@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #include <SDL_ttf.h>
 #include <SDL_image.h>
 
@@ -59,8 +59,7 @@ int main(int argc, char* args[]) {
     }
 
 
-    if( (police = TTF_OpenFont("C:\\Users\\adzer\\CLionProjects\\tock-client\\ChowFun.ttf", 20)) == NULL){
-        //FIXME metre le chemain en relatife
+    if( (police = TTF_OpenFont("assets/fonts/ChowFun.ttf", 20)) == NULL){
         fprintf(stderr, "erreur chargement font\n");
         exit(EXIT_FAILURE);
     }
@@ -82,8 +81,7 @@ int main(int argc, char* args[]) {
     SDL_QueryTexture(texte_tex, NULL, NULL, &(txtDestRect.w), &(txtDestRect.h));
 
     // load sample.png into image
-    SDL_RWops *rwop=SDL_RWFromFile("C:\\Users\\adzer\\CLionProjects\\architecture\\asets\\445126b6eab097238b5e8c9d38e38bbe.png", "rb");
-    //FIXME metre le chemain en relatife
+    SDL_RWops *rwop=SDL_RWFromFile("assets/img/controleur1024.png", "rb");
     image=IMG_LoadPNG_RW(rwop);
     if(!image) {
         printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
