@@ -4,17 +4,15 @@
 #include <SDL_ttf.h>
 #include <SDL_image.h>
 
-enum games {window,bouton};
-
-enum games currentGames;
-
 int EXIT_FAILURE = 1;
 
-enum games getCurrentGames();
-void create(enum games game);
-void start(enum games game);
-void destroy(enum games game);
-
+/**
+ * juste le main du prof pour test
+ * @bug les chemain relatifes ne marche pas
+ * @param argc
+ * @param args
+ * @return
+ */
 int main(int argc, char* args[]) {
     //Le pointeur vers la fenetre
     SDL_Window* pWindow = NULL;
@@ -62,6 +60,7 @@ int main(int argc, char* args[]) {
 
 
     if( (police = TTF_OpenFont("C:\\Users\\adzer\\CLionProjects\\tock-client\\ChowFun.ttf", 20)) == NULL){
+        //TODO metre le chemain en relatife
         fprintf(stderr, "erreur chargement font\n");
         exit(EXIT_FAILURE);
     }
@@ -84,6 +83,7 @@ int main(int argc, char* args[]) {
 
     // load sample.png into image
     SDL_RWops *rwop=SDL_RWFromFile("C:\\Users\\adzer\\CLionProjects\\architecture\\asets\\445126b6eab097238b5e8c9d38e38bbe.png", "rb");
+    //TODO metre le chemain en relatife
     image=IMG_LoadPNG_RW(rwop);
     if(!image) {
         printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
