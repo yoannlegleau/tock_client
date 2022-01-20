@@ -1,18 +1,22 @@
+/**
+ * \file main.c
+ * \brief
+ */
+
 #include <stdio.h>
 #include <SDL.h>
 #include <SDL_ttf.h>
 #include <SDL_image.h>
 
-int EXIT_FAILURE = 1;
+#define EXIT_FAILURE 1
 
 /**
- * juste le main du prof pour test
- * @bug les chemain relatifes ne marche pas
- * @param argc
- * @param args
- * @return
+ * \brief juste le main du prof pour test
+ * \param argc
+ * \param args
+ * \return
  */
-int main(int argc, char* args[]) {
+ int main(int argc, char* args[]) {
     //Le pointeur vers la fenetre
     SDL_Window* pWindow = NULL;
     //Le pointeur vers la surface incluse dans la fenetre
