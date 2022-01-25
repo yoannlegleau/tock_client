@@ -1,0 +1,9 @@
+platau:tablaux de int
+
+pion :
+    joueur (int)
+    coordoner (int)
+    intouchable (bool)
+joueur:
+    id (int)
+    nb pion rantre (int)

@@ -1,0 +1,235 @@
+\hypertarget{linkedlist_8h}{}\doxysection{C\+:/\+Users/adzer/\+CLion\+Projects/tock-\/client/src/linkedlist.h File Reference}
+\label{linkedlist_8h}\index{C:/Users/adzer/CLionProjects/tock-\/client/src/linkedlist.h@{C:/Users/adzer/CLionProjects/tock-\/client/src/linkedlist.h}}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} \mbox{\hyperlink{linkedlist_8h_a263dccd8d3432734b215f4b44f90515f}{Linkedlist}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ \mbox{\hyperlink{linkedlist_8h_aee0a24c266ceafa0b0eca1176576dd13}{Linked\+List}} (int type\+Size)
+\item 
+int \mbox{\hyperlink{linkedlist_8h_ad8feb9e4794625402d10a59f9e2a3ef5}{size}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$l)
+\begin{DoxyCompactList}\small\item\em Renvoie le nombre d\textquotesingle{}éléments de la liste l. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{linkedlist_8h_aaaed1713f40fabff5721f44dceab292a}{contains}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$l, void $\ast$o)
+\begin{DoxyCompactList}\small\item\em Renvoie le nombre d\textquotesingle{}occurrence de l\textquotesingle{}objet dans la liste. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{linkedlist_8h_a19eed22e17ce9faac496ce39d4287caa}{add\+First}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$l, void $\ast$o)
+\begin{DoxyCompactList}\small\item\em Ajoute l\textquotesingle{}objet O au debut de la liste. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{linkedlist_8h_a135d034b3b6161bb07d912ff7adc5368}{add\+Last}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$l, void $\ast$o)
+\begin{DoxyCompactList}\small\item\em Ajoute l\textquotesingle{}objet O a la fin de la liste. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ \mbox{\hyperlink{linkedlist_8h_af1334a3afb8a5b299f33ec0fecbafc0f}{clone}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$l)
+\begin{DoxyCompactList}\small\item\em Renvoie une reel copie de la liste. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{linkedlist_8h_a22e2ece11220b164541395438eafd87f}{clear}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$l)
+\begin{DoxyCompactList}\small\item\em Suprime tout les objects de la liste. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{linkedlist_8h_abf9e95651ac39e37b814352db42a72dc}{destroy}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$l)
+\begin{DoxyCompactList}\small\item\em Suprime la lise et libert l\textquotesingle{}espace memoire. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{linkedlist_8h_aa00469bd435f0b5ae644e6894b9cb096}{get}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$l, int index)
+\begin{DoxyCompactList}\small\item\em Renvoie l\textquotesingle{}élément à la position spécifiée dans cette liste. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{linkedlist_8h_a5ffae0151690b64dd5e7d2651bdcd489}{get\+First}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$l)
+\begin{DoxyCompactList}\small\item\em Renvoie le premiere élément dans cette liste. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{linkedlist_8h_a9559ae005964e1246efd9dc7ffcce527}{get\+Last}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$l)
+\begin{DoxyCompactList}\small\item\em Renvoie le dernière élément dans cette liste. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+LE GLEAU yoann 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+25/01/2022 
+\end{DoxyDate}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{linkedlist_8h_a263dccd8d3432734b215f4b44f90515f}\label{linkedlist_8h_a263dccd8d3432734b215f4b44f90515f}} 
+\index{linkedlist.h@{linkedlist.h}!Linkedlist@{Linkedlist}}
+\index{Linkedlist@{Linkedlist}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{Linkedlist}{Linkedlist}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} \mbox{\hyperlink{struct_linkedlist}{Linkedlist}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{linkedlist_8h_a19eed22e17ce9faac496ce39d4287caa}\label{linkedlist_8h_a19eed22e17ce9faac496ce39d4287caa}} 
+\index{linkedlist.h@{linkedlist.h}!addFirst@{addFirst}}
+\index{addFirst@{addFirst}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{addFirst()}{addFirst()}}
+{\footnotesize\ttfamily void add\+First (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{l,  }\item[{void $\ast$}]{o }\end{DoxyParamCaption})}
+
+
+
+Ajoute l\textquotesingle{}objet O au debut de la liste. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & \\
+\hline
+{\em o} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{linkedlist_8h_a135d034b3b6161bb07d912ff7adc5368}\label{linkedlist_8h_a135d034b3b6161bb07d912ff7adc5368}} 
+\index{linkedlist.h@{linkedlist.h}!addLast@{addLast}}
+\index{addLast@{addLast}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{addLast()}{addLast()}}
+{\footnotesize\ttfamily void add\+Last (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{l,  }\item[{void $\ast$}]{o }\end{DoxyParamCaption})}
+
+
+
+Ajoute l\textquotesingle{}objet O a la fin de la liste. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & \\
+\hline
+{\em o} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{linkedlist_8h_a22e2ece11220b164541395438eafd87f}\label{linkedlist_8h_a22e2ece11220b164541395438eafd87f}} 
+\index{linkedlist.h@{linkedlist.h}!clear@{clear}}
+\index{clear@{clear}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{l }\end{DoxyParamCaption})}
+
+
+
+Suprime tout les objects de la liste. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{linkedlist_8h_af1334a3afb8a5b299f33ec0fecbafc0f}\label{linkedlist_8h_af1334a3afb8a5b299f33ec0fecbafc0f}} 
+\index{linkedlist.h@{linkedlist.h}!clone@{clone}}
+\index{clone@{clone}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ clone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{l }\end{DoxyParamCaption})}
+
+
+
+Renvoie une reel copie de la liste. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & liste copier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+copie de la liste 
+\end{DoxyReturn}
+\mbox{\Hypertarget{linkedlist_8h_aaaed1713f40fabff5721f44dceab292a}\label{linkedlist_8h_aaaed1713f40fabff5721f44dceab292a}} 
+\index{linkedlist.h@{linkedlist.h}!contains@{contains}}
+\index{contains@{contains}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily int contains (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{l,  }\item[{void $\ast$}]{o }\end{DoxyParamCaption})}
+
+
+
+Renvoie le nombre d\textquotesingle{}occurrence de l\textquotesingle{}objet dans la liste. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} \\
+\hline
+{\em o} & pointeure de comparaison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int corespondent 
+\end{DoxyReturn}
+\mbox{\Hypertarget{linkedlist_8h_abf9e95651ac39e37b814352db42a72dc}\label{linkedlist_8h_abf9e95651ac39e37b814352db42a72dc}} 
+\index{linkedlist.h@{linkedlist.h}!destroy@{destroy}}
+\index{destroy@{destroy}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily void destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{l }\end{DoxyParamCaption})}
+
+
+
+Suprime la lise et libert l\textquotesingle{}espace memoire. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{linkedlist_8h_aa00469bd435f0b5ae644e6894b9cb096}\label{linkedlist_8h_aa00469bd435f0b5ae644e6894b9cb096}} 
+\index{linkedlist.h@{linkedlist.h}!get@{get}}
+\index{get@{get}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily void $\ast$ get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{l,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Renvoie l\textquotesingle{}élément à la position spécifiée dans cette liste. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & \\
+\hline
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+objet ou NULL si hor liste 
+\end{DoxyReturn}
+\mbox{\Hypertarget{linkedlist_8h_a5ffae0151690b64dd5e7d2651bdcd489}\label{linkedlist_8h_a5ffae0151690b64dd5e7d2651bdcd489}} 
+\index{linkedlist.h@{linkedlist.h}!getFirst@{getFirst}}
+\index{getFirst@{getFirst}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{getFirst()}{getFirst()}}
+{\footnotesize\ttfamily void $\ast$ get\+First (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{l }\end{DoxyParamCaption})}
+
+
+
+Renvoie le premiere élément dans cette liste. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{linkedlist_8h_a9559ae005964e1246efd9dc7ffcce527}\label{linkedlist_8h_a9559ae005964e1246efd9dc7ffcce527}} 
+\index{linkedlist.h@{linkedlist.h}!getLast@{getLast}}
+\index{getLast@{getLast}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{getLast()}{getLast()}}
+{\footnotesize\ttfamily void $\ast$ get\+Last (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{l }\end{DoxyParamCaption})}
+
+
+
+Renvoie le dernière élément dans cette liste. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{linkedlist_8h_aee0a24c266ceafa0b0eca1176576dd13}\label{linkedlist_8h_aee0a24c266ceafa0b0eca1176576dd13}} 
+\index{linkedlist.h@{linkedlist.h}!LinkedList@{LinkedList}}
+\index{LinkedList@{LinkedList}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{LinkedList()}{linkedListFactory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ Linked\+List (\begin{DoxyParamCaption}\item[{int}]{type\+Size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{linkedlist_8h_ad8feb9e4794625402d10a59f9e2a3ef5}\label{linkedlist_8h_ad8feb9e4794625402d10a59f9e2a3ef5}} 
+\index{linkedlist.h@{linkedlist.h}!size@{size}}
+\index{size@{size}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{l }\end{DoxyParamCaption})}
+
+
+
+Renvoie le nombre d\textquotesingle{}éléments de la liste l. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} conserner \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nombre d\textquotesingle{}éléments ou 0 si la liste est vide 
+\end{DoxyReturn}

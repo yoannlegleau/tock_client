@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8c.html#a700a0caa5b70a06d1064e576f9f3cf65',1,'main.c']]],
-  ['main_2ec_1',['main.c',['../main_8c.html',1,'']]],
-  ['mainsdl_2ec_2',['mainSDL.c',['../main_s_d_l_8c.html',1,'']]],
-  ['mainsdl_2eh_3',['mainSDL.h',['../main_s_d_l_8h.html',1,'']]]
+  ['clear_0',['clear',['../linkedlist_8c.html#a22e2ece11220b164541395438eafd87f',1,'clear(Linkedlist *l):&#160;linkedlist.c'],['../linkedlist_8h.html#a22e2ece11220b164541395438eafd87f',1,'clear(Linkedlist *l):&#160;linkedlist.c']]],
+  ['clone_1',['clone',['../linkedlist_8c.html#af1334a3afb8a5b299f33ec0fecbafc0f',1,'clone(Linkedlist *l):&#160;linkedlist.c'],['../linkedlist_8h.html#af1334a3afb8a5b299f33ec0fecbafc0f',1,'clone(Linkedlist *l):&#160;linkedlist.c']]],
+  ['contains_2',['contains',['../linkedlist_8c.html#aaaed1713f40fabff5721f44dceab292a',1,'contains(Linkedlist *l, void *o):&#160;linkedlist.c'],['../linkedlist_8h.html#aaaed1713f40fabff5721f44dceab292a',1,'contains(Linkedlist *l, void *o):&#160;linkedlist.c']]]
 ];
