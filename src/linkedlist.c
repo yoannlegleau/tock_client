@@ -30,6 +30,7 @@ struct Linkedlist {
  * \return
  */
 Elem * elemFactory(Linkedlist * l , void * o){
+    //TOTEST
     Elem * elem = malloc(size(l));
     elem->object=o;
     elem->next= elem;
@@ -37,6 +38,7 @@ Elem * elemFactory(Linkedlist * l , void * o){
 }
 
 Linkedlist * linkedListFactory(int typeSize){
+    //TOTEST
     Linkedlist * list = malloc(sizeof(Linkedlist));
     list->size = typeSize;
     list->last = NULL;
@@ -67,7 +69,7 @@ void addFirst(Linkedlist *l, void *o) {
 void addLast(Linkedlist *l, void *o) {
     //TOTEST
     Elem * elem = elemFactory(l,o);
-    if(l->last = NULL)
+    if(l->last == NULL)
         l->last = elem;
     else{
         elem->next = l->last->next;

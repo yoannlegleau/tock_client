@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['wincreate_0',['winCreate',['../main_s_d_l_8h.html#ad0d09c1b6009b869b52530dcf379eb51',1,'mainSDL.c']]],
-  ['windestroy_1',['winDestroy',['../main_s_d_l_8c.html#aaf044c965a62de4320efd57d1ad0fa81',1,'winDestroy():&#160;mainSDL.c'],['../main_s_d_l_8h.html#aaf044c965a62de4320efd57d1ad0fa81',1,'winDestroy():&#160;mainSDL.c']]],
-  ['window_2',['window',['../main_s_d_l_8c.html#a04a8a2bbfa9c15500892b8e5033d625b',1,'window():&#160;mainSDL.c'],['../main_s_d_l_8h.html#aaa8e409e04dcf575ef63fd5fb3db06f9',1,'window():&#160;mainSDL.h']]]
+  ['nbpionrantrer_0',['nbPionRantrer',['../struct_player.html#abc242d99fdf1748903d93dde2f0de373',1,'Player']]],
+  ['next_1',['next',['../struct_elem.html#a2f6c7da605efbc5686c5951fe2baf8cb',1,'Elem']]],
+  ['nine_2',['nine',['../card_8h.html#a98a2b239923441ea943de74af3208aa3a747df047c68bef3d0d7ff65578ee5848',1,'card.h']]]
 ];

@@ -1,15 +1,11 @@
 var searchData=
 [
-  ['game_2ec_0',['game.c',['../game_8c.html',1,'']]],
-  ['game_2eh_1',['game.h',['../game_8h.html',1,'']]],
-  ['gamecreate_2',['gameCreate',['../game_8c.html#a8608f514fe7507c9b45f1f7e945be7f1',1,'gameCreate(SDL_Window *window):&#160;game.c'],['../game_8h.html#a8608f514fe7507c9b45f1f7e945be7f1',1,'gameCreate(SDL_Window *window):&#160;game.c']]],
-  ['gamedestroy_3',['gameDestroy',['../game_8h.html#a046399e2d517fd587a23bcd0b0e23ab9',1,'game.h']]],
-  ['gamepause_4',['gamePause',['../game_8h.html#aa5642769dce9d51ebe5be75b3dd5007e',1,'game.h']]],
-  ['gameresume_5',['gameResume',['../game_8h.html#a43a4a38dc12d37bc2867ab1ee105b23e',1,'game.h']]],
-  ['gamestart_6',['gameStart',['../game_8h.html#a5ccf13a9cc0f2c05b31227c77fb9cd4e',1,'game.h']]],
-  ['gamestop_7',['gameStop',['../game_8h.html#af3dc2d180f1b05fae33e4ffef3973124',1,'game.h']]],
-  ['get_8',['get',['../linkedlist_8c.html#aa00469bd435f0b5ae644e6894b9cb096',1,'get(Linkedlist *l, int index):&#160;linkedlist.c'],['../linkedlist_8h.html#aa00469bd435f0b5ae644e6894b9cb096',1,'get(Linkedlist *l, int index):&#160;linkedlist.c']]],
-  ['getfirst_9',['getFirst',['../linkedlist_8c.html#a5ffae0151690b64dd5e7d2651bdcd489',1,'getFirst(Linkedlist *l):&#160;linkedlist.c'],['../linkedlist_8h.html#a5ffae0151690b64dd5e7d2651bdcd489',1,'getFirst(Linkedlist *l):&#160;linkedlist.c']]],
-  ['getlast_10',['getLast',['../linkedlist_8c.html#a9559ae005964e1246efd9dc7ffcce527',1,'getLast(Linkedlist *l):&#160;linkedlist.c'],['../linkedlist_8h.html#a9559ae005964e1246efd9dc7ffcce527',1,'getLast(Linkedlist *l):&#160;linkedlist.c']]],
-  ['getwindow_11',['getWindow',['../main_s_d_l_8c.html#aaa2f5ff6c3e7d04d7ffd16c6603df5a1',1,'getWindow():&#160;mainSDL.c'],['../main_s_d_l_8h.html#aaa2f5ff6c3e7d04d7ffd16c6603df5a1',1,'getWindow():&#160;mainSDL.c']]]
+  ['eight_0',['eight',['../card_8h.html#a98a2b239923441ea943de74af3208aa3aa07559034a57bf883e04d04c81198abb',1,'card.h']]],
+  ['eighteen_1',['eighteen',['../card_8h.html#a98a2b239923441ea943de74af3208aa3a7526c04d442ea38779b1babab0d52f15',1,'card.h']]],
+  ['elem_2',['Elem',['../struct_elem.html',1,'Elem'],['../linkedlist_8c.html#a5220afa13cf5163ab0a13caef3230176',1,'Elem():&#160;linkedlist.c']]],
+  ['elemfactory_3',['elemFactory',['../linkedlist_8c.html#a8beb2d56cc6457a550b46c94df0dbb47',1,'linkedlist.c']]],
+  ['eleven_4',['eleven',['../card_8h.html#a98a2b239923441ea943de74af3208aa3a2d3a6d777762c8bc8d9c4a6e3b5cdf76',1,'card.h']]],
+  ['eleven_5fout_5',['eleven_out',['../card_8h.html#a98a2b239923441ea943de74af3208aa3ab9854728c4cce3d32c4325730bc50c1c',1,'card.h']]],
+  ['empty_6',['empty',['../card_8h.html#a98a2b239923441ea943de74af3208aa3ae8654263bd8adf1d0922f427d8f3fc1b',1,'card.h']]],
+  ['exit_5ffailure_7',['EXIT_FAILURE',['../game_8c.html#a73efe787c131b385070f25d18b7c9aa4',1,'game.c']]]
 ];

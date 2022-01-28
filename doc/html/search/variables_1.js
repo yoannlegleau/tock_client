@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['next_0',['next',['../structelem.html#a3f6417aeec27282903f7e8a406173713',1,'elem']]]
+  ['cards_0',['cards',['../struct_player.html#a6b381ffa8dc6fb205774518b2a8aeca2',1,'Player']]]
 ];

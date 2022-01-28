@@ -5,8 +5,8 @@
  */
 
 #include <stdio.h>
-#include <SDL.h>
-
+#include <SDL2/SDL.h>
+#include <stdbool.h>
 #include "mainSDL.h"
 #include "game.h"
 #include "linkedlist.h"
@@ -22,7 +22,7 @@
     SDL_Window* pWindow = getWindow();
 
     //lance le jeu dans la fenêtre principal
-    //gameCreate(window);
+    gameCreate(window);
 
     Linkedlist * listInt = linkedListFactory(sizeof(int));
 

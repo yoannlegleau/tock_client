@@ -4,18 +4,44 @@
 {\ttfamily \#include $<$SDL.\+h$>$}\newline
 {\ttfamily \#include $<$SDL\+\_\+ttf.\+h$>$}\newline
 {\ttfamily \#include $<$SDL\+\_\+image.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}game.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}main\+SDL.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linkedlist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}card.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_player}{Player}}
+\item 
+struct \mbox{\hyperlink{struct_pawn}{Pawn}}
+\item 
+struct \mbox{\hyperlink{struct_rule}{Rule}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{game_8c_a73efe787c131b385070f25d18b7c9aa4}{EXIT\+\_\+\+FAILURE}}~0
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_player}{Player}} \mbox{\hyperlink{game_8c_a480a040facb94f90060562cd65274385}{Player}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pawn}{Pawn}} \mbox{\hyperlink{game_8c_a41376036826b0217a186f072edddc5d8}{Pawn}}
+\item 
+typedef struct \mbox{\hyperlink{struct_rule}{Rule}} \mbox{\hyperlink{game_8c_a683d0414d3752753074b14f91eb79cca}{Rule}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{game_8c_a8608f514fe7507c9b45f1f7e945be7f1}{game\+Create}} (SDL\+\_\+\+Window $\ast$\mbox{\hyperlink{main_s_d_l_8h_aaa8e409e04dcf575ef63fd5fb3db06f9}{window}})
 \begin{DoxyCompactList}\small\item\em demonstration du fonctionnement des librairie graphiques baser sur l\textquotesingle{}example de cours \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{game_8c_a680d73ca75726f5d776250b4fca878f8}{bord}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Se tableux represente toutes les cases du plateu. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -36,6 +62,27 @@ LE GLEAU yoann
 
 
 
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{game_8c_a41376036826b0217a186f072edddc5d8}\label{game_8c_a41376036826b0217a186f072edddc5d8}} 
+\index{game.c@{game.c}!Pawn@{Pawn}}
+\index{Pawn@{Pawn}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{Pawn}{Pawn}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pawn}{Pawn}} \mbox{\hyperlink{struct_pawn}{Pawn}}}
+
+\mbox{\Hypertarget{game_8c_a480a040facb94f90060562cd65274385}\label{game_8c_a480a040facb94f90060562cd65274385}} 
+\index{game.c@{game.c}!Player@{Player}}
+\index{Player@{Player}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{Player}{Player}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_player}{Player}} \mbox{\hyperlink{struct_player}{Player}}}
+
+\mbox{\Hypertarget{game_8c_a683d0414d3752753074b14f91eb79cca}\label{game_8c_a683d0414d3752753074b14f91eb79cca}} 
+\index{game.c@{game.c}!Rule@{Rule}}
+\index{Rule@{Rule}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{Rule}{Rule}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_rule}{Rule}} \mbox{\hyperlink{struct_rule}{Rule}}}
+
+
+
 \doxysubsection{Function Documentation}
 \mbox{\Hypertarget{game_8c_a8608f514fe7507c9b45f1f7e945be7f1}\label{game_8c_a8608f514fe7507c9b45f1f7e945be7f1}} 
 \index{game.c@{game.c}!gameCreate@{gameCreate}}
@@ -52,3 +99,17 @@ demonstration du fonctionnement des librairie graphiques baser sur l\textquotesi
 {\em window} & fenêtre principal \\
 \hline
 \end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{game_8c_a680d73ca75726f5d776250b4fca878f8}\label{game_8c_a680d73ca75726f5d776250b4fca878f8}} 
+\index{game.c@{game.c}!bord@{bord}}
+\index{bord@{bord}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{bord}{bord}}
+{\footnotesize\ttfamily int bord\mbox{[}$\,$\mbox{]}}
+
+
+
+Se tableux represente toutes les cases du plateu. 
+
+la longeur varie selon le nombre de joueur car chaque jouer posed 18 plus 4 donc pour 4j 88 et 132 pour 6. Les int represantes les ID de chaques jouers  

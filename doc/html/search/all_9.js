@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['size_0',['size',['../struct_linkedlist.html#a439227feff9d7f55384e8780cfc2eb82',1,'Linkedlist::size()'],['../linkedlist_8c.html#ad8feb9e4794625402d10a59f9e2a3ef5',1,'size(Linkedlist *l):&#160;linkedlist.c'],['../linkedlist_8h.html#ad8feb9e4794625402d10a59f9e2a3ef5',1,'size(Linkedlist *l):&#160;linkedlist.c']]]
+  ['main_0',['main',['../main_8c.html#a700a0caa5b70a06d1064e576f9f3cf65',1,'main.c']]],
+  ['main_2ec_1',['main.c',['../main_8c.html',1,'']]],
+  ['mainsdl_2ec_2',['mainSDL.c',['../main_s_d_l_8c.html',1,'']]],
+  ['mainsdl_2eh_3',['mainSDL.h',['../main_s_d_l_8h.html',1,'']]]
 ];

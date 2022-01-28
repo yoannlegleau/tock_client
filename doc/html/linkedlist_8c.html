@@ -80,22 +80,25 @@ $(function() {
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structelem.html">Elem</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_elem.html">Elem</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_linkedlist.html">Linkedlist</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a03f28ef452dbb87c629a2b39da6fc63c"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structelem.html">Elem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a03f28ef452dbb87c629a2b39da6fc63c">Elem</a></td></tr>
-<tr class="separator:a03f28ef452dbb87c629a2b39da6fc63c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5220afa13cf5163ab0a13caef3230176"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_elem.html">Elem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a5220afa13cf5163ab0a13caef3230176">Elem</a></td></tr>
+<tr class="separator:a5220afa13cf5163ab0a13caef3230176"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a263dccd8d3432734b215f4b44f90515f"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_linkedlist.html">Linkedlist</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a263dccd8d3432734b215f4b44f90515f">Linkedlist</a></td></tr>
 <tr class="separator:a263dccd8d3432734b215f4b44f90515f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aee0a24c266ceafa0b0eca1176576dd13"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#aee0a24c266ceafa0b0eca1176576dd13">linkedListFactory</a> (int typeSize)</td></tr>
-<tr class="separator:aee0a24c266ceafa0b0eca1176576dd13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8beb2d56cc6457a550b46c94df0dbb47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_elem.html">Elem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a8beb2d56cc6457a550b46c94df0dbb47">elemFactory</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l, void *o)</td></tr>
+<tr class="memdesc:a8beb2d56cc6457a550b46c94df0dbb47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cree un Element de list en initialisent l'espace memoire. par defaux l'element "boucle" sur lui meme.  <a href="linkedlist_8c.html#a8beb2d56cc6457a550b46c94df0dbb47">More...</a><br /></td></tr>
+<tr class="separator:a8beb2d56cc6457a550b46c94df0dbb47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1777aaa1033242487c161a6f0d3272d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a1777aaa1033242487c161a6f0d3272d6">linkedListFactory</a> (int typeSize)</td></tr>
+<tr class="separator:a1777aaa1033242487c161a6f0d3272d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8feb9e4794625402d10a59f9e2a3ef5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#ad8feb9e4794625402d10a59f9e2a3ef5">size</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l)</td></tr>
 <tr class="memdesc:ad8feb9e4794625402d10a59f9e2a3ef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le nombre d'éléments de la liste l.  <a href="linkedlist_8c.html#ad8feb9e4794625402d10a59f9e2a3ef5">More...</a><br /></td></tr>
 <tr class="separator:ad8feb9e4794625402d10a59f9e2a3ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,18 +133,18 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>LE GLEAU yoann </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>25/01/2022 <div class="image">
-<img src="linkedListFactory.png" alt=""/>
+<img src="assets/img/linkedListFactory.png" alt=""/>
 </div>
  </dd></dl>
 </div><h2 class="groupheader">Typedef Documentation</h2>
-<a id="a03f28ef452dbb87c629a2b39da6fc63c" name="a03f28ef452dbb87c629a2b39da6fc63c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03f28ef452dbb87c629a2b39da6fc63c">&#9670;&nbsp;</a></span>Elem</h2>
+<a id="a5220afa13cf5163ab0a13caef3230176" name="a5220afa13cf5163ab0a13caef3230176"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5220afa13cf5163ab0a13caef3230176">&#9670;&nbsp;</a></span>Elem</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="structelem.html">Elem</a> <a class="el" href="structelem.html">Elem</a></td>
+          <td class="memname">typedef struct <a class="el" href="struct_elem.html">Elem</a> <a class="el" href="struct_elem.html">Elem</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -354,6 +357,44 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a8beb2d56cc6457a550b46c94df0dbb47" name="a8beb2d56cc6457a550b46c94df0dbb47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8beb2d56cc6457a550b46c94df0dbb47">&#9670;&nbsp;</a></span>elemFactory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_elem.html">Elem</a> * elemFactory </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>o</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cree un Element de list en initialisent l'espace memoire. par defaux l'element "boucle" sur lui meme. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td></td></tr>
+    <tr><td class="paramname">o</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 <a id="aa00469bd435f0b5ae644e6894b9cb096" name="aa00469bd435f0b5ae644e6894b9cb096"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa00469bd435f0b5ae644e6894b9cb096">&#9670;&nbsp;</a></span>get()</h2>
 
@@ -446,8 +487,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aee0a24c266ceafa0b0eca1176576dd13" name="aee0a24c266ceafa0b0eca1176576dd13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee0a24c266ceafa0b0eca1176576dd13">&#9670;&nbsp;</a></span>linkedListFactory()</h2>
+<a id="a1777aaa1033242487c161a6f0d3272d6" name="a1777aaa1033242487c161a6f0d3272d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1777aaa1033242487c161a6f0d3272d6">&#9670;&nbsp;</a></span>linkedListFactory()</h2>
 
 <div class="memitem">
 <div class="memproto">

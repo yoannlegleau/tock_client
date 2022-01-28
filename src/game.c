@@ -8,21 +8,70 @@
 #include <SDL.h>
 #include <SDL_ttf.h>
 #include <SDL_image.h>
+#include <stdbool.h>
 
 #include "game.h"
 #include "mainSDL.h"
+#include "linkedlist.h"
+#include "card.h"
 
 #define EXIT_FAILURE 0
+
+/**
+ * \brief Se tableux represente toutes les cases du plateu
+ * \details la longeur varie selon le nombre de joueur car chaque jouer posed 18 plus 4 donc pour 4j 88 et 132 pour 6.
+ * Les int represantes les ID de chaques jouers
+ * \image html assets/img/Tock.io-BordArray.jpg
+ */
+int bord[];
+
+typedef struct Player Player;
+struct Player {
+    int idPlayer;
+    int nbPionRantrer; //TODO trouver un meilleur nom
+    Linkedlist * cards;
+};
+
+typedef struct Pawn Pawn;
+struct Pawn {
+    int IDplayer;
+    int location; //index du tableau du plateau (principalement en prevision de l'envoi de données au server)
+    bool invincibility;
+};
+
+typedef struct Rule Rule;
+struct Rule {
+   bool ruleV;
+};
+
+/*
+void initDeistribuer(){
+    Linkedlist * cards = linkedListFactory(sizeof(Card));
+    //generiqes
+    addLast(cards,);
+    //specifique au regles
+    if (ruleV) addLast(cards,);
+}
+*/
+
 
 /**
  * \brief demonstration du fonctionnement des librairie graphiques baser sur l'example de cours
  * \param window fenêtre principal
  */
 void gameCreate(SDL_Window *window) {
+    Linkedlist * cards = linkedListFactory(sizeof(int));
+    int test = 4;
+    addFirst(cards,&test);
+    int *result = getFirst(cards);
+    printf("test liste generique %i",*result);
+
+
 //Le pointeur vers la surface incluse dans la fenetre
     SDL_Surface *texte=NULL, *image=NULL;
     SDL_Renderer *renderer=NULL;
     SDL_Rect txtDestRect,imgDestRect;
+
 
     // Le pointeur vers notre police
     TTF_Font *police = NULL;

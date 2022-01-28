@@ -5,7 +5,7 @@
  */
 
 #include <stdio.h>
-#include <SDL_ttf.h>
+#include <SDL2/SDL_ttf.h>
 #include "mainSDL.h"
 
 /**
@@ -19,6 +19,7 @@ SDL_Window *window = NULL;
  * \return pointeur vers l'écran principal
  */
 SDL_Window * getWindow(){
+    //TOTEST
     if(window == NULL)
         winCreate();
     return window;

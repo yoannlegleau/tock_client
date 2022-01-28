@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['size_0',['size',['../linkedlist_8c.html#ad8feb9e4794625402d10a59f9e2a3ef5',1,'size(Linkedlist *l):&#160;linkedlist.c'],['../linkedlist_8h.html#ad8feb9e4794625402d10a59f9e2a3ef5',1,'size(Linkedlist *l):&#160;linkedlist.c']]]
+  ['main_0',['main',['../main_8c.html#a700a0caa5b70a06d1064e576f9f3cf65',1,'main.c']]]
 ];

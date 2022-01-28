@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['elem_0',['elem',['../linkedlist_8c.html#a03f28ef452dbb87c629a2b39da6fc63c',1,'linkedlist.c']]]
+  ['elem_0',['Elem',['../linkedlist_8c.html#a5220afa13cf5163ab0a13caef3230176',1,'linkedlist.c']]]
 ];

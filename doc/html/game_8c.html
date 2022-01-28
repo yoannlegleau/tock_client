@@ -67,8 +67,11 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">game.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -76,19 +79,46 @@ $(function() {
 <code>#include &lt;SDL.h&gt;</code><br />
 <code>#include &lt;SDL_ttf.h&gt;</code><br />
 <code>#include &lt;SDL_image.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="game_8h_source.html">game.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="main_s_d_l_8h_source.html">mainSDL.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="linkedlist_8h_source.html">linkedlist.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="card_8h_source.html">card.h</a>&quot;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_player.html">Player</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_pawn.html">Pawn</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_rule.html">Rule</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a73efe787c131b385070f25d18b7c9aa4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a73efe787c131b385070f25d18b7c9aa4">EXIT_FAILURE</a>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:a73efe787c131b385070f25d18b7c9aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a480a040facb94f90060562cd65274385"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_player.html">Player</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a480a040facb94f90060562cd65274385">Player</a></td></tr>
+<tr class="separator:a480a040facb94f90060562cd65274385"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41376036826b0217a186f072edddc5d8"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_pawn.html">Pawn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a41376036826b0217a186f072edddc5d8">Pawn</a></td></tr>
+<tr class="separator:a41376036826b0217a186f072edddc5d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a683d0414d3752753074b14f91eb79cca"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_rule.html">Rule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a683d0414d3752753074b14f91eb79cca">Rule</a></td></tr>
+<tr class="separator:a683d0414d3752753074b14f91eb79cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a8608f514fe7507c9b45f1f7e945be7f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a8608f514fe7507c9b45f1f7e945be7f1">gameCreate</a> (SDL_Window *<a class="el" href="main_s_d_l_8h.html#aaa8e409e04dcf575ef63fd5fb3db06f9">window</a>)</td></tr>
 <tr class="memdesc:a8608f514fe7507c9b45f1f7e945be7f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">demonstration du fonctionnement des librairie graphiques baser sur l'example de cours  <a href="game_8c.html#a8608f514fe7507c9b45f1f7e945be7f1">More...</a><br /></td></tr>
 <tr class="separator:a8608f514fe7507c9b45f1f7e945be7f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a680d73ca75726f5d776250b4fca878f8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a680d73ca75726f5d776250b4fca878f8">bord</a> []</td></tr>
+<tr class="memdesc:a680d73ca75726f5d776250b4fca878f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Se tableux represente toutes les cases du plateu.  <a href="game_8c.html#a680d73ca75726f5d776250b4fca878f8">More...</a><br /></td></tr>
+<tr class="separator:a680d73ca75726f5d776250b4fca878f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>LE GLEAU yoann </dd></dl>
@@ -102,6 +132,49 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define EXIT_FAILURE&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a41376036826b0217a186f072edddc5d8" name="a41376036826b0217a186f072edddc5d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41376036826b0217a186f072edddc5d8">&#9670;&nbsp;</a></span>Pawn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_pawn.html">Pawn</a> <a class="el" href="struct_pawn.html">Pawn</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a480a040facb94f90060562cd65274385" name="a480a040facb94f90060562cd65274385"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a480a040facb94f90060562cd65274385">&#9670;&nbsp;</a></span>Player</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_player.html">Player</a> <a class="el" href="struct_player.html">Player</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a683d0414d3752753074b14f91eb79cca" name="a683d0414d3752753074b14f91eb79cca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a683d0414d3752753074b14f91eb79cca">&#9670;&nbsp;</a></span>Rule</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_rule.html">Rule</a> <a class="el" href="struct_rule.html">Rule</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -133,6 +206,26 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a680d73ca75726f5d776250b4fca878f8" name="a680d73ca75726f5d776250b4fca878f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a680d73ca75726f5d776250b4fca878f8">&#9670;&nbsp;</a></span>bord</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bord[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Se tableux represente toutes les cases du plateu. </p>
+<p >la longeur varie selon le nombre de joueur car chaque jouer posed 18 plus 4 donc pour 4j 88 et 132 pour 6. Les int represantes les ID de chaques jouers </p><div class="image">
+<img src="Tock.io-BordArray.jpg" alt=""/>
+</div>
+ 
 </div>
 </div>
 </div><!-- contents -->
