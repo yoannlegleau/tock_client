@@ -70,22 +70,22 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="main_s_d_l_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;SDL2/SDL.h&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef TOCK_CLIENT_MAINSDL_H</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define TOCK_CLIENT_MAINSDL_H</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#endif </span><span class="comment">//TOCK_CLIENT_MAINSDL_H</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="main_s_d_l_8h.html#aaa8e409e04dcf575ef63fd5fb3db06f9">   12</a></span>SDL_Window *<a class="code hl_variable" href="main_s_d_l_8h.html#aaa8e409e04dcf575ef63fd5fb3db06f9">window</a>;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="main_s_d_l_8h.html#aaa8e409e04dcf575ef63fd5fb3db06f9">   14</a></span>SDL_Window *<a class="code hl_variable" href="main_s_d_l_8h.html#aaa8e409e04dcf575ef63fd5fb3db06f9">window</a>;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keywordtype">void</span> <a class="code hl_function" href="main_s_d_l_8h.html#ad0d09c1b6009b869b52530dcf379eb51">winCreate</a>();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">void</span> <a class="code hl_function" href="main_s_d_l_8h.html#aaf044c965a62de4320efd57d1ad0fa81">winDestroy</a>();</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>SDL_Window * <a class="code hl_function" href="main_s_d_l_8h.html#aaa2f5ff6c3e7d04d7ffd16c6603df5a1">getWindow</a>();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keywordtype">void</span> <a class="code hl_function" href="main_s_d_l_8h.html#ad0d09c1b6009b869b52530dcf379eb51">winCreate</a>();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keywordtype">void</span> <a class="code hl_function" href="main_s_d_l_8h.html#aaf044c965a62de4320efd57d1ad0fa81">winDestroy</a>();</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>SDL_Window * <a class="code hl_function" href="main_s_d_l_8h.html#aaa2f5ff6c3e7d04d7ffd16c6603df5a1">getWindow</a>();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#endif </span><span class="comment">//TOCK_CLIENT_MAINSDL_H</span></div>
 <div class="ttc" id="amain_s_d_l_8h_html_aaa2f5ff6c3e7d04d7ffd16c6603df5a1"><div class="ttname"><a href="main_s_d_l_8h.html#aaa2f5ff6c3e7d04d7ffd16c6603df5a1">getWindow</a></div><div class="ttdeci">SDL_Window * getWindow()</div><div class="ttdoc">singleton de l'écran principal</div><div class="ttdef"><b>Definition:</b> mainSDL.c:21</div></div>
-<div class="ttc" id="amain_s_d_l_8h_html_aaa8e409e04dcf575ef63fd5fb3db06f9"><div class="ttname"><a href="main_s_d_l_8h.html#aaa8e409e04dcf575ef63fd5fb3db06f9">window</a></div><div class="ttdeci">SDL_Window * window</div><div class="ttdef"><b>Definition:</b> mainSDL.h:14</div></div>
-<div class="ttc" id="amain_s_d_l_8h_html_aaf044c965a62de4320efd57d1ad0fa81"><div class="ttname"><a href="main_s_d_l_8h.html#aaf044c965a62de4320efd57d1ad0fa81">winDestroy</a></div><div class="ttdeci">void winDestroy()</div><div class="ttdoc">Ferme la fenêtre principal et fermeture des libraires graphiques SDL2 et SDL_TTF.</div><div class="ttdef"><b>Definition:</b> mainSDL.c:58</div></div>
-<div class="ttc" id="amain_s_d_l_8h_html_ad0d09c1b6009b869b52530dcf379eb51"><div class="ttname"><a href="main_s_d_l_8h.html#ad0d09c1b6009b869b52530dcf379eb51">winCreate</a></div><div class="ttdeci">void winCreate()</div><div class="ttdoc">Crée la fenêtre principal avec les caractéristique par default et initialisation des libraires graphi...</div><div class="ttdef"><b>Definition:</b> mainSDL.c:31</div></div>
+<div class="ttc" id="amain_s_d_l_8h_html_aaa8e409e04dcf575ef63fd5fb3db06f9"><div class="ttname"><a href="main_s_d_l_8h.html#aaa8e409e04dcf575ef63fd5fb3db06f9">window</a></div><div class="ttdeci">SDL_Window * window</div><div class="ttdef"><b>Definition:</b> mainSDL.h:12</div></div>
+<div class="ttc" id="amain_s_d_l_8h_html_aaf044c965a62de4320efd57d1ad0fa81"><div class="ttname"><a href="main_s_d_l_8h.html#aaf044c965a62de4320efd57d1ad0fa81">winDestroy</a></div><div class="ttdeci">void winDestroy()</div><div class="ttdoc">Ferme la fenêtre principal et fermeture des libraires graphiques SDL2 et SDL_TTF.</div><div class="ttdef"><b>Definition:</b> mainSDL.c:59</div></div>
+<div class="ttc" id="amain_s_d_l_8h_html_ad0d09c1b6009b869b52530dcf379eb51"><div class="ttname"><a href="main_s_d_l_8h.html#ad0d09c1b6009b869b52530dcf379eb51">winCreate</a></div><div class="ttdeci">void winCreate()</div><div class="ttdoc">Crée la fenêtre principal avec les caractéristique par default et initialisation des libraires graphi...</div><div class="ttdef"><b>Definition:</b> mainSDL.c:32</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
