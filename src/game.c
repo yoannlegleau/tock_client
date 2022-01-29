@@ -1,7 +1,9 @@
 /**
  * \file game.c
+ * \brief gestionaire de partie
  * \author LE GLEAU yoann
  * \date 20/01/2022
+ * \version 1
  */
 
 #include <stdio.h>

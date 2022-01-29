@@ -2,6 +2,7 @@
  * \file main.c
  * \author LE GLEAU yoann
  * \date 20/01/2022
+ * \image
  */
 
 #include <stdio.h>
