@@ -1,7 +1,9 @@
 /**
  * \file mainSDL.c
- * \author LE GLEAU yoann
+ * \brief gestion de la fenetre principale
+ * \author JARRIER Allan
  * \date 20/01/2022
+ * \version 1
  */
 
 #include <stdio.h>

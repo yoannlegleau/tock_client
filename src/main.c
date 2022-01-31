@@ -1,8 +1,9 @@
 /**
  * \file main.c
- * \author LE GLEAU yoann
+ * \brief gestion de l'application
+ * \author JARRIER Allan
  * \date 20/01/2022
- * \image
+ *
  */
 
 #include <stdio.h>

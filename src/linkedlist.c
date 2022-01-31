@@ -1,7 +1,9 @@
 /**
  * \file Linkedlist.c
+ * \brief liste chainer generique
  * \author LE GLEAU yoann
  * \date 25/01/2022
+ * \version 1
  * \image html assets/img/linkedListFactory.png
  */
 

@@ -1,6 +1,11 @@
-//
-// Created by adzer on 28/01/2022.
-//
+/**
+ * \file card.h
+ * \brief gestion des cartes
+ * \author JARRIER allan
+ * \date 28/01/2022
+ * \version 1
+ */
+
 
 #include "linkedlist.h"
 #include <stdbool.h>

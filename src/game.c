@@ -1,9 +1,9 @@
 /**
- * \file game.c
+ * \file game.h
  * \brief gestionaire de partie
- * \author LE GLEAU yoann
+ * \author SINGLANDE Thomas
  * \date 20/01/2022
- * \version 1
+ * \version 1.1
  */
 
 #include <stdio.h>
@@ -27,10 +27,18 @@
  */
 int bord[];
 
+/**
+ * \brief structure represante un joueur
+ */
 typedef struct Player Player;
 struct Player {
+    /** \brief Id unique d'un joueur */
     int idPlayer;
+
+    /** \brief nombre de pion que le joueur a reusit a meter dans l'arriver */
     int nbPionRantrer; //TODO trouver un meilleur nom
+
+    /** \brief liste de carte representent la main du joueur */
     Linkedlist * cards;
 };
 
@@ -41,11 +49,13 @@ struct Pawn {
     bool invincibility;
 };
 
+//TODO Trouver une meilleur organisation
 typedef struct Rule Rule;
 struct Rule {
    bool ruleV;
 };
 
+//TODO initDeistribuer() c du psedoCode
 /*
 void initDeistribuer(){
     Linkedlist * cards = linkedListFactory(sizeof(Card));

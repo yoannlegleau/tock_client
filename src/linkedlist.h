@@ -1,7 +1,9 @@
 /**
  * \file Linkedlist.h
+ * \brief liste chainer generique
  * \author LE GLEAU yoann
  * \date 25/01/2022
+ * \version 1
  */
 
 typedef struct Linkedlist Linkedlist;
