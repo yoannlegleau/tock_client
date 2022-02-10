@@ -31,34 +31,31 @@ struct Linkedlist {
  * \param o
  * \return
  */
-Elem * elemFactory(Linkedlist * l , void * o){
-    //TOTEST
+Elem * elemFactory(const Linkedlist * l, const void * o){
     Elem * elem = malloc(size(l));
     elem->object=o;
     elem->next= elem;
     return elem;
 }
 
-Linkedlist * linkedListFactory(int typeSize){
-    //TOTEST
+Linkedlist * linkedListFactory(const int typeSize){
     Linkedlist * list = malloc(sizeof(Linkedlist));
     list->size = typeSize;
     list->last = NULL;
     return list;
 }
 
-int size(Linkedlist *l) {
+int size(const Linkedlist *l) {
     return l->size;
 }
 
-int contains(Linkedlist *l, void *o) {
+int contains(const Linkedlist *l,const void *o) {
     //TODO int contains(Linkedlist *l, void *o)
     return 0;
 }
 
-void addFirst(Linkedlist *l, void *o) {
+void addFirst(Linkedlist *l,const void *o) {
     //le pointer de depar est la fin si la liste est vide
-    //TOTEST
     if(l->last == NULL)
         addLast(l,o);
     else{
@@ -68,8 +65,7 @@ void addFirst(Linkedlist *l, void *o) {
     }
 }
 
-void addLast(Linkedlist *l, void *o) {
-    //TOTEST
+void addLast(Linkedlist *l, const void *o) {
     Elem * elem = elemFactory(l,o);
     if(l->last == NULL)
         l->last = elem;
@@ -81,12 +77,12 @@ void addLast(Linkedlist *l, void *o) {
     l->size++;
 }
 
-Linkedlist *clone(Linkedlist *l) {
+Linkedlist *clone(const Linkedlist *l) {
     //TODO Linkedlist *clone(Linkedlist *l)
     return NULL;
 }
 
-void clear(Linkedlist *l) {
+void clear(const Linkedlist *l) {
     //TODO void clear(Linkedlist *l)
 }
 
@@ -94,18 +90,23 @@ void destroy(Linkedlist *l) {
     //TODO void destroy(Linkedlist *l)
 }
 
-void * get(Linkedlist *l, int index) {
+void * get(const Linkedlist *l,const int index) {
     //TODO void * get(Linkedlist *l, int index)
     return NULL;
 }
 
-void *getFirst(Linkedlist *l) {
-    //TODO void *getFirst(Linkedlist *l)
-    return NULL;
+void *getFirst(const Linkedlist *l) {
+    return l->last->next->object;
 }
 
-void *getLast(Linkedlist *l) {
-    //TODO void *getLast(Linkedlist *l)
-    return NULL;
+void *getLast(const Linkedlist *l) {
+    return l->last->object;
 }
 
+void drawListe(const Linkedlist *l,const void (*draw)(void * o)){
+    Elem *iterator = l->last->next;
+    do {
+        draw(iterator->object);
+        iterator = iterator->next;
+    }while (iterator != l->last->next);
+}

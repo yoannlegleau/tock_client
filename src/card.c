@@ -7,3 +7,18 @@
  */
 
 #include "card.h"
+
+
+void drawCard(const enum Card * card){
+    switch (*card) {
+        case one:
+            printf("One\n");
+            break;
+        case two:
+            printf("tow\n");
+            break;
+        case three:
+            printf("three\n");
+            //TODO ajouter les autre cartes
+    }
+}

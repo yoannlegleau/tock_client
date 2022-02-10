@@ -14,14 +14,14 @@ typedef struct Linkedlist Linkedlist;
  * \return la liste
  * \example Linkedlist list = linkedListFactory(sizeof(int)
  */
-Linkedlist * linkedListFactory(int typeSize);
+Linkedlist * linkedListFactory(const int typeSize);
 
 /**
  * \brief Renvoie le nombre d'éléments de la liste l.
  * \param l Linkedlist conserner
  * \return nombre d'éléments ou 0 si la liste est vide
  */
-int size(Linkedlist * l);
+int size(const Linkedlist * l);
 
 /**
  * \brief Renvoie le nombre d'occurrence de l'objet dans la liste
@@ -29,34 +29,34 @@ int size(Linkedlist * l);
  * \param o pointeure de comparaison
  * \return int corespondent
  */
-int contains(Linkedlist * l, void * o);
+int contains(const Linkedlist * l,const void * o);
 
 /**
  * \brief Ajoute l'objet O au debut de la liste
  * \param l
  * \param o
  */
-void addFirst(Linkedlist * l, void * o);
+void addFirst(Linkedlist * l,const void * o);
 
 /**
  * \brief Ajoute l'objet O a la fin de la liste
  * \param l
  * \param o
  */
-void addLast(Linkedlist * l, void * o);
+void addLast(Linkedlist *l, const void * o);
 
 /**
  * \brief Renvoie une reel copie de la liste
  * \param l liste copier
  * \return copie de la liste
  */
-Linkedlist * clone(Linkedlist * l);
+Linkedlist * clone(const Linkedlist * l);
 
 /**
  * \brief Suprime tout les objects de la liste
  * \param l Linkedlist
  */
-void clear(Linkedlist * l);
+void clear(const Linkedlist * l);
 
 /**
  * \brief Suprime la lise et libert l'espace memoire
@@ -70,21 +70,29 @@ void destroy(Linkedlist * l);
  * \param index
  * \return objet ou NULL si hor liste
  */
-void * get(Linkedlist * l, int index );
+void * get(const Linkedlist * l,const int index );
 
 /**
  * \brief Renvoie le premiere élément dans cette liste.
  * \param l
  * \return
  */
-void * getFirst(Linkedlist * l);
+void * getFirst(const Linkedlist * l);
 
 /**
  * \brief Renvoie le dernière élément dans cette liste.
  * \param l
  * \return
  */
-void * getLast(Linkedlist * l);
+void * getLast(const Linkedlist * l);
+
+/**
+ * \brief afficher le contenu de la liste
+ * \param l liter a afficher
+ * \param draw fonction draw'affichage de l'object
+ */
+void drawListe(const Linkedlist *l,const void (*draw)(void * o));
+
 
 /*
  IDER DE FONCTION A IMPLEMENTER

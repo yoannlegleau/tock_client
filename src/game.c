@@ -17,6 +17,7 @@
 #include "linkedlist.h"
 #include "card.h"
 
+
 #define EXIT_FAILURE 0
 
 /**
@@ -72,11 +73,8 @@ void initDeistribuer(){
  * \param window fenêtre principal
  */
 void gameCreate(SDL_Window *window) {
-    Linkedlist * cards = linkedListFactory(sizeof(int));
-    int test = 4;
-    addFirst(cards,&test);
-    int *result = getFirst(cards);
-    printf("test liste generique %i",*result);
+    Linkedlist * l = linkedListFactory(sizeof(enum Card));
+
 
 
 //Le pointeur vers la surface incluse dans la fenetre
@@ -133,8 +131,6 @@ void gameCreate(SDL_Window *window) {
     SDL_FreeSurface(image); /* on a la texture, plus besoin de l'image */
 
 
-
-
     if( window )
     {
         int running = 1;
@@ -181,3 +177,5 @@ void gameCreate(SDL_Window *window) {
         fprintf(stderr,"Erreur de création de la fenêtre: %s\n",SDL_GetError());
     }
 }
+
+

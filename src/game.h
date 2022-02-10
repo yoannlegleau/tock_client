@@ -10,7 +10,7 @@
 #ifndef TOCK_CLIENT_GAME_H
 #define TOCK_CLIENT_GAME_H
 
-#endif //TOCK_CLIENT_GAME_H
+
 
 /**
  * \brief initialise la liste
@@ -42,3 +42,6 @@ void gameStop();
  * \brief libere toutes les variable
  */
 void gameDestroy();
+
+
+#endif //TOCK_CLIENT_GAME_H
