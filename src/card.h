@@ -6,7 +6,7 @@
  * \version 1
  */
 
-update #ifndef TOCK_CLIENT_CARD_H
+#ifndef TOCK_CLIENT_CARD_H
 #define TOCK_CLIENT_CARD_H
 
 #include "linkedlist.h"
