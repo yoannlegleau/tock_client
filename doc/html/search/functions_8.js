@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['wincreate_0',['winCreate',['../main_s_d_l_8h.html#ad0d09c1b6009b869b52530dcf379eb51',1,'mainSDL.c']]],
-  ['windestroy_1',['winDestroy',['../main_s_d_l_8c.html#aaf044c965a62de4320efd57d1ad0fa81',1,'winDestroy():&#160;mainSDL.c'],['../main_s_d_l_8h.html#aaf044c965a62de4320efd57d1ad0fa81',1,'winDestroy():&#160;mainSDL.c']]]
+  ['playcard_0',['playCard',['../game_8c.html#a6256228950cd2f9e808f0f7b3ea09e6d',1,'game.c']]],
+  ['playerfactory_1',['playerFactory',['../_player_8c.html#a36dbaae80ee465fe51c5c492216a7b24',1,'playerFactory(int id):&#160;Player.c'],['../_player_8h.html#a36dbaae80ee465fe51c5c492216a7b24',1,'playerFactory(int id):&#160;Player.c']]],
+  ['playonce_2',['playOnce',['../game_8c.html#a044c42150c2fa2a9c15d058ae610a328',1,'game.c']]],
+  ['pollfirst_3',['pollFirst',['../linkedlist_8c.html#a512c4edbb810a012a89fee8fa483074d',1,'pollFirst(Linkedlist *l):&#160;linkedlist.c'],['../linkedlist_8h.html#a512c4edbb810a012a89fee8fa483074d',1,'pollFirst(Linkedlist *l):&#160;linkedlist.c']]]
 ];

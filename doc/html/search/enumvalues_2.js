@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nine_0',['nine',['../card_8h.html#a98a2b239923441ea943de74af3208aa3a747df047c68bef3d0d7ff65578ee5848',1,'card.h']]]
+  ['minusfiveforopponent_0',['minusFiveForOpponent',['../game_rule_8h.html#a14e22b68b1581d31203037ae8b7f86aea568e649f4047c8c5245ec07f8792265f',1,'gameRule.h']]]
 ];

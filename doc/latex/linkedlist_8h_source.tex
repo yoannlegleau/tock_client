@@ -1,41 +1,55 @@
 \hypertarget{linkedlist_8h_source}{}\doxysection{linkedlist.\+h}
-\label{linkedlist_8h_source}\index{C:/Users/adzer/CLionProjects/tock-\/client/src/linkedlist.h@{C:/Users/adzer/CLionProjects/tock-\/client/src/linkedlist.h}}
-\mbox{\hyperlink{linkedlist_8h}{Go to the documentation of this file.}}
+\label{linkedlist_8h_source}\index{C:/Users/adzerake/CLionProjects/tock-\/client/src/linkedlist.h@{C:/Users/adzerake/CLionProjects/tock-\/client/src/linkedlist.h}}
+\mbox{\hyperlink{linkedlist_8h}{Aller à la documentation de ce fichier.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 }
-\DoxyCodeLine{7 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} \mbox{\hyperlink{struct_linkedlist}{Linkedlist}};}
-\DoxyCodeLine{8 }
-\DoxyCodeLine{15 \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * \mbox{\hyperlink{linkedlist_8h_a1777aaa1033242487c161a6f0d3272d6}{linkedListFactory}}(\textcolor{keywordtype}{int} typeSize);}
-\DoxyCodeLine{16 }
-\DoxyCodeLine{22 \textcolor{keywordtype}{int} \mbox{\hyperlink{linkedlist_8h_ad8feb9e4794625402d10a59f9e2a3ef5}{size}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
-\DoxyCodeLine{23 }
-\DoxyCodeLine{30 \textcolor{keywordtype}{int} \mbox{\hyperlink{linkedlist_8h_aaaed1713f40fabff5721f44dceab292a}{contains}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l, \textcolor{keywordtype}{void} * o);}
-\DoxyCodeLine{31 }
-\DoxyCodeLine{37 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_a19eed22e17ce9faac496ce39d4287caa}{addFirst}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l, \textcolor{keywordtype}{void} * o);}
-\DoxyCodeLine{38 }
-\DoxyCodeLine{44 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_a135d034b3b6161bb07d912ff7adc5368}{addLast}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l, \textcolor{keywordtype}{void} * o);}
-\DoxyCodeLine{45 }
-\DoxyCodeLine{51 \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * \mbox{\hyperlink{linkedlist_8h_af1334a3afb8a5b299f33ec0fecbafc0f}{clone}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
-\DoxyCodeLine{52 }
-\DoxyCodeLine{57 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_a22e2ece11220b164541395438eafd87f}{clear}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{12 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} \mbox{\hyperlink{struct_linkedlist}{Linkedlist}};}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{20 \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * \mbox{\hyperlink{linkedlist_8h_a1777aaa1033242487c161a6f0d3272d6}{linkedListFactory}}( \textcolor{keywordtype}{int} typeSize);}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{27 \textcolor{keywordtype}{int} \mbox{\hyperlink{linkedlist_8h_ad8feb9e4794625402d10a59f9e2a3ef5}{size}}( \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{34 \textcolor{keywordtype}{int} \mbox{\hyperlink{linkedlist_8h_a53b854c9c6b351137f85d421439a6233}{length}}( \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} *l);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{42 \textcolor{keywordtype}{bool} \mbox{\hyperlink{linkedlist_8h_afcb647a9f61711367accfb0739d044c1}{isEmpty}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} *l);}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{50 \textcolor{keywordtype}{int} \mbox{\hyperlink{linkedlist_8h_aaaed1713f40fabff5721f44dceab292a}{contains}}( \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l, \textcolor{keywordtype}{void} * o);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{57 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_a19eed22e17ce9faac496ce39d4287caa}{addFirst}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l, \textcolor{keywordtype}{void} * o);}
 \DoxyCodeLine{58 }
-\DoxyCodeLine{63 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_abf9e95651ac39e37b814352db42a72dc}{destroy}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
-\DoxyCodeLine{64 }
-\DoxyCodeLine{71 \textcolor{keywordtype}{void} * \mbox{\hyperlink{linkedlist_8h_aa00469bd435f0b5ae644e6894b9cb096}{get}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l, \textcolor{keywordtype}{int} index );}
+\DoxyCodeLine{64 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_a135d034b3b6161bb07d912ff7adc5368}{addLast}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} *l,  \textcolor{keywordtype}{void} * o);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{71 \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * \mbox{\hyperlink{linkedlist_8h_af1334a3afb8a5b299f33ec0fecbafc0f}{clone}}( \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
 \DoxyCodeLine{72 }
-\DoxyCodeLine{78 \textcolor{keywordtype}{void} * \mbox{\hyperlink{linkedlist_8h_a5ffae0151690b64dd5e7d2651bdcd489}{getFirst}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
-\DoxyCodeLine{79 }
-\DoxyCodeLine{85 \textcolor{keywordtype}{void} * \mbox{\hyperlink{linkedlist_8h_a9559ae005964e1246efd9dc7ffcce527}{getLast}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
-\DoxyCodeLine{86 }
-\DoxyCodeLine{87 \textcolor{comment}{/*}}
-\DoxyCodeLine{88 \textcolor{comment}{ IDER DE FONCTION A IMPLEMENTER}}
-\DoxyCodeLine{89 \textcolor{comment}{pollFirst()}}
-\DoxyCodeLine{90 \textcolor{comment}{remove()}}
-\DoxyCodeLine{91 \textcolor{comment}{remove(int index)}}
-\DoxyCodeLine{92 \textcolor{comment}{remove(Object o)}}
-\DoxyCodeLine{93 \textcolor{comment}{removeFirst()}}
-\DoxyCodeLine{94 \textcolor{comment}{set(int index, E element)}}
-\DoxyCodeLine{95 \textcolor{comment}{toArray()}}
-\DoxyCodeLine{96 \textcolor{comment}{*/}}
+\DoxyCodeLine{77 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_a22e2ece11220b164541395438eafd87f}{clear}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{84 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_a12976c90013ea6e466c15431cc88172c}{removeElem}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l, \textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{90 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_a902a8a5358a5c1233fb7a84188c95cf7}{removeFirst}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} *l);}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{96 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_abf9e95651ac39e37b814352db42a72dc}{destroy}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{104 \textcolor{keywordtype}{void} * \mbox{\hyperlink{linkedlist_8h_aa00469bd435f0b5ae644e6894b9cb096}{get}}( \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l, \textcolor{keywordtype}{int} index );}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{111 \textcolor{keywordtype}{void} * \mbox{\hyperlink{linkedlist_8h_a5ffae0151690b64dd5e7d2651bdcd489}{getFirst}}( \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{118 \textcolor{keywordtype}{void} * \mbox{\hyperlink{linkedlist_8h_a9559ae005964e1246efd9dc7ffcce527}{getLast}}( \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{125 \textcolor{keywordtype}{void} * \mbox{\hyperlink{linkedlist_8h_a512c4edbb810a012a89fee8fa483074d}{pollFirst}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{132 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_a9ddc4cccc387759bca3067b3ae640cb7}{drawListe}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} *l,\textcolor{keywordtype}{void} (*draw)(\textcolor{keywordtype}{void} * o));}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{comment}{/*}}
+\DoxyCodeLine{136 \textcolor{comment}{ IDER DE FONCTION A IMPLEMENTER}}
+\DoxyCodeLine{137 \textcolor{comment}{pollFirst()}}
+\DoxyCodeLine{138 \textcolor{comment}{remove()}}
+\DoxyCodeLine{139 \textcolor{comment}{remove(int index)}}
+\DoxyCodeLine{140 \textcolor{comment}{remove(Object o)}}
+\DoxyCodeLine{141 \textcolor{comment}{removeFirst()}}
+\DoxyCodeLine{142 \textcolor{comment}{set(int index, E element)}}
+\DoxyCodeLine{143 \textcolor{comment}{toArray()}}
+\DoxyCodeLine{144 \textcolor{comment}{*/}}
 
 \end{DoxyCode}

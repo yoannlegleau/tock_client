@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['size_0',['size',['../linkedlist_8c.html#ad8feb9e4794625402d10a59f9e2a3ef5',1,'size(Linkedlist *l):&#160;linkedlist.c'],['../linkedlist_8h.html#ad8feb9e4794625402d10a59f9e2a3ef5',1,'size(Linkedlist *l):&#160;linkedlist.c']]]
+  ['main_0',['main',['../main_8c.html#a700a0caa5b70a06d1064e576f9f3cf65',1,'main.c']]],
+  ['makedeck_1',['makeDeck',['../card_8c.html#a588f788a116c7297754143f4c764675e',1,'makeDeck(Linkedlist *cards, Linkedlist *gameRules):&#160;card.c'],['../card_8h.html#a588f788a116c7297754143f4c764675e',1,'makeDeck(Linkedlist *cards, Linkedlist *gameRules):&#160;card.c']]],
+  ['move_2',['move',['../game_8c.html#a76e6365b8a0e9a2e9495c01ae715b4a1',1,'game.c']]]
 ];

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<game>
+    <language>FR</language>
+    <graphic>
+        <width>1280</width>
+        <height>720</height>
+        <brightness>1</brightness>
+        <fullscreenMode>windowed_fullscreen</fullscreenMode>
+        <theme>light</theme>
+    </graphic>
+    <audio enable="true" volume="1" />
+</game>

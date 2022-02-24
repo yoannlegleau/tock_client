@@ -17,10 +17,8 @@
 
 /**
  * \brief chaque enume corespon a une action distinct
- * TODO se metre dacord pour les nom
  */
-enum Card{empty,
-        one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, eighteen,
+enum Card{one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, eighteen,
         swap, eleven_out };
 
 /**
@@ -30,5 +28,14 @@ enum Card{empty,
  */
 void drawCard(const enum Card * card);
 
+/**
+ * \brief ajout des cartes dans la list pour cree un paket de carte coherent et prend en compte les règles sélectionner
+ * \param cards liste de carte
+ * \param gameRules liste des règles
+ */
+void makeDeck(Linkedlist * cards, Linkedlist * gameRules);
+
 #endif //TOCK_CLIENT_CARD_H
+
+
 

@@ -1,3 +1,68 @@
-\hypertarget{card_8c}{}\doxysection{C\+:/\+Users/adzer/\+CLion\+Projects/tock-\/client/src/card.c File Reference}
-\label{card_8c}\index{C:/Users/adzer/CLionProjects/tock-\/client/src/card.c@{C:/Users/adzer/CLionProjects/tock-\/client/src/card.c}}
+\hypertarget{card_8c}{}\doxysection{Référence du fichier C\+:/\+Users/adzerake/\+CLion\+Projects/tock-\/client/src/card.c}
+\label{card_8c}\index{C:/Users/adzerake/CLionProjects/tock-\/client/src/card.c@{C:/Users/adzerake/CLionProjects/tock-\/client/src/card.c}}
+
+
+gestion des cartes  
+
+
 {\ttfamily \#include \char`\"{}card.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{card_8c_afe3c91043da027e3ca6e6b514828e126}{draw\+Card}} (const enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$card)
+\begin{DoxyCompactList}\small\item\em affiche le nom dew catres dans le terminal \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{card_8c_a588f788a116c7297754143f4c764675e}{make\+Deck}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$cards, \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$game\+Rules)
+\begin{DoxyCompactList}\small\item\em ajout des cartes dans la list pour cree un paket de carte coherent et prend en compte les règles sélectionner \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+gestion des cartes 
+
+\begin{DoxyAuthor}{Auteur}
+JARRIER allan 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+28/01/2022 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{card_8c_afe3c91043da027e3ca6e6b514828e126}\label{card_8c_afe3c91043da027e3ca6e6b514828e126}} 
+\index{card.c@{card.c}!drawCard@{drawCard}}
+\index{drawCard@{drawCard}!card.c@{card.c}}
+\doxysubsubsection{\texorpdfstring{drawCard()}{drawCard()}}
+{\footnotesize\ttfamily void draw\+Card (\begin{DoxyParamCaption}\item[{const enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$}]{card }\end{DoxyParamCaption})}
+
+
+
+affiche le nom dew catres dans le terminal 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em card} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+\mbox{\Hypertarget{card_8c_a588f788a116c7297754143f4c764675e}\label{card_8c_a588f788a116c7297754143f4c764675e}} 
+\index{card.c@{card.c}!makeDeck@{makeDeck}}
+\index{makeDeck@{makeDeck}!card.c@{card.c}}
+\doxysubsubsection{\texorpdfstring{makeDeck()}{makeDeck()}}
+{\footnotesize\ttfamily void make\+Deck (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{cards,  }\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{game\+Rules }\end{DoxyParamCaption})}
+
+
+
+ajout des cartes dans la list pour cree un paket de carte coherent et prend en compte les règles sélectionner 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em cards} & liste de carte \\
+\hline
+{\em game\+Rules} & liste des règles \\
+\hline
+\end{DoxyParams}

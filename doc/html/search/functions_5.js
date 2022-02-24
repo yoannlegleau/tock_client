@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['linkedlistfactory_0',['linkedListFactory',['../linkedlist_8c.html#a1777aaa1033242487c161a6f0d3272d6',1,'linkedListFactory(int typeSize):&#160;linkedlist.c'],['../linkedlist_8h.html#a1777aaa1033242487c161a6f0d3272d6',1,'linkedListFactory(int typeSize):&#160;linkedlist.c']]]
+  ['initbord_0',['initBord',['../game_8c.html#ade61443d39f111c96f160359cab6f8bb',1,'game.c']]],
+  ['isempty_1',['isEmpty',['../linkedlist_8c.html#afcb647a9f61711367accfb0739d044c1',1,'isEmpty(Linkedlist *l):&#160;linkedlist.c'],['../linkedlist_8h.html#afcb647a9f61711367accfb0739d044c1',1,'isEmpty(Linkedlist *l):&#160;linkedlist.c']]]
 ];
