@@ -36,7 +36,7 @@ Elem * getElem( Linkedlist *l, int index);
  * \return
  */
 Elem * elemFactory( Linkedlist * l, void * o){
-    Elem * elem = malloc(size(l));
+    Elem * elem = malloc(sizeof(Elem));
     elem->object=o;
     elem->next= elem;
     return elem;

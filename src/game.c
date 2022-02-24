@@ -96,7 +96,6 @@ void gameCreate(SDL_Window *window) {
     Player * player1 = playerFactory(1);
     bord[0] = 1;
     addLast(players,player1);
-    /*
     Player * player2 = playerFactory(2);
     bord[18] = 2;
     addLast(players,player2);
@@ -106,7 +105,6 @@ void gameCreate(SDL_Window *window) {
     Player * player4 = playerFactory(4);
     bord[54] = 4;
     addLast(players,player4);
-     */
 
 
 
@@ -242,7 +240,7 @@ void gameCreate(SDL_Window *window) {
             drawBord(renderer, 394, 64, bord);
 
             SDL_RenderPresent(renderer);
-            Sleep(1000);
+            Sleep(100);
         }
     } else {
         fprintf(stderr,"Erreur de création de la fenêtre: %s\n",SDL_GetError());
@@ -250,6 +248,8 @@ void gameCreate(SDL_Window *window) {
 }
 
 move(int location,int step){
+    if (bord[(location+step)%72] != 0)
+        printf("----- %i a tuer %i -----\n",bord[location],bord[(location+step)%72]);
     bord[(location+step)%72] = bord[location];
     bord[location] = 0;
 }
@@ -305,26 +305,25 @@ void playOnce(Linkedlist *players) {
     int nbPlayer = length(players);
     Player * p;
     for (int i = 0; i < nbPlayer; i++) {
-
         p = get(players,i);
         Linkedlist * pownsLocations = getPlayerPansLocation(p);
-        bool played;
-        for (int j = 0; j < length(p->cards); ++j) {
+        bool played = false;
+        if (!isEmpty(pownsLocations))
+        for (int j = 0; j <= length(p->cards); j++) {
             played = playCard(get(p->cards,j), (int)getFirst(pownsLocations));
             if(played){
                 printf("player %i a jouer ",p->idPlayer);
                 drawCard(get(p->cards,j));
                 removeElem(p->cards,j);
 
-
-
                 break;
             }
         }
-        if (!played && !isEmpty(p->cards))
+        if (!played && !isEmpty(p->cards)){
             printf("player %i a jeter ",p->idPlayer);
             drawCard(getFirst(p->cards));
             pollFirst(p->cards);
+        }
     }
 }
 
