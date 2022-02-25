@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/mnt/c/Users/adzer/CLionProjects/tock-client/src/Player.c" "/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/CMakeFiles/tock_client.dir/src/Player.c.o"
   "/mnt/c/Users/adzer/CLionProjects/tock-client/src/card.c" "/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/CMakeFiles/tock_client.dir/src/card.c.o"
   "/mnt/c/Users/adzer/CLionProjects/tock-client/src/game.c" "/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/CMakeFiles/tock_client.dir/src/game.c.o"
   "/mnt/c/Users/adzer/CLionProjects/tock-client/src/linkedlist.c" "/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/CMakeFiles/tock_client.dir/src/linkedlist.c.o"

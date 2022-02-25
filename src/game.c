@@ -62,13 +62,12 @@ void drawCircleBorder(SDL_Renderer *renderer, int x, int y, int radius, SDL_Colo
 
 void distributeCards(Linkedlist *cards, Linkedlist *players);
 bool playCard(enum Card * card,int location);
-move(int location,int step);
+bool forward(int location, int step);
 
 
 void playOnce(Linkedlist *players);
 
 Linkedlist *getPlayerPansLocation();
-
 
 void initBord(int pInt[88]) {
     for (int i = 0; i < 88; ++i) {
@@ -232,7 +231,7 @@ void gameCreate(SDL_Window *window) {
                     makeDeck(cards, gamRules);
                 distributeCards(cards, players);
             }
-
+            drawPlayer(p);
             //TODO
             playOnce(players);
 
@@ -240,65 +239,65 @@ void gameCreate(SDL_Window *window) {
             drawBord(renderer, 394, 64, bord);
 
             SDL_RenderPresent(renderer);
-            Sleep(100);
+            Sleep(500);
         }
     } else {
         fprintf(stderr,"Erreur de création de la fenêtre: %s\n",SDL_GetError());
     }
 }
 
-move(int location,int step){
+bool forward(int location, int step){
+    int player = bord[location];
+    if (location > 72)
+        return false;
+    int playerEntry = ((72+(player*18)-20)%72);
+    if((location+step)>playerEntry && (location+step)>playerEntry+4){
+
+    }
     if (bord[(location+step)%72] != 0)
-        printf("----- %i a tuer %i -----\n",bord[location],bord[(location+step)%72]);
-    bord[(location+step)%72] = bord[location];
+        printf("----- %i a tuer %i -----\n",player,bord[(location+step)%72]);
+    bord[(location+step)%72] = player;
     bord[location] = 0;
+    return  true;
 }
+
+void move(int from, int to){
+    bord[to] = bord[from];
+    bord[from] = 0;
+}
+
 
 bool playCard(enum Card * card,int location) {
     switch (*card) {
         case one:
-            move(location,1);
-            break;
+            return forward(location, 1);
         case two:
-            move(location,2);
-            break;
+            return forward(location, 2);
         case three:
-            move(location,3);
-            break;
+            return forward(location, 3);
         case four:
-            move(location,4);
-            break;
+            return forward(location, 4);
         case five:
-            move(location,5);
-            break;
+            return forward(location, 5);
         case six:
-            move(location,6);
-            break;
+            return forward(location, 6);
         case seven:
-            move(location,7);
-            break;
+            return forward(location, 7);
         case eight:
-            move(location,8);
-            break;
+            return forward(location, 8);
         case nine:
-            move(location,9);
-            break;
+            return forward(location, 9);
         case ten:
-            move(location,10);
-            break;
+            return forward(location, 10);
         case eleven:
-            move(location,11);
-            break;
+            return forward(location, 11);
         case twelve:
-            move(location,12);
-            break;
+            return forward(location, 12);
         case thirteen:
-            move(location,13);
-            break;
+            return forward(location, 13);
         default:
             return false;
     }
-    return true;
 }
 
 void playOnce(Linkedlist *players) {
@@ -327,8 +326,6 @@ void playOnce(Linkedlist *players) {
     }
 }
 
-
-
 Linkedlist *getPlayerPansLocation(Player * player) {
     Linkedlist * locations = linkedListFactory(sizeof(int));
     for (int i = 0; i < 72; i++) {
@@ -353,7 +350,6 @@ void distributeCards(Linkedlist *cards, Linkedlist *players) {
     }
 
 }
-
 
 void drawBord(SDL_Renderer *renderer, int x, int y,int bord[]){
     const int squareSize = 26;
@@ -546,5 +542,3 @@ void drawCircle(SDL_Renderer *renderer, int x, int y, int radius, SDL_Color colo
         }
     }
 }
-
-

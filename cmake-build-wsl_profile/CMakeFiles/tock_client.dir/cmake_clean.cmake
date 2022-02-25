@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/tock_client.dir/src/Player.c.o"
   "CMakeFiles/tock_client.dir/src/card.c.o"
   "CMakeFiles/tock_client.dir/src/game.c.o"
   "CMakeFiles/tock_client.dir/src/linkedlist.c.o"

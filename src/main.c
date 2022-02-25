@@ -11,7 +11,6 @@
 #include <stdbool.h>
 #include "mainSDL.h"
 #include "game.h"
-#include "linkedlist.h"
 
 /**
  * \brief lancement du jeu et fermeture
@@ -25,9 +24,6 @@
 
     //lance le jeu dans la fenêtre principal
     gameCreate(window);
-
-    Linkedlist * listInt = linkedListFactory(sizeof(int));
-
 
     // ferme le jeu
     winDestroy();

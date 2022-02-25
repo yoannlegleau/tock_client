@@ -112,7 +112,7 @@ void removeElem(Linkedlist *l, int i) {
 
     //FIXME fuite de memoire
     //free(elem->object);
-    //free(elem);
+    free(elem);
 }
 
 void removeFirst(Linkedlist *l) {
@@ -121,7 +121,9 @@ void removeFirst(Linkedlist *l) {
 
 
 void destroy(Linkedlist *l) {
-    //TODO void destroy(Linkedlist *l)
+    while (!isEmpty(l))
+        removeFirst(l);
+    free(l);
 }
 
 Elem * getElem( Linkedlist *l, int index) {
