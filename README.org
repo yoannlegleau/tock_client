@@ -1,0 +1,11 @@
+* MAKEFILE
+** Darwin
+   Pour compiler sur macOS
+   #+BEGIN_SRC sh
+   make -f Makefile.darwin
+   #+END_SRC
+** Linux
+   Pour compiler sur Linux
+** Windows
+   Pour compiler sur Windows
+   

@@ -1,0 +1,246 @@
+\hypertarget{game_8c}{}\doxysection{Référence du fichier C\+:/\+Users/adzerake/\+CLion\+Projects/tock-\/client/src/game.c}
+\label{game_8c}\index{C:/Users/adzerake/CLionProjects/tock-\/client/src/game.c@{C:/Users/adzerake/CLionProjects/tock-\/client/src/game.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$SDL.\+h$>$}\newline
+{\ttfamily \#include $<$SDL\+\_\+ttf.\+h$>$}\newline
+{\ttfamily \#include $<$SDL\+\_\+image.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}game.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}main\+SDL.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linkedlist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}card.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}game\+Rule.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Player.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$xmllite.\+h$>$}\newline
+\doxysubsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pawn}{Pawn}}
+\item 
+struct \mbox{\hyperlink{struct_rule}{Rule}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_pawn}{Pawn}} \mbox{\hyperlink{game_8c_a41376036826b0217a186f072edddc5d8}{Pawn}}
+\item 
+typedef struct \mbox{\hyperlink{struct_rule}{Rule}} \mbox{\hyperlink{game_8c_a683d0414d3752753074b14f91eb79cca}{Rule}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{game_8c_a4dd60d54858e044d9530e79507545819}{draw\+Bord}} (SDL\+\_\+\+Renderer $\ast$renderer, int x, int y, int \mbox{\hyperlink{game_8c_a412ee707910a58d55e831ce5dcefffb0}{bord}}\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{game_8c_aa21ea2c9de7c9b4323c344e53364d036}{draw\+Circle}} (SDL\+\_\+\+Renderer $\ast$renderer, int x, int y, int radius, SDL\+\_\+\+Color color)
+\item 
+void \mbox{\hyperlink{game_8c_abea8e30166d3ab063a83bce9b5ce3bdb}{draw\+Circle\+Border}} (SDL\+\_\+\+Renderer $\ast$renderer, int x, int y, int radius, SDL\+\_\+\+Color color\+Out, int width, SDL\+\_\+\+Color color\+In)
+\item 
+void \mbox{\hyperlink{game_8c_a099ad5ba8fde893123e3223f3ab306af}{distribute\+Cards}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$cards, \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$players)
+\item 
+bool \mbox{\hyperlink{game_8c_a6256228950cd2f9e808f0f7b3ea09e6d}{play\+Card}} (enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$card, int location)
+\item 
+\mbox{\hyperlink{game_8c_a76e6365b8a0e9a2e9495c01ae715b4a1}{move}} (int location, int step)
+\item 
+void \mbox{\hyperlink{game_8c_a044c42150c2fa2a9c15d058ae610a328}{play\+Once}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$players)
+\item 
+\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ \mbox{\hyperlink{game_8c_a24adfa3e2367dcea3cd3ff85c8760b02}{get\+Player\+Pans\+Location}} ()
+\item 
+void \mbox{\hyperlink{game_8c_ade61443d39f111c96f160359cab6f8bb}{init\+Bord}} (int p\+Int\mbox{[}88\mbox{]})
+\item 
+void \mbox{\hyperlink{game_8c_a8608f514fe7507c9b45f1f7e945be7f1}{game\+Create}} (SDL\+\_\+\+Window $\ast$\mbox{\hyperlink{main_s_d_l_8h_aaa8e409e04dcf575ef63fd5fb3db06f9}{window}})
+\begin{DoxyCompactList}\small\item\em demonstration du fonctionnement des librairie graphiques baser sur l\textquotesingle{}example de cours \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ \mbox{\hyperlink{game_8c_a2eb7d102f733c1a2c4f042456f7f3903}{get\+Player\+Pans\+Location}} (\mbox{\hyperlink{struct_player}{Player}} $\ast$player)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{game_8c_a412ee707910a58d55e831ce5dcefffb0}{bord}} \mbox{[}88\mbox{]}
+\begin{DoxyCompactList}\small\item\em Se tableux represente toutes les cases du plateu. \end{DoxyCompactList}\item 
+const SDL\+\_\+\+Color \mbox{\hyperlink{game_8c_a1d588d71a130835aefee5340759b9317}{couleur\+Noire}} = \{0, 0, 0\}
+\item 
+const SDL\+\_\+\+Color \mbox{\hyperlink{game_8c_aac9b1cc66a1a82b7957bff89132e5555}{couleur\+Blanc}} = \{255, 255, 255\}
+\item 
+const SDL\+\_\+\+Color \mbox{\hyperlink{game_8c_a15d2146e71c712081337332e659d0c44}{color\+Player1}} = \{2, 3, 230\}
+\item 
+const SDL\+\_\+\+Color \mbox{\hyperlink{game_8c_a2cc1f78cdd872f44f40c475ee5f76bc1}{color\+Player2}} = \{223, 8 , 7\}
+\item 
+const SDL\+\_\+\+Color \mbox{\hyperlink{game_8c_a16b8c478c9e170179e714e2486d916b2}{color\+Player3}} = \{251, 249, 27\}
+\item 
+const SDL\+\_\+\+Color \mbox{\hyperlink{game_8c_af343d3e3ce4f336e77b9cf7081d116e0}{color\+Player4}} = \{57, 147, 103\}
+\item 
+const SDL\+\_\+\+Color \mbox{\hyperlink{game_8c_a313eca0f2b203ca3063dea6f3689b531}{color\+Player1\+Light}} = \{65, 65, 244\}
+\item 
+const SDL\+\_\+\+Color \mbox{\hyperlink{game_8c_a5722c3d050384571ca4f3e99a1094b97}{color\+Player2\+Light}} = \{255, 98 , 98\}
+\item 
+const SDL\+\_\+\+Color \mbox{\hyperlink{game_8c_ac76f1cc0990613ec2ed4a8a631720620}{color\+Player3\+Light}} = \{255, 254, 113\}
+\item 
+const SDL\+\_\+\+Color \mbox{\hyperlink{game_8c_a4d1e3f4a1cfc40c68fe129cba6df5359}{color\+Player4\+Light}} = \{146, 206, 177\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des définitions de type}
+\mbox{\Hypertarget{game_8c_a41376036826b0217a186f072edddc5d8}\label{game_8c_a41376036826b0217a186f072edddc5d8}} 
+\index{game.c@{game.c}!Pawn@{Pawn}}
+\index{Pawn@{Pawn}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{Pawn}{Pawn}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pawn}{Pawn}} \mbox{\hyperlink{struct_pawn}{Pawn}}}
+
+\mbox{\Hypertarget{game_8c_a683d0414d3752753074b14f91eb79cca}\label{game_8c_a683d0414d3752753074b14f91eb79cca}} 
+\index{game.c@{game.c}!Rule@{Rule}}
+\index{Rule@{Rule}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{Rule}{Rule}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_rule}{Rule}} \mbox{\hyperlink{struct_rule}{Rule}}}
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{game_8c_a099ad5ba8fde893123e3223f3ab306af}\label{game_8c_a099ad5ba8fde893123e3223f3ab306af}} 
+\index{game.c@{game.c}!distributeCards@{distributeCards}}
+\index{distributeCards@{distributeCards}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{distributeCards()}{distributeCards()}}
+{\footnotesize\ttfamily void distribute\+Cards (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{cards,  }\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{players }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{game_8c_a4dd60d54858e044d9530e79507545819}\label{game_8c_a4dd60d54858e044d9530e79507545819}} 
+\index{game.c@{game.c}!drawBord@{drawBord}}
+\index{drawBord@{drawBord}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{drawBord()}{drawBord()}}
+{\footnotesize\ttfamily void draw\+Bord (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{bord\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{game_8c_aa21ea2c9de7c9b4323c344e53364d036}\label{game_8c_aa21ea2c9de7c9b4323c344e53364d036}} 
+\index{game.c@{game.c}!drawCircle@{drawCircle}}
+\index{drawCircle@{drawCircle}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{drawCircle()}{drawCircle()}}
+{\footnotesize\ttfamily void draw\+Circle (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{radius,  }\item[{SDL\+\_\+\+Color}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{game_8c_abea8e30166d3ab063a83bce9b5ce3bdb}\label{game_8c_abea8e30166d3ab063a83bce9b5ce3bdb}} 
+\index{game.c@{game.c}!drawCircleBorder@{drawCircleBorder}}
+\index{drawCircleBorder@{drawCircleBorder}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{drawCircleBorder()}{drawCircleBorder()}}
+{\footnotesize\ttfamily void draw\+Circle\+Border (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{radius,  }\item[{SDL\+\_\+\+Color}]{color\+Out,  }\item[{int}]{width,  }\item[{SDL\+\_\+\+Color}]{color\+In }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{game_8c_a8608f514fe7507c9b45f1f7e945be7f1}\label{game_8c_a8608f514fe7507c9b45f1f7e945be7f1}} 
+\index{game.c@{game.c}!gameCreate@{gameCreate}}
+\index{gameCreate@{gameCreate}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{gameCreate()}{gameCreate()}}
+{\footnotesize\ttfamily void game\+Create (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Window $\ast$}]{window }\end{DoxyParamCaption})}
+
+
+
+demonstration du fonctionnement des librairie graphiques baser sur l\textquotesingle{}example de cours 
+
+initialise la liste
+
+
+\begin{DoxyParams}{Paramètres}
+{\em window} & fenêtre principal \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{game_8c_a24adfa3e2367dcea3cd3ff85c8760b02}\label{game_8c_a24adfa3e2367dcea3cd3ff85c8760b02}} 
+\index{game.c@{game.c}!getPlayerPansLocation@{getPlayerPansLocation}}
+\index{getPlayerPansLocation@{getPlayerPansLocation}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{getPlayerPansLocation()}{getPlayerPansLocation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ get\+Player\+Pans\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{game_8c_a2eb7d102f733c1a2c4f042456f7f3903}\label{game_8c_a2eb7d102f733c1a2c4f042456f7f3903}} 
+\index{game.c@{game.c}!getPlayerPansLocation@{getPlayerPansLocation}}
+\index{getPlayerPansLocation@{getPlayerPansLocation}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{getPlayerPansLocation()}{getPlayerPansLocation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ get\+Player\+Pans\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_player}{Player}} $\ast$}]{player }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{game_8c_ade61443d39f111c96f160359cab6f8bb}\label{game_8c_ade61443d39f111c96f160359cab6f8bb}} 
+\index{game.c@{game.c}!initBord@{initBord}}
+\index{initBord@{initBord}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{initBord()}{initBord()}}
+{\footnotesize\ttfamily void init\+Bord (\begin{DoxyParamCaption}\item[{int}]{p\+Int\mbox{[}88\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{game_8c_a76e6365b8a0e9a2e9495c01ae715b4a1}\label{game_8c_a76e6365b8a0e9a2e9495c01ae715b4a1}} 
+\index{game.c@{game.c}!move@{move}}
+\index{move@{move}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily forward (\begin{DoxyParamCaption}\item[{int}]{location,  }\item[{int}]{step }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{game_8c_a6256228950cd2f9e808f0f7b3ea09e6d}\label{game_8c_a6256228950cd2f9e808f0f7b3ea09e6d}} 
+\index{game.c@{game.c}!playCard@{playCard}}
+\index{playCard@{playCard}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{playCard()}{playCard()}}
+{\footnotesize\ttfamily bool play\+Card (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$}]{card,  }\item[{int}]{location }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{game_8c_a044c42150c2fa2a9c15d058ae610a328}\label{game_8c_a044c42150c2fa2a9c15d058ae610a328}} 
+\index{game.c@{game.c}!playOnce@{playOnce}}
+\index{playOnce@{playOnce}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{playOnce()}{playOnce()}}
+{\footnotesize\ttfamily void play\+Once (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{players }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Documentation des variables}
+\mbox{\Hypertarget{game_8c_a412ee707910a58d55e831ce5dcefffb0}\label{game_8c_a412ee707910a58d55e831ce5dcefffb0}} 
+\index{game.c@{game.c}!bord@{bord}}
+\index{bord@{bord}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{bord}{bord}}
+{\footnotesize\ttfamily int bord\mbox{[}88\mbox{]}}
+
+
+
+Se tableux represente toutes les cases du plateu. 
+
+la longeur varie selon le nombre de joueur car chaque jouer posed 18 plus 4 donc pour 4j 88 et 132 pour 6. Les int represantes les ID de chaques jouers  \mbox{\Hypertarget{game_8c_a15d2146e71c712081337332e659d0c44}\label{game_8c_a15d2146e71c712081337332e659d0c44}} 
+\index{game.c@{game.c}!colorPlayer1@{colorPlayer1}}
+\index{colorPlayer1@{colorPlayer1}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{colorPlayer1}{colorPlayer1}}
+{\footnotesize\ttfamily const SDL\+\_\+\+Color color\+Player1 = \{2, 3, 230\}}
+
+\mbox{\Hypertarget{game_8c_a313eca0f2b203ca3063dea6f3689b531}\label{game_8c_a313eca0f2b203ca3063dea6f3689b531}} 
+\index{game.c@{game.c}!colorPlayer1Light@{colorPlayer1Light}}
+\index{colorPlayer1Light@{colorPlayer1Light}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{colorPlayer1Light}{colorPlayer1Light}}
+{\footnotesize\ttfamily const SDL\+\_\+\+Color color\+Player1\+Light = \{65, 65, 244\}}
+
+\mbox{\Hypertarget{game_8c_a2cc1f78cdd872f44f40c475ee5f76bc1}\label{game_8c_a2cc1f78cdd872f44f40c475ee5f76bc1}} 
+\index{game.c@{game.c}!colorPlayer2@{colorPlayer2}}
+\index{colorPlayer2@{colorPlayer2}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{colorPlayer2}{colorPlayer2}}
+{\footnotesize\ttfamily const SDL\+\_\+\+Color color\+Player2 = \{223, 8 , 7\}}
+
+\mbox{\Hypertarget{game_8c_a5722c3d050384571ca4f3e99a1094b97}\label{game_8c_a5722c3d050384571ca4f3e99a1094b97}} 
+\index{game.c@{game.c}!colorPlayer2Light@{colorPlayer2Light}}
+\index{colorPlayer2Light@{colorPlayer2Light}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{colorPlayer2Light}{colorPlayer2Light}}
+{\footnotesize\ttfamily const SDL\+\_\+\+Color color\+Player2\+Light = \{255, 98 , 98\}}
+
+\mbox{\Hypertarget{game_8c_a16b8c478c9e170179e714e2486d916b2}\label{game_8c_a16b8c478c9e170179e714e2486d916b2}} 
+\index{game.c@{game.c}!colorPlayer3@{colorPlayer3}}
+\index{colorPlayer3@{colorPlayer3}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{colorPlayer3}{colorPlayer3}}
+{\footnotesize\ttfamily const SDL\+\_\+\+Color color\+Player3 = \{251, 249, 27\}}
+
+\mbox{\Hypertarget{game_8c_ac76f1cc0990613ec2ed4a8a631720620}\label{game_8c_ac76f1cc0990613ec2ed4a8a631720620}} 
+\index{game.c@{game.c}!colorPlayer3Light@{colorPlayer3Light}}
+\index{colorPlayer3Light@{colorPlayer3Light}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{colorPlayer3Light}{colorPlayer3Light}}
+{\footnotesize\ttfamily const SDL\+\_\+\+Color color\+Player3\+Light = \{255, 254, 113\}}
+
+\mbox{\Hypertarget{game_8c_af343d3e3ce4f336e77b9cf7081d116e0}\label{game_8c_af343d3e3ce4f336e77b9cf7081d116e0}} 
+\index{game.c@{game.c}!colorPlayer4@{colorPlayer4}}
+\index{colorPlayer4@{colorPlayer4}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{colorPlayer4}{colorPlayer4}}
+{\footnotesize\ttfamily const SDL\+\_\+\+Color color\+Player4 = \{57, 147, 103\}}
+
+\mbox{\Hypertarget{game_8c_a4d1e3f4a1cfc40c68fe129cba6df5359}\label{game_8c_a4d1e3f4a1cfc40c68fe129cba6df5359}} 
+\index{game.c@{game.c}!colorPlayer4Light@{colorPlayer4Light}}
+\index{colorPlayer4Light@{colorPlayer4Light}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{colorPlayer4Light}{colorPlayer4Light}}
+{\footnotesize\ttfamily const SDL\+\_\+\+Color color\+Player4\+Light = \{146, 206, 177\}}
+
+\mbox{\Hypertarget{game_8c_aac9b1cc66a1a82b7957bff89132e5555}\label{game_8c_aac9b1cc66a1a82b7957bff89132e5555}} 
+\index{game.c@{game.c}!couleurBlanc@{couleurBlanc}}
+\index{couleurBlanc@{couleurBlanc}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{couleurBlanc}{couleurBlanc}}
+{\footnotesize\ttfamily const SDL\+\_\+\+Color couleur\+Blanc = \{255, 255, 255\}}
+
+\mbox{\Hypertarget{game_8c_a1d588d71a130835aefee5340759b9317}\label{game_8c_a1d588d71a130835aefee5340759b9317}} 
+\index{game.c@{game.c}!couleurNoire@{couleurNoire}}
+\index{couleurNoire@{couleurNoire}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{couleurNoire}{couleurNoire}}
+{\footnotesize\ttfamily const SDL\+\_\+\+Color couleur\+Noire = \{0, 0, 0\}}
+

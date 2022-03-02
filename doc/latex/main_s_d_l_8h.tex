@@ -1,0 +1,65 @@
+\hypertarget{main_s_d_l_8h}{}\doxysection{Référence du fichier C\+:/\+Users/adzerake/\+CLion\+Projects/tock-\/client/src/main\+SDL.h}
+\label{main_s_d_l_8h}\index{C:/Users/adzerake/CLionProjects/tock-\/client/src/mainSDL.h@{C:/Users/adzerake/CLionProjects/tock-\/client/src/mainSDL.h}}
+{\ttfamily \#include $<$SDL2/\+SDL.\+h$>$}\newline
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_s_d_l_8h_ad0d09c1b6009b869b52530dcf379eb51}{win\+Create}} ()
+\begin{DoxyCompactList}\small\item\em Crée la fenêtre principal avec les caractéristique par default et initialisation des libraires graphiques SDL2 et SDL\+\_\+\+TTF. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_s_d_l_8h_aaf044c965a62de4320efd57d1ad0fa81}{win\+Destroy}} ()
+\begin{DoxyCompactList}\small\item\em Ferme la fenêtre principal et fermeture des libraires graphiques SDL2 et SDL\+\_\+\+TTF. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Window $\ast$ \mbox{\hyperlink{main_s_d_l_8h_aaa2f5ff6c3e7d04d7ffd16c6603df5a1}{get\+Window}} ()
+\begin{DoxyCompactList}\small\item\em singleton de l\textquotesingle{}écran principal \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+SDL\+\_\+\+Window $\ast$ \mbox{\hyperlink{main_s_d_l_8h_aaa8e409e04dcf575ef63fd5fb3db06f9}{window}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{main_s_d_l_8h_aaa2f5ff6c3e7d04d7ffd16c6603df5a1}\label{main_s_d_l_8h_aaa2f5ff6c3e7d04d7ffd16c6603df5a1}} 
+\index{mainSDL.h@{mainSDL.h}!getWindow@{getWindow}}
+\index{getWindow@{getWindow}!mainSDL.h@{mainSDL.h}}
+\doxysubsubsection{\texorpdfstring{getWindow()}{getWindow()}}
+{\footnotesize\ttfamily SDL\+\_\+\+Window $\ast$ get\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+singleton de l\textquotesingle{}écran principal 
+
+\begin{DoxyReturn}{Renvoie}
+pointeur vers l\textquotesingle{}écran principal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_s_d_l_8h_ad0d09c1b6009b869b52530dcf379eb51}\label{main_s_d_l_8h_ad0d09c1b6009b869b52530dcf379eb51}} 
+\index{mainSDL.h@{mainSDL.h}!winCreate@{winCreate}}
+\index{winCreate@{winCreate}!mainSDL.h@{mainSDL.h}}
+\doxysubsubsection{\texorpdfstring{winCreate()}{winCreate()}}
+{\footnotesize\ttfamily void win\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Crée la fenêtre principal avec les caractéristique par default et initialisation des libraires graphiques SDL2 et SDL\+\_\+\+TTF. 
+
+\mbox{\Hypertarget{main_s_d_l_8h_aaf044c965a62de4320efd57d1ad0fa81}\label{main_s_d_l_8h_aaf044c965a62de4320efd57d1ad0fa81}} 
+\index{mainSDL.h@{mainSDL.h}!winDestroy@{winDestroy}}
+\index{winDestroy@{winDestroy}!mainSDL.h@{mainSDL.h}}
+\doxysubsubsection{\texorpdfstring{winDestroy()}{winDestroy()}}
+{\footnotesize\ttfamily void win\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Ferme la fenêtre principal et fermeture des libraires graphiques SDL2 et SDL\+\_\+\+TTF. 
+
+\begin{DoxyWarning}{Avertissement}
+Penser a bien fermer les polices avent d\textquotesingle{}utiliser cette fonction 
+\end{DoxyWarning}
+
+
+\doxysubsection{Documentation des variables}
+\mbox{\Hypertarget{main_s_d_l_8h_aaa8e409e04dcf575ef63fd5fb3db06f9}\label{main_s_d_l_8h_aaa8e409e04dcf575ef63fd5fb3db06f9}} 
+\index{mainSDL.h@{mainSDL.h}!window@{window}}
+\index{window@{window}!mainSDL.h@{mainSDL.h}}
+\doxysubsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily SDL\+\_\+\+Window$\ast$ window}
+
