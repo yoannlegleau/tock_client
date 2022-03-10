@@ -63,6 +63,7 @@ void drawCircleBorder(SDL_Renderer *renderer, int x, int y, int radius, SDL_Colo
 void distributeCards(Linkedlist *cards, Linkedlist *players);
 bool playCard(enum Card * card,int location);
 bool forward(int location, int step);
+void move(int from, int to);
 
 
 void playOnce(Linkedlist *players);
@@ -107,7 +108,7 @@ void gameCreate(SDL_Window *window) {
 
 
 
-    Linkedlist * gamRules = linkedListFactory(sizeof(enum GamrRule));
+    Linkedlist * gamRules = linkedListFactory(sizeof(enum GameRule));
 
     Linkedlist * cards = linkedListFactory(sizeof(enum Card));
 
@@ -251,13 +252,14 @@ bool forward(int location, int step){
     if (location > 72)
         return false;
     int playerEntry = ((72+(player*18)-20)%72);
-    if((location+step)>playerEntry && (location+step)>playerEntry+4){
-
+    if((location+step)>playerEntry && (location+step)<playerEntry+4){
+        int destination = location+step-playerEntry-1;
+        move(location,72+(4*(player-1)+destination));
+        return true;
     }
     if (bord[(location+step)%72] != 0)
         printf("----- %i a tuer %i -----\n",player,bord[(location+step)%72]);
-    bord[(location+step)%72] = player;
-    bord[location] = 0;
+    move(location,(location+step)%72);
     return  true;
 }
 

@@ -28,4 +28,6 @@ Player * playerFactory( int id);
 
 void drawPlayer(const Player *player);
 
+//TODO player destroyPlayer
+
 #endif //TOCK_CLIENT_PLAYER_H
