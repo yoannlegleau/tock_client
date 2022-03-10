@@ -129,6 +129,30 @@ tock_client/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/build
 .PHONY : tock_client/fast
 
+src/Player.o: src/Player.c.o
+.PHONY : src/Player.o
+
+# target to build an object file
+src/Player.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/Player.c.o
+.PHONY : src/Player.c.o
+
+src/Player.i: src/Player.c.i
+.PHONY : src/Player.i
+
+# target to preprocess a source file
+src/Player.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/Player.c.i
+.PHONY : src/Player.c.i
+
+src/Player.s: src/Player.c.s
+.PHONY : src/Player.s
+
+# target to generate assembly for a file
+src/Player.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/Player.c.s
+.PHONY : src/Player.c.s
+
 src/card.o: src/card.c.o
 .PHONY : src/card.o
 
@@ -258,6 +282,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... tock_client"
+	@echo "... src/Player.o"
+	@echo "... src/Player.i"
+	@echo "... src/Player.s"
 	@echo "... src/card.o"
 	@echo "... src/card.i"
 	@echo "... src/card.s"

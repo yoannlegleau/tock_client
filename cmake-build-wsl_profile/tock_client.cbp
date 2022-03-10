@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/Player.c">
+			<Option target="tock_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/Player.h">
+			<Option target="tock_client"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/card.c">
 			<Option target="tock_client"/>
 		</Unit>

@@ -120,7 +120,9 @@ void removeFirst(Linkedlist *l) {
 
 
 void destroy(Linkedlist *l) {
-    //TODO void destroy(Linkedlist *l)
+    while (!isEmpty(l))
+        removeFirst(l);
+    free(l);
 }
 
 Elem * getElem( Linkedlist *l, int index) {

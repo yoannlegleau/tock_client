@@ -6,6 +6,34 @@
 
 #IncludeRegexTransform: 
 
+/mnt/c/Users/adzer/CLionProjects/tock-client/src/Player.c
+stdio.h
+-
+malloc.h
+-
+Player.h
+/mnt/c/Users/adzer/CLionProjects/tock-client/src/Player.h
+card.h
+/mnt/c/Users/adzer/CLionProjects/tock-client/src/card.h
+
+/mnt/c/Users/adzer/CLionProjects/tock-client/src/Player.h
+linkedlist.h
+/mnt/c/Users/adzer/CLionProjects/tock-client/src/linkedlist.h
+
+/mnt/c/Users/adzer/CLionProjects/tock-client/src/card.c
+card.h
+/mnt/c/Users/adzer/CLionProjects/tock-client/src/card.h
+stdlib.h
+-
+
+/mnt/c/Users/adzer/CLionProjects/tock-client/src/card.h
+linkedlist.h
+/mnt/c/Users/adzer/CLionProjects/tock-client/src/linkedlist.h
+stdbool.h
+-
+stdio.h
+-
+
 /mnt/c/Users/adzer/CLionProjects/tock-client/src/game.c
 stdio.h
 -
@@ -23,25 +51,35 @@ mainSDL.h
 /mnt/c/Users/adzer/CLionProjects/tock-client/src/mainSDL.h
 linkedlist.h
 /mnt/c/Users/adzer/CLionProjects/tock-client/src/linkedlist.h
+card.h
+/mnt/c/Users/adzer/CLionProjects/tock-client/src/card.h
+gameRule.h
+/mnt/c/Users/adzer/CLionProjects/tock-client/src/gameRule.h
+Player.h
+/mnt/c/Users/adzer/CLionProjects/tock-client/src/Player.h
+xmllite.h
+-
 
 /mnt/c/Users/adzer/CLionProjects/tock-client/src/game.h
 
+/mnt/c/Users/adzer/CLionProjects/tock-client/src/gameRule.h
+
 /mnt/c/Users/adzer/CLionProjects/tock-client/src/linkedlist.c
-stdio.h
--
 malloc.h
 -
+stdlib.h
+-
 linkedlist.h
+/mnt/c/Users/adzer/CLionProjects/tock-client/src/linkedlist.h
+
 /mnt/c/Users/adzer/CLionProjects/tock-client/src/linkedlist.h
 stdbool.h
 -
 
-/mnt/c/Users/adzer/CLionProjects/tock-client/src/linkedlist.h
-
 /mnt/c/Users/adzer/CLionProjects/tock-client/src/main.c
 stdio.h
 -
-SDL.h
+SDL2/SDL.h
 -
 stdbool.h
 -
@@ -55,12 +93,12 @@ linkedlist.h
 /mnt/c/Users/adzer/CLionProjects/tock-client/src/mainSDL.c
 stdio.h
 -
-SDL_ttf.h
+SDL2/SDL_ttf.h
 -
 mainSDL.h
 /mnt/c/Users/adzer/CLionProjects/tock-client/src/mainSDL.h
 
 /mnt/c/Users/adzer/CLionProjects/tock-client/src/mainSDL.h
-SDL.h
+SDL2/SDL.h
 -
 
