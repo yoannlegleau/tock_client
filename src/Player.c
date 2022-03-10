@@ -1,6 +1,10 @@
-//
-// Created by adzerake on 23/02/2022.
-//
+/**
+ * \file Player.c
+ * \brief gestion des joueurs
+ * \author LE GLEAU Yoann
+ * \date 23/02/2022
+ * \version 1
+ */
 
 #include <stdio.h>
 #include <malloc.h>

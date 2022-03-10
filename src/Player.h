@@ -1,6 +1,10 @@
-//
-// Created by adzerake on 23/02/2022.
-//
+/**
+ * \file Player.h
+ * \brief gestion des joueurs
+ * \author LE GLEAU Yoann
+ * \date 23/02/2022
+ * \version 1
+ */
 
 #ifndef TOCK_CLIENT_PLAYER_H
 #define TOCK_CLIENT_PLAYER_H
@@ -27,5 +31,6 @@ struct Player {
 Player * playerFactory( int id);
 
 void drawPlayer(const Player *player);
+
 
 #endif //TOCK_CLIENT_PLAYER_H
