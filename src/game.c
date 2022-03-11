@@ -112,14 +112,16 @@ void gameCreate(SDL_Window *window) {
         exit(EXIT_FAILURE);
     }
 
-    if( (police = TTF_OpenFont("assets/fonts/ChowFun.ttf", 20)) == NULL){
+    drawCircle(renderer, 100, 100, 50, couleurBlanc);
+
+    if( (police = TTF_OpenFont("assets/fonts/NewHiScore.ttf", 30)) == NULL){
         fprintf(stderr, "erreur chargement font\n");
         exit(EXIT_FAILURE);
     }
 
     // load sample.png into image
 
-    SDL_RWops *rwop = SDL_RWFromFile("C:\\Users\\adzer\\CLionProjects\\tock-client\\assets\\Design_Cartes\\Carte4_1.png", "rb");
+    SDL_RWops *rwop=SDL_RWFromFile("assets/Design_Cartes/Carte_2.png", "rb");
     image=IMG_LoadPNG_RW(rwop);
     if(!image) {
         printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
@@ -159,18 +161,15 @@ void gameCreate(SDL_Window *window) {
 
 
                                 /* Ajout de la seconde image à une certaine position */
-                                /*
-                                imgDestRect.x = 100;
-                                imgDestRect.y = 50;
+                                imgDestRect.y = 600;
+                                imgDestRect.x = 640;
                                 SDL_QueryTexture(image_tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
-                                SDL_RenderCopy(renderer, image_tex, NULL, &imgDestRect);
 
 
                                 // Ajout de la seconde image à une autre position
-                                imgDestRect.x = 250;
                                 SDL_RenderCopy(renderer, image_tex, NULL, &imgDestRect);
 
-                                */
+
                                 /* On fait le rendu ! */
 
 
@@ -179,8 +178,6 @@ void gameCreate(SDL_Window *window) {
                         break;
                 }
             }
-
-
             Player * p = getFirst(players);
             if (isEmpty(p->cards)){
                 if(isEmpty(cards))
