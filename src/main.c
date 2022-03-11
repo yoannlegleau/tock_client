@@ -19,11 +19,8 @@
  * \return
  */
  int main(int argc, char* args[]) {
-    //Le pointeur vers la fenetre
-    SDL_Window* pWindow = getWindow();
-
     //lance le jeu dans la fenêtre principal
-    gameCreate(window);
+    gameCreate();
 
     // ferme le jeu
     winDestroy();

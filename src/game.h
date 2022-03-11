@@ -10,18 +10,24 @@
 #ifndef TOCK_CLIENT_GAME_H
 #define TOCK_CLIENT_GAME_H
 
+#include "bord.h"
+
+typedef struct Game Game;
+struct Game {
+    Bord * bord;
+    Linkedlist * players;
+};
 
 
 /**
  * \brief initialise la liste
- * \param window fenetre d'affichage
  */
-void gameCreate(SDL_Window *window);
+Game * gameCreate(int nbPlayer);
 
 /**
  * \brief lancer le deroulement du jeux
  */
-void gameStart();
+void gameStart(Game* game);
 
 /**
  * \brief reprande le jeu apres une pause

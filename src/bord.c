@@ -6,21 +6,46 @@
 #include "mainSDL.h"
 #include "Color.h"
 
+/* ---------- Constructor ---------- */
 
-void initBord(int pInt[88]) {
-    for (int i = 0; i < 88; ++i) {
-        pInt[i] = 0;
+Bord * bordFactory(int nbPlayer){
+    Bord * bord = malloc(sizeof(sizeof(Bord)));
+    bord->nbPlayer = nbPlayer;
+    bord->bord = malloc(sizeof(int)*(getLen(bord)));
+    initBord(bord);
+    return bord;
+}
+
+void initBord(Bord * bord) {
+    for (int i = 0; i < getLen(bord); ++i) {
+        bord->bord[i] = 0;
     }
 }
 
-Linkedlist *getPlayerPansLocation(Player * player) {
+/* ---------- Getter ---------- */
+
+int getNbPlayer(Bord * bord){
+    return bord->nbPlayer;
+}
+
+int getLen(Bord * bord){
+    return ((18*getNbPlayer(bord))+(4*getNbPlayer(bord)));
+}
+
+/* ---------- Utilities ---------- */
+
+
+
+Linkedlist *getPlayerPansLocation(Bord * bord,Player * player) {
     Linkedlist * locations = linkedListFactory(sizeof(int));
     for (int i = 0; i < 88; i++) {
-        if (bord[i] == player->idPlayer)
+        if ( [i] == player->idPlayer)
             addLast(locations, i);
     }
     return locations;
 }
+
+/* ---------- Old ---------- */
 
 void drawBord(SDL_Renderer *renderer, int x, int y,int bord[]){
     const int squareSize = 26;

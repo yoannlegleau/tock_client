@@ -130,6 +130,12 @@
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/mainSDL.h">
 			<Option target="tock_client"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/pawn.c">
+			<Option target="tock_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/pawn.h">
+			<Option target="tock_client"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

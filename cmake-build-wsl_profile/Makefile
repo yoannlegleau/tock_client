@@ -321,6 +321,30 @@ src/mainSDL.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/mainSDL.c.s
 .PHONY : src/mainSDL.c.s
 
+src/pawn.o: src/pawn.c.o
+.PHONY : src/pawn.o
+
+# target to build an object file
+src/pawn.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/pawn.c.o
+.PHONY : src/pawn.c.o
+
+src/pawn.i: src/pawn.c.i
+.PHONY : src/pawn.i
+
+# target to preprocess a source file
+src/pawn.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/pawn.c.i
+.PHONY : src/pawn.c.i
+
+src/pawn.s: src/pawn.c.s
+.PHONY : src/pawn.s
+
+# target to generate assembly for a file
+src/pawn.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/pawn.c.s
+.PHONY : src/pawn.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -354,6 +378,9 @@ help:
 	@echo "... src/mainSDL.o"
 	@echo "... src/mainSDL.i"
 	@echo "... src/mainSDL.s"
+	@echo "... src/pawn.o"
+	@echo "... src/pawn.i"
+	@echo "... src/pawn.s"
 .PHONY : help
 
 

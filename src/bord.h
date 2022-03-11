@@ -9,10 +9,25 @@
 
 #include "Player/player.h"
 
-int bord[88];
+typedef struct Bord Bord;
+struct Bord {
+    int ** bord;
+    int nbPlayer;
+};
+
+/* ---------- Constructor ---------- */
+
+Bord * bordFactory(int nbPlayer);
 
 
-void initBord(int pInt[88]);
+/* ---------- Getter ---------- */
+
+int getNbPlayer(Bord * bord);
+int getLen(Bord * bord);
+
+/* ---------- old ---------- */
+
+void initBord(Bord * bord);
 Linkedlist *getPlayerPansLocation(Player * player);
 
 void drawBord(SDL_Renderer *renderer, int x, int y,int bord[]);

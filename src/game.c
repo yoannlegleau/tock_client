@@ -18,9 +18,11 @@
 #include "card.h"
 #include "gameRule.h"
 #include "Player/player.h"
-#include "bord.h"
+
 
 #include <xmllite.h>
+
+
 
 /**
  * \brief Se tableux represente toutes les cases du plateu
@@ -31,12 +33,7 @@
 
 void drawPlayerHUD(SDL_Renderer *renderer, Player * player, TTF_Font *police, int x, int y);
 
-typedef struct Pawn Pawn;
-struct Pawn {
-    int IDplayer;
-    int location; //index du tableau du plateau (principalement en prevision de l'envoi de données au server)
-    bool invincibility;
-};
+
 
 //TODO Trouver une meilleur organisation
 typedef struct Rule Rule;
@@ -55,11 +52,18 @@ Linkedlist *getPlayerPansLocation();
 
 void rendererAll(SDL_Renderer *pRenderer);
 
+Game * gameCreate(int nbPlayer){
+    Game * game = malloc(sizeof(Game));
+    game->bord = bordFactory(nbPlayer);
+    game->players = linkedListFactory(sizeof(Player));
+}
+
+
 /**
  * \brief demonstration du fonctionnement des librairie graphiques baser sur l'example de cours
  * \param window fenêtre principal
  */
-void gameCreate(SDL_Window *window) {
+void gameStart(Game * game) {
 
     bord[88];
     initBord(bord);
@@ -112,8 +116,6 @@ void gameCreate(SDL_Window *window) {
         exit(EXIT_FAILURE);
     }
 
-    drawCircle(renderer, 100, 100, 50, couleurBlanc);
-
     if( (police = TTF_OpenFont("assets/fonts/NewHiScore.ttf", 30)) == NULL){
         fprintf(stderr, "erreur chargement font\n");
         exit(EXIT_FAILURE);
@@ -121,7 +123,7 @@ void gameCreate(SDL_Window *window) {
 
     // load sample.png into image
 
-    SDL_RWops *rwop=SDL_RWFromFile("assets/Design_Cartes/Carte_2.png", "rb");
+    SDL_RWops *rwop=SDL_RWFromFile("assets/Carte_2.png", "rb");
     image=IMG_LoadPNG_RW(rwop);
     if(!image) {
         printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
@@ -215,7 +217,13 @@ void rendererAll(SDL_Renderer *renderer) {
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_RenderPresent(renderer);
     SDL_RenderClear(renderer);
-    Sleep(100);
+
+    #ifdef __unix__
+        sleep(100);
+    #endif
+    #ifdef _WIN32
+        Sleep(100);
+    #endif
 }
 
 void playOnce(Linkedlist *players) {
