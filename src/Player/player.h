@@ -10,7 +10,8 @@
 #define TOCK_CLIENT_PLAYER_H
 
 
-#include "linkedlist.h"
+#include "../linkedlist.h"
+#include "../card.h"
 
 /**
  * \brief structure represante un joueur
@@ -26,11 +27,15 @@ struct Player {
 
     /** \brief liste de carte representent la main du joueur */
     Linkedlist * cards;
+
+    enum Card (* play)(Player * p);
 };
 
 Player * playerFactory( int id);
 
 void drawPlayer(const Player *player);
+
+bool play(Player *p);
 
 
 #endif //TOCK_CLIENT_PLAYER_H

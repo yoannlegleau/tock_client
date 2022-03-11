@@ -149,8 +149,10 @@ Fonctions</h2></td></tr>
 <tr class="memdesc:a512c4edbb810a012a89fee8fa483074d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le premiere élément dans cette liste et le supprime.  <a href="linkedlist_8c.html#a512c4edbb810a012a89fee8fa483074d">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a512c4edbb810a012a89fee8fa483074d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ddc4cccc387759bca3067b3ae640cb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a9ddc4cccc387759bca3067b3ae640cb7">drawListe</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l, void(*draw)(void *o))</td></tr>
-<tr class="memdesc:a9ddc4cccc387759bca3067b3ae640cb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">afficher le contenu de la liste  <a href="linkedlist_8c.html#a9ddc4cccc387759bca3067b3ae640cb7">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a9ddc4cccc387759bca3067b3ae640cb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">affiche le contenu de la liste  <a href="linkedlist_8c.html#a9ddc4cccc387759bca3067b3ae640cb7">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a9ddc4cccc387759bca3067b3ae640cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d693c9adf0600ee81073b500359d418"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a5d693c9adf0600ee81073b500359d418">foreach</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l, void(*pVoid)(void *))</td></tr>
+<tr class="separator:a5d693c9adf0600ee81073b500359d418"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p >liste chainer generique </p>
@@ -407,14 +409,15 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>afficher le contenu de la liste </p>
+<p>affiche le contenu de la liste </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">l</td><td>liter a afficher </td></tr>
-    <tr><td class="paramname">draw</td><td>fonction draw'affichage de l'object </td></tr>
+    <tr><td class="paramname">l</td><td>liste cible </td></tr>
+    <tr><td class="paramname">draw</td><td>fonction d'affichage </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Obsolète:</a></b></dt><dd>refine a utiliser forEach utiliser foreach </dd></dl>
 
 </div>
 </div>
@@ -453,6 +456,34 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a5d693c9adf0600ee81073b500359d418" name="a5d693c9adf0600ee81073b500359d418"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d693c9adf0600ee81073b500359d418">&#9670;&nbsp;</a></span>foreach()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void foreach </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td>
+          <td class="paramname"><em>l</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(void *)&#160;</td>
+          <td class="paramname"><em>pVoid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

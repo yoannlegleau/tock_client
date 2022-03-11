@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['wincreate_0',['winCreate',['../main_s_d_l_8h.html#ad0d09c1b6009b869b52530dcf379eb51',1,'mainSDL.c']]],
-  ['windestroy_1',['winDestroy',['../main_s_d_l_8c.html#aaf044c965a62de4320efd57d1ad0fa81',1,'winDestroy():&#160;mainSDL.c'],['../main_s_d_l_8h.html#aaf044c965a62de4320efd57d1ad0fa81',1,'winDestroy():&#160;mainSDL.c']]]
+  ['size_0',['size',['../linkedlist_8c.html#ad8feb9e4794625402d10a59f9e2a3ef5',1,'size(Linkedlist *l):&#160;linkedlist.c'],['../linkedlist_8h.html#ad8feb9e4794625402d10a59f9e2a3ef5',1,'size(Linkedlist *l):&#160;linkedlist.c']]]
 ];

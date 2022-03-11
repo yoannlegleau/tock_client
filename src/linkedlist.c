@@ -166,12 +166,28 @@ void *pollFirst(Linkedlist *l) {
     return result;
 }
 
+/**
+ * \brief affiche le contenu de la liste
+ * \param l liste cible
+ * \param draw fonction d'affichage
+ * \deprecated refine a utiliser forEach utiliser foreach
+ */
 void drawListe(Linkedlist *l,void (*draw)(void * o)){
     if(isEmpty(l))
         return;
     Elem *iterator = l->last->next;
     do {
         draw(iterator->object);
+        iterator = iterator->next;
+    }while (iterator != l->last->next);
+}
+
+void foreach(Linkedlist *l, void (*pVoid)(void *)) {
+    if(isEmpty(l))
+        return;
+    Elem *iterator = l->last->next;
+    do {
+        pVoid(iterator->object);
         iterator = iterator->next;
     }while (iterator != l->last->next);
 }

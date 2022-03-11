@@ -75,6 +75,7 @@ $(function() {
 <p>gestion des cartes  
 <a href="#details">Plus de détails...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="card_8h_source.html">card.h</a>&quot;</code><br />
+<code>#include &quot;Player/player.h&quot;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -85,6 +86,8 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a588f788a116c7297754143f4c764675e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="card_8c.html#a588f788a116c7297754143f4c764675e">makeDeck</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *cards, <a class="el" href="struct_linkedlist.html">Linkedlist</a> *gameRules)</td></tr>
 <tr class="memdesc:a588f788a116c7297754143f4c764675e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ajout des cartes dans la list pour cree un paket de carte coherent et prend en compte les règles sélectionner  <a href="card_8c.html#a588f788a116c7297754143f4c764675e">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a588f788a116c7297754143f4c764675e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a099ad5ba8fde893123e3223f3ab306af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="card_8c.html#a099ad5ba8fde893123e3223f3ab306af">distributeCards</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *cards, <a class="el" href="struct_linkedlist.html">Linkedlist</a> *players)</td></tr>
+<tr class="separator:a099ad5ba8fde893123e3223f3ab306af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p >gestion des cartes </p>
@@ -92,6 +95,34 @@ Fonctions</h2></td></tr>
 <dl class="section date"><dt>Date</dt><dd>28/01/2022 </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1 </dd></dl>
 </div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a099ad5ba8fde893123e3223f3ab306af" name="a099ad5ba8fde893123e3223f3ab306af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a099ad5ba8fde893123e3223f3ab306af">&#9670;&nbsp;</a></span>distributeCards()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void distributeCards </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td>
+          <td class="paramname"><em>cards</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td>
+          <td class="paramname"><em>players</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="afe3c91043da027e3ca6e6b514828e126" name="afe3c91043da027e3ca6e6b514828e126"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe3c91043da027e3ca6e6b514828e126">&#9670;&nbsp;</a></span>drawCard()</h2>
 
