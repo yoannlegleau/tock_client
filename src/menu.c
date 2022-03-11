@@ -74,7 +74,7 @@ int menu(SDL_Window * pWindow){
 	SDL_Rect txt_optn1_R;
 	txt_optn1_R.x=200;
 	txt_optn1_R.y=200;
-  txt_optn1_R.w=400;
+  txt_optn1_R.w=300;
 	txt_optn1_R.h=100;
 
 
@@ -82,7 +82,7 @@ int menu(SDL_Window * pWindow){
 
 	/*Surface du bouton quitter*/
 	SDL_Surface* txt_optn4_S = TTF_RenderUTF8_Blended(police, "QUITTER ?", couleurNoire);
-	SDL_Surface* txt_optn4_Hover_S = TTF_RenderUTF8_Blended(police, "NOOOOOO !", couleurGold);
+	SDL_Surface* txt_optn4_Hover_S = TTF_RenderUTF8_Blended(police, "QUITTER ?", couleurGold);
 
 	if(!txt_optn4_S || !txt_optn4_Hover_S){
 		fprintf(stderr, "Erreur à la création du texte ''option 4'': %s\n", SDL_GetError());
@@ -102,19 +102,10 @@ int menu(SDL_Window * pWindow){
 	SDL_Rect txt_optn4_R;
 	txt_optn4_R.x=200;
 	txt_optn4_R.y=400;
-	txt_optn4_R.w=400;
+	txt_optn4_R.w=300;
 	txt_optn4_R.h=100;
 
 
-
-//récupération des données de sauvegarde (quelles cartes possède le joueur / quelles sont toutes les cartes qui existent)-------------------------------------------
-
-	/*carte_t * tab_cartes_total[N]; //tableau qui repertorie toutes les cartes qui existent
-	carte_t * tab_sauvegarde[N]; //tableau qui repertorie les cartes que possède le joueur
-	init_cartes(tab_cartes_total);
-	recup_sauvegarde(tab_sauvegarde, tab_cartes_total);*/
-
-//gestion des evenements---------------------------------------------------------------------------------------------------------------------------------------------
 		//oldHover: Variable qui permet d'éviter de render toutes les frames, si pas besoin
 		int oldHover=0;
 

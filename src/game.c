@@ -141,7 +141,7 @@ void gameCreate(SDL_Window *window) {
 
     drawCircle(renderer, 100, 100, 50, couleurBlanc);
 
-    if( (police = TTF_OpenFont("assets/fonts/ChowFun.ttf", 20)) == NULL){
+    if( (police = TTF_OpenFont("assets/fonts/NewHiScore.ttf", 30)) == NULL){
         fprintf(stderr, "erreur chargement font\n");
         exit(EXIT_FAILURE);
     }
