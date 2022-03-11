@@ -4,16 +4,21 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{1 }
 \DoxyCodeLine{9 \textcolor{preprocessor}{\#include <SDL2/SDL.h>}}
-\DoxyCodeLine{10 }
-\DoxyCodeLine{11 \textcolor{preprocessor}{\#ifndef TOCK\_CLIENT\_MAINSDL\_H}}
-\DoxyCodeLine{12 \textcolor{preprocessor}{\#define TOCK\_CLIENT\_MAINSDL\_H}}
-\DoxyCodeLine{13 }
-\DoxyCodeLine{14 SDL\_Window *\mbox{\hyperlink{main_s_d_l_8h_aaa8e409e04dcf575ef63fd5fb3db06f9}{window}};}
-\DoxyCodeLine{15 }
-\DoxyCodeLine{16 \textcolor{keywordtype}{void} \mbox{\hyperlink{main_s_d_l_8h_ad0d09c1b6009b869b52530dcf379eb51}{winCreate}}();}
-\DoxyCodeLine{17 \textcolor{keywordtype}{void} \mbox{\hyperlink{main_s_d_l_8h_aaf044c965a62de4320efd57d1ad0fa81}{winDestroy}}();}
-\DoxyCodeLine{18 SDL\_Window * \mbox{\hyperlink{main_s_d_l_8h_aaa2f5ff6c3e7d04d7ffd16c6603df5a1}{getWindow}}();}
-\DoxyCodeLine{19 }
-\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//TOCK\_CLIENT\_MAINSDL\_H}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#ifndef TOCK\_CLIENT\_MAINSDL\_H}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define TOCK\_CLIENT\_MAINSDL\_H}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 SDL\_Window *\mbox{\hyperlink{main_s_d_l_8h_aaa8e409e04dcf575ef63fd5fb3db06f9}{window}};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keywordtype}{void} \mbox{\hyperlink{main_s_d_l_8h_ad0d09c1b6009b869b52530dcf379eb51}{winCreate}}();}
+\DoxyCodeLine{18 \textcolor{keywordtype}{void} \mbox{\hyperlink{main_s_d_l_8h_aaf044c965a62de4320efd57d1ad0fa81}{winDestroy}}();}
+\DoxyCodeLine{19 SDL\_Window * \mbox{\hyperlink{main_s_d_l_8h_aaa2f5ff6c3e7d04d7ffd16c6603df5a1}{getWindow}}();}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keywordtype}{void} \mbox{\hyperlink{main_s_d_l_8h_aa21ea2c9de7c9b4323c344e53364d036}{drawCircle}}(SDL\_Renderer *renderer, \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} radius, SDL\_Color color);}
+\DoxyCodeLine{22 \textcolor{keywordtype}{void} \mbox{\hyperlink{main_s_d_l_8h_abea8e30166d3ab063a83bce9b5ce3bdb}{drawCircleBorder}}(SDL\_Renderer *renderer, \textcolor{keywordtype}{int} x, \textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} radius, SDL\_Color colorOut, \textcolor{keywordtype}{int} width , SDL\_Color colorIn);}
+\DoxyCodeLine{23 \textcolor{keywordtype}{bool} \mbox{\hyperlink{main_s_d_l_8h_a6256228950cd2f9e808f0f7b3ea09e6d}{playCard}}(\textcolor{keyword}{enum} \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} * card,\textcolor{keywordtype}{int} location);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//TOCK\_CLIENT\_MAINSDL\_H}}
 
 \end{DoxyCode}

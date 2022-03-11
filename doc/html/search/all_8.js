@@ -6,5 +6,6 @@ var searchData=
   ['linkedlist_2ec_3',['linkedlist.c',['../linkedlist_8c.html',1,'']]],
   ['linkedlist_2eh_4',['linkedlist.h',['../linkedlist_8h.html',1,'']]],
   ['linkedlistfactory_5',['linkedListFactory',['../linkedlist_8c.html#a1777aaa1033242487c161a6f0d3272d6',1,'linkedListFactory(int typeSize):&#160;linkedlist.c'],['../linkedlist_8h.html#a1777aaa1033242487c161a6f0d3272d6',1,'linkedListFactory(int typeSize):&#160;linkedlist.c']]],
-  ['location_6',['location',['../struct_pawn.html#a7bbce2c7450610bda61793f7dd12ceed',1,'Pawn']]]
+  ['liste_20des_20éléments_20obsolètes_6',['Liste des éléments obsolètes',['../deprecated.html',1,'']]],
+  ['location_7',['location',['../struct_pawn.html#a7bbce2c7450610bda61793f7dd12ceed',1,'Pawn']]]
 ];

@@ -73,6 +73,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;SDL2/SDL.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
 </div>
 <p><a href="main_s_d_l_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
@@ -87,6 +88,12 @@ Fonctions</h2></td></tr>
 <tr class="memitem:aaa2f5ff6c3e7d04d7ffd16c6603df5a1"><td class="memItemLeft" align="right" valign="top">SDL_Window *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_s_d_l_8h.html#aaa2f5ff6c3e7d04d7ffd16c6603df5a1">getWindow</a> ()</td></tr>
 <tr class="memdesc:aaa2f5ff6c3e7d04d7ffd16c6603df5a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">singleton de l'écran principal  <a href="main_s_d_l_8h.html#aaa2f5ff6c3e7d04d7ffd16c6603df5a1">Plus de détails...</a><br /></td></tr>
 <tr class="separator:aaa2f5ff6c3e7d04d7ffd16c6603df5a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa21ea2c9de7c9b4323c344e53364d036"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_s_d_l_8h.html#aa21ea2c9de7c9b4323c344e53364d036">drawCircle</a> (SDL_Renderer *renderer, int x, int y, int radius, SDL_Color color)</td></tr>
+<tr class="separator:aa21ea2c9de7c9b4323c344e53364d036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abea8e30166d3ab063a83bce9b5ce3bdb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_s_d_l_8h.html#abea8e30166d3ab063a83bce9b5ce3bdb">drawCircleBorder</a> (SDL_Renderer *renderer, int x, int y, int radius, SDL_Color colorOut, int width, SDL_Color colorIn)</td></tr>
+<tr class="separator:abea8e30166d3ab063a83bce9b5ce3bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6256228950cd2f9e808f0f7b3ea09e6d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_s_d_l_8h.html#a6256228950cd2f9e808f0f7b3ea09e6d">playCard</a> (enum <a class="el" href="card_8h.html#a98a2b239923441ea943de74af3208aa3">Card</a> *card, int location)</td></tr>
+<tr class="separator:a6256228950cd2f9e808f0f7b3ea09e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -94,6 +101,110 @@ Variables</h2></td></tr>
 <tr class="separator:aaa8e409e04dcf575ef63fd5fb3db06f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Documentation des fonctions</h2>
+<a id="aa21ea2c9de7c9b4323c344e53364d036" name="aa21ea2c9de7c9b4323c344e53364d036"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa21ea2c9de7c9b4323c344e53364d036">&#9670;&nbsp;</a></span>drawCircle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawCircle </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Renderer *&#160;</td>
+          <td class="paramname"><em>renderer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Color&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abea8e30166d3ab063a83bce9b5ce3bdb" name="abea8e30166d3ab063a83bce9b5ce3bdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abea8e30166d3ab063a83bce9b5ce3bdb">&#9670;&nbsp;</a></span>drawCircleBorder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawCircleBorder </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Renderer *&#160;</td>
+          <td class="paramname"><em>renderer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Color&#160;</td>
+          <td class="paramname"><em>colorOut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SDL_Color&#160;</td>
+          <td class="paramname"><em>colorIn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aaa2f5ff6c3e7d04d7ffd16c6603df5a1" name="aaa2f5ff6c3e7d04d7ffd16c6603df5a1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaa2f5ff6c3e7d04d7ffd16c6603df5a1">&#9670;&nbsp;</a></span>getWindow()</h2>
 
@@ -111,6 +222,34 @@ Variables</h2></td></tr>
 
 <p>singleton de l'écran principal </p>
 <dl class="section return"><dt>Renvoie</dt><dd>pointeur vers l'écran principal </dd></dl>
+
+</div>
+</div>
+<a id="a6256228950cd2f9e808f0f7b3ea09e6d" name="a6256228950cd2f9e808f0f7b3ea09e6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6256228950cd2f9e808f0f7b3ea09e6d">&#9670;&nbsp;</a></span>playCard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool playCard </td>
+          <td>(</td>
+          <td class="paramtype">enum <a class="el" href="card_8h.html#a98a2b239923441ea943de74af3208aa3">Card</a> *&#160;</td>
+          <td class="paramname"><em>card</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>location</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

@@ -46,8 +46,10 @@ void $\ast$ \mbox{\hyperlink{linkedlist_8h_a9559ae005964e1246efd9dc7ffcce527}{ge
 \begin{DoxyCompactList}\small\item\em Renvoie le dernière élément dans cette liste. \end{DoxyCompactList}\item 
 void $\ast$ \mbox{\hyperlink{linkedlist_8h_a512c4edbb810a012a89fee8fa483074d}{poll\+First}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$l)
 \begin{DoxyCompactList}\small\item\em Renvoie le premiere élément dans cette liste et le supprime. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{linkedlist_8h_a9ddc4cccc387759bca3067b3ae640cb7}{draw\+Liste}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$l, void($\ast$draw)(void $\ast$o))
-\begin{DoxyCompactList}\small\item\em afficher le contenu de la liste \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{linkedlist_8h_ae31095fa82978128cf88d2940568109c}{draw\+Liste}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$l, void($\ast$draw)(void $\ast$))
+\begin{DoxyCompactList}\small\item\em afficher le contenu de la liste \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{linkedlist_8h_a5d693c9adf0600ee81073b500359d418}{foreach}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$l, void($\ast$p\+Void)(void $\ast$))
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -176,11 +178,11 @@ Suprime la lise et libert l\textquotesingle{}espace memoire.
 {\em l} & \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{linkedlist_8h_a9ddc4cccc387759bca3067b3ae640cb7}\label{linkedlist_8h_a9ddc4cccc387759bca3067b3ae640cb7}} 
+\mbox{\Hypertarget{linkedlist_8h_ae31095fa82978128cf88d2940568109c}\label{linkedlist_8h_ae31095fa82978128cf88d2940568109c}} 
 \index{linkedlist.h@{linkedlist.h}!drawListe@{drawListe}}
 \index{drawListe@{drawListe}!linkedlist.h@{linkedlist.h}}
 \doxysubsubsection{\texorpdfstring{drawListe()}{drawListe()}}
-{\footnotesize\ttfamily void draw\+Liste (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{l,  }\item[{void($\ast$)(void $\ast$o)}]{draw }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void draw\+Liste (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{l,  }\item[{void($\ast$)(void $\ast$)}]{draw }\end{DoxyParamCaption})}
 
 
 
@@ -193,6 +195,12 @@ afficher le contenu de la liste
 {\em draw} & fonction draw\textquotesingle{}affichage de l\textquotesingle{}object \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{linkedlist_8h_a5d693c9adf0600ee81073b500359d418}\label{linkedlist_8h_a5d693c9adf0600ee81073b500359d418}} 
+\index{linkedlist.h@{linkedlist.h}!foreach@{foreach}}
+\index{foreach@{foreach}!linkedlist.h@{linkedlist.h}}
+\doxysubsubsection{\texorpdfstring{foreach()}{foreach()}}
+{\footnotesize\ttfamily void foreach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{l,  }\item[{void($\ast$)(void $\ast$)}]{p\+Void }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{linkedlist_8h_aa00469bd435f0b5ae644e6894b9cb096}\label{linkedlist_8h_aa00469bd435f0b5ae644e6894b9cb096}} 
 \index{linkedlist.h@{linkedlist.h}!get@{get}}
 \index{get@{get}!linkedlist.h@{linkedlist.h}}

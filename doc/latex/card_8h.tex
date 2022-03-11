@@ -39,7 +39,9 @@ enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} \{ \newl
 void \mbox{\hyperlink{card_8h_afe3c91043da027e3ca6e6b514828e126}{draw\+Card}} (const enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$card)
 \begin{DoxyCompactList}\small\item\em affiche le nom dew catres dans le terminal \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{card_8h_a588f788a116c7297754143f4c764675e}{make\+Deck}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$cards, \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$game\+Rules)
-\begin{DoxyCompactList}\small\item\em ajout des cartes dans la list pour cree un paket de carte coherent et prend en compte les règles sélectionner \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em ajout des cartes dans la list pour cree un paket de carte coherent et prend en compte les règles sélectionner \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{card_8h_a099ad5ba8fde893123e3223f3ab306af}{distribute\+Cards}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$cards, \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$players)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -136,6 +138,12 @@ eleven\+\_\+out&\\
 
 
 \doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{card_8h_a099ad5ba8fde893123e3223f3ab306af}\label{card_8h_a099ad5ba8fde893123e3223f3ab306af}} 
+\index{card.h@{card.h}!distributeCards@{distributeCards}}
+\index{distributeCards@{distributeCards}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{distributeCards()}{distributeCards()}}
+{\footnotesize\ttfamily void distribute\+Cards (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{cards,  }\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{players }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{card_8h_afe3c91043da027e3ca6e6b514828e126}\label{card_8h_afe3c91043da027e3ca6e6b514828e126}} 
 \index{card.h@{card.h}!drawCard@{drawCard}}
 \index{drawCard@{drawCard}!card.h@{card.h}}

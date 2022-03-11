@@ -129,7 +129,9 @@ void * pollFirst(Linkedlist * l);
  * \param l liter a afficher
  * \param draw fonction draw'affichage de l'object
  */
-void drawListe(Linkedlist *l,void (*draw)(void * o));
+void drawListe(Linkedlist *l,void (*draw)(void *));
+
+void foreach(Linkedlist * l, void (*pVoid)(void *));
 
 
 /*

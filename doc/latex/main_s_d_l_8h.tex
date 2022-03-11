@@ -1,6 +1,7 @@
 \hypertarget{main_s_d_l_8h}{}\doxysection{Référence du fichier C\+:/\+Users/adzerake/\+CLion\+Projects/tock-\/client/src/main\+SDL.h}
 \label{main_s_d_l_8h}\index{C:/Users/adzerake/CLionProjects/tock-\/client/src/mainSDL.h@{C:/Users/adzerake/CLionProjects/tock-\/client/src/mainSDL.h}}
 {\ttfamily \#include $<$SDL2/\+SDL.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
@@ -9,7 +10,13 @@ void \mbox{\hyperlink{main_s_d_l_8h_ad0d09c1b6009b869b52530dcf379eb51}{win\+Crea
 void \mbox{\hyperlink{main_s_d_l_8h_aaf044c965a62de4320efd57d1ad0fa81}{win\+Destroy}} ()
 \begin{DoxyCompactList}\small\item\em Ferme la fenêtre principal et fermeture des libraires graphiques SDL2 et SDL\+\_\+\+TTF. \end{DoxyCompactList}\item 
 SDL\+\_\+\+Window $\ast$ \mbox{\hyperlink{main_s_d_l_8h_aaa2f5ff6c3e7d04d7ffd16c6603df5a1}{get\+Window}} ()
-\begin{DoxyCompactList}\small\item\em singleton de l\textquotesingle{}écran principal \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em singleton de l\textquotesingle{}écran principal \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_s_d_l_8h_aa21ea2c9de7c9b4323c344e53364d036}{draw\+Circle}} (SDL\+\_\+\+Renderer $\ast$renderer, int x, int y, int radius, SDL\+\_\+\+Color color)
+\item 
+void \mbox{\hyperlink{main_s_d_l_8h_abea8e30166d3ab063a83bce9b5ce3bdb}{draw\+Circle\+Border}} (SDL\+\_\+\+Renderer $\ast$renderer, int x, int y, int radius, SDL\+\_\+\+Color color\+Out, int width, SDL\+\_\+\+Color color\+In)
+\item 
+bool \mbox{\hyperlink{main_s_d_l_8h_a6256228950cd2f9e808f0f7b3ea09e6d}{play\+Card}} (enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$card, int location)
+\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -18,6 +25,18 @@ SDL\+\_\+\+Window $\ast$ \mbox{\hyperlink{main_s_d_l_8h_aaa8e409e04dcf575ef63fd5
 
 
 \doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{main_s_d_l_8h_aa21ea2c9de7c9b4323c344e53364d036}\label{main_s_d_l_8h_aa21ea2c9de7c9b4323c344e53364d036}} 
+\index{mainSDL.h@{mainSDL.h}!drawCircle@{drawCircle}}
+\index{drawCircle@{drawCircle}!mainSDL.h@{mainSDL.h}}
+\doxysubsubsection{\texorpdfstring{drawCircle()}{drawCircle()}}
+{\footnotesize\ttfamily void draw\+Circle (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{radius,  }\item[{SDL\+\_\+\+Color}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_s_d_l_8h_abea8e30166d3ab063a83bce9b5ce3bdb}\label{main_s_d_l_8h_abea8e30166d3ab063a83bce9b5ce3bdb}} 
+\index{mainSDL.h@{mainSDL.h}!drawCircleBorder@{drawCircleBorder}}
+\index{drawCircleBorder@{drawCircleBorder}!mainSDL.h@{mainSDL.h}}
+\doxysubsubsection{\texorpdfstring{drawCircleBorder()}{drawCircleBorder()}}
+{\footnotesize\ttfamily void draw\+Circle\+Border (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{radius,  }\item[{SDL\+\_\+\+Color}]{color\+Out,  }\item[{int}]{width,  }\item[{SDL\+\_\+\+Color}]{color\+In }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{main_s_d_l_8h_aaa2f5ff6c3e7d04d7ffd16c6603df5a1}\label{main_s_d_l_8h_aaa2f5ff6c3e7d04d7ffd16c6603df5a1}} 
 \index{mainSDL.h@{mainSDL.h}!getWindow@{getWindow}}
 \index{getWindow@{getWindow}!mainSDL.h@{mainSDL.h}}
@@ -31,6 +50,12 @@ singleton de l\textquotesingle{}écran principal
 \begin{DoxyReturn}{Renvoie}
 pointeur vers l\textquotesingle{}écran principal 
 \end{DoxyReturn}
+\mbox{\Hypertarget{main_s_d_l_8h_a6256228950cd2f9e808f0f7b3ea09e6d}\label{main_s_d_l_8h_a6256228950cd2f9e808f0f7b3ea09e6d}} 
+\index{mainSDL.h@{mainSDL.h}!playCard@{playCard}}
+\index{playCard@{playCard}!mainSDL.h@{mainSDL.h}}
+\doxysubsubsection{\texorpdfstring{playCard()}{playCard()}}
+{\footnotesize\ttfamily bool play\+Card (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$}]{card,  }\item[{int}]{location }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{main_s_d_l_8h_ad0d09c1b6009b869b52530dcf379eb51}\label{main_s_d_l_8h_ad0d09c1b6009b869b52530dcf379eb51}} 
 \index{mainSDL.h@{mainSDL.h}!winCreate@{winCreate}}
 \index{winCreate@{winCreate}!mainSDL.h@{mainSDL.h}}

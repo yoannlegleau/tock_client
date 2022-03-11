@@ -1,12 +1,17 @@
-//
-// Created by adzerake on 23/02/2022.
-//
+/**
+ * \file Player.h
+ * \brief gestion des joueurs
+ * \author LE GLEAU Yoann
+ * \date 23/02/2022
+ * \version 1
+ */
 
 #ifndef TOCK_CLIENT_PLAYER_H
 #define TOCK_CLIENT_PLAYER_H
 
 
-#include "linkedlist.h"
+#include "../linkedlist.h"
+#include "../card.h"
 
 /**
  * \brief structure represante un joueur
@@ -22,12 +27,15 @@ struct Player {
 
     /** \brief liste de carte representent la main du joueur */
     Linkedlist * cards;
+
+    enum Card (* play)(Player * p);
 };
 
 Player * playerFactory( int id);
 
 void drawPlayer(const Player *player);
 
-//TODO player destroyPlayer
+bool play(Player *p);
+
 
 #endif //TOCK_CLIENT_PLAYER_H

@@ -35,6 +35,8 @@ void drawCard(const enum Card * card);
  */
 void makeDeck(Linkedlist * cards, Linkedlist * gameRules);
 
+void distributeCards(Linkedlist *cards, Linkedlist *players);
+
 #endif //TOCK_CLIENT_CARD_H
 
 

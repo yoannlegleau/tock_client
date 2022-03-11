@@ -7,6 +7,7 @@
  */
 
 #include "card.h"
+#include "Player/player.h"
 #include <stdlib.h>
 
 
@@ -67,6 +68,22 @@ void makeDeck(Linkedlist *cards, Linkedlist *gameRules) {
             addFirst(cards,card);
         }
     }
+}
+
+void distributeCards(Linkedlist *cards, Linkedlist *players) {
+    int nbPlayer = length(players);
+    int nbDistributCards;
+    if((length(cards)/length(players))%4 != 0) nbDistributCards = 5;
+    else nbDistributCards = 4;
+    Player * p;
+
+    for (int i = 0; i < nbPlayer; i++) {
+        p = get(players,i);
+        for (int j = 0; j < nbDistributCards; j++) {
+            addLast(p->cards, pollFirst(cards));
+        }
+    }
+
 }
 
 
