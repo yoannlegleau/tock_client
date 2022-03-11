@@ -7,10 +7,11 @@
  */
 
 #include <stdio.h>
-#include <SDL.h>
-#include <SDL_ttf.h>
-#include <SDL_image.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
+#include <SDL2/SDL_image.h>
 #include <stdbool.h>
+#include <unistd.h>
 
 #include "game.h"
 #include "mainSDL.h"
@@ -20,7 +21,7 @@
 #include "Player/player.h"
 #include "bord.h"
 
-#include <xmllite.h>
+//#include <xmllite.h>
 
 /**
  * \brief Se tableux represente toutes les cases du plateu
@@ -112,7 +113,6 @@ void gameCreate(SDL_Window *window) {
         exit(EXIT_FAILURE);
     }
 
-    drawCircle(renderer, 100, 100, 50, couleurBlanc);
 
     if( (police = TTF_OpenFont("assets/fonts/NewHiScore.ttf", 30)) == NULL){
         fprintf(stderr, "erreur chargement font\n");
@@ -215,7 +215,13 @@ void rendererAll(SDL_Renderer *renderer) {
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_RenderPresent(renderer);
     SDL_RenderClear(renderer);
-    Sleep(100);
+
+    #ifdef __unix__
+      sleep(1);
+    #endif
+    #ifdef _WIN32
+      Sleep(100);
+    #endif
 }
 
 void playOnce(Linkedlist *players) {
@@ -274,5 +280,3 @@ void drawPlayerHUD(SDL_Renderer *renderer, Player * player, TTF_Font *police, in
     }
 
 }
-
-

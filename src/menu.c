@@ -5,12 +5,7 @@
 #include <stdbool.h>
 #include <unistd.h>
 
-#include "game.h"
 #include "mainSDL.h"
-#include "linkedlist.h"
-#include "card.h"
-#include "gameRule.h"
-#include "Player.h"
 
 int menu(SDL_Window * pWindow){
 

@@ -5,7 +5,7 @@
 #ifndef TOCK_CLIENT_BORD_H
 #define TOCK_CLIENT_BORD_H
 
-#include <SDL.h>
+#include <SDL2/SDL.h>
 
 #include "Player/player.h"
 
