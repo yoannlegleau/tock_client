@@ -7,7 +7,4 @@ LIBS=-L ${SDL_LIB_DIR} -lSDL2 -lSDL2_image -lSDL2_ttf
 INCS=-I ${SDL_INC_DIR}
 
 game:
-	${CC} -o game src/linkedlist.c src/card.c src/gameRule.c src/Player.c src/mainSDL.c src/game.c src/main.c ${LIBS} ${INCS}
-
-menu:
-	${CC} -o menu src/mainSDL.c src/menu.c ${LIBS} ${INCS}
+	${CC} -o game src/linkedlist.c src/card.c src/gameRule.c src/Player.c src/mainSDL.c src/game.c src/main.c ${LIBS} ${INCS} 

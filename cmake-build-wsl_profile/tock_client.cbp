@@ -27,7 +27,6 @@
 					<Add directory="/mnt/c/Users/adzer/CLionProjects/tock-client/C:/lib/SDL2-2.0.16/include"/>
 					<Add directory="/mnt/c/Users/adzer/CLionProjects/tock-client/C:/lib/SDL2_ttf/include"/>
 					<Add directory="/mnt/c/Users/adzer/CLionProjects/tock-client/C:/lib/SDL2_image-2.0.5/include"/>
-					<Add directory="/mnt/c/Users/adzer/CLionProjects/tock-client/C:/lib/CUnitLocal/CUnitLocal/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
@@ -50,7 +49,6 @@
 					<Add directory="/mnt/c/Users/adzer/CLionProjects/tock-client/C:/lib/SDL2-2.0.16/include"/>
 					<Add directory="/mnt/c/Users/adzer/CLionProjects/tock-client/C:/lib/SDL2_ttf/include"/>
 					<Add directory="/mnt/c/Users/adzer/CLionProjects/tock-client/C:/lib/SDL2_image-2.0.5/include"/>
-					<Add directory="/mnt/c/Users/adzer/CLionProjects/tock-client/C:/lib/CUnitLocal/CUnitLocal/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
@@ -84,10 +82,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/Player.c">
+		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/Color.h">
 			<Option target="tock_client"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/Player.h">
+		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/Player/player.c">
+			<Option target="tock_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/Player/player.h">
+			<Option target="tock_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/bord.c">
+			<Option target="tock_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/bord.h">
 			<Option target="tock_client"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/card.c">
@@ -100,6 +107,12 @@
 			<Option target="tock_client"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/game.h">
+			<Option target="tock_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/gameRule.c">
+			<Option target="tock_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/gameRule.h">
 			<Option target="tock_client"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/linkedlist.c">

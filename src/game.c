@@ -29,7 +29,7 @@
  * \image html assets/img/Tock.io-BordArray.jpg
  */
 
-
+void drawPlayerHUD(SDL_Renderer *renderer, Player * player, TTF_Font *police, int x, int y);
 
 typedef struct Pawn Pawn;
 struct Pawn {
@@ -43,6 +43,11 @@ typedef struct Rule Rule;
 struct Rule {
    bool ruleV;
 };
+
+SDL_Rect txtDestRect,imgDestRect;
+TTF_Font *police = NULL;
+SDL_Texture *image_tex;
+Linkedlist *players;
 
 void playOnce(Linkedlist *players);
 
@@ -60,12 +65,7 @@ void gameCreate(SDL_Window *window) {
     initBord(bord);
 
 
-
-
-
-
-
-    Linkedlist * players = linkedListFactory(sizeof(Player));
+    players = linkedListFactory(sizeof(Player));
 
     Player * player1 = playerFactory(1);
     bord[0] = 1;
@@ -99,11 +99,9 @@ void gameCreate(SDL_Window *window) {
 //Le pointeur vers la surface incluse dans la fenetre
     SDL_Surface *texte=NULL, *image=NULL;
     SDL_Renderer *renderer=NULL;
-    SDL_Rect txtDestRect,imgDestRect;
 
 
     // Le pointeur vers notre police
-    TTF_Font *police = NULL;
     // Une variable de couleur noire
 
 
@@ -114,39 +112,20 @@ void gameCreate(SDL_Window *window) {
         exit(EXIT_FAILURE);
     }
 
-    //drawCircle(renderer, 100, 100, 50, couleurBlanc);
-
     if( (police = TTF_OpenFont("assets/fonts/ChowFun.ttf", 20)) == NULL){
         fprintf(stderr, "erreur chargement font\n");
         exit(EXIT_FAILURE);
     }
-    const SDL_Color couleurNoire = {0, 0, 0};
-    texte = TTF_RenderUTF8_Blended(police, "Vive la programmation !", couleurNoire);
-    if(!texte){
-        fprintf(stderr, "Erreur à la création du texte : %s\n", SDL_GetError());
-        exit(EXIT_FAILURE);
-    }
-
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-    SDL_Texture *texte_tex = SDL_CreateTextureFromSurface(renderer, texte);
-    if(!texte_tex){
-        fprintf(stderr, "Erreur à la création du rendu du texte : %s\n", SDL_GetError());
-        exit(EXIT_FAILURE);
-    }
-    SDL_FreeSurface(texte); /* on a la texture, plus besoin du texte */
-    /* Position ou sera mis le texte dans la fenêtre */
-    txtDestRect.x = txtDestRect.y = 10;
-    SDL_QueryTexture(texte_tex, NULL, NULL, &(txtDestRect.w), &(txtDestRect.h));
 
     // load sample.png into image
 
-    SDL_RWops *rwop=SDL_RWFromFile("assets/img/controleur1024.png", "rb");
+    SDL_RWops *rwop = SDL_RWFromFile("C:\\Users\\adzer\\CLionProjects\\tock-client\\assets\\Design_Cartes\\Carte4_1.png", "rb");
     image=IMG_LoadPNG_RW(rwop);
     if(!image) {
         printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
     }
 
-    SDL_Texture *image_tex = SDL_CreateTextureFromSurface(renderer, image);
+    image_tex = SDL_CreateTextureFromSurface(renderer, image);
     if(!image_tex){
         fprintf(stderr, "Erreur a la creation du rendu de l'image : %s\n", SDL_GetError());
         exit(EXIT_FAILURE);
@@ -175,7 +154,6 @@ void gameCreate(SDL_Window *window) {
 
                                 /* Ajout du texte en noir */
                                 SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-                                SDL_RenderCopy(renderer, texte_tex, NULL, &txtDestRect);
 
                                 //dessin du plateux
 
@@ -216,12 +194,10 @@ void gameCreate(SDL_Window *window) {
             // TODO ajouter l'affichage en simultaner
             //foreach(players,p->play);
 
-
             for (int i = 0; i < length(players) ; i++) {
-                if(play(get(players,i)))
-                    rendererAll(renderer);
+                play(get(players,i));
+                rendererAll(renderer);
             }
-
 
         }
     } else {
@@ -230,8 +206,18 @@ void gameCreate(SDL_Window *window) {
 }
 
 void rendererAll(SDL_Renderer *renderer) {
+    drawPlayerHUD(renderer,get(players,0),police, 10, 40);
+    drawPlayerHUD(renderer,get(players,1),police, 10, 500);
+    drawPlayerHUD(renderer,get(players,2),police, 1000, 40);
+    drawPlayerHUD(renderer,get(players,3),police, 1000, 500);
     drawBord(renderer, 394, 64, bord);
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_RenderCopy(renderer, image_tex, NULL, &imgDestRect);
+
+    drawBord(renderer, 394, 64, bord);
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_RenderPresent(renderer);
+    SDL_RenderClear(renderer);
     Sleep(100);
 }
 
@@ -261,5 +247,35 @@ void playOnce(Linkedlist *players) {
     }
 }
 
+void drawPlayerHUD(SDL_Renderer *renderer, Player * player, TTF_Font *police, int x, int y) {
+    char output[1024];
+    char carte[1024];
+    SDL_Surface *texte=NULL;
+    SDL_Rect txtDestRect;
+    int *card;
+    txtDestRect.x = x;
+    txtDestRect.y = y;
+    const SDL_Color couleurNoire = {0, 0, 0};
+
+    snprintf(output,1024,"Player numéro : %d",player->idPlayer);
+    texte = TTF_RenderUTF8_Blended(police, output, couleurNoire);
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    SDL_Texture *texte_tex = SDL_CreateTextureFromSurface(renderer, texte);
+    SDL_FreeSurface(texte);
+    SDL_QueryTexture(texte_tex, NULL, NULL, &(txtDestRect.w), &(txtDestRect.h));
+    SDL_RenderCopy(renderer, texte_tex, NULL, &txtDestRect);
+    for (int j = 0; j < length(player->cards); j++) {
+        txtDestRect.y += 30;
+        card = get(player->cards,j);
+        snprintf(carte,1024,"Carte numéro %d : %d",j,*card);
+        texte = TTF_RenderUTF8_Blended(police, carte, couleurNoire);
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+        SDL_Texture *test = SDL_CreateTextureFromSurface(renderer, texte);
+        SDL_FreeSurface(texte);
+        SDL_QueryTexture(test, NULL, NULL, &(txtDestRect.w), &(txtDestRect.h));
+        SDL_RenderCopy(renderer, test, NULL, &txtDestRect);
+    }
+
+}
 
 

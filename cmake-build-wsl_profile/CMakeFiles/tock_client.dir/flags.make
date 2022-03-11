@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/mnt/c/Users/adzer/CLionProjects/tock-client/C:/lib/SDL2-2.0.16/include -I/mnt/c/Users/adzer/CLionProjects/tock-client/C:/lib/SDL2_ttf/include -I/mnt/c/Users/adzer/CLionProjects/tock-client/C:/lib/SDL2_image-2.0.5/include -I/mnt/c/Users/adzer/CLionProjects/tock-client/C:/lib/CUnitLocal/CUnitLocal/include
+C_INCLUDES = -I/mnt/c/Users/adzer/CLionProjects/tock-client/C:/lib/SDL2-2.0.16/include -I/mnt/c/Users/adzer/CLionProjects/tock-client/C:/lib/SDL2_ttf/include -I/mnt/c/Users/adzer/CLionProjects/tock-client/C:/lib/SDL2_image-2.0.5/include
 
 C_FLAGS = -g -std=gnu99
 
