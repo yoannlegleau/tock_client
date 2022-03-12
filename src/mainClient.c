@@ -20,7 +20,8 @@
  */
  int main(int argc, char* args[]) {
     //lance le jeu dans la fenêtre principal
-    gameCreate();
+    Game *game = gameCreate(4);
+    gameStart(game);
 
     // ferme le jeu
     winDestroy();

@@ -20,6 +20,5 @@ SDL_Window * getWindow();
 
 void drawCircle(SDL_Renderer *renderer, int x, int y, int radius, SDL_Color color);
 void drawCircleBorder(SDL_Renderer *renderer, int x, int y, int radius, SDL_Color colorOut, int width , SDL_Color colorIn);
-bool playCard(enum Card * card,int location);
 
 #endif //TOCK_CLIENT_MAINSDL_H

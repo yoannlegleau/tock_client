@@ -12,6 +12,7 @@
 
 #include "../linkedlist.h"
 #include "../card.h"
+#include "../bord.h"
 
 /**
  * \brief structure represante un joueur
@@ -28,14 +29,14 @@ struct Player {
     /** \brief liste de carte representent la main du joueur */
     Linkedlist * cards;
 
-    enum Card (* play)(Player * p);
+    bool (*play)(Player *, Bord * bord);
 };
 
 Player * playerFactory( int id);
 
 void drawPlayer(const Player *player);
 
-bool play(Player *p);
+bool play(Player *p, Bord * bord);
 
 
 #endif //TOCK_CLIENT_PLAYER_H

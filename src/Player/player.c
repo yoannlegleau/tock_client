@@ -9,9 +9,7 @@
 #include <stdio.h>
 #include <malloc.h>
 #include "player.h"
-#include "../card.h"
 #include "../mainSDL.h"
-#include "../bord.h"
 
 
 Player * playerFactory( int id){
@@ -19,7 +17,7 @@ Player * playerFactory( int id){
     player->idPlayer = id;
     player->nbPionRantrer = 0;
     player->cards = linkedListFactory(sizeof(enum Card));
-    player->play = play;
+    //player->play = play;
     return player;
 }
 
@@ -28,12 +26,12 @@ void drawPlayer(const Player *player) {
     drawListe(player->cards,drawCard);
 }
 
-bool play(Player *p) {
-        Linkedlist * pownsLocations = getPlayerPansLocation(p);
+bool play(Player *p , Bord * bord) {
+        Linkedlist * pownsLocations = getPlayerPansLocation(bord, p);
         bool played = false;
         if (!isEmpty(pownsLocations))
             for (int j = 0; j <= length(p->cards); j++) {
-                played = playCard(get(p->cards,j), (int)getFirst(pownsLocations));
+                played = playCard(bord, get(p->cards,j), (int)getFirst(pownsLocations));
                 if(played){
                     printf("player %i a jouer ",p->idPlayer);
                     drawCard(get(p->cards,j));

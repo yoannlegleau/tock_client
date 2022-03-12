@@ -22,8 +22,6 @@
 
 #include <xmllite.h>
 
-
-
 /**
  * \brief Se tableux represente toutes les cases du plateu
  * \details la longeur varie selon le nombre de joueur car chaque jouer posed 18 plus 4 donc pour 4j 88 et 132 pour 6.
@@ -32,7 +30,7 @@
  */
 
 void drawPlayerHUD(SDL_Renderer *renderer, Player * player, TTF_Font *police, int x, int y);
-
+void rendererAll(Game *game, SDL_Renderer *pRenderer);
 
 
 //TODO Trouver une meilleur organisation
@@ -44,18 +42,13 @@ struct Rule {
 SDL_Rect txtDestRect,imgDestRect;
 TTF_Font *police = NULL;
 SDL_Texture *image_tex;
-Linkedlist *players;
 
-void playOnce(Linkedlist *players);
-
-Linkedlist *getPlayerPansLocation();
-
-void rendererAll(SDL_Renderer *pRenderer);
 
 Game * gameCreate(int nbPlayer){
     Game * game = malloc(sizeof(Game));
     game->bord = bordFactory(nbPlayer);
     game->players = linkedListFactory(sizeof(Player));
+    return game;
 }
 
 
@@ -65,24 +58,19 @@ Game * gameCreate(int nbPlayer){
  */
 void gameStart(Game * game) {
 
-    bord[88];
-    initBord(bord);
-
-
-    players = linkedListFactory(sizeof(Player));
 
     Player * player1 = playerFactory(1);
-    bord[0] = 1;
-    addLast(players,player1);
+    game->bord->bord[0] = (int *) 1;
+    addLast(game->players,player1);
     Player * player2 = playerFactory(2);
-    bord[18] = 2;
-    addLast(players,player2);
+    game->bord->bord[18] = (int *) 2;
+    addLast(game->players,player2);
     Player * player3 = playerFactory(3);
-    bord[36] = 3;
-    addLast(players,player3);
+    game->bord->bord[36] = (int *) 3;
+    addLast(game->players,player3);
     Player * player4 = playerFactory(4);
-    bord[54] = 4;
-    addLast(players,player4);
+    game->bord->bord[54] = (int *) 4;
+    addLast(game->players,player4);
 
 
 
@@ -180,11 +168,11 @@ void gameStart(Game * game) {
                         break;
                 }
             }
-            Player * p = getFirst(players);
+            Player * p = getFirst(game->players);
             if (isEmpty(p->cards)){
                 if(isEmpty(cards))
                     makeDeck(cards, gamRules);
-                distributeCards(cards, players);
+                distributeCards(cards, game->players);
             }
             drawPlayer(p);
             //TODO
@@ -193,9 +181,9 @@ void gameStart(Game * game) {
             // TODO ajouter l'affichage en simultaner
             //foreach(players,p->play);
 
-            for (int i = 0; i < length(players) ; i++) {
-                play(get(players,i));
-                rendererAll(renderer);
+            for (int i = 0; i < length(game->players) ; i++) {
+                play(get(game->players, i), game->bord);
+                rendererAll(game,renderer);
             }
 
         }
@@ -204,16 +192,16 @@ void gameStart(Game * game) {
     }
 }
 
-void rendererAll(SDL_Renderer *renderer) {
-    drawPlayerHUD(renderer,get(players,0),police, 10, 40);
-    drawPlayerHUD(renderer,get(players,1),police, 10, 500);
-    drawPlayerHUD(renderer,get(players,2),police, 1000, 40);
-    drawPlayerHUD(renderer,get(players,3),police, 1000, 500);
-    drawBord(renderer, 394, 64, bord);
+void rendererAll(Game *game, SDL_Renderer *renderer) {
+    drawPlayerHUD(renderer,get(game->players,0),police, 10, 40);
+    drawPlayerHUD(renderer,get(game->players,1),police, 10, 500);
+    drawPlayerHUD(renderer,get(game->players,2),police, 1000, 40);
+    drawPlayerHUD(renderer,get(game->players,3),police, 1000, 500);
+    drawBord(game->bord,renderer, 394, 64);
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_RenderCopy(renderer, image_tex, NULL, &imgDestRect);
 
-    drawBord(renderer, 394, 64, bord);
+    drawBord(game->bord,renderer, 394, 64);
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_RenderPresent(renderer);
     SDL_RenderClear(renderer);
@@ -226,31 +214,6 @@ void rendererAll(SDL_Renderer *renderer) {
     #endif
 }
 
-void playOnce(Linkedlist *players) {
-    int nbPlayer = length(players);
-    Player * p;
-    for (int i = 0; i < nbPlayer; i++) {
-        p = get(players,i);
-        Linkedlist * pownsLocations = getPlayerPansLocation(p);
-        bool played = false;
-        if (!isEmpty(pownsLocations))
-        for (int j = 0; j <= length(p->cards); j++) {
-            played = playCard(get(p->cards,j), (int)getFirst(pownsLocations));
-            if(played){
-                printf("player %i a jouer ",p->idPlayer);
-                drawCard(get(p->cards,j));
-                removeElem(p->cards,j);
-
-                break;
-            }
-        }
-        if (!played && !isEmpty(p->cards)){
-            printf("player %i a jeter ",p->idPlayer);
-            drawCard(getFirst(p->cards));
-            pollFirst(p->cards);
-        }
-    }
-}
 
 void drawPlayerHUD(SDL_Renderer *renderer, Player * player, TTF_Font *police, int x, int y) {
     char output[1024];
