@@ -2,9 +2,14 @@
 // Created by adzerake on 10/03/2022.
 //
 
+#include <stdio.h>
 #include "bord.h"
 #include "mainSDL.h"
 #include "Color.h"
+#include "linkedlist.h"
+#include "card.h"
+
+
 
 bool forward(Bord * bord, int location, int step);
 void move(Bord * bord, int from, int to);
@@ -38,10 +43,10 @@ int getLen(Bord * bord){
 /* ---------- Utilities ---------- */
 
 
-Linkedlist *getPlayerPansLocation(Bord * bord,Player * player) {
+Linkedlist *getPlayerPansLocation(Bord * bord, int playerId) {
     Linkedlist * locations = linkedListFactory(sizeof(int));
     for (int i = 0; i < 88; i++) {
-        if ( bord->bord[i] == player->idPlayer)
+        if ( bord->bord[i] == playerId)
             addLast(locations, i);
     }
     return locations;

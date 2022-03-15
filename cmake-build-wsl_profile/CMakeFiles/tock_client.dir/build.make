@@ -66,18 +66,18 @@ include CMakeFiles/tock_client.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/tock_client.dir/flags.make
 
-CMakeFiles/tock_client.dir/src/main.c.o: CMakeFiles/tock_client.dir/flags.make
-CMakeFiles/tock_client.dir/src/main.c.o: ../src/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/tock_client.dir/src/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tock_client.dir/src/main.c.o -c /mnt/c/Users/adzer/CLionProjects/tock-client/src/main.c
+CMakeFiles/tock_client.dir/src/mainClient.c.o: CMakeFiles/tock_client.dir/flags.make
+CMakeFiles/tock_client.dir/src/mainClient.c.o: ../src/mainClient.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/tock_client.dir/src/mainClient.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/tock_client.dir/src/mainClient.c.o -c /mnt/c/Users/adzer/CLionProjects/tock-client/src/mainClient.c
 
-CMakeFiles/tock_client.dir/src/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/tock_client.dir/src/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/adzer/CLionProjects/tock-client/src/main.c > CMakeFiles/tock_client.dir/src/main.c.i
+CMakeFiles/tock_client.dir/src/mainClient.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/tock_client.dir/src/mainClient.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/adzer/CLionProjects/tock-client/src/mainClient.c > CMakeFiles/tock_client.dir/src/mainClient.c.i
 
-CMakeFiles/tock_client.dir/src/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/tock_client.dir/src/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/adzer/CLionProjects/tock-client/src/main.c -o CMakeFiles/tock_client.dir/src/main.c.s
+CMakeFiles/tock_client.dir/src/mainClient.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/tock_client.dir/src/mainClient.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/adzer/CLionProjects/tock-client/src/mainClient.c -o CMakeFiles/tock_client.dir/src/mainClient.c.s
 
 CMakeFiles/tock_client.dir/src/game.c.o: CMakeFiles/tock_client.dir/flags.make
 CMakeFiles/tock_client.dir/src/game.c.o: ../src/game.c
@@ -185,7 +185,7 @@ CMakeFiles/tock_client.dir/src/pawn.c.s: cmake_force
 
 # Object files for target tock_client
 tock_client_OBJECTS = \
-"CMakeFiles/tock_client.dir/src/main.c.o" \
+"CMakeFiles/tock_client.dir/src/mainClient.c.o" \
 "CMakeFiles/tock_client.dir/src/game.c.o" \
 "CMakeFiles/tock_client.dir/src/mainSDL.c.o" \
 "CMakeFiles/tock_client.dir/src/linkedlist.c.o" \
@@ -198,7 +198,7 @@ tock_client_OBJECTS = \
 # External object files for target tock_client
 tock_client_EXTERNAL_OBJECTS =
 
-tock_client: CMakeFiles/tock_client.dir/src/main.c.o
+tock_client: CMakeFiles/tock_client.dir/src/mainClient.c.o
 tock_client: CMakeFiles/tock_client.dir/src/game.c.o
 tock_client: CMakeFiles/tock_client.dir/src/mainSDL.c.o
 tock_client: CMakeFiles/tock_client.dir/src/linkedlist.c.o

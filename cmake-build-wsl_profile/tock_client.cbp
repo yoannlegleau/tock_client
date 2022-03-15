@@ -121,7 +121,7 @@
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/linkedlist.h">
 			<Option target="tock_client"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/main.c">
+		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/mainClient.c">
 			<Option target="tock_client"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/mainSDL.c">

@@ -273,29 +273,29 @@ src/linkedlist.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/linkedlist.c.s
 .PHONY : src/linkedlist.c.s
 
-src/main.o: src/main.c.o
-.PHONY : src/main.o
+src/mainClient.o: src/mainClient.c.o
+.PHONY : src/mainClient.o
 
 # target to build an object file
-src/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/main.c.o
-.PHONY : src/main.c.o
+src/mainClient.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/mainClient.c.o
+.PHONY : src/mainClient.c.o
 
-src/main.i: src/main.c.i
-.PHONY : src/main.i
+src/mainClient.i: src/mainClient.c.i
+.PHONY : src/mainClient.i
 
 # target to preprocess a source file
-src/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/main.c.i
-.PHONY : src/main.c.i
+src/mainClient.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/mainClient.c.i
+.PHONY : src/mainClient.c.i
 
-src/main.s: src/main.c.s
-.PHONY : src/main.s
+src/mainClient.s: src/mainClient.c.s
+.PHONY : src/mainClient.s
 
 # target to generate assembly for a file
-src/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/main.c.s
-.PHONY : src/main.c.s
+src/mainClient.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/mainClient.c.s
+.PHONY : src/mainClient.c.s
 
 src/mainSDL.o: src/mainSDL.c.o
 .PHONY : src/mainSDL.o
@@ -372,9 +372,9 @@ help:
 	@echo "... src/linkedlist.o"
 	@echo "... src/linkedlist.i"
 	@echo "... src/linkedlist.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... src/mainClient.o"
+	@echo "... src/mainClient.i"
+	@echo "... src/mainClient.s"
 	@echo "... src/mainSDL.o"
 	@echo "... src/mainSDL.i"
 	@echo "... src/mainSDL.s"

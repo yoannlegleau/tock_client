@@ -6,13 +6,14 @@
 #define TOCK_CLIENT_BORD_H
 
 #include <SDL.h>
-#include "Player/player.h"
+#include "linkedlist.h"
 
 typedef struct Bord Bord;
 struct Bord {
     int ** bord;
     int nbPlayer;
 };
+
 
 /* ---------- Constructor ---------- */
 
@@ -26,7 +27,7 @@ int getLen(Bord * bord);
 
 /* ---------- Utilities ---------- */
 
-Linkedlist * getPlayerPansLocation(Bord * bord,Player * player);
+Linkedlist * getPlayerPansLocation(Bord * bord,int playerId );
 
 void drawBord(Bord * bord, SDL_Renderer *renderer, int x, int y);
 

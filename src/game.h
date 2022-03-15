@@ -18,7 +18,6 @@ struct Game {
     Linkedlist * players;
 };
 
-
 /**
  * \brief initialise la liste
  */

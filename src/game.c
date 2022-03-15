@@ -58,7 +58,6 @@ Game * gameCreate(int nbPlayer){
  */
 void gameStart(Game * game) {
 
-
     Player * player1 = playerFactory(1);
     game->bord->bord[0] = (int *) 1;
     addLast(game->players,player1);

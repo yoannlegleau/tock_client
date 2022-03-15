@@ -13,6 +13,7 @@
 #include "../linkedlist.h"
 #include "../card.h"
 #include "../bord.h"
+#include "stdbool.h"
 
 /**
  * \brief structure represante un joueur
@@ -29,14 +30,14 @@ struct Player {
     /** \brief liste de carte representent la main du joueur */
     Linkedlist * cards;
 
-    bool (*play)(Player *, Bord * bord);
+    int (*pt)(Player *, Bord *);
 };
 
 Player * playerFactory( int id);
 
 void drawPlayer(const Player *player);
 
-bool play(Player *p, Bord * bord);
+int play(Player *p, Bord * bord);
 
 
 #endif //TOCK_CLIENT_PLAYER_H

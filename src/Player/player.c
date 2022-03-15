@@ -12,12 +12,15 @@
 #include "../mainSDL.h"
 
 
+
+
+
 Player * playerFactory( int id){
     Player * player = malloc(sizeof(Player));
     player->idPlayer = id;
     player->nbPionRantrer = 0;
     player->cards = linkedListFactory(sizeof(enum Card));
-    //player->play = play;
+    player->pt = &play;
     return player;
 }
 
@@ -26,8 +29,8 @@ void drawPlayer(const Player *player) {
     drawListe(player->cards,drawCard);
 }
 
-bool play(Player *p , Bord * bord) {
-        Linkedlist * pownsLocations = getPlayerPansLocation(bord, p);
+int play(Player *p, Bord * bord) {
+        Linkedlist * pownsLocations = getPlayerPansLocation(bord, p->idPlayer);
         bool played = false;
         if (!isEmpty(pownsLocations))
             for (int j = 0; j <= length(p->cards); j++) {
