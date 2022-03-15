@@ -23,7 +23,7 @@
     SDL_Window* pWindow = getWindow();
 
     //lance le jeu dans la fenêtre principal
-    gameCreate(window);
+    menu(pWindow);
 
     // ferme le jeu
     winDestroy();

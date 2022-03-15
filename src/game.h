@@ -16,7 +16,7 @@
  * \brief initialise la liste
  * \param window fenetre d'affichage
  */
-void gameCreate(SDL_Window *window);
+void gameCreate(SDL_Window *window,SDL_Renderer* renderer);
 
 /**
  * \brief lancer le deroulement du jeux

@@ -60,7 +60,8 @@ void rendererAll(SDL_Renderer *pRenderer);
  * \brief demonstration du fonctionnement des librairie graphiques baser sur l'example de cours
  * \param window fenêtre principal
  */
-void gameCreate(SDL_Window *window) {
+void gameCreate(SDL_Window *window, SDL_Renderer* renderer) {
+  SDL_RenderClear(renderer);
 
     bord[88];
     initBord(bord);
@@ -99,7 +100,7 @@ void gameCreate(SDL_Window *window) {
 
 //Le pointeur vers la surface incluse dans la fenetre
     SDL_Surface *texte=NULL, *image=NULL;
-    SDL_Renderer *renderer=NULL;
+
 
 
     // Le pointeur vers notre police
@@ -107,11 +108,6 @@ void gameCreate(SDL_Window *window) {
 
 
 
-    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-    if(renderer == NULL){
-        fprintf(stderr, "Erreur à la création du renderer\n");
-        exit(EXIT_FAILURE);
-    }
 
 
     if( (police = TTF_OpenFont("assets/fonts/NewHiScore.ttf", 30)) == NULL){

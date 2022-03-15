@@ -136,6 +136,7 @@ if(pWindow){
 			if(e.button.x >= txt_optn1_R.x && e.button.x <= txt_optn1_R.x+txt_optn1_R.w && e.button.y >= txt_optn1_R.y && e.button.y <= txt_optn1_R.y+txt_optn1_R.h){
 				//Si on clique sur le bouton 1
         printf("Test on clique sur le bouton 1\n\n");
+				gameCreate(pWindow,renderer_menu);
 
 			}
 			else if(e.button.x >= txt_optn4_R.x && e.button.x <= txt_optn4_R.x+txt_optn4_R.w && e.button.y >= txt_optn4_R.y && e.button.y <= txt_optn4_R.y+txt_optn4_R.h){
@@ -190,9 +191,4 @@ TTF_CloseFont(police); //Doit être avant TTF_Quit()
 TTF_Quit();
   SDL_Quit();
   return 0;
-}
-
-void main() {
-  SDL_Window * pWindow = getWindow();
-  menu(pWindow);
 }
