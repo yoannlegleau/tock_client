@@ -62,7 +62,7 @@ void makeDeck(Linkedlist *cards, Linkedlist *gameRules) {
     clear(cards);
     enum Card * card = malloc(sizeof(enum Card));
     for (int i = 0; i < 4; ++i) {
-        for (enum Card c = one ; c <= thirteen; ++c) {
+        for (enum Card c = one ; c <= out; ++c) {
             card = malloc(sizeof(enum Card));
             *card = c;
             addFirst(cards,card);

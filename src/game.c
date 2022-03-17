@@ -96,7 +96,7 @@ void gameStart(Game * game) {
     // Une variable de couleur noire
 
 
-
+    window = getWindow();
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     if(renderer == NULL){
         fprintf(stderr, "Erreur à la création du renderer\n");
