@@ -11,9 +11,9 @@ const SDL_Color colorPlayer1 = {2, 3, 230};
 const SDL_Color colorPlayer2 = {223, 8 , 7};
 const SDL_Color colorPlayer3 = {251, 249, 27};
 const SDL_Color colorPlayer4 = {57, 147, 103};
-const SDL_Color colorPlayer1Light = {65, 65, 244};
-const SDL_Color colorPlayer2Light = {255, 98 , 98};
-const  SDL_Color colorPlayer3Light = {255, 254, 113};
-const SDL_Color colorPlayer4Light = {146, 206, 177};
+const SDL_Color colorPlayer1Light = {185, 185, 252};
+const SDL_Color colorPlayer2Light = {255, 177 , 177};
+const  SDL_Color colorPlayer3Light = {255, 255, 192};
+const SDL_Color colorPlayer4Light = {193, 231, 213};
 
 #endif //TOCK_CLIENT_COLOR_H

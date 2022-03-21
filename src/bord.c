@@ -7,10 +7,7 @@
 #include "mainSDL.h"
 #include "Color.h"
 
-
-bool forward(Bord * bord, int location, int step);
-void move(Bord * bord, int from, int to);
-bool outPawn(Bord * bord, int pId);
+#define PLAYERBORDLENTH 18;
 
 /* ---------- Constructor ---------- */
 
@@ -38,9 +35,6 @@ int getLen(Bord * bord){
     return ((18*getNbPlayer(bord))+(4*getNbPlayer(bord)));
 }
 
-/* ---------- Utilities ---------- */
-
-
 Linkedlist *getPlayerPansLocation(Bord * bord, int playerId) {
     Linkedlist * locations = linkedListFactory(sizeof(int));
     for (int i = 0; i < 88; i++) {
@@ -48,6 +42,84 @@ Linkedlist *getPlayerPansLocation(Bord * bord, int playerId) {
             addLast(locations, i);
     }
     return locations;
+}
+
+int getBordLen(Bord * bord){
+    return getNbPlayer(bord) * PLAYERBORDLENTH;
+}
+
+int getStart(int pId){
+    return ((18*pId)-18);
+}
+
+int getHomeEntry(int pId){
+    return ((72+(pId*18)-20)%72);
+}
+
+int getHomeStart(int pId){
+
+}
+
+int getInHomePosition(Bord * bord, int location){
+    if (isOnBord(bord, location))
+        return -1;
+    return (location- getBordLen(bord))%4+1;
+}
+
+/* ---------- Tests ---------- */
+
+bool isOnBord(Bord * bord, int location){
+    return (0 <= location && location < getBordLen(bord));
+}
+
+bool pawnOnPath(Bord * bord, int location, int step){
+    bool ret = false;
+    for (int i = location+1; i <= step+location; i++) {
+        if (bord->bord[i] != 0)
+            return true;
+    }
+    return ret;
+}
+
+/* ---------- Utilities ---------- */
+
+bool forward(Bord * bord, int location, int step){
+    int player = bord->bord[location];
+    if (location >= getBordLen(bord)){
+        int inHomePosition = getInHomePosition(bord, location);
+        if (inHomePosition + step <= 4 && !pawnOnPath(bord, location, step)) {
+            move(bord, location, location + step);
+            return true;
+        } else return false;
+    }
+    int homeStart = getHomeStart(player) ;
+    if((location+step) > homeStart && (location + step) < homeStart + 4 && !pawnOnPath(bord, homeStart, location+step-homeStart) ){
+        int destination = location + step - homeStart - 1;
+        move(bord,location,72+(4*(player-1)+destination));
+        return true;
+    }
+    if (bord->bord[(location+step)%72] != 0)
+        printf("----- %i a tuer %i -----\n",player,bord[(location+step)%72]);
+    move(bord, location,(location+step)%72);
+    return  true;
+}
+
+void move(Bord * bord, int from, int to){
+    bord->bord[to] = bord->bord[from];
+    bord->bord[from] = 0;
+}
+
+bool outPawn(Bord * bord, int pId) {
+    if (pId == 3)
+        printf("test");
+    bool ret = false;
+    Linkedlist * pawns = getPlayerPansLocation(bord, pId);
+    if (length(pawns) < 4){
+        bord->bord[getStart(pId)] = pId;
+        ret= true;
+    }
+    destroy(pawns);
+    return ret;
 }
 
 /* ---------- Old ---------- */
@@ -223,82 +295,6 @@ void drawBord(Bord * bord, SDL_Renderer *renderer, int x, int y){
     }
 }
 
-bool pawnOnPath(int location, int step){
-    //TODO pawnOnPath(int location, int step)
-    return false;
-}
 
-bool forward(Bord * bord, int location, int step){
-    int player = bord->bord[location];
-    if (location > 72)
-        if (3-(location-72)%4 >= step && !pawnOnPath(location,step)){
-            move(bord,location,location+step);
-            return true;
-        }
-        else return false;
-    int playerEntry = ((72+(player*18)-20)%72);
-    if((location+step)>playerEntry && (location+step)<playerEntry+4){
-        int destination = location+step-playerEntry-1;
-        move(bord,location,72+(4*(player-1)+destination));
-        return true;
-    }
-    if (bord->bord[(location+step)%72] != 0)
-        printf("----- %i a tuer %i -----\n",player,bord[(location+step)%72]);
-    move(bord, location,(location+step)%72);
-    return  true;
-}
 
-void move(Bord * bord, int from, int to){
-    bord->bord[to] = bord->bord[from];
-    bord->bord[from] = 0;
-}
 
-bool outPawn(Bord * bord, int pId) {
-    bool ret = false;
-    Linkedlist * pawns = getPlayerPansLocation(bord, pId);
-    int playerstart = (18*pId)-18;
-    if (length(pawns) < 4){
-        bord->bord[playerstart] = pId ;
-        ret = true;
-    }
-    destroy(pawns);
-    return ret;
-}
-
-bool playCard(Bord * bord, enum Card * card, int location) {
-    switch (*card) {
-        case one:
-            return forward(bord, location, 1);
-        case two:
-            return forward(bord, location, 2);
-        case three:
-            return forward(bord, location, 3);
-        case four:
-            return forward(bord,location, 4);
-        case five:
-            return forward(bord,location, 5);
-        case six:
-            return forward(bord, location, 6);
-        case seven:
-            return forward(bord, location, 7);
-        case eight:
-            return forward(bord, location, 8);
-        case nine:
-            return forward(bord, location, 9);
-        case ten:
-            return forward(bord, location, 10);
-        case eleven:
-            return forward(bord, location, 11);
-        case twelve:
-            return forward(bord, location, 12);
-        case thirteen:
-            return forward(bord, location, 13);
-        case thirteen_out:
-            if(forward(bord, location, 13))
-                return true;
-            if(outPawn(bord, *(bord->bord[location])))
-                return true;
-        default:
-            return false;
-    }
-}

@@ -118,19 +118,24 @@ void * getFirst( Linkedlist * l);
 void * getLast( Linkedlist * l);
 
 /**
- * \brief Renvoie le premiere élément dans cette liste et le supprime.
+ * \brief Renvoie le premiere élément dans la liste et le supprime.
  * \param l
  * \return
  */
 void * pollFirst(Linkedlist * l);
 
 /**
- * \brief afficher le contenu de la liste
- * \param l liter a afficher
- * \param draw fonction draw'affichage de l'object
+ * \brief Renvoie un élément aléatoire dans la liste et le supprime.
+ * \param l
+ * \return
  */
-void drawListe(Linkedlist *l,void (*draw)(void *));
+void * pollRandom(Linkedlist * l);
 
+/**
+ * \brief parcoure de la liste
+ * \param l liste de travaille
+ * \param pVoid fonction utiliser par toutes les objects
+ */
 void foreach(Linkedlist * l, void (*pVoid)(void *));
 
 

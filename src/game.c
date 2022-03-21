@@ -59,16 +59,16 @@ Game * gameCreate(int nbPlayer){
 void gameStart(Game * game) {
 
     Player * player1 = playerFactory(1);
-    game->bord->bord[0] = (int *) 1;
+    //game->bord->bord[0] = (int *) 1;
     addLast(game->players,player1);
     Player * player2 = playerFactory(2);
-    game->bord->bord[18] = (int *) 2;
+    //game->bord->bord[18] = (int *) 2;
     addLast(game->players,player2);
     Player * player3 = playerFactory(3);
-    game->bord->bord[36] = (int *) 3;
+    //game->bord->bord[36] = (int *) 3;
     addLast(game->players,player3);
     Player * player4 = playerFactory(4);
-    game->bord->bord[54] = (int *) 4;
+    //game->bord->bord[54] = (int *) 4;
     addLast(game->players,player4);
 
 
@@ -204,7 +204,7 @@ void rendererAll(Game *game, SDL_Renderer *renderer) {
     sleep(100);
 #endif
 #ifdef _WIN32
-    Sleep(100);
+    //Sleep(100);
 #endif
 }
 

@@ -39,6 +39,7 @@ Elem * elemFactory( Linkedlist * l, void * o){
     Elem * elem = malloc(sizeof(Elem));
     elem->object=o;
     elem->next= elem;
+
     return elem;
 }
 
@@ -111,7 +112,7 @@ void removeElem(Linkedlist *l, int i) {
     l->length--;
 
     //FIXME fuite de memoire
-    free(elem);
+    //free(elem);
 }
 
 void removeFirst(Linkedlist *l) {
@@ -166,30 +167,21 @@ void *pollFirst(Linkedlist *l) {
     return result;
 }
 
-/**
- * \brief affiche le contenu de la liste
- * \param l liste cible
- * \param draw fonction d'affichage
- * \deprecated refine a utiliser forEach utiliser foreach
- */
-void drawListe(Linkedlist *l,void (*draw)(void * o)){
-    if(isEmpty(l))
-        return;
-    Elem *iterator = l->last->next;
-    do {
-        draw(iterator->object);
-        iterator = iterator->next;
-    }while (iterator != l->last->next);
+void * pollRandom(Linkedlist * l) {
+    if (isEmpty(l))
+        return NULL;
+    int index = rand() % l->length;
+    void *result = get(l, index);
+    removeElem(l, index);
+    return result;
 }
 
 void foreach(Linkedlist *l, void (*pVoid)(void *)) {
-    if(isEmpty(l))
-        return;
     Elem *iterator = l->last->next;
-    do {
+    for(int i = 0; i < l->length; ++i) {
         pVoid(iterator->object);
         iterator = iterator->next;
-    }while (iterator != l->last->next);
+    }
 }
 
 

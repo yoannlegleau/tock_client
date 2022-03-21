@@ -86,7 +86,7 @@ void distributeCards(Linkedlist *cards, Linkedlist *players) {
     for (int i = 0; i < nbPlayer; i++) {
         p = get(players,i);
         for (int j = 0; j < nbDistributCards; j++) {
-            addLast(p->cards, pollFirst(cards));
+            addLast(p->cards, pollRandom(cards));
         }
     }
 

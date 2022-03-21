@@ -24,9 +24,6 @@ struct Player {
     /** \brief Id unique d'un joueur */
     int idPlayer;
 
-    /** \brief nombre de pion que le joueur a reusit a meter dans l'arriver */
-    int nbPionRantrer; //TODO trouver un meilleur nom
-
     /** \brief liste de carte representent la main du joueur */
     Linkedlist * cards;
 
