@@ -290,7 +290,7 @@ bool playCard(Bord * bord, enum Card * card, int location) {
             return forward(bord, location, 12);
         case thirteen:
             return forward(bord, location, 13);
-        case out:
+        case thirteen_out:
             outPawn(bord, bord->bord[location]);
         default:
             return false;
