@@ -6,13 +6,11 @@
 #include "bord.h"
 #include "mainSDL.h"
 #include "Color.h"
-#include "linkedlist.h"
-#include "card.h"
-
 
 
 bool forward(Bord * bord, int location, int step);
 void move(Bord * bord, int from, int to);
+void outPawn(Bord * bord, int pId);
 
 /* ---------- Constructor ---------- */
 
@@ -255,7 +253,16 @@ void move(Bord * bord, int from, int to){
     bord->bord[from] = 0;
 }
 
-bool playCard(Bord * bord, enum Card * card,int location) {
+void outPawn(Bord * bord, int pId) {
+    Linkedlist * pawns = getPlayerPansLocation(bord, pId);
+    int playerstart = (18*pId)-18;
+    if (length(pawns) < 4){
+        bord->bord[playerstart] = pId ;
+    }
+    destroy(pawns);
+}
+
+bool playCard(Bord * bord, enum Card * card, int location) {
     switch (*card) {
         case one:
             return forward(bord, location, 1);
@@ -283,6 +290,8 @@ bool playCard(Bord * bord, enum Card * card,int location) {
             return forward(bord, location, 12);
         case thirteen:
             return forward(bord, location, 13);
+        case out:
+            outPawn(bord, bord->bord[location]);
         default:
             return false;
     }
