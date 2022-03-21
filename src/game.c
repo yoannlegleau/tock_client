@@ -36,7 +36,7 @@ void rendererAll(Game *game, SDL_Renderer *pRenderer);
 //TODO Trouver une meilleur organisation
 typedef struct Rule Rule;
 struct Rule {
-   bool ruleV;
+    bool ruleV;
 };
 
 SDL_Rect txtDestRect,imgDestRect;
@@ -97,98 +97,92 @@ void gameStart(Game * game) {
 
 
 
-    window = getWindow();
-    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-    if(renderer == NULL){
-        fprintf(stderr, "Erreur à la création du renderer\n");
-        exit(EXIT_FAILURE);
-    }
-
-    if( (police = TTF_OpenFont("assets/fonts/NewHiScore.ttf", 30)) == NULL){
-        fprintf(stderr, "erreur chargement font\n");
-        exit(EXIT_FAILURE);
-    }
-
-    // load sample.png into image
-
-    SDL_RWops *rwop=SDL_RWFromFile("assets/Carte_2.png", "rb");
-    image=IMG_LoadPNG_RW(rwop);
-    if(!image) {
-        printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
-    }
-
-    image_tex = SDL_CreateTextureFromSurface(renderer, image);
-    if(!image_tex){
-        fprintf(stderr, "Erreur a la creation du rendu de l'image : %s\n", SDL_GetError());
-        exit(EXIT_FAILURE);
-    }
-    SDL_FreeSurface(image); /* on a la texture, plus besoin de l'image */
-
-
-    if( window )
-    {
-        int running = 1;
-        while(running) {
-            SDL_Event e;
-            while(SDL_PollEvent(&e)) {
-                switch(e.type) {
-                    case SDL_QUIT: running = 0;
-                        break;
-                    case SDL_WINDOWEVENT:
-                        switch(e.window.event){
-                            case SDL_WINDOWEVENT_EXPOSED:
-                            case SDL_WINDOWEVENT_SIZE_CHANGED:
-                            case SDL_WINDOWEVENT_RESIZED:
-                            case SDL_WINDOWEVENT_SHOWN:
-                                /* Le fond de la fenêtre sera blanc */
-                                SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-                                SDL_RenderClear(renderer);
-
-                                /* Ajout du texte en noir */
-                                SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-
-                                //dessin du plateux
-
-
-                                /* Ajout de la seconde image à une certaine position */
-                                imgDestRect.y = 600;
-                                imgDestRect.x = 640;
-                                SDL_QueryTexture(image_tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
-
-
-                                // Ajout de la seconde image à une autre position
-                                SDL_RenderCopy(renderer, image_tex, NULL, &imgDestRect);
-
-
-                                /* On fait le rendu ! */
-
-
-                                break;
-                        }
-                        break;
-                }
-            }
-            Player * p = getFirst(game->players);
-            if (isEmpty(p->cards)){
-                if(isEmpty(cards))
-                    makeDeck(cards, gamRules);
-                distributeCards(cards, game->players);
-            }
-            drawPlayer(p);
-            //TODO
-            //playOnce(players);
-
-            // TODO ajouter l'affichage en simultaner
-            //foreach(players,p->play);
-
-            for (int i = 0; i < length(game->players) ; i++) {
-                play(get(game->players, i), game->bord);
-                rendererAll(game,renderer);
-            }
-
+    if(isWinCreat()){
+        renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+        if(renderer == NULL){
+            fprintf(stderr, "Erreur à la création du renderer\n");
+            exit(EXIT_FAILURE);
         }
-    } else {
-        fprintf(stderr,"Erreur de création de la fenêtre: %s\n",SDL_GetError());
+
+        if( (police = TTF_OpenFont("assets/fonts/NewHiScore.ttf", 30)) == NULL){
+            fprintf(stderr, "erreur chargement font\n");
+            exit(EXIT_FAILURE);
+        }
+
+        // load sample.png into image
+
+        SDL_RWops *rwop=SDL_RWFromFile("assets/Carte_2.png", "rb");
+        image=IMG_LoadPNG_RW(rwop);
+        if(!image) {
+            printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
+        }
+
+        image_tex = SDL_CreateTextureFromSurface(renderer, image);
+        if(!image_tex){
+            fprintf(stderr, "Erreur a la creation du rendu de l'image : %s\n", SDL_GetError());
+            exit(EXIT_FAILURE);
+        }
+        SDL_FreeSurface(image); /* on a la texture, plus besoin de l'image */
+    }
+    int running = 1;
+    while(running) {
+        SDL_Event e;
+        while(SDL_PollEvent(&e)) {
+            switch(e.type) {
+                case SDL_QUIT: running = 0;
+                    break;
+                case SDL_WINDOWEVENT:
+                    switch(e.window.event){
+                        case SDL_WINDOWEVENT_EXPOSED:
+                        case SDL_WINDOWEVENT_SIZE_CHANGED:
+                        case SDL_WINDOWEVENT_RESIZED:
+                        case SDL_WINDOWEVENT_SHOWN:
+                            /* Le fond de la fenêtre sera blanc */
+                            SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+                            SDL_RenderClear(renderer);
+
+                            /* Ajout du texte en noir */
+                            SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+
+                            //dessin du plateux
+
+
+                            /* Ajout de la seconde image à une certaine position */
+                            imgDestRect.y = 600;
+                            imgDestRect.x = 640;
+                            SDL_QueryTexture(image_tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
+
+
+                            // Ajout de la seconde image à une autre position
+                            SDL_RenderCopy(renderer, image_tex, NULL, &imgDestRect);
+
+
+                            /* On fait le rendu ! */
+
+
+                            break;
+                    }
+                    break;
+            }
+        }
+        Player * p = getFirst(game->players);
+        if (isEmpty(p->cards)){
+            if(isEmpty(cards))
+                makeDeck(cards, gamRules);
+            distributeCards(cards, game->players);
+        }
+        drawPlayer(p);
+        //TODO
+        //playOnce(players);
+
+        // TODO ajouter l'affichage en simultaner
+        //foreach(players,p->play);
+
+        for (int i = 0; i < length(game->players) ; i++) {
+            play(get(game->players, i), game->bord);
+            rendererAll(game,renderer);
+        }
+
     }
 }
 
@@ -206,12 +200,12 @@ void rendererAll(Game *game, SDL_Renderer *renderer) {
     SDL_RenderPresent(renderer);
     SDL_RenderClear(renderer);
 
-    #ifdef __unix__
-        sleep(100);
-    #endif
-    #ifdef _WIN32
-        Sleep(100);
-    #endif
+#ifdef __unix__
+    sleep(100);
+#endif
+#ifdef _WIN32
+    Sleep(100);
+#endif
 }
 
 

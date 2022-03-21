@@ -129,12 +129,26 @@ tock_client/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/build
 .PHONY : tock_client/fast
 
+#=============================================================================
+# Target rules for targets named tock_server
+
+# Build rule for target.
+tock_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tock_server
+.PHONY : tock_server
+
+# fast build rule for target.
+tock_server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/build
+.PHONY : tock_server/fast
+
 src/Player/player.o: src/Player/player.c.o
 .PHONY : src/Player/player.o
 
 # target to build an object file
 src/Player/player.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/Player/player.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/Player/player.c.o
 .PHONY : src/Player/player.c.o
 
 src/Player/player.i: src/Player/player.c.i
@@ -143,6 +157,7 @@ src/Player/player.i: src/Player/player.c.i
 # target to preprocess a source file
 src/Player/player.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/Player/player.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/Player/player.c.i
 .PHONY : src/Player/player.c.i
 
 src/Player/player.s: src/Player/player.c.s
@@ -151,6 +166,7 @@ src/Player/player.s: src/Player/player.c.s
 # target to generate assembly for a file
 src/Player/player.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/Player/player.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/Player/player.c.s
 .PHONY : src/Player/player.c.s
 
 src/bord.o: src/bord.c.o
@@ -159,6 +175,7 @@ src/bord.o: src/bord.c.o
 # target to build an object file
 src/bord.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/bord.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/bord.c.o
 .PHONY : src/bord.c.o
 
 src/bord.i: src/bord.c.i
@@ -167,6 +184,7 @@ src/bord.i: src/bord.c.i
 # target to preprocess a source file
 src/bord.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/bord.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/bord.c.i
 .PHONY : src/bord.c.i
 
 src/bord.s: src/bord.c.s
@@ -175,6 +193,7 @@ src/bord.s: src/bord.c.s
 # target to generate assembly for a file
 src/bord.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/bord.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/bord.c.s
 .PHONY : src/bord.c.s
 
 src/card.o: src/card.c.o
@@ -183,6 +202,7 @@ src/card.o: src/card.c.o
 # target to build an object file
 src/card.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/card.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/card.c.o
 .PHONY : src/card.c.o
 
 src/card.i: src/card.c.i
@@ -191,6 +211,7 @@ src/card.i: src/card.c.i
 # target to preprocess a source file
 src/card.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/card.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/card.c.i
 .PHONY : src/card.c.i
 
 src/card.s: src/card.c.s
@@ -199,6 +220,7 @@ src/card.s: src/card.c.s
 # target to generate assembly for a file
 src/card.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/card.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/card.c.s
 .PHONY : src/card.c.s
 
 src/game.o: src/game.c.o
@@ -207,6 +229,7 @@ src/game.o: src/game.c.o
 # target to build an object file
 src/game.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/game.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/game.c.o
 .PHONY : src/game.c.o
 
 src/game.i: src/game.c.i
@@ -215,6 +238,7 @@ src/game.i: src/game.c.i
 # target to preprocess a source file
 src/game.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/game.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/game.c.i
 .PHONY : src/game.c.i
 
 src/game.s: src/game.c.s
@@ -223,6 +247,7 @@ src/game.s: src/game.c.s
 # target to generate assembly for a file
 src/game.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/game.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/game.c.s
 .PHONY : src/game.c.s
 
 src/gameRule.o: src/gameRule.c.o
@@ -231,6 +256,7 @@ src/gameRule.o: src/gameRule.c.o
 # target to build an object file
 src/gameRule.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/gameRule.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/gameRule.c.o
 .PHONY : src/gameRule.c.o
 
 src/gameRule.i: src/gameRule.c.i
@@ -239,6 +265,7 @@ src/gameRule.i: src/gameRule.c.i
 # target to preprocess a source file
 src/gameRule.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/gameRule.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/gameRule.c.i
 .PHONY : src/gameRule.c.i
 
 src/gameRule.s: src/gameRule.c.s
@@ -247,6 +274,7 @@ src/gameRule.s: src/gameRule.c.s
 # target to generate assembly for a file
 src/gameRule.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/gameRule.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/gameRule.c.s
 .PHONY : src/gameRule.c.s
 
 src/linkedlist.o: src/linkedlist.c.o
@@ -255,6 +283,7 @@ src/linkedlist.o: src/linkedlist.c.o
 # target to build an object file
 src/linkedlist.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/linkedlist.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/linkedlist.c.o
 .PHONY : src/linkedlist.c.o
 
 src/linkedlist.i: src/linkedlist.c.i
@@ -263,6 +292,7 @@ src/linkedlist.i: src/linkedlist.c.i
 # target to preprocess a source file
 src/linkedlist.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/linkedlist.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/linkedlist.c.i
 .PHONY : src/linkedlist.c.i
 
 src/linkedlist.s: src/linkedlist.c.s
@@ -271,6 +301,7 @@ src/linkedlist.s: src/linkedlist.c.s
 # target to generate assembly for a file
 src/linkedlist.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/linkedlist.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/linkedlist.c.s
 .PHONY : src/linkedlist.c.s
 
 src/mainClient.o: src/mainClient.c.o
@@ -303,6 +334,7 @@ src/mainSDL.o: src/mainSDL.c.o
 # target to build an object file
 src/mainSDL.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/mainSDL.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/mainSDL.c.o
 .PHONY : src/mainSDL.c.o
 
 src/mainSDL.i: src/mainSDL.c.i
@@ -311,6 +343,7 @@ src/mainSDL.i: src/mainSDL.c.i
 # target to preprocess a source file
 src/mainSDL.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/mainSDL.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/mainSDL.c.i
 .PHONY : src/mainSDL.c.i
 
 src/mainSDL.s: src/mainSDL.c.s
@@ -319,7 +352,32 @@ src/mainSDL.s: src/mainSDL.c.s
 # target to generate assembly for a file
 src/mainSDL.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/mainSDL.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/mainSDL.c.s
 .PHONY : src/mainSDL.c.s
+
+src/mainServer.o: src/mainServer.c.o
+.PHONY : src/mainServer.o
+
+# target to build an object file
+src/mainServer.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/mainServer.c.o
+.PHONY : src/mainServer.c.o
+
+src/mainServer.i: src/mainServer.c.i
+.PHONY : src/mainServer.i
+
+# target to preprocess a source file
+src/mainServer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/mainServer.c.i
+.PHONY : src/mainServer.c.i
+
+src/mainServer.s: src/mainServer.c.s
+.PHONY : src/mainServer.s
+
+# target to generate assembly for a file
+src/mainServer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/mainServer.c.s
+.PHONY : src/mainServer.c.s
 
 src/pawn.o: src/pawn.c.o
 .PHONY : src/pawn.o
@@ -327,6 +385,7 @@ src/pawn.o: src/pawn.c.o
 # target to build an object file
 src/pawn.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/pawn.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/pawn.c.o
 .PHONY : src/pawn.c.o
 
 src/pawn.i: src/pawn.c.i
@@ -335,6 +394,7 @@ src/pawn.i: src/pawn.c.i
 # target to preprocess a source file
 src/pawn.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/pawn.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/pawn.c.i
 .PHONY : src/pawn.c.i
 
 src/pawn.s: src/pawn.c.s
@@ -343,6 +403,7 @@ src/pawn.s: src/pawn.c.s
 # target to generate assembly for a file
 src/pawn.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/pawn.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/pawn.c.s
 .PHONY : src/pawn.c.s
 
 # Help Target
@@ -354,6 +415,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... tock_client"
+	@echo "... tock_server"
 	@echo "... src/Player/player.o"
 	@echo "... src/Player/player.i"
 	@echo "... src/Player/player.s"
@@ -378,6 +440,9 @@ help:
 	@echo "... src/mainSDL.o"
 	@echo "... src/mainSDL.i"
 	@echo "... src/mainSDL.s"
+	@echo "... src/mainServer.o"
+	@echo "... src/mainServer.i"
+	@echo "... src/mainServer.s"
 	@echo "... src/pawn.o"
 	@echo "... src/pawn.i"
 	@echo "... src/pawn.s"

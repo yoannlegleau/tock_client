@@ -1,8 +1,8 @@
 /**
  * \file main.c
  * \brief gestion de l'application
- * \author JARRIER Allan
- * \date 20/01/2022
+ * \author LE GLEAU yoann
+ * \date 21/03/2022
  *
  */
 
@@ -13,19 +13,15 @@
 #include "game.h"
 
 /**
- * \brief lancement du jeu et fermeture
+ * \brief lancement du server de jeux (pour le moment un seule partie)
  * \param argc
  * \param args
  * \return
  */
- int main(int argc, char* args[]) {
-    //lance le jeu dans la fenêtre principal
-    getWindow();
+int main(int argc, char* args[]) {
+    //lance le jeu
     Game *game = gameCreate(4);
     gameStart(game);
-
-    // ferme le jeu
-    winDestroy();
 
     return 0;
 }

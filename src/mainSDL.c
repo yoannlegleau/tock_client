@@ -21,9 +21,13 @@ SDL_Window *window = NULL;
  * \return pointeur vers l'écran principal
  */
 SDL_Window * getWindow(){
-    if(window == NULL)
+    if(!isWinCreat())
         winCreate();
     return window;
+}
+
+bool isWinCreat(){
+    return window != NULL;
 }
 
 /**

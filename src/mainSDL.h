@@ -18,6 +18,8 @@ void winCreate();
 void winDestroy();
 SDL_Window * getWindow();
 
+bool isWinCreat();
+
 void drawCircle(SDL_Renderer *renderer, int x, int y, int radius, SDL_Color color);
 void drawCircleBorder(SDL_Renderer *renderer, int x, int y, int radius, SDL_Color colorOut, int width , SDL_Color colorIn);
 
