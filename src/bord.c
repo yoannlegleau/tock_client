@@ -10,7 +10,7 @@
 
 bool forward(Bord * bord, int location, int step);
 void move(Bord * bord, int from, int to);
-void outPawn(Bord * bord, int pId);
+bool outPawn(Bord * bord, int pId);
 
 /* ---------- Constructor ---------- */
 
@@ -253,13 +253,16 @@ void move(Bord * bord, int from, int to){
     bord->bord[from] = 0;
 }
 
-void outPawn(Bord * bord, int pId) {
+bool outPawn(Bord * bord, int pId) {
+    bool ret = false;
     Linkedlist * pawns = getPlayerPansLocation(bord, pId);
     int playerstart = (18*pId)-18;
     if (length(pawns) < 4){
         bord->bord[playerstart] = pId ;
+        ret = true;
     }
     destroy(pawns);
+    return ret;
 }
 
 bool playCard(Bord * bord, enum Card * card, int location) {
@@ -291,7 +294,8 @@ bool playCard(Bord * bord, enum Card * card, int location) {
         case thirteen:
             return forward(bord, location, 13);
         case thirteen_out:
-            outPawn(bord, bord->bord[location]);
+            //return forward(bord, location, 13);
+            return outPawn(bord, bord->bord[location]);
         default:
             return false;
     }

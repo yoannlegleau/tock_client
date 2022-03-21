@@ -54,6 +54,9 @@ void drawCard(const enum Card * card){
         case thirteen:
             printf("thirteen\n");
             break;
+        case thirteen_out:
+            printf("thirteen_out\n");
+            break;
             //TODO ajouter les autre cartes
     }
 }
@@ -63,8 +66,11 @@ void makeDeck(Linkedlist *cards, Linkedlist *gameRules) {
     enum Card * card ;
     for (int i = 0; i < 4; ++i) {
         for (enum Card c = one ; c <= thirteen; ++c) {
+
             card = malloc(sizeof(enum Card));
             *card = c;
+            if(*card == thirteen)
+                 *card = thirteen_out;
             addFirst(cards,card);
         }
     }
