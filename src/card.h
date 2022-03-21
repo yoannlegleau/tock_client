@@ -19,7 +19,7 @@
  * \brief chaque enume corespon a une action distinct
  */
 enum Card{one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, eighteen,
-        swap, eleven_out };
+        swap, thirteen_out };
 
 /**
  * \brief affiche le nom dew catres dans le terminal

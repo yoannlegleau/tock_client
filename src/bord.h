@@ -7,6 +7,7 @@
 
 #include <SDL.h>
 #include "linkedlist.h"
+#include "card.h"
 
 typedef struct Bord Bord;
 struct Bord {

@@ -60,7 +60,7 @@ void drawCard(const enum Card * card){
 
 void makeDeck(Linkedlist *cards, Linkedlist *gameRules) {
     clear(cards);
-    enum Card * card = malloc(sizeof(enum Card));
+    enum Card * card ;
     for (int i = 0; i < 4; ++i) {
         for (enum Card c = one ; c <= thirteen; ++c) {
             card = malloc(sizeof(enum Card));
