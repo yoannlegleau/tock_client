@@ -31,20 +31,22 @@ void drawPlayer(const Player *player) {
 int play(Player *p, Bord * bord) {
     Linkedlist * pownsLocations = getPlayerPansLocation(bord, p->idPlayer);
     bool played = false;
-    for (int j = 0; j <= length(p->cards); j++) {
-        played = playCard(p ,bord, get(p->cards,j), (int)getFirst(pownsLocations));
-        if(played){
-            printf("player %i a jouer ",p->idPlayer);
-            drawCard(get(p->cards,j));
-            removeElem(p->cards,j);
-            return true;
+    for (int i = length(pownsLocations) ; i >= 0 ; i--) {
+        int pownLocation = (int) get(pownsLocations, i);
+        for (int j = 0; j <= length(p->cards); j++) {
+            played = playCard(p, bord, get(p->cards, j), pownLocation);
+            if (played) {
+                //printf("player %i a jouer ", p->idPlayer);
+                //drawCard(get(p->cards, j));
+                removeElem(p->cards, j);
+                return true;
+            }
         }
     }
     if (!played && !isEmpty(p->cards)){
         printf("player %i a jeter ",p->idPlayer);
         drawCard(getFirst(p->cards));
         pollFirst(p->cards);
-
     }
     return false;
 }

@@ -28,16 +28,21 @@ int getLen(Bord * bord);
 Linkedlist * getPlayerPansLocation(Bord * bord,int playerId );
 int getStart(int pId);
 int getHomeEntry(int pId);
-int getHomeStart(int pId);
+int getHomeStart(Bord * bord, int pId);
+int getInHomePosition(Bord * bord, int location);
+int getStepToHome(Bord * bord, int location, int pId);
+
 
 /* ---------- Tests ---------- */
 
 bool isOnBord(Bord * bord, int location);
 bool pawnOnPath(Bord * bord, int location, int step);
+bool isWin(Bord * bord, int pId);
 
 /* ---------- Utilities ---------- */
 
 bool forward(Bord * bord, int location, int step);
+bool backward(Bord * bord, int location, int step);
 void move(Bord * bord, int from, int to);
 bool outPawn(Bord * bord, int pId);
 

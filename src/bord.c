@@ -7,12 +7,12 @@
 #include "mainSDL.h"
 #include "Color.h"
 
-#define PLAYERBORDLENTH 18;
+#define PLAYERBORDLENTH 18
 
 /* ---------- Constructor ---------- */
 
 Bord * bordFactory(int nbPlayer){
-    Bord * bord = malloc(sizeof(sizeof(Bord)));
+    Bord * bord = malloc(sizeof(Bord));
     bord->nbPlayer = nbPlayer;
     bord->bord = malloc(sizeof(int)*(getLen(bord)));
     initBord(bord);
@@ -37,9 +37,10 @@ int getLen(Bord * bord){
 
 Linkedlist *getPlayerPansLocation(Bord * bord, int playerId) {
     Linkedlist * locations = linkedListFactory(sizeof(int));
-    for (int i = 0; i < 88; i++) {
+    int arrayLen = getLen(bord) + 4* bord->nbPlayer;
+    for (int i = 0; i < arrayLen; i++) {
         if ( bord->bord[i] == playerId)
-            addLast(locations, i);
+            addLast(locations, (void *) i);
     }
     return locations;
 }
@@ -56,14 +57,18 @@ int getHomeEntry(int pId){
     return ((72+(pId*18)-20)%72);
 }
 
-int getHomeStart(int pId){
-
+int getHomeStart(Bord * bord, int pId){
+    return getBordLen(bord)+(4*(pId-1));
 }
 
 int getInHomePosition(Bord * bord, int location){
     if (isOnBord(bord, location))
         return -1;
     return (location- getBordLen(bord))%4+1;
+}
+
+int getStepToHome(Bord * bord, int location, int pId){
+    return (getHomeEntry(pId) - location +getBordLen(bord))% getBordLen(bord);
 }
 
 /* ---------- Tests ---------- */
@@ -81,6 +86,16 @@ bool pawnOnPath(Bord * bord, int location, int step){
     return ret;
 }
 
+bool isWin(Bord * bord, int pId){
+    bool ret = true;
+    int homeStart = getHomeStart(bord,pId);
+    for (int i = homeStart ; i < homeStart+4 ; i++) {
+        if (bord->bord[i] != pId)
+            return false;
+    }
+    return ret;
+}
+
 /* ---------- Utilities ---------- */
 
 bool forward(Bord * bord, int location, int step){
@@ -92,16 +107,33 @@ bool forward(Bord * bord, int location, int step){
             return true;
         } else return false;
     }
-    int homeStart = getHomeStart(player) ;
-    if((location+step) > homeStart && (location + step) < homeStart + 4 && !pawnOnPath(bord, homeStart, location+step-homeStart) ){
-        int destination = location + step - homeStart - 1;
+    int stepToHome = getStepToHome(bord,location,player);
+    if(stepToHome < step &&
+        step <= stepToHome+3 &&
+        !pawnOnPath(bord,getHomeStart(bord,player)-1, step-stepToHome)){
+        int destination = step - stepToHome;
+        move(bord,location, getHomeStart(bord,player)+destination);
+        return true;
+    }
+    /*
+    int playerEntry = ((72+(player*18)-20)%72);
+    if((location+step)>playerEntry && (location+step)<playerEntry+4){
+        int destination = location+step-playerEntry-1;
         move(bord,location,72+(4*(player-1)+destination));
         return true;
     }
-    if (bord->bord[(location+step)%72] != 0)
-        printf("----- %i a tuer %i -----\n",player,bord[(location+step)%72]);
+     */
+    if (bord->bord[(location+step)% getBordLen(bord)] != 0)
+        printf("----- %i a tuer %i -----\n",player,bord[(location+step)% getBordLen(bord)]);
     move(bord, location,(location+step)%72);
     return  true;
+}
+
+bool backward(Bord * bord, int location, int step){
+    if(!isOnBord(bord,location))
+        return false;
+    move(bord,location,((location-step+ getBordLen(bord))% getBordLen(bord)));
+    return true;
 }
 
 void move(Bord * bord, int from, int to){
@@ -110,8 +142,6 @@ void move(Bord * bord, int from, int to){
 }
 
 bool outPawn(Bord * bord, int pId) {
-    if (pId == 3)
-        printf("test");
     bool ret = false;
     Linkedlist * pawns = getPlayerPansLocation(bord, pId);
     if (length(pawns) < 4){

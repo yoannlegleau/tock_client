@@ -171,7 +171,7 @@ void gameStart(Game * game) {
                 makeDeck(cards, gamRules);
             distributeCards(cards, game->players);
         }
-        drawPlayer(p);
+        //drawPlayer(p);
         //TODO
         //playOnce(players);
 
@@ -179,7 +179,10 @@ void gameStart(Game * game) {
         //foreach(players,p->play);
 
         for (int i = 0; i < length(game->players) ; i++) {
-            play(get(game->players, i), game->bord);
+            p = get(game->players, i);
+            play(p, game->bord);
+            if(isWin(game->bord,p->idPlayer))
+                printf("---------- joueur %i a gagner ----------",p->idPlayer);
             rendererAll(game,renderer);
         }
 
