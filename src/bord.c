@@ -100,6 +100,8 @@ bool isWin(Bord * bord, int pId){
 
 bool forward(Bord * bord, int location, int step){
     int player = bord->bord[location];
+
+    //Si le pion est dans la maison
     if (location >= getBordLen(bord)){
         int inHomePosition = getInHomePosition(bord, location);
         if (inHomePosition + step <= 4 && !pawnOnPath(bord, location, step)) {

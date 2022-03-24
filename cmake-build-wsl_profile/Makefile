@@ -355,29 +355,29 @@ src/mainSDL.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/mainSDL.c.s
 .PHONY : src/mainSDL.c.s
 
-src/mainServer.o: src/mainServer.c.o
-.PHONY : src/mainServer.o
+src/mainServeur.o: src/mainServeur.c.o
+.PHONY : src/mainServeur.o
 
 # target to build an object file
-src/mainServer.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/mainServer.c.o
-.PHONY : src/mainServer.c.o
+src/mainServeur.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/mainServeur.c.o
+.PHONY : src/mainServeur.c.o
 
-src/mainServer.i: src/mainServer.c.i
-.PHONY : src/mainServer.i
+src/mainServeur.i: src/mainServeur.c.i
+.PHONY : src/mainServeur.i
 
 # target to preprocess a source file
-src/mainServer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/mainServer.c.i
-.PHONY : src/mainServer.c.i
+src/mainServeur.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/mainServeur.c.i
+.PHONY : src/mainServeur.c.i
 
-src/mainServer.s: src/mainServer.c.s
-.PHONY : src/mainServer.s
+src/mainServeur.s: src/mainServeur.c.s
+.PHONY : src/mainServeur.s
 
 # target to generate assembly for a file
-src/mainServer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/mainServer.c.s
-.PHONY : src/mainServer.c.s
+src/mainServeur.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/mainServeur.c.s
+.PHONY : src/mainServeur.c.s
 
 src/pawn.o: src/pawn.c.o
 .PHONY : src/pawn.o
@@ -440,9 +440,9 @@ help:
 	@echo "... src/mainSDL.o"
 	@echo "... src/mainSDL.i"
 	@echo "... src/mainSDL.s"
-	@echo "... src/mainServer.o"
-	@echo "... src/mainServer.i"
-	@echo "... src/mainServer.s"
+	@echo "... src/mainServeur.o"
+	@echo "... src/mainServeur.i"
+	@echo "... src/mainServeur.s"
 	@echo "... src/pawn.o"
 	@echo "... src/pawn.i"
 	@echo "... src/pawn.s"

@@ -189,7 +189,7 @@
 			<Option target="tock_client"/>
 			<Option target="tock_server"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/mainServer.c">
+		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/mainServeur.c">
 			<Option target="tock_server"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/pawn.c">

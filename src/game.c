@@ -51,27 +51,24 @@ Game * gameCreate(int nbPlayer){
     return game;
 }
 
+void addPlayer(Game * game, int nbPlayer){
+  int i;
+  Player * player;
+  for(i = 0; i < nbPlayer; i++){
+    player = playerFactory(i+1);
+    addLast(game->players,player);
+  }
+  for(i = nbPlayer; i < 4; i++){
+    player = playerFactory(i+1);
+    addLast(game->players,player);
+  }
+}
 
 /**
  * \brief demonstration du fonctionnement des librairie graphiques baser sur l'example de cours
  * \param window fenêtre principal
  */
 void gameStart(Game * game) {
-
-    Player * player1 = playerFactory(1);
-    //game->bord->bord[0] = (int *) 1;
-    addLast(game->players,player1);
-    Player * player2 = playerFactory(2);
-    //game->bord->bord[18] = (int *) 2;
-    addLast(game->players,player2);
-    Player * player3 = playerFactory(3);
-    //game->bord->bord[36] = (int *) 3;
-    addLast(game->players,player3);
-    Player * player4 = playerFactory(4);
-    //game->bord->bord[54] = (int *) 4;
-    addLast(game->players,player4);
-
-
 
     Linkedlist * gamRules = linkedListFactory(sizeof(enum GameRule));
 
@@ -83,7 +80,7 @@ void gameStart(Game * game) {
     //printf("---- distribution 1 ----\n");
 
     //printf("cartes restantes:%i\n",length(cards));
-    //drawListe(players,drawPlayer);
+    //foreach(game->players,drawPlayer);
 
 
 
@@ -242,5 +239,3 @@ void drawPlayerHUD(SDL_Renderer *renderer, Player * player, TTF_Font *police, in
     }
 
 }
-
-
