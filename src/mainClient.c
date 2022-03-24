@@ -11,6 +11,9 @@
 #include <stdbool.h>
 #include "mainSDL.h"
 #include "game.h"
+#include "parser.h"
+
+
 
 /**
  * \brief lancement du jeu et fermeture
@@ -20,10 +23,13 @@
  */
  int main(int argc, char* args[]) {
     //lance le jeu dans la fenêtre principal
+    /*
     getWindow();
     Game *game = gameCreate(4);
     gameStart(game);
+     */
 
+    parsByKey("assets/Style","SDL_ColorPlayer1");
     // ferme le jeu
     winDestroy();
 
