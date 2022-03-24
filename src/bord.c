@@ -161,6 +161,12 @@ void drawBord(Bord * bord, SDL_Renderer *renderer, int x, int y){
     const int matSize = 19;
     int bordMat[19][19];
 
+    for(int i = 0; i < 19; i++){
+      for(int j = 0; j < 19; j++){
+        bordMat[i][j] = -1;
+      }
+    }
+
     bordMat[7][18] = 10;
     for (int i = 14; i < 19; ++i) bordMat[9][i] = 10;
     bordMat[0][7] = 20;
