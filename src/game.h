@@ -24,6 +24,13 @@ struct Game {
 Game * gameCreate(int nbPlayer);
 
 /**
+ * \brief ajoute des joueur a la partie
+ * \param game
+ * \param nbPlayer
+ */
+void addPlayer(Game * game, int nbPlayer);
+
+/**
  * \brief lancer le deroulement du jeux
  */
 void gameStart(Game* game);
