@@ -93,4 +93,5 @@ bool playCard(Player *p, Bord *bord, enum Card *card, int location) {
 
 int getHeuristic(Bord * bord, Player * player, enum Card * card){
 
+    return 0;
 }

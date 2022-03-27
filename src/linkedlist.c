@@ -177,6 +177,8 @@ void * pollRandom(Linkedlist * l) {
 }
 
 void foreach(Linkedlist *l, void (*pVoid)(void *)) {
+    if(isEmpty(l))
+        return;
     Elem *iterator = l->last->next;
     for(int i = 0; i < l->length; ++i) {
         pVoid(iterator->object);

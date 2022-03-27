@@ -14,6 +14,8 @@
 #include <stdbool.h>
 #include "mainSDL.h"
 #include "game.h"
+#include "parser.h"
+#include "Color.h"
 
 #ifdef __unix__
  #include <unistd.h>
@@ -93,13 +95,19 @@ int main(int argc, char* args[]) {
     }
     */
 
+
+
+
+    //SDL_Color color = getSDLColor("SDL_ColorPlayer4Light");
+    //printf("\n");
+
     winCreate();
     Game *game = gameCreate(4);
     addPlayer(game, 4);
     gameStart(game);
 
     // ferme le jeu
-    winDestroy();
+    //winDestroy();
 
     return 0;
 }

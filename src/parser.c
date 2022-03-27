@@ -6,33 +6,69 @@
 #include <stdlib.h>
 #include <string.h>
 #include "parser.h"
-
-#ifdef __unix__
-    #include <regex.h>
-#endif
-#ifdef _WIN32
-
-#endif
-
+#include "linkedlist.h"
 
 #define MAX_BUFFER_SIZE 100
+#define REG_START '<'
+#define REG_END '>'
 
-char* parsByKey(const char *path, char* key) {
-    FILE * file = fopen(path, "r" );
-    if (file == NULL)
+char * getByKey(Linkedlist *liste,char *key){
+    int i;
+    KeyValue * kv;
+    char * result = NULL;
+    if(isEmpty(liste))
         exit(EXIT_FAILURE);
+    for(i=0;i<length(liste);i++){
+        kv = (KeyValue *)get(liste,i);
+        if(strcmp(kv->key,key)==0){
+            result = kv->value;
+        }
+    }
+    return result;
+}
 
-    char reg[MAX_BUFFER_SIZE] = "^<";
-    strcat(reg,key);
-    strcat(reg,">.*");
 
-
-    char *line = malloc(MAX_BUFFER_SIZE);
-    while(fgets(line,MAX_BUFFER_SIZE,file) != NULL){
-        printf("%s",line);
+Linkedlist * loadFromPath(const char *path){
+    FILE * file = fopen(path, "r");
+    if ( file == NULL ) {
+        printf( "Cannot open file %s\n", path );
+        exit( 0 );
     }
 
+    Linkedlist * keyValues = linkedListFactory(sizeof(KeyValue));
+    if (file == NULL)
+        exit(EXIT_FAILURE);
+    char * c = "";
+    while(!feof(file)){
+        fscanf(file,"%c",c);
+        if(*c == REG_START){
+            KeyValue * keyValue = keyValueFactory("\0","\0");
+            fscanf(file,"%c",c);
+            while(*c != REG_END){
+                strcat(keyValue->key,c);
+                fscanf(file,"%c",c);
+            }
+            fscanf(file,"%c",c); // passer le caractaire REG_END
+            while(!feof(file) && *c != '\n'){
+                strcat(keyValue->value,c);
+                fscanf(file,"%c",c);
+            }
+            addLast(keyValues,keyValue);
+        }
+    }
     fclose(file);
+    return keyValues;
+}
 
-    return line;
+KeyValue * keyValueFactory(char * key,char * value){
+    KeyValue * kv = malloc(sizeof(KeyValue));
+    kv->key = (char *) malloc(MAX_BUFFER_SIZE);
+    strcpy(kv->key,key);
+    kv->value = (char *) malloc(MAX_BUFFER_SIZE);
+    strcpy(kv->value,key);
+    return kv;
+}
+void drawKeyValue(KeyValue *keyValue){
+    printf("key: %s\n",keyValue->key);
+    printf("value: %s\n",keyValue->value);
 }

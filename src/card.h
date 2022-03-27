@@ -29,6 +29,13 @@ enum Card{one, two, three, four, five, six, seven, eight, nine, ten, eleven, twe
 void drawCard(const enum Card * card);
 
 /**
+ * \brief retour le chemain ver l'asset associer a la carte
+ * \param card
+ * \return
+ */
+char* getAsset(const enum Card * card);
+
+/**
  * \brief ajout des cartes dans la list pour cree un paket de carte coherent et prend en compte les règles sélectionner
  * \param cards liste de carte
  * \param gameRules liste des règles

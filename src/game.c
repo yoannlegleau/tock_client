@@ -151,12 +151,7 @@ void gameStart(Game * game) {
                 makeDeck(cards, gamRules);
             distributeCards(cards, game->players);
         }
-        //drawPlayer(p);
-        //TODO
-        //playOnce(players);
 
-        // TODO ajouter l'affichage en simultaner
-        //foreach(players,p->play);
 
         for (int i = 0; i < length(game->players) ; i++) {
             p = get(game->players, i);
