@@ -61,6 +61,45 @@ void drawCard(const enum Card * card){
     }
 }
 
+char* getAsset(const enum Card * card){
+    if (card == NULL)
+        return "assets/Design_Cartes/Derriere_Carte.png";
+    switch (*card) {
+        case one:
+            return "assets/Design_Cartes/CarteValeur_3.png";
+        case two:
+            return "assets/Design_Cartes/CarteValeur_3.png";
+        case three:
+            return "assets/Design_Cartes/CarteValeur_3.png";
+        case four:
+            return "assets/Design_Cartes/Carte4_1.png";
+        case five:
+            return "assets/Design_Cartes/Carte5_2.png";
+        case six:
+            return "assets/Design_Cartes/CarteValeur_3.png";
+        case seven:
+            return "assets/Design_Cartes/Carte7_4.png";
+        case eight:
+            return "assets/Design_Cartes/CarteValeur_3.png";
+        case nine:
+            return "assets/Design_Cartes/CarteValeur_3.png";
+        case ten:
+            return "assets/Design_Cartes/Carte10_1.png";
+        case eleven:
+            return "assets/Design_Cartes/CarteV_1.png";
+        case twelve:
+            return "assets/Design_Cartes/CarteValeur_3.png";
+        case thirteen:
+            return "assets/Design_Cartes/CarteValeur_3.png";
+        case thirteen_out:
+            return "assets/Design_Cartes/CarteSortirPions_2.png";
+            //TODO ajouter les autre cartesd
+        default:
+            return "assets/Design_Cartes/Derriere_Carte.png";
+    }
+}
+
+
 void makeDeck(Linkedlist *cards, Linkedlist *gameRules) {
     clear(cards);
     enum Card * card ;

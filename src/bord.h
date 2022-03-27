@@ -19,6 +19,7 @@ struct Bord {
 /* ---------- Constructor ---------- */
 
 Bord * bordFactory(int nbPlayer);
+
 void initBord(Bord * bord);
 
 /* ---------- Getter ---------- */
@@ -41,6 +42,13 @@ bool isWin(Bord * bord, int pId);
 
 /* ---------- Utilities ---------- */
 
+/**
+ * \brief Fais avencer un pion sur le plateau
+ * \param bord le plateau
+ * \param location position du pion a faire avencer
+ * \param step distance a parcourire
+ * \return true si le pion a bien pue avencer
+ */
 bool forward(Bord * bord, int location, int step);
 bool backward(Bord * bord, int location, int step);
 void move(Bord * bord, int from, int to);

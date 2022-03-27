@@ -90,3 +90,7 @@ bool playCard(Player *p, Bord *bord, enum Card *card, int location) {
             return false;
     }
 }
+
+int getHeuristic(Bord * bord, Player * player, enum Card * card){
+
+}

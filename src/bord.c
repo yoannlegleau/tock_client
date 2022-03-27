@@ -100,6 +100,8 @@ bool isWin(Bord * bord, int pId){
 
 bool forward(Bord * bord, int location, int step){
     int player = bord->bord[location];
+
+    //Si le pion est dans la maison
     if (location >= getBordLen(bord)){
         int inHomePosition = getInHomePosition(bord, location);
         if (inHomePosition + step <= 4 && !pawnOnPath(bord, location, step)) {
@@ -160,6 +162,12 @@ void drawBord(Bord * bord, SDL_Renderer *renderer, int x, int y){
     const int widthSize = 3;
     const int matSize = 19;
     int bordMat[19][19];
+
+    for(int i = 0; i < 19; i++){
+      for(int j = 0; j < 19; j++){
+        bordMat[i][j] = -1;
+      }
+    }
 
     bordMat[7][18] = 10;
     for (int i = 14; i < 19; ++i) bordMat[9][i] = 10;

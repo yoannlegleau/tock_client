@@ -30,6 +30,8 @@
  */
 
 void drawPlayerHUD(SDL_Renderer *renderer, Player * player, TTF_Font *police, int x, int y);
+void drawMainOpponentHUD(SDL_Renderer *renderer, Player * player);
+void drawMainPlayerHUD(SDL_Renderer *renderer, Player * player);
 void rendererAll(Game *game, SDL_Renderer *pRenderer);
 
 
@@ -39,9 +41,8 @@ struct Rule {
     bool ruleV;
 };
 
-SDL_Rect txtDestRect,imgDestRect;
 TTF_Font *police = NULL;
-SDL_Texture *image_tex;
+
 
 
 Game * gameCreate(int nbPlayer){
@@ -51,27 +52,24 @@ Game * gameCreate(int nbPlayer){
     return game;
 }
 
+void addPlayer(Game * game, int nbPlayer){
+  int i;
+  Player * player;
+  for(i = 0; i < nbPlayer; i++){
+    player = playerFactory(i+1);
+    addLast(game->players,player);
+  }
+  for(i = nbPlayer; i < 4; i++){
+    player = playerFactory(i+1);
+    addLast(game->players,player);
+  }
+}
 
 /**
  * \brief demonstration du fonctionnement des librairie graphiques baser sur l'example de cours
  * \param window fenêtre principal
  */
 void gameStart(Game * game) {
-
-    Player * player1 = playerFactory(1);
-    //game->bord->bord[0] = (int *) 1;
-    addLast(game->players,player1);
-    Player * player2 = playerFactory(2);
-    //game->bord->bord[18] = (int *) 2;
-    addLast(game->players,player2);
-    Player * player3 = playerFactory(3);
-    //game->bord->bord[36] = (int *) 3;
-    addLast(game->players,player3);
-    Player * player4 = playerFactory(4);
-    //game->bord->bord[54] = (int *) 4;
-    addLast(game->players,player4);
-
-
 
     Linkedlist * gamRules = linkedListFactory(sizeof(enum GameRule));
 
@@ -83,12 +81,11 @@ void gameStart(Game * game) {
     //printf("---- distribution 1 ----\n");
 
     //printf("cartes restantes:%i\n",length(cards));
-    //drawListe(players,drawPlayer);
+    //foreach(game->players,drawPlayer);
 
 
 
 //Le pointeur vers la surface incluse dans la fenetre
-    SDL_Surface *texte=NULL, *image=NULL;
     SDL_Renderer *renderer=NULL;
 
 
@@ -109,20 +106,7 @@ void gameStart(Game * game) {
             exit(EXIT_FAILURE);
         }
 
-        // load sample.png into image
 
-        SDL_RWops *rwop=SDL_RWFromFile("assets/Carte_2.png", "rb");
-        image=IMG_LoadPNG_RW(rwop);
-        if(!image) {
-            printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
-        }
-
-        image_tex = SDL_CreateTextureFromSurface(renderer, image);
-        if(!image_tex){
-            fprintf(stderr, "Erreur a la creation du rendu de l'image : %s\n", SDL_GetError());
-            exit(EXIT_FAILURE);
-        }
-        SDL_FreeSurface(image); /* on a la texture, plus besoin de l'image */
     }
     int running = 1;
     while(running) {
@@ -148,13 +132,9 @@ void gameStart(Game * game) {
 
 
                             /* Ajout de la seconde image à une certaine position */
-                            imgDestRect.y = 600;
-                            imgDestRect.x = 640;
-                            SDL_QueryTexture(image_tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
-
 
                             // Ajout de la seconde image à une autre position
-                            SDL_RenderCopy(renderer, image_tex, NULL, &imgDestRect);
+
 
 
                             /* On fait le rendu ! */
@@ -183,20 +163,24 @@ void gameStart(Game * game) {
             play(p, game->bord);
             if(isWin(game->bord,p->idPlayer))
                 printf("---------- joueur %i a gagner ----------",p->idPlayer);
-            rendererAll(game,renderer);
+            if(isWinCreat())
+                rendererAll(game,renderer);
         }
 
     }
 }
 
 void rendererAll(Game *game, SDL_Renderer *renderer) {
+
+    drawMainPlayerHUD(renderer,get(game->players,0));
+    drawMainOpponentHUD(renderer, get(game->players,2));
+
     drawPlayerHUD(renderer,get(game->players,0),police, 10, 40);
     drawPlayerHUD(renderer,get(game->players,1),police, 10, 500);
     drawPlayerHUD(renderer,get(game->players,2),police, 1000, 40);
     drawPlayerHUD(renderer,get(game->players,3),police, 1000, 500);
     drawBord(game->bord,renderer, 394, 64);
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    SDL_RenderCopy(renderer, image_tex, NULL, &imgDestRect);
 
     drawBord(game->bord,renderer, 394, 64);
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
@@ -210,6 +194,7 @@ void rendererAll(Game *game, SDL_Renderer *renderer) {
     //Sleep(100);
 #endif
 }
+
 
 
 void drawPlayerHUD(SDL_Renderer *renderer, Player * player, TTF_Font *police, int x, int y) {
@@ -240,7 +225,91 @@ void drawPlayerHUD(SDL_Renderer *renderer, Player * player, TTF_Font *police, in
         SDL_QueryTexture(test, NULL, NULL, &(txtDestRect.w), &(txtDestRect.h));
         SDL_RenderCopy(renderer, test, NULL, &txtDestRect);
     }
+}
+
+void drawMainPlayerHUD(SDL_Renderer *renderer, Player * player){
+    //FIXME centre les cartes
+    SDL_Texture *image_tex;
+    SDL_Rect imgDestRect ;
+    SDL_Surface *image=NULL;
+    int center = 640;
+    int bottom = 720;
+    int cardx = 80;
+    int cardy = 120;
+    int cardslen = cardx*length(player->cards);
+    int xStart = center - (cardslen/2) - (cardx/2);
+    int yStart = bottom - cardy;
+
+    imgDestRect.y = yStart;
+    imgDestRect.w = 10;
+
+    for (int i = 0; i < length(player->cards); i++) {
+
+        imgDestRect.x = xStart + (cardx*i);
+
+        const char *path = getAsset(get(player->cards,i));
+        SDL_RWops *rwop=SDL_RWFromFile(path , "rb");
+        image=IMG_LoadPNG_RW(rwop);
+        if(!image) {
+            printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
+        }
+
+        image_tex = SDL_CreateTextureFromSurface(renderer, image);
+        if(!image_tex){
+            fprintf(stderr, "Erreur a la creation du rendu de l'image : %s\n", SDL_GetError());
+            exit(EXIT_FAILURE);
+        }
+
+
+        SDL_QueryTexture(image_tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
+        SDL_RenderCopy(renderer, image_tex, NULL, &imgDestRect);
+        SDL_FreeSurface(image);
+        SDL_DestroyTexture(image_tex);
+    }
+
 
 }
 
+void drawMainOpponentHUD(SDL_Renderer *renderer, Player * player){
+    //FIXME centre les cartes
+    SDL_Texture *image_tex;
+    SDL_Rect imgDestRect ;
+    SDL_Surface *image=NULL;
+    int center = 640;
+    int bottom = 720;
+    int cardx = 80-20;
+    int cardy = 120;
+    int cardslen = cardx*length(player->cards);
+    int xStart = center - (cardslen/2) - (cardx/2);
+    int yStart = bottom - cardy;
 
+    imgDestRect.y = -80;
+
+
+    for (int i = 0; i < length(player->cards); i++) {
+
+        imgDestRect.x = xStart + (cardx*i);
+        imgDestRect.w = i;
+
+        SDL_RWops *rwop=SDL_RWFromFile(getAsset(NULL) , "rb");
+        image=IMG_LoadPNG_RW(rwop);
+        if(!image) {
+            printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
+        }
+
+        image_tex = SDL_CreateTextureFromSurface(renderer, image);
+        if(!image_tex){
+            fprintf(stderr, "Erreur a la creation du rendu de l'image : %s\n", SDL_GetError());
+            exit(EXIT_FAILURE);
+        }
+
+
+        SDL_QueryTexture(image_tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
+        SDL_RenderCopy(renderer, image_tex, NULL, &imgDestRect);
+        SDL_FreeSurface(image);
+        SDL_DestroyTexture(image_tex);
+
+    }
+
+
+}
