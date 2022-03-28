@@ -18,6 +18,7 @@
 #include "card.h"
 #include "gameRule.h"
 #include "Player/player.h"
+#include "Color.h"
 
 
 #include <xmllite.h>
@@ -69,7 +70,7 @@ void addPlayer(Game * game, int nbPlayer){
  * \brief demonstration du fonctionnement des librairie graphiques baser sur l'example de cours
  * \param window fenêtre principal
  */
-void gameStart(Game * game) {
+int gameStart(Game * game) {
 
     Linkedlist * gamRules = linkedListFactory(sizeof(enum GameRule));
 
@@ -95,11 +96,8 @@ void gameStart(Game * game) {
 
 
     if(isWinCreat()){
-        renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-        if(renderer == NULL){
-            fprintf(stderr, "Erreur à la création du renderer\n");
-            exit(EXIT_FAILURE);
-        }
+
+        renderer = SDL_GetRenderer(window);
 
         if( (police = TTF_OpenFont("assets/fonts/NewHiScore.ttf", 30)) == NULL){
             fprintf(stderr, "erreur chargement font\n");
@@ -113,8 +111,12 @@ void gameStart(Game * game) {
         SDL_Event e;
         while(SDL_PollEvent(&e)) {
             switch(e.type) {
-                case SDL_QUIT: running = 0;
-                    break;
+                case SDL_QUIT:
+                    running = 0;
+                    return -1;
+                case SDL_KEYDOWN:
+                case SDLK_END:
+                    return -1;
                 case SDL_WINDOWEVENT:
                     switch(e.window.event){
                         case SDL_WINDOWEVENT_EXPOSED:
@@ -156,16 +158,22 @@ void gameStart(Game * game) {
         for (int i = 0; i < length(game->players) ; i++) {
             p = get(game->players, i);
             play(p, game->bord);
-            if(isWin(game->bord,p->idPlayer))
-                printf("---------- joueur %i a gagner ----------",p->idPlayer);
+            if (isWin(game->bord, p->idPlayer)) {
+                printf("---------- joueur %i a gagner ----------", p->idPlayer);
+                return p->idPlayer;
+            }
             if(isWinCreat())
                 rendererAll(game,renderer);
         }
 
     }
+    return 0;
 }
 
 void rendererAll(Game *game, SDL_Renderer *renderer) {
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
+    SDL_RenderDrawLine(renderer,1280/2,0,1280/2,720),
+    SDL_RenderDrawLine(renderer,0,720/2,1280,720/2),
 
     drawMainPlayerHUD(renderer,get(game->players,0));
     drawMainOpponentHUD(renderer, get(game->players,2));
@@ -174,11 +182,11 @@ void rendererAll(Game *game, SDL_Renderer *renderer) {
     drawPlayerHUD(renderer,get(game->players,1),police, 10, 500);
     drawPlayerHUD(renderer,get(game->players,2),police, 1000, 40);
     drawPlayerHUD(renderer,get(game->players,3),police, 1000, 500);
-    drawBord(game->bord,renderer, 394, 64);
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 
-    drawBord(game->bord,renderer, 394, 64);
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    drawBord(game->bord,renderer, 406, 64);
+
+    SDL_Color background = getSDLColor("Background");
+    SDL_SetRenderDrawColor(renderer, background.r , background.g , background.b,background.a );
     SDL_RenderPresent(renderer);
     SDL_RenderClear(renderer);
 
@@ -200,7 +208,7 @@ void drawPlayerHUD(SDL_Renderer *renderer, Player * player, TTF_Font *police, in
     int *card;
     txtDestRect.x = x;
     txtDestRect.y = y;
-    const SDL_Color couleurNoire = {0, 0, 0};
+    const SDL_Color couleurNoire = getSDLColor("Text");
 
     snprintf(output,1024,"Player numéro : %d",player->idPlayer);
     texte = TTF_RenderUTF8_Blended(police, output, couleurNoire);
@@ -227,12 +235,12 @@ void drawMainPlayerHUD(SDL_Renderer *renderer, Player * player){
     SDL_Texture *image_tex;
     SDL_Rect imgDestRect ;
     SDL_Surface *image=NULL;
-    int center = 640;
+    int center = 1280/2;
     int bottom = 720;
     int cardx = 80;
     int cardy = 120;
     int cardslen = cardx*length(player->cards);
-    int xStart = center - (cardslen/2) - (cardx/2);
+    int xStart = center - (cardslen/2) ;
     int yStart = bottom - cardy;
 
     imgDestRect.y = yStart;
@@ -266,16 +274,17 @@ void drawMainPlayerHUD(SDL_Renderer *renderer, Player * player){
 }
 
 void drawMainOpponentHUD(SDL_Renderer *renderer, Player * player){
-    //FIXME centre les cartes
     SDL_Texture *image_tex;
     SDL_Rect imgDestRect ;
     SDL_Surface *image=NULL;
-    int center = 640;
+    int center = 1280/2;
     int bottom = 720;
-    int cardx = 80-20;
+    int cardx = 80;
     int cardy = 120;
-    int cardslen = cardx*length(player->cards);
-    int xStart = center - (cardslen/2) - (cardx/2);
+    int ofset = 20;
+
+    int cardslen = cardx*length(player->cards) - (ofset* (length(player->cards) - 1));
+    int xStart = center - (cardslen/2);
     int yStart = bottom - cardy;
 
     imgDestRect.y = -80;
@@ -283,7 +292,7 @@ void drawMainOpponentHUD(SDL_Renderer *renderer, Player * player){
 
     for (int i = 0; i < length(player->cards); i++) {
 
-        imgDestRect.x = xStart + (cardx*i);
+        imgDestRect.x = xStart + (cardx*i) - (ofset*i);
         imgDestRect.w = i;
 
         SDL_RWops *rwop=SDL_RWFromFile(getAsset(NULL) , "rb");

@@ -35,6 +35,8 @@ bool isWinCreat(){
  * \private
  */
 void winCreate() {
+    if (isWinCreat())
+        return;
 
     SDL_Init(SDL_INIT_VIDEO); // Initialise SDL2
     TTF_Init(); // Initialise SDL2_TTF
@@ -54,6 +56,10 @@ void winCreate() {
     if (window == NULL) {
         // Dans le cas où la fenêtre ne pourrait pas être créé...
         printf("Could not create window: %s\n", SDL_GetError());
+    }
+
+    if(SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED) == NULL){
+        fprintf(stderr, "Erreur à la création du renderer\n");
     }
 }
 

@@ -109,6 +109,7 @@ bool forward(Bord * bord, int location, int step){
             return true;
         } else return false;
     }
+    /*
     int stepToHome = getStepToHome(bord,location,player);
     if(stepToHome < step &&
         step <= stepToHome+3 &&
@@ -117,14 +118,15 @@ bool forward(Bord * bord, int location, int step){
         move(bord,location, getHomeStart(bord,player)+destination);
         return true;
     }
-    /*
+     */
+    ///*
     int playerEntry = ((72+(player*18)-20)%72);
     if((location+step)>playerEntry && (location+step)<playerEntry+4){
         int destination = location+step-playerEntry-1;
         move(bord,location,72+(4*(player-1)+destination));
         return true;
     }
-     */
+    // */
     if (bord->bord[(location+step)% getBordLen(bord)] != 0)
         printf("----- %i a tuer %i -----\n",player,bord[(location+step)% getBordLen(bord)]);
     move(bord, location,(location+step)%72);
@@ -157,7 +159,7 @@ bool outPawn(Bord * bord, int pId) {
 /* ---------- Old ---------- */
 
 void drawBord(Bord * bord, SDL_Renderer *renderer, int x, int y){
-    SDL_Color couleurNoire = getSDLColor("SDL_ColorBlack");
+    SDL_Color couleurNoire = getSDLColor("Black");
     const int squareSize = 26;
     const int sercleSize = 23/2;
     const int widthSize = 3;
@@ -303,32 +305,32 @@ void drawBord(Bord * bord, SDL_Renderer *renderer, int x, int y){
             switch (bordMat[i][j]) {
                 case 0: {
 
-                    drawCircleBorder(renderer, x + i * squareSize, y + j * squareSize, sercleSize, couleurNoire, widthSize , getSDLColor("SDL_ColorWhite"));
+                    drawCircleBorder(renderer, x + i * squareSize, y + j * squareSize, sercleSize, couleurNoire, widthSize , getSDLColor("Background"));
                 }
                     break;
                 case 1:
-                    drawCircleBorder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize   , getSDLColor("SDL_ColorPlayer1"));
+                    drawCircleBorder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize   , getSDLColor("Player1"));
                     break;
                 case 10:
-                    drawCircleBorder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize   , getSDLColor("SDL_ColorPlayer1Light"));
+                    drawCircleBorder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize   , getSDLColor("Player1Light"));
                     break;
                 case 2:
-                    drawCircleBorder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize , getSDLColor("SDL_ColorPlayer2"));
+                    drawCircleBorder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize , getSDLColor("Player2"));
                     break;
                 case 20:
-                    drawCircleBorder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize , getSDLColor("SDL_ColorPlayer2Light"));
+                    drawCircleBorder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize , getSDLColor("Player2Light"));
                     break;
                 case 3:
-                    drawCircleBorder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize , getSDLColor("SDL_ColorPlayer3"));
+                    drawCircleBorder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize , getSDLColor("Player3"));
                     break;
                 case 30:
-                    drawCircleBorder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize , getSDLColor("SDL_ColorPlayer3Light"));
+                    drawCircleBorder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize , getSDLColor("Player3Light"));
                     break;
                 case 4:
-                    drawCircleBorder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, 3 , getSDLColor("SDL_ColorPlayer4"));
+                    drawCircleBorder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, 3 , getSDLColor("Player4"));
                     break;
                 case 40:
-                    drawCircleBorder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, 3 , getSDLColor("SDL_ColorPlayer4Light"));
+                    drawCircleBorder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, 3 , getSDLColor("Player4Light"));
                     break;
 
             }

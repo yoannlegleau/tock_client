@@ -33,7 +33,7 @@ void addPlayer(Game * game, int nbPlayer);
 /**
  * \brief lancer le deroulement du jeux
  */
-void gameStart(Game* game);
+int gameStart(Game* game);
 
 /**
  * \brief reprande le jeu apres une pause
