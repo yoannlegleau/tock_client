@@ -1,0 +1,61 @@
+//
+// Created by adzerake on 10/03/2022.
+//
+
+#ifndef TOCK_CLIENT_BOARD_H
+#define TOCK_CLIENT_BOARD_H
+
+#include <SDL.h>
+#include "linkedlist.h"
+#include "card.h"
+
+typedef struct Board Board;
+struct Board {
+    int * board;
+    int nbPlayer;
+};
+
+
+/* ---------- Constructor ---------- */
+
+Board * boardFactory(int nbPlayer);
+
+void initBoard(Board * board);
+
+/* ---------- Getter ---------- */
+
+int getNbPlayer(Board * board);
+int getLen(Board * board);
+Linkedlist * getPlayerPansLocation(Board * board, int playerId );
+int getStart(int pId);
+int getHomeEntry(int pId);
+int getHomeStart(Board * board, int pId);
+int getInHomePosition(Board * board, int location);
+int getStepToHome(Board * board, int location, int pId);
+
+
+/* ---------- Tests ---------- */
+
+bool isOnBoard(Board * board, int location);
+bool pawnOnPath(Board * board, int location, int step);
+bool isWin(Board * board, int pId);
+
+/* ---------- Utilities ---------- */
+
+/**
+ * \brief Fais avencer un pion sur le plateau
+ * \param board le plateau
+ * \param location position du pion a faire avencer
+ * \param step distance a parcourire
+ * \return true si le pion a bien pue avencer
+ */
+bool forward(Board * board, int location, int step);
+bool backward(Board * board, int location, int step);
+void move(Board * board, int from, int to);
+bool outPawn(Board * board, int pId);
+
+
+void drawBoard(Board * board, SDL_Renderer *renderer, int x, int y);
+
+
+#endif //TOCK_CLIENT_BOARD_H

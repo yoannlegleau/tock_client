@@ -1,67 +1,67 @@
-\hypertarget{bord_8c}{}\doxysection{Référence du fichier C\+:/\+Users/adzerake/\+CLion\+Projects/tock-\/client/src/bord.c}
-\label{bord_8c}\index{C:/Users/adzerake/CLionProjects/tock-\/client/src/bord.c@{C:/Users/adzerake/CLionProjects/tock-\/client/src/bord.c}}
-{\ttfamily \#include \char`\"{}bord.\+h\char`\"{}}\newline
+\hypertarget{board_8c}{}\doxysection{Référence du fichier C\+:/\+Users/adzerake/\+CLion\+Projects/tock-\/client/src/board.c}
+\label{board_8c}\index{C:/Users/adzerake/CLionProjects/tock-\/client/src/board.c@{C:/Users/adzerake/CLionProjects/tock-\/client/src/board.c}}
+{\ttfamily \#include \char`\"{}board.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}main\+SDL.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Color.\+h\char`\"{}}\newline
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{bord_8c_ade61443d39f111c96f160359cab6f8bb}{init\+Bord}} (int p\+Int\mbox{[}88\mbox{]})
+void \mbox{\hyperlink{board_8c_ade61443d39f111c96f160359cab6f8bb}{init\+Board}} (int p\+Int\mbox{[}88\mbox{]})
 \item 
-\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ \mbox{\hyperlink{bord_8c_a2eb7d102f733c1a2c4f042456f7f3903}{get\+Player\+Pans\+Location}} (Player $\ast$player)
+\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ \mbox{\hyperlink{board_8c_a2eb7d102f733c1a2c4f042456f7f3903}{get\+Player\+Pans\+Location}} (Player $\ast$player)
 \item 
-void \mbox{\hyperlink{bord_8c_a4dd60d54858e044d9530e79507545819}{draw\+Bord}} (SDL\+\_\+\+Renderer $\ast$renderer, int x, int y, int \mbox{\hyperlink{bord_8h_a412ee707910a58d55e831ce5dcefffb0}{bord}}\mbox{[}$\,$\mbox{]})
+void \mbox{\hyperlink{board_8c_a4dd60d54858e044d9530e79507545819}{draw\+Board}} (SDL\+\_\+\+Renderer $\ast$renderer, int x, int y, int \mbox{\hyperlink{board_8h_a412ee707910a58d55e831ce5dcefffb0}{board}}\mbox{[}$\,$\mbox{]})
 \item 
-bool \mbox{\hyperlink{bord_8c_aacf217e326af10bed20595d6d02c8322}{pawn\+On\+Path}} (int location, int step)
+bool \mbox{\hyperlink{board_8c_aacf217e326af10bed20595d6d02c8322}{pawn\+On\+Path}} (int location, int step)
 \item 
-bool \mbox{\hyperlink{bord_8c_a38e25eb1e604166bfa142067b2be6e24}{forward}} (int location, int step)
+bool \mbox{\hyperlink{board_8c_a38e25eb1e604166bfa142067b2be6e24}{forward}} (int location, int step)
 \item 
-void \mbox{\hyperlink{bord_8c_a7650ba73078429f41e6774a72b6867bc}{move}} (int from, int to)
+void \mbox{\hyperlink{board_8c_a7650ba73078429f41e6774a72b6867bc}{move}} (int from, int to)
 \item 
-bool \mbox{\hyperlink{bord_8c_a6256228950cd2f9e808f0f7b3ea09e6d}{play\+Card}} (enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$card, int location)
+bool \mbox{\hyperlink{board_8c_a6256228950cd2f9e808f0f7b3ea09e6d}{play\+Card}} (enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$card, int location)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{bord_8c_a4dd60d54858e044d9530e79507545819}\label{bord_8c_a4dd60d54858e044d9530e79507545819}} 
-\index{bord.c@{bord.c}!drawBord@{drawBord}}
-\index{drawBord@{drawBord}!bord.c@{bord.c}}
-\doxysubsubsection{\texorpdfstring{drawBord()}{drawBord()}}
-{\footnotesize\ttfamily void draw\+Bord (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{bord\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{board_8c_a4dd60d54858e044d9530e79507545819}\label{board_8c_a4dd60d54858e044d9530e79507545819}}
+\index{board.c@{board.c}!drawBoard@{drawBoard}}
+\index{drawBoard@{drawBoard}!board.c@{board.c}}
+\doxysubsubsection{\texorpdfstring{drawBoard()}{drawBoard()}}
+{\footnotesize\ttfamily void draw\+Board (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{board\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{bord_8c_a38e25eb1e604166bfa142067b2be6e24}\label{bord_8c_a38e25eb1e604166bfa142067b2be6e24}} 
-\index{bord.c@{bord.c}!forward@{forward}}
-\index{forward@{forward}!bord.c@{bord.c}}
+\mbox{\Hypertarget{board_8c_a38e25eb1e604166bfa142067b2be6e24}\label{board_8c_a38e25eb1e604166bfa142067b2be6e24}}
+\index{board.c@{board.c}!forward@{forward}}
+\index{forward@{forward}!board.c@{board.c}}
 \doxysubsubsection{\texorpdfstring{forward()}{forward()}}
 {\footnotesize\ttfamily bool forward (\begin{DoxyParamCaption}\item[{int}]{location,  }\item[{int}]{step }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{bord_8c_a2eb7d102f733c1a2c4f042456f7f3903}\label{bord_8c_a2eb7d102f733c1a2c4f042456f7f3903}} 
-\index{bord.c@{bord.c}!getPlayerPansLocation@{getPlayerPansLocation}}
-\index{getPlayerPansLocation@{getPlayerPansLocation}!bord.c@{bord.c}}
+\mbox{\Hypertarget{board_8c_a2eb7d102f733c1a2c4f042456f7f3903}\label{board_8c_a2eb7d102f733c1a2c4f042456f7f3903}}
+\index{board.c@{board.c}!getPlayerPansLocation@{getPlayerPansLocation}}
+\index{getPlayerPansLocation@{getPlayerPansLocation}!board.c@{board.c}}
 \doxysubsubsection{\texorpdfstring{getPlayerPansLocation()}{getPlayerPansLocation()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ get\+Player\+Pans\+Location (\begin{DoxyParamCaption}\item[{Player $\ast$}]{player }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{bord_8c_ade61443d39f111c96f160359cab6f8bb}\label{bord_8c_ade61443d39f111c96f160359cab6f8bb}} 
-\index{bord.c@{bord.c}!initBord@{initBord}}
-\index{initBord@{initBord}!bord.c@{bord.c}}
-\doxysubsubsection{\texorpdfstring{initBord()}{initBord()}}
-{\footnotesize\ttfamily void init\+Bord (\begin{DoxyParamCaption}\item[{int}]{p\+Int\mbox{[}88\mbox{]} }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{board_8c_ade61443d39f111c96f160359cab6f8bb}\label{board_8c_ade61443d39f111c96f160359cab6f8bb}}
+\index{board.c@{board.c}!initBoard@{initBoard}}
+\index{initBoard@{initBoard}!board.c@{board.c}}
+\doxysubsubsection{\texorpdfstring{initBoard()}{initBoard()}}
+{\footnotesize\ttfamily void init\+Board (\begin{DoxyParamCaption}\item[{int}]{p\+Int\mbox{[}88\mbox{]} }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{bord_8c_a7650ba73078429f41e6774a72b6867bc}\label{bord_8c_a7650ba73078429f41e6774a72b6867bc}} 
-\index{bord.c@{bord.c}!move@{move}}
-\index{move@{move}!bord.c@{bord.c}}
+\mbox{\Hypertarget{board_8c_a7650ba73078429f41e6774a72b6867bc}\label{board_8c_a7650ba73078429f41e6774a72b6867bc}}
+\index{board.c@{board.c}!move@{move}}
+\index{move@{move}!board.c@{board.c}}
 \doxysubsubsection{\texorpdfstring{move()}{move()}}
 {\footnotesize\ttfamily void move (\begin{DoxyParamCaption}\item[{int}]{from,  }\item[{int}]{to }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{bord_8c_aacf217e326af10bed20595d6d02c8322}\label{bord_8c_aacf217e326af10bed20595d6d02c8322}} 
-\index{bord.c@{bord.c}!pawnOnPath@{pawnOnPath}}
-\index{pawnOnPath@{pawnOnPath}!bord.c@{bord.c}}
+\mbox{\Hypertarget{board_8c_aacf217e326af10bed20595d6d02c8322}\label{board_8c_aacf217e326af10bed20595d6d02c8322}}
+\index{board.c@{board.c}!pawnOnPath@{pawnOnPath}}
+\index{pawnOnPath@{pawnOnPath}!board.c@{board.c}}
 \doxysubsubsection{\texorpdfstring{pawnOnPath()}{pawnOnPath()}}
 {\footnotesize\ttfamily bool pawn\+On\+Path (\begin{DoxyParamCaption}\item[{int}]{location,  }\item[{int}]{step }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{bord_8c_a6256228950cd2f9e808f0f7b3ea09e6d}\label{bord_8c_a6256228950cd2f9e808f0f7b3ea09e6d}} 
-\index{bord.c@{bord.c}!playCard@{playCard}}
-\index{playCard@{playCard}!bord.c@{bord.c}}
+\mbox{\Hypertarget{board_8c_a6256228950cd2f9e808f0f7b3ea09e6d}\label{board_8c_a6256228950cd2f9e808f0f7b3ea09e6d}}
+\index{board.c@{board.c}!playCard@{playCard}}
+\index{playCard@{playCard}!board.c@{board.c}}
 \doxysubsubsection{\texorpdfstring{playCard()}{playCard()}}
 {\footnotesize\ttfamily bool play\+Card (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$}]{card,  }\item[{int}]{location }\end{DoxyParamCaption})}
 

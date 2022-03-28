@@ -27,7 +27,7 @@
  * \brief Se tableux represente toutes les cases du plateu
  * \details la longeur varie selon le nombre de joueur car chaque jouer posed 18 plus 4 donc pour 4j 88 et 132 pour 6.
  * Les int represantes les ID de chaques jouers
- * \image html assets/img/Tock.io-BordArray.jpg
+ * \image html assets/img/Tock.io-BoardArray.jpg
  */
 
 void drawPlayerHUD(SDL_Renderer *renderer, Player * player, TTF_Font *police, int x, int y);
@@ -48,8 +48,8 @@ TTF_Font *police = NULL;
 
 Game * gameCreate(int nbPlayer){
     Game * game = malloc(sizeof(Game));
-    game->bord = bordFactory(nbPlayer);
-    game->players = linkedListFactory(sizeof(Player));
+    game->board = boardFactory(nbPlayer);
+    game->players = linkedListFactory();
     return game;
 }
 
@@ -72,9 +72,9 @@ void addPlayer(Game * game, int nbPlayer){
  */
 int gameStart(Game * game) {
 
-    Linkedlist * gamRules = linkedListFactory(sizeof(enum GameRule));
+    Linkedlist * gamRules = linkedListFactory();
 
-    Linkedlist * cards = linkedListFactory(sizeof(enum Card));
+    Linkedlist * cards = linkedListFactory();
 
 
     //printf("cartes:%i\n",length(cards));
@@ -157,8 +157,8 @@ int gameStart(Game * game) {
 
         for (int i = 0; i < length(game->players) ; i++) {
             p = get(game->players, i);
-            play(p, game->bord);
-            if (isWin(game->bord, p->idPlayer)) {
+            play(p, game->board);
+            if (isWin(game->board, p->idPlayer)) {
                 printf("---------- joueur %i a gagner ----------", p->idPlayer);
                 return p->idPlayer;
             }
@@ -183,7 +183,7 @@ void rendererAll(Game *game, SDL_Renderer *renderer) {
     drawPlayerHUD(renderer,get(game->players,2),police, 1000, 40);
     drawPlayerHUD(renderer,get(game->players,3),police, 1000, 500);
 
-    drawBord(game->bord,renderer, 406, 64);
+    drawBoard(game->board,renderer, 406, 64);
 
     SDL_Color background = getSDLColor("Background");
     SDL_SetRenderDrawColor(renderer, background.r , background.g , background.b,background.a );

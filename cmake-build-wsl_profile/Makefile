@@ -142,6 +142,33 @@ tock_server/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/build
 .PHONY : tock_server/fast
 
+src/Color.o: src/Color.c.o
+.PHONY : src/Color.o
+
+# target to build an object file
+src/Color.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/Color.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/Color.c.o
+.PHONY : src/Color.c.o
+
+src/Color.i: src/Color.c.i
+.PHONY : src/Color.i
+
+# target to preprocess a source file
+src/Color.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/Color.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/Color.c.i
+.PHONY : src/Color.c.i
+
+src/Color.s: src/Color.c.s
+.PHONY : src/Color.s
+
+# target to generate assembly for a file
+src/Color.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/Color.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/Color.c.s
+.PHONY : src/Color.c.s
+
 src/Player/player.o: src/Player/player.c.o
 .PHONY : src/Player/player.o
 
@@ -169,32 +196,32 @@ src/Player/player.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/Player/player.c.s
 .PHONY : src/Player/player.c.s
 
-src/bord.o: src/bord.c.o
-.PHONY : src/bord.o
+src/board.o: src/board.c.o
+.PHONY : src/board.o
 
 # target to build an object file
-src/bord.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/bord.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/bord.c.o
-.PHONY : src/bord.c.o
+src/board.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/board.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/board.c.o
+.PHONY : src/board.c.o
 
-src/bord.i: src/bord.c.i
-.PHONY : src/bord.i
+src/board.i: src/board.c.i
+.PHONY : src/board.i
 
 # target to preprocess a source file
-src/bord.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/bord.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/bord.c.i
-.PHONY : src/bord.c.i
+src/board.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/board.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/board.c.i
+.PHONY : src/board.c.i
 
-src/bord.s: src/bord.c.s
-.PHONY : src/bord.s
+src/board.s: src/board.c.s
+.PHONY : src/board.s
 
 # target to generate assembly for a file
-src/bord.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/bord.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/bord.c.s
-.PHONY : src/bord.c.s
+src/board.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/board.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/board.c.s
+.PHONY : src/board.c.s
 
 src/card.o: src/card.c.o
 .PHONY : src/card.o
@@ -355,29 +382,56 @@ src/mainSDL.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/mainSDL.c.s
 .PHONY : src/mainSDL.c.s
 
-src/mainServer.o: src/mainServer.c.o
-.PHONY : src/mainServer.o
+src/mainServeur.o: src/mainServeur.c.o
+.PHONY : src/mainServeur.o
 
 # target to build an object file
-src/mainServer.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/mainServer.c.o
-.PHONY : src/mainServer.c.o
+src/mainServeur.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/mainServeur.c.o
+.PHONY : src/mainServeur.c.o
 
-src/mainServer.i: src/mainServer.c.i
-.PHONY : src/mainServer.i
+src/mainServeur.i: src/mainServeur.c.i
+.PHONY : src/mainServeur.i
 
 # target to preprocess a source file
-src/mainServer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/mainServer.c.i
-.PHONY : src/mainServer.c.i
+src/mainServeur.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/mainServeur.c.i
+.PHONY : src/mainServeur.c.i
 
-src/mainServer.s: src/mainServer.c.s
-.PHONY : src/mainServer.s
+src/mainServeur.s: src/mainServeur.c.s
+.PHONY : src/mainServeur.s
 
 # target to generate assembly for a file
-src/mainServer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/mainServer.c.s
-.PHONY : src/mainServer.c.s
+src/mainServeur.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/mainServeur.c.s
+.PHONY : src/mainServeur.c.s
+
+src/parser.o: src/parser.c.o
+.PHONY : src/parser.o
+
+# target to build an object file
+src/parser.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/parser.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/parser.c.o
+.PHONY : src/parser.c.o
+
+src/parser.i: src/parser.c.i
+.PHONY : src/parser.i
+
+# target to preprocess a source file
+src/parser.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/parser.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/parser.c.i
+.PHONY : src/parser.c.i
+
+src/parser.s: src/parser.c.s
+.PHONY : src/parser.s
+
+# target to generate assembly for a file
+src/parser.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/parser.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/src/parser.c.s
+.PHONY : src/parser.c.s
 
 src/pawn.o: src/pawn.c.o
 .PHONY : src/pawn.o
@@ -416,12 +470,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... tock_client"
 	@echo "... tock_server"
+	@echo "... src/Color.o"
+	@echo "... src/Color.i"
+	@echo "... src/Color.s"
 	@echo "... src/Player/player.o"
 	@echo "... src/Player/player.i"
 	@echo "... src/Player/player.s"
-	@echo "... src/bord.o"
-	@echo "... src/bord.i"
-	@echo "... src/bord.s"
+	@echo "... src/board.o"
+	@echo "... src/board.i"
+	@echo "... src/board.s"
 	@echo "... src/card.o"
 	@echo "... src/card.i"
 	@echo "... src/card.s"
@@ -440,9 +497,12 @@ help:
 	@echo "... src/mainSDL.o"
 	@echo "... src/mainSDL.i"
 	@echo "... src/mainSDL.s"
-	@echo "... src/mainServer.o"
-	@echo "... src/mainServer.i"
-	@echo "... src/mainServer.s"
+	@echo "... src/mainServeur.o"
+	@echo "... src/mainServeur.i"
+	@echo "... src/mainServeur.s"
+	@echo "... src/parser.o"
+	@echo "... src/parser.i"
+	@echo "... src/parser.s"
 	@echo "... src/pawn.o"
 	@echo "... src/pawn.i"
 	@echo "... src/pawn.s"

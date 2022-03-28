@@ -12,13 +12,13 @@
 #include "../mainSDL.h"
 
 
-bool playCard(Player *p, Bord * bord, enum Card * card, int location );
+bool playCard(Player *p, Board * board, enum Card * card, int location );
 
 
 Player * playerFactory( int id){
     Player * player = malloc(sizeof(Player));
     player->idPlayer = id;
-    player->cards = linkedListFactory(sizeof(enum Card));
+    player->cards = linkedListFactory();
     player->pt = &play;
     return player;
 }
@@ -28,13 +28,13 @@ void drawPlayer(const Player *player) {
     foreach(player->cards,drawCard);
 }
 
-int play(Player *p, Bord * bord) {
-    Linkedlist * pownsLocations = getPlayerPansLocation(bord, p->idPlayer);
+int play(Player *p, Board * board) {
+    Linkedlist * pownsLocations = getPlayerPansLocation(board, p->idPlayer);
     bool played = false;
     for (int i = length(pownsLocations) ; i >= 0 ; i--) {
         int pownLocation = (int) get(pownsLocations, i);
         for (int j = 0; j <= length(p->cards); j++) {
-            played = playCard(p, bord, get(p->cards, j), pownLocation);
+            played = playCard(p, board, get(p->cards, j), pownLocation);
             if (played) {
                 //printf("player %i a jouer ", p->idPlayer);
                 //drawCard(get(p->cards, j));
@@ -53,45 +53,45 @@ int play(Player *p, Bord * bord) {
 
 
 
-bool playCard(Player *p, Bord *bord, enum Card *card, int location) {
+bool playCard(Player *p, Board *board, enum Card *card, int location) {
     switch (*card) {
         case one:
-            return forward(bord, location, 1);
+            return forward(board, location, 1);
         case two:
-            return forward(bord, location, 2);
+            return forward(board, location, 2);
         case three:
-            return forward(bord, location, 3);
+            return forward(board, location, 3);
         case four:
-            return forward(bord,location, 4);
+            return forward(board,location, 4);
         case five:
-            return forward(bord,location, 5);
+            return forward(board,location, 5);
         case six:
-            return forward(bord, location, 6);
+            return forward(board, location, 6);
         case seven:
-            return forward(bord, location, 7);
+            return forward(board, location, 7);
         case eight:
-            return forward(bord, location, 8);
+            return forward(board, location, 8);
         case nine:
-            return forward(bord, location, 9);
+            return forward(board, location, 9);
         case ten:
-            return forward(bord, location, 10);
+            return forward(board, location, 10);
         case eleven:
-            return forward(bord, location, 11);
+            return forward(board, location, 11);
         case twelve:
-            return forward(bord, location, 12);
+            return forward(board, location, 12);
         case thirteen:
-            return forward(bord, location, 13);
+            return forward(board, location, 13);
         case thirteen_out:
-            if(outPawn(bord, p->idPlayer))
+            if(outPawn(board, p->idPlayer))
                 return true;
-            if(forward(bord, location, 13))
+            if(forward(board, location, 13))
                 return true;
         default:
             return false;
     }
 }
 
-int getHeuristic(Bord * bord, Player * player, enum Card * card){
+int getHeuristic(Board * board, Player * player, enum Card * card){
 
     return 0;
 }

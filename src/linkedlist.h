@@ -17,14 +17,7 @@ typedef struct Linkedlist Linkedlist;
  * \return la liste
  * \example Linkedlist list = linkedListFactory(sizeof(int)
  */
-Linkedlist * linkedListFactory( int typeSize);
-
-/**
- * \brief Renvoie la taille des element contenue.
- * \param l Linkedlist conserner
- * \return int
- */
-int size( Linkedlist * l);
+Linkedlist * linkedListFactory();
 
 /**
  * \brief Renvoie le nombre d'éléments de la liste l.

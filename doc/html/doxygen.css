@@ -22,7 +22,7 @@ h1.groupheader {
 }
 
 h2.groupheader {
-	border-bottom: 1px solid #879ECB;
+	boarder-bottom: 1px solid #879ECB;
 	color: #354C7B;
 	font-size: 150%;
 	font-weight: normal;
@@ -113,14 +113,14 @@ h3.version {
 }
 
 div.navtab {
-	border-right: 1px solid #A3B4D7;
+	boarder-right: 1px solid #A3B4D7;
 	padding-right: 15px;
 	text-align: right;
 	line-height: 110%;
 }
 
 div.navtab table {
-	border-spacing: 0;
+	boarder-spacing: 0;
 }
 
 td.navtab {
@@ -281,7 +281,7 @@ ul {
 }
 
 pre.fragment {
-        border: 1px solid #C4CFE5;
+        boarder: 1px solid #C4CFE5;
         background-color: #FBFCFD;
         padding: 4px 6px;
         margin: 4px 8px 4px 2px;
@@ -294,10 +294,10 @@ pre.fragment {
 }
 
 div.fragment {
-  padding: 0 0 1px 0; /*Fixed: last line underline overlap border*/
+  padding: 0 0 1px 0; /*Fixed: last line underline overlap boarder*/
   margin: 4px 8px 4px 2px;
 	background-color: #FBFCFD;
-	border: 1px solid #C4CFE5;
+	boarder: 1px solid #C4CFE5;
 }
 
 div.line {
@@ -342,7 +342,7 @@ span.lineno {
 	padding-right: 4px;
         margin-right: 9px;
 	text-align: right;
-	border-right: 2px solid #0F0;
+	boarder-right: 2px solid #0F0;
 	background-color: #E8E8E8;
         white-space: pre;
 }
@@ -370,10 +370,10 @@ div.ah, span.ah {
 	margin-bottom: 3px;
 	margin-top: 3px;
 	padding: 0.2em;
-	border: solid thin #333;
-	border-radius: 0.5em;
-	-webkit-border-radius: .5em;
-	-moz-border-radius: .5em;
+	boarder: solid thin #333;
+	boarder-radius: 0.5em;
+	-webkit-boarder-radius: .5em;
+	-moz-boarder-radius: .5em;
 	box-shadow: 2px 2px 3px #999;
 	-webkit-box-shadow: 2px 2px 3px #999;
 	-moz-box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2px;
@@ -416,7 +416,7 @@ div.contents {
 td.indexkey {
 	background-color: #EBEFF6;
 	font-weight: bold;
-	border: 1px solid #C4CFE5;
+	boarder: 1px solid #C4CFE5;
 	margin: 2px 0px 2px 0;
 	padding: 2px 10px;
         white-space: nowrap;
@@ -425,7 +425,7 @@ td.indexkey {
 
 td.indexvalue {
 	background-color: #EBEFF6;
-	border: 1px solid #C4CFE5;
+	boarder: 1px solid #C4CFE5;
 	padding: 2px 10px;
 	margin: 2px 0px;
 }
@@ -454,7 +454,7 @@ div.center {
 }
 
 div.center img {
-	border: 0px;
+	boarder: 0px;
 }
 
 address.footer {
@@ -463,7 +463,7 @@ address.footer {
 }
 
 img.footer {
-	border: 0px;
+	boarder: 0px;
 	vertical-align: middle;
 }
 
@@ -521,14 +521,14 @@ span.vhdllogic {
 
 blockquote {
         background-color: #F7F8FB;
-        border-left: 2px solid #9CAFD4;
+        boarder-left: 2px solid #9CAFD4;
         margin: 0 24px 0 4px;
         padding: 0 12px 0 16px;
 }
 
 blockquote.DocNodeRTL {
-   border-left: 0;
-   border-right: 2px solid #9CAFD4;
+   boarder-left: 0;
+   boarder-right: 2px solid #9CAFD4;
    margin: 0 4px 0 24px;
    padding: 0 16px 0 12px;
 }
@@ -560,8 +560,8 @@ td.tiny {
 
 .dirtab {
 	padding: 4px;
-	border-collapse: collapse;
-	border: 1px solid #A3B4D7;
+	boarder-collapse: collapse;
+	boarder: 1px solid #A3B4D7;
 }
 
 th.dirtab {
@@ -571,8 +571,8 @@ th.dirtab {
 
 hr {
 	height: 0px;
-	border: none;
-	border-top: 1px solid #4A6AAA;
+	boarder: none;
+	boarder-top: 1px solid #4A6AAA;
 }
 
 hr.footer {
@@ -582,7 +582,7 @@ hr.footer {
 /* @group Member Descriptions */
 
 table.memberdecls {
-	border-spacing: 0px;
+	boarder-spacing: 0px;
 	padding: 0px;
 }
 
@@ -608,7 +608,7 @@ table.memberdecls {
 .memItemLeft, .memItemRight,
 .memTemplItemLeft, .memTemplItemRight, .memTemplParams {
 	background-color: #F9FAFC;
-	border: none;
+	boarder: none;
 	margin: 4px;
 	padding: 1px 0 0 8px;
 }
@@ -619,7 +619,7 @@ table.memberdecls {
 }
 
 .memSeparator {
-        border-bottom: 1px solid #DEE4F0;
+        boarder-bottom: 1px solid #DEE4F0;
         line-height: 1px;
         margin: 0px;
         padding: 0px;
@@ -647,11 +647,11 @@ table.memberdecls {
 
 .memtitle {
 	padding: 8px;
-	border-top: 1px solid #A8B8D9;
-	border-left: 1px solid #A8B8D9;
-	border-right: 1px solid #A8B8D9;
-	border-top-right-radius: 4px;
-	border-top-left-radius: 4px;
+	boarder-top: 1px solid #A8B8D9;
+	boarder-left: 1px solid #A8B8D9;
+	boarder-right: 1px solid #A8B8D9;
+	boarder-top-right-radius: 4px;
+	boarder-top-left-radius: 4px;
 	margin-bottom: -1px;
 	background-image: url('nav_f.png');
 	background-repeat: repeat-x;
@@ -677,7 +677,7 @@ table.memberdecls {
 
 .memnav {
 	background-color: #EBEFF6;
-	border: 1px solid #A3B4D7;
+	boarder: 1px solid #A3B4D7;
 	text-align: center;
 	margin: 2px;
 	margin-right: 15px;
@@ -715,9 +715,9 @@ table.memberdecls {
 }
 
 .memproto, dl.reflist dt {
-        border-top: 1px solid #A8B8D9;
-        border-left: 1px solid #A8B8D9;
-        border-right: 1px solid #A8B8D9;
+        boarder-top: 1px solid #A8B8D9;
+        boarder-left: 1px solid #A8B8D9;
+        boarder-right: 1px solid #A8B8D9;
         padding: 6px 0px 6px 0px;
         color: #253555;
         font-weight: bold;
@@ -725,13 +725,13 @@ table.memberdecls {
         background-color: #DFE5F1;
         /* opera specific markup */
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
-        border-top-right-radius: 4px;
+        boarder-top-right-radius: 4px;
         /* firefox specific markup */
         -moz-box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 5px;
-        -moz-border-radius-topright: 4px;
+        -moz-boarder-radius-topright: 4px;
         /* webkit specific markup */
         -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
-        -webkit-border-top-right-radius: 4px;
+        -webkit-boarder-top-right-radius: 4px;
 
 }
 
@@ -741,26 +741,26 @@ table.memberdecls {
 }
 
 .memdoc, dl.reflist dd {
-        border-bottom: 1px solid #A8B8D9;      
-        border-left: 1px solid #A8B8D9;      
-        border-right: 1px solid #A8B8D9; 
+        boarder-bottom: 1px solid #A8B8D9;
+        boarder-left: 1px solid #A8B8D9;
+        boarder-right: 1px solid #A8B8D9;
         padding: 6px 10px 2px 10px;
         background-color: #FBFCFD;
-        border-top-width: 0;
+        boarder-top-width: 0;
         background-image:url('nav_g.png');
         background-repeat:repeat-x;
         background-color: #FFFFFF;
         /* opera specific markup */
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
+        boarder-bottom-left-radius: 4px;
+        boarder-bottom-right-radius: 4px;
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
         /* firefox specific markup */
-        -moz-border-radius-bottomleft: 4px;
-        -moz-border-radius-bottomright: 4px;
+        -moz-boarder-radius-bottomleft: 4px;
+        -moz-boarder-radius-bottomright: 4px;
         -moz-box-shadow: rgba(0, 0, 0, 0.15) 5px 5px 5px;
         /* webkit specific markup */
-        -webkit-border-bottom-left-radius: 4px;
-        -webkit-border-bottom-right-radius: 4px;
+        -webkit-boarder-bottom-left-radius: 4px;
+        -webkit-boarder-bottom-right-radius: 4px;
         -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
 }
 
@@ -813,7 +813,7 @@ dl.reflist dd {
 }
 
 table.mlabels {
-	border-spacing: 0px;
+	boarder-spacing: 0px;
 }
 
 td.mlabels-left {
@@ -833,15 +833,15 @@ span.mlabels {
 
 span.mlabel {
         background-color: #728DC1;
-        border-top:1px solid #5373B4;
-        border-left:1px solid #5373B4;
-        border-right:1px solid #C4CFE5;
-        border-bottom:1px solid #C4CFE5;
+        boarder-top:1px solid #5373B4;
+        boarder-left:1px solid #5373B4;
+        boarder-right:1px solid #C4CFE5;
+        boarder-bottom:1px solid #C4CFE5;
 	text-shadow: none;
 	color: white;
 	margin-right: 4px;
 	padding: 2px 3px;
-	border-radius: 3px;
+	boarder-radius: 3px;
 	font-size: 7pt;
 	white-space: nowrap;
 	vertical-align: middle;
@@ -855,13 +855,13 @@ span.mlabel {
 
 div.directory {
         margin: 10px 0px;
-        border-top: 1px solid #9CAFD4;
-        border-bottom: 1px solid #9CAFD4;
+        boarder-top: 1px solid #9CAFD4;
+        boarder-bottom: 1px solid #9CAFD4;
         width: 100%;
 }
 
 .directory table {
-        border-collapse:collapse;
+        boarder-collapse:collapse;
 }
 
 .directory td {
@@ -881,7 +881,7 @@ div.directory {
 }
 
 .directory td.entry a img {
-        border: none;
+        boarder: none;
 }
 
 .directory td.desc {
@@ -889,7 +889,7 @@ div.directory {
         padding-left: 6px;
 	padding-right: 6px;
 	padding-top: 3px;
-	border-left: 1px solid rgba(0,0,0,0.05);
+	boarder-left: 1px solid rgba(0,0,0,0.05);
 }
 
 .directory tr.even {
@@ -939,7 +939,7 @@ div.directory {
     background-color: #728DC1;
     color: white;
     text-align: center;
-    border-radius: 4px;
+    boarder-radius: 4px;
     margin-left: 2px;
     margin-right: 2px;
 }
@@ -1009,13 +1009,13 @@ table.doxtable caption {
 }
 
 table.doxtable {
-	border-collapse:collapse;
+	boarder-collapse:collapse;
         margin-top: 4px;
         margin-bottom: 4px;
 }
 
 table.doxtable td, table.doxtable th {
-	border: 1px solid #2D4068;
+	boarder: 1px solid #2D4068;
 	padding: 3px 7px 2px;
 }
 
@@ -1030,11 +1030,11 @@ table.doxtable th {
 table.fieldtable {
         /*width: 100%;*/
         margin-bottom: 10px;
-        border: 1px solid #A8B8D9;
-        border-spacing: 0px;
-        -moz-border-radius: 4px;
-        -webkit-border-radius: 4px;
-        border-radius: 4px;
+        boarder: 1px solid #A8B8D9;
+        boarder-spacing: 0px;
+        -moz-boarder-radius: 4px;
+        -webkit-boarder-radius: 4px;
+        boarder-radius: 4px;
         -moz-box-shadow: rgba(0, 0, 0, 0.15) 2px 2px 2px;
         -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
@@ -1046,8 +1046,8 @@ table.fieldtable {
 
 .fieldtable td.fieldtype, .fieldtable td.fieldname {
         white-space: nowrap;
-        border-right: 1px solid #A8B8D9;
-        border-bottom: 1px solid #A8B8D9;
+        boarder-right: 1px solid #A8B8D9;
+        boarder-bottom: 1px solid #A8B8D9;
         vertical-align: top;
 }
 
@@ -1056,7 +1056,7 @@ table.fieldtable {
 }
 
 .fieldtable td.fielddoc {
-        border-bottom: 1px solid #A8B8D9;
+        boarder-bottom: 1px solid #A8B8D9;
         /*width: 100%;*/
 }
 
@@ -1069,7 +1069,7 @@ table.fieldtable {
 }
 
 .fieldtable tr:last-child td {
-        border-bottom: none;
+        boarder-bottom: none;
 }
 
 .fieldtable th {
@@ -1082,13 +1082,13 @@ table.fieldtable {
         padding-top: 5px;
         text-align:left;
         font-weight: 400;
-        -moz-border-radius-topleft: 4px;
-        -moz-border-radius-topright: 4px;
-        -webkit-border-top-left-radius: 4px;
-        -webkit-border-top-right-radius: 4px;
-        border-top-left-radius: 4px;
-        border-top-right-radius: 4px;
-        border-bottom: 1px solid #A8B8D9;
+        -moz-boarder-radius-topleft: 4px;
+        -moz-boarder-radius-topright: 4px;
+        -webkit-boarder-top-left-radius: 4px;
+        -webkit-boarder-top-right-radius: 4px;
+        boarder-top-left-radius: 4px;
+        boarder-top-right-radius: 4px;
+        boarder-bottom: 1px solid #A8B8D9;
 }
 
 
@@ -1111,7 +1111,7 @@ table.fieldtable {
 	height:30px;
 	line-height:30px;
 	color:#8AA0CC;
-	border:solid 1px #C2CDE4;
+	boarder:solid 1px #C2CDE4;
 	overflow:hidden;
 	margin:0px;
 	padding:0px;
@@ -1181,8 +1181,8 @@ table.classindex
         margin-left: 3%;
         margin-right: 3%;
         width: 94%;
-        border: 0;
-        border-spacing: 0; 
+        boarder: 0;
+        boarder-spacing: 0;
         padding: 0;
 }
 
@@ -1204,7 +1204,7 @@ div.header
         background-repeat:repeat-x;
 	background-color: #F9FAFC;
 	margin:  0px;
-	border-bottom: 1px solid #C4CFE5;
+	boarder-bottom: 1px solid #C4CFE5;
 }
 
 div.headertitle
@@ -1235,120 +1235,120 @@ dl.section.DocNodeRTL {
 dl.note {
   margin-left: -7px;
   padding-left: 3px;
-  border-left: 4px solid;
-  border-color: #D0C000;
+  boarder-left: 4px solid;
+  boarder-color: #D0C000;
 }
 
 dl.note.DocNodeRTL {
   margin-left: 0;
   padding-left: 0;
-  border-left: 0;
+  boarder-left: 0;
   margin-right: -7px;
   padding-right: 3px;
-  border-right: 4px solid;
-  border-color: #D0C000;
+  boarder-right: 4px solid;
+  boarder-color: #D0C000;
 }
 
 dl.warning, dl.attention {
   margin-left: -7px;
   padding-left: 3px;
-  border-left: 4px solid;
-  border-color: #FF0000;
+  boarder-left: 4px solid;
+  boarder-color: #FF0000;
 }
 
 dl.warning.DocNodeRTL, dl.attention.DocNodeRTL {
   margin-left: 0;
   padding-left: 0;
-  border-left: 0;
+  boarder-left: 0;
   margin-right: -7px;
   padding-right: 3px;
-  border-right: 4px solid;
-  border-color: #FF0000;
+  boarder-right: 4px solid;
+  boarder-color: #FF0000;
 }
 
 dl.pre, dl.post, dl.invariant {
   margin-left: -7px;
   padding-left: 3px;
-  border-left: 4px solid;
-  border-color: #00D000;
+  boarder-left: 4px solid;
+  boarder-color: #00D000;
 }
 
 dl.pre.DocNodeRTL, dl.post.DocNodeRTL, dl.invariant.DocNodeRTL {
   margin-left: 0;
   padding-left: 0;
-  border-left: 0;
+  boarder-left: 0;
   margin-right: -7px;
   padding-right: 3px;
-  border-right: 4px solid;
-  border-color: #00D000;
+  boarder-right: 4px solid;
+  boarder-color: #00D000;
 }
 
 dl.deprecated {
   margin-left: -7px;
   padding-left: 3px;
-  border-left: 4px solid;
-  border-color: #505050;
+  boarder-left: 4px solid;
+  boarder-color: #505050;
 }
 
 dl.deprecated.DocNodeRTL {
   margin-left: 0;
   padding-left: 0;
-  border-left: 0;
+  boarder-left: 0;
   margin-right: -7px;
   padding-right: 3px;
-  border-right: 4px solid;
-  border-color: #505050;
+  boarder-right: 4px solid;
+  boarder-color: #505050;
 }
 
 dl.todo {
   margin-left: -7px;
   padding-left: 3px;
-  border-left: 4px solid;
-  border-color: #00C0E0;
+  boarder-left: 4px solid;
+  boarder-color: #00C0E0;
 }
 
 dl.todo.DocNodeRTL {
   margin-left: 0;
   padding-left: 0;
-  border-left: 0;
+  boarder-left: 0;
   margin-right: -7px;
   padding-right: 3px;
-  border-right: 4px solid;
-  border-color: #00C0E0;
+  boarder-right: 4px solid;
+  boarder-color: #00C0E0;
 }
 
 dl.test {
   margin-left: -7px;
   padding-left: 3px;
-  border-left: 4px solid;
-  border-color: #3030E0;
+  boarder-left: 4px solid;
+  boarder-color: #3030E0;
 }
 
 dl.test.DocNodeRTL {
   margin-left: 0;
   padding-left: 0;
-  border-left: 0;
+  boarder-left: 0;
   margin-right: -7px;
   padding-right: 3px;
-  border-right: 4px solid;
-  border-color: #3030E0;
+  boarder-right: 4px solid;
+  boarder-color: #3030E0;
 }
 
 dl.bug {
   margin-left: -7px;
   padding-left: 3px;
-  border-left: 4px solid;
-  border-color: #C08050;
+  boarder-left: 4px solid;
+  boarder-color: #C08050;
 }
 
 dl.bug.DocNodeRTL {
   margin-left: 0;
   padding-left: 0;
-  border-left: 0;
+  boarder-left: 0;
   margin-right: -7px;
   padding-right: 3px;
-  border-right: 4px solid;
-  border-color: #C08050;
+  boarder-right: 4px solid;
+  boarder-color: #C08050;
 }
 
 dl.section dd {
@@ -1365,12 +1365,12 @@ dl.section dd {
 {
 	text-align: center;
 	vertical-align: bottom;
-	border-collapse: separate;
+	boarder-collapse: separate;
 }
  
 #projectlogo img
 { 
-	border: 0px none;
+	boarder: 0px none;
 }
  
 #projectalign
@@ -1405,7 +1405,7 @@ dl.section dd {
 	padding: 0px;
 	margin: 0px;
 	width: 100%;
-	border-bottom: 1px solid #5373B4;
+	boarder-bottom: 1px solid #5373B4;
 }
 
 .image
@@ -1440,7 +1440,7 @@ dl.section dd {
 
 div.zoom
 {
-	border: 1px solid #90A5CE;
+	boarder: 1px solid #90A5CE;
 }
 
 dl.citelist {
@@ -1465,8 +1465,8 @@ dl.citelist dd {
 div.toc {
         padding: 14px 25px;
         background-color: #F4F6FA;
-        border: 1px solid #D8DFEE;
-        border-radius: 7px 7px 7px 7px;
+        boarder: 1px solid #D8DFEE;
+        boarder-radius: 7px 7px 7px 7px;
         float: right;
         height: auto;
         margin: 0 8px 10px 10px;
@@ -1495,13 +1495,13 @@ div.toc li {
 div.toc h3 {
         font: bold 12px/1.2 Arial,FreeSans,sans-serif;
 	color: #4665A2;
-        border-bottom: 0 none;
+        boarder-bottom: 0 none;
         margin: 0;
 }
 
 div.toc ul {
         list-style: none outside none;
-        border: medium none;
+        boarder: medium none;
         padding: 0px;
 }       
 
@@ -1587,8 +1587,8 @@ tr.heading h2 {
 	cursor: default;
 	/*white-space: nowrap;*/
 	background-color: white;
-	border: 1px solid gray;
-	border-radius: 4px 4px 4px 4px;
+	boarder: 1px solid gray;
+	boarder-radius: 4px 4px 4px 4px;
 	box-shadow: 1px 1px 7px gray;
 	display: none;
 	font-size: smaller;
@@ -1636,7 +1636,7 @@ tr.heading h2 {
 #powerTip.se:after, #powerTip.se:before,
 #powerTip.nw:after, #powerTip.nw:before,
 #powerTip.sw:after, #powerTip.sw:before {
-	border: solid transparent;
+	boarder: solid transparent;
 	content: " ";
 	height: 0;
 	width: 0;
@@ -1647,14 +1647,14 @@ tr.heading h2 {
 #powerTip.w:after,  #powerTip.e:after,
 #powerTip.nw:after, #powerTip.ne:after,
 #powerTip.sw:after, #powerTip.se:after {
-	border-color: rgba(255, 255, 255, 0);
+	boarder-color: rgba(255, 255, 255, 0);
 }
 
 #powerTip.n:before,  #powerTip.s:before,
 #powerTip.w:before,  #powerTip.e:before,
 #powerTip.nw:before, #powerTip.ne:before,
 #powerTip.sw:before, #powerTip.se:before {
-	border-color: rgba(128, 128, 128, 0);
+	boarder-color: rgba(128, 128, 128, 0);
 }
 
 #powerTip.n:after,  #powerTip.n:before,
@@ -1664,13 +1664,13 @@ tr.heading h2 {
 }
 
 #powerTip.n:after, #powerTip.ne:after, #powerTip.nw:after {
-	border-top-color: #FFFFFF;
-	border-width: 10px;
+	boarder-top-color: #FFFFFF;
+	boarder-width: 10px;
 	margin: 0px -10px;
 }
 #powerTip.n:before {
-	border-top-color: #808080;
-	border-width: 11px;
+	boarder-top-color: #808080;
+	boarder-width: 11px;
 	margin: 0px -11px;
 }
 #powerTip.n:after, #powerTip.n:before {
@@ -1692,14 +1692,14 @@ tr.heading h2 {
 }
 
 #powerTip.s:after, #powerTip.se:after, #powerTip.sw:after {
-	border-bottom-color: #FFFFFF;
-	border-width: 10px;
+	boarder-bottom-color: #FFFFFF;
+	boarder-width: 10px;
 	margin: 0px -10px;
 }
 
 #powerTip.s:before, #powerTip.se:before, #powerTip.sw:before {
-	border-bottom-color: #808080;
-	border-width: 11px;
+	boarder-bottom-color: #808080;
+	boarder-width: 11px;
 	margin: 0px -11px;
 }
 
@@ -1719,14 +1719,14 @@ tr.heading h2 {
 	left: 100%;
 }
 #powerTip.e:after {
-	border-left-color: #FFFFFF;
-	border-width: 10px;
+	boarder-left-color: #FFFFFF;
+	boarder-width: 10px;
 	top: 50%;
 	margin-top: -10px;
 }
 #powerTip.e:before {
-	border-left-color: #808080;
-	border-width: 11px;
+	boarder-left-color: #808080;
+	boarder-width: 11px;
 	top: 50%;
 	margin-top: -11px;
 }
@@ -1735,14 +1735,14 @@ tr.heading h2 {
 	right: 100%;
 }
 #powerTip.w:after {
-	border-right-color: #FFFFFF;
-	border-width: 10px;
+	boarder-right-color: #FFFFFF;
+	boarder-width: 10px;
 	top: 50%;
 	margin-top: -10px;
 }
 #powerTip.w:before {
-	border-right-color: #808080;
-	border-width: 11px;
+	boarder-right-color: #808080;
+	boarder-width: 11px;
 	top: 50%;
 	margin-top: -11px;
 }
@@ -1769,13 +1769,13 @@ tr.heading h2 {
 /* @group Markdown */
 
 table.markdownTable {
-	border-collapse:collapse;
+	boarder-collapse:collapse;
         margin-top: 4px;
         margin-bottom: 4px;
 }
 
 table.markdownTable td, table.markdownTable th {
-	border: 1px solid #2D4068;
+	boarder: 1px solid #2D4068;
 	padding: 3px 7px 2px;
 }
 

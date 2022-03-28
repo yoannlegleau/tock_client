@@ -23,7 +23,6 @@ struct Elem {
 typedef struct Linkedlist Linkedlist;
 struct Linkedlist {
     Elem * last;
-    int size;
     int length;
 };
 
@@ -43,17 +42,13 @@ Elem * elemFactory( Linkedlist * l, void * o){
     return elem;
 }
 
-Linkedlist * linkedListFactory( int typeSize){
+Linkedlist * linkedListFactory(){
     Linkedlist * list = malloc(sizeof(Linkedlist));
-    list->size = typeSize;
     list->last = NULL;
     list->length = 0;
     return list;
 }
 
-int size( Linkedlist *l) {
-    return l->size;
-}
 
 int length( Linkedlist *l) {
     return l->length;

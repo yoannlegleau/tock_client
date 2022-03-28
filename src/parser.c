@@ -35,7 +35,7 @@ Linkedlist * loadFromPath(const char *path){
         exit( 0 );
     }
 
-    Linkedlist * keyValues = linkedListFactory(sizeof(KeyValue));
+    Linkedlist * keyValues = linkedListFactory();
     if (file == NULL)
         exit(EXIT_FAILURE);
     char * c = "";

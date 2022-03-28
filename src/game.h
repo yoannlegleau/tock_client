@@ -10,11 +10,11 @@
 #ifndef TOCK_CLIENT_GAME_H
 #define TOCK_CLIENT_GAME_H
 
-#include "bord.h"
+#include "board.h"
 
 typedef struct Game Game;
 struct Game {
-    Bord * bord;
+    Board * board;
     Linkedlist * players;
 };
 

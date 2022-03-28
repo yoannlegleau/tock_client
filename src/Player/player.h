@@ -12,7 +12,7 @@
 
 #include "../linkedlist.h"
 #include "../card.h"
-#include "../bord.h"
+#include "../board.h"
 #include "stdbool.h"
 
 /**
@@ -27,14 +27,14 @@ struct Player {
     /** \brief liste de carte representent la main du joueur */
     Linkedlist * cards;
 
-    int (*pt)(Player *, Bord *);
+    int (*pt)(Player *, Board *);
 };
 
 Player * playerFactory( int id);
 
 void drawPlayer(const Player *player);
 
-int play(Player *p, Bord * bord);
+int play(Player *p, Board * board);
 
 
 #endif //TOCK_CLIENT_PLAYER_H

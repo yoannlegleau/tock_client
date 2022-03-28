@@ -13,6 +13,8 @@
 #define COLOR_SPLITER ","
 
 char** str_split(char* a_str, const char a_delim);
+void colorInit();
+
 
 /**
  * \brief (singleton) liste contenant les clefs valuers des couleur

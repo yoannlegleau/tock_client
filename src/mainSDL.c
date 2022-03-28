@@ -58,6 +58,7 @@ void winCreate() {
         printf("Could not create window: %s\n", SDL_GetError());
     }
 
+    // Creation du render
     if(SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED) == NULL){
         fprintf(stderr, "Erreur à la création du renderer\n");
     }
@@ -76,7 +77,7 @@ void winDestroy() {
     SDL_Quit();
 }
 
-void drawCircleBorder(SDL_Renderer *renderer, int x, int y, int radius, SDL_Color colorOut, int width , SDL_Color colorIn) {
+void drawCircleBoarder(SDL_Renderer *renderer, int x, int y, int radius, SDL_Color colorOut, int width , SDL_Color colorIn) {
     drawCircle(renderer, x, y, radius, colorOut);
     drawCircle(renderer, x  , y, radius-width, colorIn);
 }

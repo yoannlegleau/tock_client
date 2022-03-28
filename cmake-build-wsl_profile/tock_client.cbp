@@ -126,6 +126,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/Color.c">
+			<Option target="tock_client"/>
+			<Option target="tock_server"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/Color.h">
 			<Option target="tock_client"/>
 			<Option target="tock_server"/>
@@ -138,11 +142,11 @@
 			<Option target="tock_client"/>
 			<Option target="tock_server"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/bord.c">
+		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/board.c">
 			<Option target="tock_client"/>
 			<Option target="tock_server"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/bord.h">
+		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/board.h">
 			<Option target="tock_client"/>
 			<Option target="tock_server"/>
 		</Unit>
@@ -190,6 +194,14 @@
 			<Option target="tock_server"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/mainServeur.c">
+			<Option target="tock_server"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/parser.c">
+			<Option target="tock_client"/>
+			<Option target="tock_server"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/parser.h">
+			<Option target="tock_client"/>
 			<Option target="tock_server"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/pawn.c">

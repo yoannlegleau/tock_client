@@ -1,64 +1,64 @@
-\hypertarget{bord_8h}{}\doxysection{Référence du fichier C\+:/\+Users/adzerake/\+CLion\+Projects/tock-\/client/src/bord.h}
-\label{bord_8h}\index{C:/Users/adzerake/CLionProjects/tock-\/client/src/bord.h@{C:/Users/adzerake/CLionProjects/tock-\/client/src/bord.h}}
+\hypertarget{board_8h}{}\doxysection{Référence du fichier C\+:/\+Users/adzerake/\+CLion\+Projects/tock-\/client/src/board.h}
+\label{board_8h}\index{C:/Users/adzerake/CLionProjects/tock-\/client/src/board.h@{C:/Users/adzerake/CLionProjects/tock-\/client/src/board.h}}
 {\ttfamily \#include $<$SDL.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}Player/player.\+h\char`\"{}}\newline
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{bord_8h_ade61443d39f111c96f160359cab6f8bb}{init\+Bord}} (int p\+Int\mbox{[}88\mbox{]})
+void \mbox{\hyperlink{board_8h_ade61443d39f111c96f160359cab6f8bb}{init\+Board}} (int p\+Int\mbox{[}88\mbox{]})
 \item 
-\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ \mbox{\hyperlink{bord_8h_a2eb7d102f733c1a2c4f042456f7f3903}{get\+Player\+Pans\+Location}} (Player $\ast$player)
+\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ \mbox{\hyperlink{board_8h_a2eb7d102f733c1a2c4f042456f7f3903}{get\+Player\+Pans\+Location}} (Player $\ast$player)
 \item 
-void \mbox{\hyperlink{bord_8h_a4dd60d54858e044d9530e79507545819}{draw\+Bord}} (SDL\+\_\+\+Renderer $\ast$renderer, int x, int y, int \mbox{\hyperlink{bord_8h_a412ee707910a58d55e831ce5dcefffb0}{bord}}\mbox{[}$\,$\mbox{]})
+void \mbox{\hyperlink{board_8h_a4dd60d54858e044d9530e79507545819}{draw\+Board}} (SDL\+\_\+\+Renderer $\ast$renderer, int x, int y, int \mbox{\hyperlink{board_8h_a412ee707910a58d55e831ce5dcefffb0}{board}}\mbox{[}$\,$\mbox{]})
 \item 
-bool \mbox{\hyperlink{bord_8h_a38e25eb1e604166bfa142067b2be6e24}{forward}} (int location, int step)
+bool \mbox{\hyperlink{board_8h_a38e25eb1e604166bfa142067b2be6e24}{forward}} (int location, int step)
 \item 
-void \mbox{\hyperlink{bord_8h_a7650ba73078429f41e6774a72b6867bc}{move}} (int from, int to)
+void \mbox{\hyperlink{board_8h_a7650ba73078429f41e6774a72b6867bc}{move}} (int from, int to)
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{bord_8h_a412ee707910a58d55e831ce5dcefffb0}{bord}} \mbox{[}88\mbox{]}
+int \mbox{\hyperlink{board_8h_a412ee707910a58d55e831ce5dcefffb0}{board}} \mbox{[}88\mbox{]}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{bord_8h_a4dd60d54858e044d9530e79507545819}\label{bord_8h_a4dd60d54858e044d9530e79507545819}} 
-\index{bord.h@{bord.h}!drawBord@{drawBord}}
-\index{drawBord@{drawBord}!bord.h@{bord.h}}
-\doxysubsubsection{\texorpdfstring{drawBord()}{drawBord()}}
-{\footnotesize\ttfamily void draw\+Bord (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{bord\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{board_8h_a4dd60d54858e044d9530e79507545819}\label{board_8h_a4dd60d54858e044d9530e79507545819}}
+\index{board.h@{board.h}!drawBoard@{drawBoard}}
+\index{drawBoard@{drawBoard}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{drawBoard()}{drawBoard()}}
+{\footnotesize\ttfamily void draw\+Board (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{board\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{bord_8h_a38e25eb1e604166bfa142067b2be6e24}\label{bord_8h_a38e25eb1e604166bfa142067b2be6e24}} 
-\index{bord.h@{bord.h}!forward@{forward}}
-\index{forward@{forward}!bord.h@{bord.h}}
+\mbox{\Hypertarget{board_8h_a38e25eb1e604166bfa142067b2be6e24}\label{board_8h_a38e25eb1e604166bfa142067b2be6e24}}
+\index{board.h@{board.h}!forward@{forward}}
+\index{forward@{forward}!board.h@{board.h}}
 \doxysubsubsection{\texorpdfstring{forward()}{forward()}}
 {\footnotesize\ttfamily bool forward (\begin{DoxyParamCaption}\item[{int}]{location,  }\item[{int}]{step }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{bord_8h_a2eb7d102f733c1a2c4f042456f7f3903}\label{bord_8h_a2eb7d102f733c1a2c4f042456f7f3903}} 
-\index{bord.h@{bord.h}!getPlayerPansLocation@{getPlayerPansLocation}}
-\index{getPlayerPansLocation@{getPlayerPansLocation}!bord.h@{bord.h}}
+\mbox{\Hypertarget{board_8h_a2eb7d102f733c1a2c4f042456f7f3903}\label{board_8h_a2eb7d102f733c1a2c4f042456f7f3903}}
+\index{board.h@{board.h}!getPlayerPansLocation@{getPlayerPansLocation}}
+\index{getPlayerPansLocation@{getPlayerPansLocation}!board.h@{board.h}}
 \doxysubsubsection{\texorpdfstring{getPlayerPansLocation()}{getPlayerPansLocation()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ get\+Player\+Pans\+Location (\begin{DoxyParamCaption}\item[{Player $\ast$}]{player }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{bord_8h_ade61443d39f111c96f160359cab6f8bb}\label{bord_8h_ade61443d39f111c96f160359cab6f8bb}} 
-\index{bord.h@{bord.h}!initBord@{initBord}}
-\index{initBord@{initBord}!bord.h@{bord.h}}
-\doxysubsubsection{\texorpdfstring{initBord()}{initBord()}}
-{\footnotesize\ttfamily void init\+Bord (\begin{DoxyParamCaption}\item[{int}]{p\+Int\mbox{[}88\mbox{]} }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{board_8h_ade61443d39f111c96f160359cab6f8bb}\label{board_8h_ade61443d39f111c96f160359cab6f8bb}}
+\index{board.h@{board.h}!initBoard@{initBoard}}
+\index{initBoard@{initBoard}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{initBoard()}{initBoard()}}
+{\footnotesize\ttfamily void init\+Board (\begin{DoxyParamCaption}\item[{int}]{p\+Int\mbox{[}88\mbox{]} }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{bord_8h_a7650ba73078429f41e6774a72b6867bc}\label{bord_8h_a7650ba73078429f41e6774a72b6867bc}} 
-\index{bord.h@{bord.h}!move@{move}}
-\index{move@{move}!bord.h@{bord.h}}
+\mbox{\Hypertarget{board_8h_a7650ba73078429f41e6774a72b6867bc}\label{board_8h_a7650ba73078429f41e6774a72b6867bc}}
+\index{board.h@{board.h}!move@{move}}
+\index{move@{move}!board.h@{board.h}}
 \doxysubsubsection{\texorpdfstring{move()}{move()}}
 {\footnotesize\ttfamily void move (\begin{DoxyParamCaption}\item[{int}]{from,  }\item[{int}]{to }\end{DoxyParamCaption})}
 
 
 
 \doxysubsection{Documentation des variables}
-\mbox{\Hypertarget{bord_8h_a412ee707910a58d55e831ce5dcefffb0}\label{bord_8h_a412ee707910a58d55e831ce5dcefffb0}} 
-\index{bord.h@{bord.h}!bord@{bord}}
-\index{bord@{bord}!bord.h@{bord.h}}
-\doxysubsubsection{\texorpdfstring{bord}{bord}}
-{\footnotesize\ttfamily int bord\mbox{[}88\mbox{]}}
+\mbox{\Hypertarget{board_8h_a412ee707910a58d55e831ce5dcefffb0}\label{board_8h_a412ee707910a58d55e831ce5dcefffb0}}
+\index{board.h@{board.h}!board@{board}}
+\index{board@{board}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{board}{board}}
+{\footnotesize\ttfamily int board\mbox{[}88\mbox{]}}
 
