@@ -16,14 +16,13 @@ char * getByKey(Linkedlist *liste,char *key){
     int i;
     KeyValue * kv;
     char * result = NULL;
-    if(isEmpty(liste))
-        exit(EXIT_FAILURE);
-    for(i=0;i<length(liste);i++){
-        kv = (KeyValue *)get(liste,i);
-        if(strcmp(kv->key,key)==0){
-            result = kv->value;
+    if(!isEmpty(liste))
+        for(i=0;i<length(liste);i++){
+            kv = (KeyValue *)get(liste,i);
+            if(strcmp(kv->key,key)==0){
+                result = kv->value;
+            }
         }
-    }
     return result;
 }
 
@@ -71,4 +70,8 @@ KeyValue * keyValueFactory(char * key,char * value){
 void drawKeyValue(KeyValue *keyValue){
     printf("key: %s\n",keyValue->key);
     printf("value: %s\n",keyValue->value);
+}
+
+bool toBool(char *s){
+    return (strcmp(s,"true") == 0);
 }

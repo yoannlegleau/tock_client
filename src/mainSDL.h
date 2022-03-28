@@ -23,4 +23,7 @@ bool isWinCreat();
 void drawCircle(SDL_Renderer *renderer, int x, int y, int radius, SDL_Color color);
 void drawCircleBoarder(SDL_Renderer *renderer, int x, int y, int radius, SDL_Color colorOut, int width , SDL_Color colorIn);
 
+int SDLgetWidth(float f);
+int SDLgetHeight(float f);
+
 #endif //TOCK_CLIENT_MAINSDL_H

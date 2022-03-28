@@ -8,8 +8,11 @@
 
 #include <stdio.h>
 #include <SDL2/SDL_ttf.h>
+#include <stdlib.h>
 #include "mainSDL.h"
+#include "parser.h"
 
+#define SETTINGS_PATH "assets/Settings"
 /**
  * \var window
  * \brief pointeur vers la fenêtre principal
@@ -41,15 +44,24 @@ void winCreate() {
     SDL_Init(SDL_INIT_VIDEO); // Initialise SDL2
     TTF_Init(); // Initialise SDL2_TTF
 
+    Linkedlist *settings = loadFromPath(SETTINGS_PATH);
+
 
     // Créez la fenêtre de l'application avec les paramètres suivants :
+    Uint32 flags;
+
+    if (toBool(getByKey(settings,"Fullscreen")))
+        flags = SDL_WINDOW_FULLSCREEN_DESKTOP;
+    else
+        flags = SDL_WINDOW_SHOWN|SDL_WINDOW_RESIZABLE|SDL_WINDOW_OPENGL;
+
     window = SDL_CreateWindow(
             "Tock.io",                  // window title
             SDL_WINDOWPOS_UNDEFINED,           // initial x position
             SDL_WINDOWPOS_UNDEFINED,           // initial y position
-            1280,                               // width, in pixels
-            720,                               // height, in pixels
-            SDL_WINDOW_SHOWN|SDL_WINDOW_RESIZABLE|SDL_WINDOW_OPENGL // flags - see below
+            atoi(getByKey(settings,"WindowsDefaultWidth")),// width, in pixels
+            atoi(getByKey(settings,"WindowsDefaultHeight")),// height, in pixels
+            flags
     );
 
     // Vérifiez que la fenêtre a bien été créé
@@ -98,3 +110,16 @@ void drawCircle(SDL_Renderer *renderer, int x, int y, int radius, SDL_Color colo
     }
 }
 
+int SDLgetWidth(float f){
+    winCreate();
+    int w,h;
+    SDL_GetWindowSize(window, &w, &h);
+    return (int)(w*f);
+}
+
+int SDLgetHeight(float f){
+    winCreate();
+    int w,h;
+    SDL_GetWindowSize(window, &w, &h);
+    return (int)(h*f);
+}

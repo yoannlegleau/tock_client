@@ -158,13 +158,16 @@ bool outPawn(Board * board, int pId) {
 
 /* ---------- Old ---------- */
 
-void drawBoard(Board * board, SDL_Renderer *renderer, int x, int y){
+void drawBoard(Board * board, SDL_Renderer *renderer){
     SDL_Color couleurNoire = getSDLColor("Black");
-    const int squareSize = 26;
-    const int sercleSize = 23/2;
-    const int widthSize = 3;
+    const int squareSize = SDLgetHeight(0.03611112);
+    const int sercleSize = SDLgetHeight(0.0152777779);;
+    const int widthSize = SDLgetHeight(0.004166667);
+
     const int matSize = 19;
     int boardMat[19][19];
+
+    int x = (SDLgetWidth(0.5)-((squareSize*(matSize-1))/2)) , y = SDLgetHeight(0.1);
 
     for(int i = 0; i < 19; i++){
       for(int j = 0; j < 19; j++){
@@ -327,10 +330,10 @@ void drawBoard(Board * board, SDL_Renderer *renderer, int x, int y){
                     drawCircleBoarder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize , getSDLColor("Player3Light"));
                     break;
                 case 4:
-                    drawCircleBoarder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, 3 , getSDLColor("Player4"));
+                    drawCircleBoarder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize , getSDLColor("Player4"));
                     break;
                 case 40:
-                    drawCircleBoarder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, 3 , getSDLColor("Player4Light"));
+                    drawCircleBoarder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize , getSDLColor("Player4Light"));
                     break;
 
             }

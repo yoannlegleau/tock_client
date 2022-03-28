@@ -72,7 +72,7 @@ void addPlayer(Game * game, int nbPlayer){
  */
 int gameStart(Game * game) {
 
-    Linkedlist * gamRules = linkedListFactory();
+    Linkedlist * gameRules = linkedListFactory();
 
     Linkedlist * cards = linkedListFactory();
 
@@ -113,7 +113,7 @@ int gameStart(Game * game) {
             switch(e.type) {
                 case SDL_QUIT:
                     running = 0;
-                    return -1;
+                    return 1;
                 case SDL_KEYDOWN:
                 case SDLK_END:
                     return -1;
@@ -150,7 +150,7 @@ int gameStart(Game * game) {
         Player * p = getFirst(game->players);
         if (isEmpty(p->cards)){
             if(isEmpty(cards))
-                makeDeck(cards, gamRules);
+                makeDeck(cards, gameRules);
             distributeCards(cards, game->players);
         }
 
@@ -172,8 +172,8 @@ int gameStart(Game * game) {
 
 void rendererAll(Game *game, SDL_Renderer *renderer) {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
-    SDL_RenderDrawLine(renderer,1280/2,0,1280/2,720),
-    SDL_RenderDrawLine(renderer,0,720/2,1280,720/2),
+    SDL_RenderDrawLine(renderer, SDLgetWidth(0.5),0,SDLgetWidth(0.5),SDLgetHeight(1)),
+    SDL_RenderDrawLine(renderer,0,SDLgetHeight(0.5),SDLgetWidth(1),SDLgetHeight(0.5)),
 
     drawMainPlayerHUD(renderer,get(game->players,0));
     drawMainOpponentHUD(renderer, get(game->players,2));
@@ -183,7 +183,7 @@ void rendererAll(Game *game, SDL_Renderer *renderer) {
     drawPlayerHUD(renderer,get(game->players,2),police, 1000, 40);
     drawPlayerHUD(renderer,get(game->players,3),police, 1000, 500);
 
-    drawBoard(game->board,renderer, 406, 64);
+    drawBoard(game->board,renderer);
 
     SDL_Color background = getSDLColor("Background");
     SDL_SetRenderDrawColor(renderer, background.r , background.g , background.b,background.a );

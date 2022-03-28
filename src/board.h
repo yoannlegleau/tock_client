@@ -55,7 +55,7 @@ void move(Board * board, int from, int to);
 bool outPawn(Board * board, int pId);
 
 
-void drawBoard(Board * board, SDL_Renderer *renderer, int x, int y);
+void drawBoard(Board * board, SDL_Renderer *renderer);
 
 
 #endif //TOCK_CLIENT_BOARD_H

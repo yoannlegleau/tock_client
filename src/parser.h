@@ -21,4 +21,6 @@ KeyValue * keyValueFactory(char * key,char * value);
 
 void drawKeyValue(KeyValue *keyValue);
 
+bool toBool(char *s);
+
 #endif //TOCK_CLIENT_PARSER_H
