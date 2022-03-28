@@ -1,4 +1,4 @@
-* MAKEFILE
+* MAKEFILE 👾
 ** Darwin
    Pour compiler sur macOS
    #+BEGIN_SRC sh
