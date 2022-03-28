@@ -113,7 +113,7 @@ int gameStart(Game * game) {
             switch(e.type) {
                 case SDL_QUIT:
                     running = 0;
-                    return 1;
+                    return -1;
                 case SDL_KEYDOWN:
                 case SDLK_END:
                     return -1;
@@ -178,10 +178,10 @@ void rendererAll(Game *game, SDL_Renderer *renderer) {
     drawMainPlayerHUD(renderer,get(game->players,0));
     drawMainOpponentHUD(renderer, get(game->players,2));
 
-    drawPlayerHUD(renderer,get(game->players,0),police, 10, 40);
-    drawPlayerHUD(renderer,get(game->players,1),police, 10, 500);
-    drawPlayerHUD(renderer,get(game->players,2),police, 1000, 40);
-    drawPlayerHUD(renderer,get(game->players,3),police, 1000, 500);
+    drawPlayerHUD(renderer,get(game->players,0),police, SDLgetWidth(0.1), SDLgetHeight(0.1));
+    drawPlayerHUD(renderer,get(game->players,1),police, SDLgetWidth(0.1), SDLgetHeight(0.7));
+    drawPlayerHUD(renderer,get(game->players,2),police, SDLgetWidth(0.7), SDLgetHeight(0.1));
+    drawPlayerHUD(renderer,get(game->players,3),police, SDLgetWidth(0.7), SDLgetHeight(0.7));
 
     drawBoard(game->board,renderer);
 
@@ -235,8 +235,8 @@ void drawMainPlayerHUD(SDL_Renderer *renderer, Player * player){
     SDL_Texture *image_tex;
     SDL_Rect imgDestRect ;
     SDL_Surface *image=NULL;
-    int center = 1280/2;
-    int bottom = 720;
+    int center = SDLgetWidth(0.5);
+    int bottom = SDLgetHeight(1);
     int cardx = 80;
     int cardy = 120;
     int cardslen = cardx*length(player->cards);
@@ -277,8 +277,8 @@ void drawMainOpponentHUD(SDL_Renderer *renderer, Player * player){
     SDL_Texture *image_tex;
     SDL_Rect imgDestRect ;
     SDL_Surface *image=NULL;
-    int center = 1280/2;
-    int bottom = 720;
+    int center = SDLgetWidth(0.5);
+    int bottom = SDLgetHeight(1);
     int cardx = 80;
     int cardy = 120;
     int ofset = 20;
