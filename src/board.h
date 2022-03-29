@@ -19,6 +19,7 @@ struct Board {
 /* ---------- Constructor ---------- */
 
 Board * boardFactory(int nbPlayer);
+Board * boardClone(Board * board);
 
 void initBoard(Board * board);
 
@@ -26,7 +27,7 @@ void initBoard(Board * board);
 
 int getNbPlayer(Board * board);
 int getLen(Board * board);
-Linkedlist * getPlayerPansLocation(Board * board, int playerId );
+Linkedlist * getPlayerPawnsLocation(Board * board, int playerId );
 int getStart(int pId);
 int getHomeEntry(int pId);
 int getHomeStart(Board * board, int pId);
@@ -53,7 +54,7 @@ bool forward(Board * board, int location, int step);
 bool backward(Board * board, int location, int step);
 void move(Board * board, int from, int to);
 bool outPawn(Board * board, int pId);
-
+int heuristic(Board * board,int IdPlayer);
 
 void drawBoard(Board * board, SDL_Renderer *renderer);
 

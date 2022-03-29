@@ -18,7 +18,6 @@ set(CMAKE_DEPENDS_CHECK_C
   "/mnt/c/Users/adzer/CLionProjects/tock-client/src/mainClient.c" "/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/CMakeFiles/tock_client.dir/src/mainClient.c.o"
   "/mnt/c/Users/adzer/CLionProjects/tock-client/src/mainSDL.c" "/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/CMakeFiles/tock_client.dir/src/mainSDL.c.o"
   "/mnt/c/Users/adzer/CLionProjects/tock-client/src/parser.c" "/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/CMakeFiles/tock_client.dir/src/parser.c.o"
-  "/mnt/c/Users/adzer/CLionProjects/tock-client/src/pawn.c" "/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/CMakeFiles/tock_client.dir/src/pawn.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

@@ -1,4 +1,3 @@
 /mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/CMakeFiles/tock_client.dir
-/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/CMakeFiles/tock_server.dir
 /mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/CMakeFiles/edit_cache.dir
 /mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/CMakeFiles/rebuild_cache.dir

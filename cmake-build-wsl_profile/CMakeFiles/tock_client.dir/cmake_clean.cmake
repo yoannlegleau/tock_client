@@ -9,7 +9,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/tock_client.dir/src/mainClient.c.o"
   "CMakeFiles/tock_client.dir/src/mainSDL.c.o"
   "CMakeFiles/tock_client.dir/src/parser.c.o"
-  "CMakeFiles/tock_client.dir/src/pawn.c.o"
   "tock_client"
   "tock_client.pdb"
 )

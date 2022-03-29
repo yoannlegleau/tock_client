@@ -61,50 +61,6 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="tock_server">
-				<Option output="/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/tock_server" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/mnt/c/Users/adzer/CLionProjects/tock-client/C:/lib/SDL2-2.0.16/include"/>
-					<Add directory="/mnt/c/Users/adzer/CLionProjects/tock-client/C:/lib/SDL2_ttf/include"/>
-					<Add directory="/mnt/c/Users/adzer/CLionProjects/tock-client/C:/lib/SDL2_image-2.0.5/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 tock_server"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="tock_server/fast">
-				<Option output="/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/tock_server" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile"/>
-				<Option object_output="./"/>
-				<Option type="1"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/mnt/c/Users/adzer/CLionProjects/tock-client/C:/lib/SDL2-2.0.16/include"/>
-					<Add directory="/mnt/c/Users/adzer/CLionProjects/tock-client/C:/lib/SDL2_ttf/include"/>
-					<Add directory="/mnt/c/Users/adzer/CLionProjects/tock-client/C:/lib/SDL2_image-2.0.5/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 tock_server/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile"/>
 				<Option type="4"/>
@@ -128,89 +84,60 @@
 		</Build>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/Color.c">
 			<Option target="tock_client"/>
-			<Option target="tock_server"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/Color.h">
 			<Option target="tock_client"/>
-			<Option target="tock_server"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/Player/player.c">
 			<Option target="tock_client"/>
-			<Option target="tock_server"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/Player/player.h">
 			<Option target="tock_client"/>
-			<Option target="tock_server"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/board.c">
 			<Option target="tock_client"/>
-			<Option target="tock_server"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/board.h">
 			<Option target="tock_client"/>
-			<Option target="tock_server"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/card.c">
 			<Option target="tock_client"/>
-			<Option target="tock_server"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/card.h">
 			<Option target="tock_client"/>
-			<Option target="tock_server"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/game.c">
 			<Option target="tock_client"/>
-			<Option target="tock_server"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/game.h">
 			<Option target="tock_client"/>
-			<Option target="tock_server"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/gameRule.c">
 			<Option target="tock_client"/>
-			<Option target="tock_server"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/gameRule.h">
 			<Option target="tock_client"/>
-			<Option target="tock_server"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/linkedlist.c">
 			<Option target="tock_client"/>
-			<Option target="tock_server"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/linkedlist.h">
 			<Option target="tock_client"/>
-			<Option target="tock_server"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/mainClient.c">
 			<Option target="tock_client"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/mainSDL.c">
 			<Option target="tock_client"/>
-			<Option target="tock_server"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/mainSDL.h">
 			<Option target="tock_client"/>
-			<Option target="tock_server"/>
-		</Unit>
-		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/mainServeur.c">
-			<Option target="tock_server"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/parser.c">
 			<Option target="tock_client"/>
-			<Option target="tock_server"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/parser.h">
 			<Option target="tock_client"/>
-			<Option target="tock_server"/>
-		</Unit>
-		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/pawn.c">
-			<Option target="tock_client"/>
-			<Option target="tock_server"/>
-		</Unit>
-		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/pawn.h">
-			<Option target="tock_client"/>
-			<Option target="tock_server"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

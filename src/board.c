@@ -9,6 +9,8 @@
 
 #define PLAYERBORDLENTH 18
 
+int getBoardLen(Board * board);
+
 /* ---------- Constructor ---------- */
 
 Board * boardFactory(int nbPlayer){
@@ -17,6 +19,14 @@ Board * boardFactory(int nbPlayer){
     board->board = malloc(sizeof(int)*(getLen(board)));
     initBoard(board);
     return board;
+}
+
+Board * boardClone(Board * board){
+    Board *newBord = boardFactory(board->nbPlayer);
+    for (int i = 0; i < getLen(board); i++) {
+        newBord->board[i] = board->board[i];
+    }
+    return newBord;
 }
 
 void initBoard(Board * board) {
@@ -32,10 +42,10 @@ int getNbPlayer(Board * board){
 }
 
 int getLen(Board * board){
-    return ((18*getNbPlayer(board))+(4*getNbPlayer(board)));
+    return (getBoardLen(board)+(4*getNbPlayer(board)));
 }
 
-Linkedlist *getPlayerPansLocation(Board * board, int playerId) {
+Linkedlist *getPlayerPawnsLocation(Board * board, int playerId) {
     Linkedlist * locations = linkedListFactory();
     int arrayLen = getLen(board) + 4* board->nbPlayer;
     for (int i = 0; i < arrayLen; i++) {
@@ -147,13 +157,32 @@ void move(Board * board, int from, int to){
 
 bool outPawn(Board * board, int pId) {
     bool ret = false;
-    Linkedlist * pawns = getPlayerPansLocation(board, pId);
+    Linkedlist * pawns = getPlayerPawnsLocation(board, pId);
     if (length(pawns) < 4){
         board->board[getStart(pId)] = pId;
         ret= true;
     }
     destroy(pawns);
     return ret;
+}
+
+int heuristic(Board * board,int IdPlayer){
+    Linkedlist * pawns = getPlayerPawnsLocation(board,IdPlayer);
+    int const inHomeFactor = 100, startFactor = 20;
+    int result = 0;
+
+    for (int i = 0; i < length(pawns) ; i++) {
+        int pawnLocation = (int) get(pawns, i);
+        if (pawnLocation >= getBoardLen(board))
+            result += getInHomePosition(board, pawnLocation) * inHomeFactor;
+        else
+            result += getBoardLen(board) - getStepToHome(board,pawnLocation,IdPlayer) + startFactor;
+    }
+    for (int i = 0; i < board->nbPlayer; i++) {
+        if (i != IdPlayer)
+            result -= heuristic(board,i);
+    }
+    return result;
 }
 
 /* ---------- Old ---------- */
@@ -340,6 +369,7 @@ void drawBoard(Board * board, SDL_Renderer *renderer){
         }
     }
 }
+
 
 
 

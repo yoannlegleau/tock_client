@@ -13,13 +13,14 @@
 
 
 bool playCard(Player *p, Board * board, enum Card * card, int location );
+int playSmart(Player *p, Board * board);
 
 
 Player * playerFactory( int id){
     Player * player = malloc(sizeof(Player));
     player->idPlayer = id;
     player->cards = linkedListFactory();
-    player->pt = &play;
+    player->pt = &playSmart;
     return player;
 }
 
@@ -29,7 +30,7 @@ void drawPlayer(const Player *player) {
 }
 
 int play(Player *p, Board * board) {
-    Linkedlist * pownsLocations = getPlayerPansLocation(board, p->idPlayer);
+    Linkedlist * pownsLocations = getPlayerPawnsLocation(board, p->idPlayer);
     bool played = false;
     for (int i = length(pownsLocations) ; i >= 0 ; i--) {
         int pownLocation = (int) get(pownsLocations, i);
@@ -51,7 +52,38 @@ int play(Player *p, Board * board) {
     return false;
 }
 
+int playSmart(Player *p, Board * board) {
+    Linkedlist * pownsLocations = getPlayerPawnsLocation(board, p->idPlayer);
+    Board *boardCopy = boardClone(board);
+    bool played = false;
+    int pownLocation,h;
 
+    int maxh = -2147483648  , maxi , maxj;
+
+    for (int i = length(pownsLocations) ; i >= 0 ; i--) {
+        pownLocation = (int) get(pownsLocations, i);
+        for (int j = 0; j <= length(p->cards); j++) {
+            played = playCard(p, boardCopy, get(p->cards, j), pownLocation);
+            if (played) {
+                h = heuristic(boardCopy, p->idPlayer);
+                if (h > maxh){
+                    maxh = h;
+                    maxi = i;
+                    maxj = j;
+                }
+            }
+        }
+    }
+    if (!played && !isEmpty(p->cards)){
+        printf("player %i a jeter ",p->idPlayer);
+        drawCard(getFirst(p->cards));
+        pollFirst(p->cards);
+    } else {
+        playCard(p, board, get(p->cards, maxj), (int) get(pownsLocations, maxi));
+        removeElem(p->cards, maxj);
+    }
+    return played;
+}
 
 bool playCard(Player *p, Board *board, enum Card *card, int location) {
     switch (*card) {

@@ -64,7 +64,6 @@ CMAKE_BINARY_DIR = /mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_
 
 # The main recursive "all" target.
 all: CMakeFiles/tock_client.dir/all
-all: CMakeFiles/tock_server.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -73,7 +72,6 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/tock_client.dir/clean
-clean: CMakeFiles/tock_server.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -83,12 +81,12 @@ clean: CMakeFiles/tock_server.dir/clean
 CMakeFiles/tock_client.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target tock_client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target tock_client"
 .PHONY : CMakeFiles/tock_client.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/tock_client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/CMakeFiles 11
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/tock_client.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/CMakeFiles 0
 .PHONY : CMakeFiles/tock_client.dir/rule
@@ -101,32 +99,6 @@ tock_client: CMakeFiles/tock_client.dir/rule
 CMakeFiles/tock_client.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/clean
 .PHONY : CMakeFiles/tock_client.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/tock_server.dir
-
-# All Build rule for target.
-CMakeFiles/tock_server.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/CMakeFiles --progress-num=13,14,15,16,17,18,19,20,21,22,23,24 "Built target tock_server"
-.PHONY : CMakeFiles/tock_server.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/tock_server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/CMakeFiles 12
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/tock_server.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/adzer/CLionProjects/tock-client/cmake-build-wsl_profile/CMakeFiles 0
-.PHONY : CMakeFiles/tock_server.dir/rule
-
-# Convenience name for target.
-tock_server: CMakeFiles/tock_server.dir/rule
-.PHONY : tock_server
-
-# clean rule for target.
-CMakeFiles/tock_server.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_server.dir/build.make CMakeFiles/tock_server.dir/clean
-.PHONY : CMakeFiles/tock_server.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
