@@ -110,6 +110,7 @@ void makeDeck(Linkedlist *cards, Linkedlist *gameRules) {
             *card = c;
             if(*card == thirteen)
                  *card = thirteen_out;
+
             addFirst(cards,card);
         }
     }

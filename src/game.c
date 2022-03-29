@@ -157,7 +157,7 @@ int gameStart(Game * game) {
 
         for (int i = 0; i < length(game->players) ; i++) {
             p = get(game->players, i);
-            play(p, game->board);
+            p->play(p, game->board);
             if (isWin(game->board, p->idPlayer)) {
                 printf("---------- joueur %i a gagner ----------", p->idPlayer);
                 return p->idPlayer;

@@ -27,14 +27,12 @@ struct Player {
     /** \brief liste de carte representent la main du joueur */
     Linkedlist * cards;
 
-    int (*pt)(Player *, Board *);
+    int (*play)(Player *, Board *);
 };
 
 Player * playerFactory( int id);
 
 void drawPlayer(const Player *player);
-
-int play(Player *p, Board * board);
 
 
 #endif //TOCK_CLIENT_PLAYER_H

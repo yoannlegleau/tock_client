@@ -12,7 +12,7 @@
 #include "../mainSDL.h"
 
 
-bool playCard(Player *p, Board * board, enum Card * card, int location );
+bool playCard(Player *p, Board * board, enum Card * card, ...);
 int playSmart(Player *p, Board * board);
 
 
@@ -20,7 +20,7 @@ Player * playerFactory( int id){
     Player * player = malloc(sizeof(Player));
     player->idPlayer = id;
     player->cards = linkedListFactory();
-    player->pt = &playSmart;
+    player->play = &playSmart;
     return player;
 }
 
@@ -85,38 +85,46 @@ int playSmart(Player *p, Board * board) {
     return played;
 }
 
-bool playCard(Player *p, Board *board, enum Card *card, int location) {
+bool playCard(Player *p, Board *board, enum Card *card, ... ) {
+    va_list ap;
+    va_start(ap, card);
+    int location1 = va_arg(ap, int );
+    int location2 = va_arg(ap, int );
+    int location3 = va_arg(ap, int );
+    int location4 = va_arg(ap, int );
+
+
     switch (*card) {
         case one:
-            return forward(board, location, 1);
+            return forward(board, location1, 1);
         case two:
-            return forward(board, location, 2);
+            return forward(board, location1, 2);
         case three:
-            return forward(board, location, 3);
+            return forward(board, location1, 3);
         case four:
-            return forward(board,location, 4);
+            return backward(board,location1, 4);
         case five:
-            return forward(board,location, 5);
+            return forward(board,location1, 5);
         case six:
-            return forward(board, location, 6);
+            return forward(board, location1, 6);
         case seven:
-            return forward(board, location, 7);
+            return forward(board, location1, 7);
         case eight:
-            return forward(board, location, 8);
+            return forward(board, location1, 8);
         case nine:
-            return forward(board, location, 9);
+            return forward(board, location1, 9);
         case ten:
-            return forward(board, location, 10);
+            return forward(board, location1, 10);
         case eleven:
-            return forward(board, location, 11);
+            return forward(board, location1, 11);
         case twelve:
-            return forward(board, location, 12);
+            return forward(board, location1, 12);
         case thirteen:
-            return forward(board, location, 13);
+            return forward(board, location1, 13);
         case thirteen_out:
             if(outPawn(board, p->idPlayer))
                 return true;
-            if(forward(board, location, 13))
+            if(forward(board, location1, 13))
                 return true;
         default:
             return false;

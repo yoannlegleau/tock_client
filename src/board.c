@@ -10,6 +10,7 @@
 #define PLAYERBORDLENTH 18
 
 int getBoardLen(Board * board);
+int heuristicPlayer(Board * board,int IdPlayer);
 
 /* ---------- Constructor ---------- */
 
@@ -138,7 +139,7 @@ bool forward(Board * board, int location, int step){
     }
     // */
     if (board->board[(location+step)% getBoardLen(board)] != 0)
-        printf("----- %i a tuer %i -----\n",player,board[(location+step)% getBoardLen(board)]);
+        //printf("----- %i a tuer %i -----\n",player,board[(location+step)% getBoardLen(board)]);
     move(board, location,(location+step)%72);
     return  true;
 }
@@ -167,8 +168,19 @@ bool outPawn(Board * board, int pId) {
 }
 
 int heuristic(Board * board,int IdPlayer){
+    int result = 0;
+    for (int i = 1; i < board->nbPlayer; i++) {
+        if (i != IdPlayer)
+            result -= heuristicPlayer(board,i);
+        else
+            result += heuristicPlayer(board,i);
+    }
+    return result;
+}
+
+int heuristicPlayer(Board * board,int IdPlayer){
     Linkedlist * pawns = getPlayerPawnsLocation(board,IdPlayer);
-    int const inHomeFactor = 100, startFactor = 20;
+    int const inHomeFactor = 100, startFactor = 20 ,toHomeFactor=1;
     int result = 0;
 
     for (int i = 0; i < length(pawns) ; i++) {
@@ -176,17 +188,12 @@ int heuristic(Board * board,int IdPlayer){
         if (pawnLocation >= getBoardLen(board))
             result += getInHomePosition(board, pawnLocation) * inHomeFactor;
         else
-            result += getBoardLen(board) - getStepToHome(board,pawnLocation,IdPlayer) + startFactor;
-    }
-    for (int i = 0; i < board->nbPlayer; i++) {
-        if (i != IdPlayer)
-            result -= heuristic(board,i);
+            result += getBoardLen(board) - getStepToHome(board,pawnLocation,IdPlayer)*toHomeFactor + startFactor;
     }
     return result;
 }
 
 /* ---------- Old ---------- */
-
 void drawBoard(Board * board, SDL_Renderer *renderer){
     SDL_Color couleurNoire = getSDLColor("Black");
     const int squareSize = SDLgetHeight(0.03611112);
