@@ -10,4 +10,8 @@
  */
 enum GameRule{minusFiveForOpponent};
 
+void destroyGameRuleVoid(void * gameRule);
+
+void destroyGameRule(enum GameRule ** gameRule);
+
 #endif //TOCK_CLIENT_GAMERULE_H

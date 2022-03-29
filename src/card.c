@@ -61,6 +61,14 @@ void drawCard(const enum Card * card){
     }
 }
 
+void destroyCardVoid(void * card){
+  destroyCard(card);
+}
+
+void destroyCard(enum Card ** card){
+  free(*card);
+}
+
 char* getAsset(const enum Card * card){
     if (card == NULL)
         return "assets/Design_Cartes/Derriere_Carte.png";
@@ -131,5 +139,3 @@ void distributeCards(Linkedlist *cards, Linkedlist *players) {
     }
 
 }
-
-

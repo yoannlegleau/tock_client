@@ -47,7 +47,7 @@ int getLen(Board * board){
 }
 
 Linkedlist *getPlayerPawnsLocation(Board * board, int playerId) {
-    Linkedlist * locations = linkedListFactory();
+    Linkedlist * locations = linkedListFactory(destroyCardVoid);
     int arrayLen = getLen(board) + 4* board->nbPlayer;
     for (int i = 0; i < arrayLen; i++) {
         if ( board->board[i] == playerId)
@@ -377,7 +377,11 @@ void drawBoard(Board * board, SDL_Renderer *renderer){
     }
 }
 
+void destroyBoardVoid(void * board){
+  destroyBoard(board);
+}
 
-
-
-
+void destroyBoard(Board ** board){
+  free((*board)->board);
+  free(*board);
+}

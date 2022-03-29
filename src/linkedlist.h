@@ -17,7 +17,7 @@ typedef struct Linkedlist Linkedlist;
  * \return la liste
  * \example Linkedlist list = linkedListFactory(sizeof(int)
  */
-Linkedlist * linkedListFactory();
+Linkedlist * linkedListFactory(void (*funcDest)(void * e));
 
 /**
  * \brief Renvoie le nombre d'éléments de la liste l.
@@ -86,7 +86,7 @@ void removeFirst(Linkedlist *l);
  * \brief Suprime la lise et libert l'espace memoire
  * \param l Linkedlist
  */
-void destroy(Linkedlist * l);
+void destroyLinkedList(Linkedlist * l);
 
 /**
  * \brief Renvoie l'élément à la position spécifiée dans cette liste.

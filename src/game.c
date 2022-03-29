@@ -20,9 +20,6 @@
 #include "Player/player.h"
 #include "Color.h"
 
-
-#include <xmllite.h>
-
 /**
  * \brief Se tableux represente toutes les cases du plateu
  * \details la longeur varie selon le nombre de joueur car chaque jouer posed 18 plus 4 donc pour 4j 88 et 132 pour 6.
@@ -49,7 +46,7 @@ TTF_Font *police = NULL;
 Game * gameCreate(int nbPlayer){
     Game * game = malloc(sizeof(Game));
     game->board = boardFactory(nbPlayer);
-    game->players = linkedListFactory();
+    game->players = linkedListFactory(destroyPlayerVoid);
     return game;
 }
 
@@ -72,9 +69,9 @@ void addPlayer(Game * game, int nbPlayer){
  */
 int gameStart(Game * game) {
 
-    Linkedlist * gameRules = linkedListFactory();
+    Linkedlist * gameRules = linkedListFactory(destroyGameRuleVoid);
 
-    Linkedlist * cards = linkedListFactory();
+    Linkedlist * cards = linkedListFactory(destroyCardVoid);
 
 
     //printf("cartes:%i\n",length(cards));

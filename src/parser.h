@@ -13,6 +13,12 @@ struct KeyValue{
     char * value ;
 };
 
+void destroyKeyValueVoid(void * keyValue);
+
+void destroyKeyValue(KeyValue ** keyValue);
+
+void setKeyValue(char *newKey,const char *path);
+
 char * getByKey(Linkedlist *liste,char *key);
 
 Linkedlist *  loadFromPath(const char *path);
