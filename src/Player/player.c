@@ -13,14 +13,15 @@
 
 
 bool playCard(Player *p, Board * board, enum Card * card, ...);
+int play(Player *p, Board * board);
 int playSmart(Player *p, Board * board);
 
 
 Player * playerFactory( int id){
     Player * player = malloc(sizeof(Player));
     player->idPlayer = id;
-    player->cards = linkedListFactory(destroyCardVoid);
-    player->play = &playSmart;
+    player->cards = linkedListFactory((void (*)(void *)) destroyCard);
+    player->play = &play;
     return player;
 }
 
@@ -41,13 +42,15 @@ void drawPlayer(const Player *player) {
 int play(Player *p, Board * board) {
     Linkedlist * pownsLocations = getPlayerPawnsLocation(board, p->idPlayer);
     bool played = false;
+    int pownLocation;
     for (int i = length(pownsLocations) ; i >= 0 ; i--) {
-        int pownLocation = (int) get(pownsLocations, i);
+        if (get(pownsLocations, i) != NULL)
+            pownLocation = *((int*) get(pownsLocations, i));
+        else
+            pownLocation = -1;
         for (int j = 0; j <= length(p->cards); j++) {
             played = playCard(p, board, get(p->cards, j), pownLocation);
             if (played) {
-                //printf("player %i a jouer ", p->idPlayer);
-                //drawCard(get(p->cards, j));
                 removeElem(p->cards, j);
                 return true;
             }
@@ -65,19 +68,24 @@ int playSmart(Player *p, Board * board) {
     Linkedlist * pownsLocations = getPlayerPawnsLocation(board, p->idPlayer);
     Board *boardCopy = boardClone(board);
     bool played = false;
-    int pownLocation,h;
+    int pownLocation;
+    int h;
 
-    int maxh = -2147483648  , maxi , maxj;
+    int maxh = -2147483648  , maxLocation , maxj;
 
     for (int i = length(pownsLocations) ; i >= 0 ; i--) {
-        pownLocation = (int) get(pownsLocations, i);
+        if (get(pownsLocations, i) != NULL)
+            pownLocation = *((int*) get(pownsLocations, i));
+        else
+            pownLocation = -1;
         for (int j = 0; j <= length(p->cards); j++) {
-            played = playCard(p, boardCopy, get(p->cards, j), pownLocation);
+            if (pownLocation != NULL)
+                played = playCard(p, boardCopy, get(p->cards, j), pownLocation);
             if (played) {
                 h = heuristic(boardCopy, p->idPlayer);
                 if (h > maxh){
                     maxh = h;
-                    maxi = i;
+                    maxLocation = pownLocation;
                     maxj = j;
                 }
             }
@@ -88,7 +96,8 @@ int playSmart(Player *p, Board * board) {
         drawCard(getFirst(p->cards));
         pollFirst(p->cards);
     } else {
-        playCard(p, board, get(p->cards, maxj), (int) get(pownsLocations, maxi));
+        if (pownLocation)
+        playCard(p, board, get(p->cards, maxj), maxLocation);
         removeElem(p->cards, maxj);
     }
     return played;

@@ -11,6 +11,7 @@
 
 #include <malloc.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "linkedlist.h"
 
 
@@ -28,6 +29,7 @@ struct Linkedlist {
 };
 
 Elem * getElem( Linkedlist *l, int index);
+void destroyElem(Elem **e, void (*pFunction)(void *));
 
 /**
  * \brief Cree un Element de list en initialisent l'espace memoire. par defaux l'element "boucle" sur lui meme
@@ -101,13 +103,16 @@ void clear(Linkedlist *l) {
 
 void removeElem(Linkedlist *l, int i) {
     Elem * elem = getElem(l, i);
-    if(length(l) == 1)
+    if (length(l) == 1)
         l->last = NULL;
-    else
-        getElem(l, i - 1)->next = getElem(l, i + 1);
+    else {
+        Elem *prev = getElem(l, i - 1);
+        prev->next = getElem(l, i + 1);
+        if(i+1 == l->length)
+            l->last = prev;
+    }
     l->length--;
-    l->destroy(elem);
-    free(elem);
+    destroyElem(&elem, l->destroy);
 }
 
 void removeFirst(Linkedlist *l) {
@@ -115,10 +120,17 @@ void removeFirst(Linkedlist *l) {
 }
 
 
-void destroyLinkedList(Linkedlist *l) {
-    while (!isEmpty(l))
-        removeFirst(l);
-    free(l);
+void destroyLinkedList(Linkedlist **l) {
+    while (!isEmpty(*l))
+        removeFirst(*l);
+    free(*l);
+    *l = NULL;
+}
+
+void destroyElem(Elem **e, void (*destroy)(void *)) {
+    destroy(&((*e)->object));
+    //TODO free(*e);
+    *e = NULL;
 }
 
 Elem * getElem( Linkedlist *l, int index) {

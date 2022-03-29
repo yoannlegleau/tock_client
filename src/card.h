@@ -44,8 +44,6 @@ void makeDeck(Linkedlist * cards, Linkedlist * gameRules);
 
 void distributeCards(Linkedlist *cards, Linkedlist *players);
 
-void destroyCardVoid(void * card);
-
 void destroyCard(enum Card ** card);
 
 #endif //TOCK_CLIENT_CARD_H

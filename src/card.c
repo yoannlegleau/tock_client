@@ -61,12 +61,10 @@ void drawCard(const enum Card * card){
     }
 }
 
-void destroyCardVoid(void * card){
-  destroyCard(card);
-}
-
 void destroyCard(enum Card ** card){
-  free(*card);
+  //TODO destroyCard
+  //free(*card);
+  *card = NULL;
 }
 
 char* getAsset(const enum Card * card){

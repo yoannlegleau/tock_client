@@ -49,7 +49,13 @@ Linkedlist * loadFromPath(const char *path){
     if (file == NULL)
         exit(EXIT_FAILURE);
     Linkedlist * keyValues = linkedListFactory(destroyKeyValueVoid);
-    char * c = (char *) malloc(sizeof(char)+1);
+    char * c ;
+    #ifdef __unix__
+        c = (char *) malloc(sizeof(char)+1);
+    #endif
+    #ifdef _WIN32
+        c = "";
+    #endif
     while(!feof(file)){
         fscanf(file,"%c",c);
         if(*c == REG_START){
@@ -68,7 +74,10 @@ Linkedlist * loadFromPath(const char *path){
         }
     }
     fclose(file);
+    #ifdef __unix__
     free(c);
+    #endif
+
     return keyValues;
 }
 
@@ -86,5 +95,7 @@ void drawKeyValue(KeyValue *keyValue){
 }
 
 bool toBool(char *s){
+    if(s==NULL)
+        return false;
     return (strcmp(s,"true") == 0);
 }

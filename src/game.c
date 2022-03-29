@@ -11,6 +11,7 @@
 #include <SDL_ttf.h>
 #include <SDL_image.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
 #include "game.h"
 #include "mainSDL.h"
@@ -71,7 +72,7 @@ int gameStart(Game * game) {
 
     Linkedlist * gameRules = linkedListFactory(destroyGameRuleVoid);
 
-    Linkedlist * cards = linkedListFactory(destroyCardVoid);
+    Linkedlist * cards = linkedListFactory((void (*)(void *)) destroyCard);
 
 
     //printf("cartes:%i\n",length(cards));

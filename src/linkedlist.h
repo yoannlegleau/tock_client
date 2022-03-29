@@ -86,7 +86,7 @@ void removeFirst(Linkedlist *l);
  * \brief Suprime la lise et libert l'espace memoire
  * \param l Linkedlist
  */
-void destroyLinkedList(Linkedlist * l);
+void destroyLinkedList(Linkedlist ** l);
 
 /**
  * \brief Renvoie l'élément à la position spécifiée dans cette liste.

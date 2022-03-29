@@ -47,11 +47,14 @@ int getLen(Board * board){
 }
 
 Linkedlist *getPlayerPawnsLocation(Board * board, int playerId) {
-    Linkedlist * locations = linkedListFactory(destroyCardVoid);
+    Linkedlist * locations = linkedListFactory(free);
     int arrayLen = getLen(board) + 4* board->nbPlayer;
     for (int i = 0; i < arrayLen; i++) {
-        if ( board->board[i] == playerId)
-            addLast(locations, (void *) i);
+        if (board->board[i] == playerId) {
+            int * location = malloc(sizeof(int));
+            *location = i;
+            addLast(locations,location);
+        }
     }
     return locations;
 }
@@ -110,8 +113,9 @@ bool isWin(Board * board, int pId){
 /* ---------- Utilities ---------- */
 
 bool forward(Board * board, int location, int step){
+    if (location < 0)
+        return false;
     int player = board->board[location];
-
     //Si le pion est dans la maison
     if (location >= getBoardLen(board)){
         int inHomePosition = getInHomePosition(board, location);
@@ -163,7 +167,7 @@ bool outPawn(Board * board, int pId) {
         board->board[getStart(pId)] = pId;
         ret= true;
     }
-    destroy(pawns);
+    destroyLinkedList(&pawns);
     return ret;
 }
 
