@@ -19,9 +19,18 @@ int playSmart(Player *p, Board * board);
 Player * playerFactory( int id){
     Player * player = malloc(sizeof(Player));
     player->idPlayer = id;
-    player->cards = linkedListFactory();
+    player->cards = linkedListFactory(destroyCardVoid);
     player->pt = &playSmart;
     return player;
+}
+
+void destroyPlayerVoid(void * player){
+  destroyPlayer(player);
+}
+
+void destroyPlayer(Player ** player){
+  destroyLinkedList((*player)->cards);
+  free(*player);
 }
 
 void drawPlayer(const Player *player) {

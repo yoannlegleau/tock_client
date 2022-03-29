@@ -26,6 +26,19 @@ char * getByKey(Linkedlist *liste,char *key){
     return result;
 }
 
+void setKeyValue(char *newKey,const char *path){
+  //TODO NULL = suppr
+}
+
+void destroyKeyValueVoid(void * keyValue){
+  destroyKeyValue(keyValue);
+}
+
+void destroyKeyValue(KeyValue ** keyValue){
+  free((*keyValue)->key);
+  free((*keyValue)->value);
+  free((*keyValue));
+}
 
 Linkedlist * loadFromPath(const char *path){
     FILE * file = fopen(path, "r");
@@ -33,11 +46,10 @@ Linkedlist * loadFromPath(const char *path){
         printf( "Cannot open file %s\n", path );
         exit( 0 );
     }
-
-    Linkedlist * keyValues = linkedListFactory();
     if (file == NULL)
         exit(EXIT_FAILURE);
-    char * c = "";
+    Linkedlist * keyValues = linkedListFactory(destroyKeyValueVoid);
+    char * c = (char *) malloc(sizeof(char)+1);
     while(!feof(file)){
         fscanf(file,"%c",c);
         if(*c == REG_START){
@@ -56,6 +68,7 @@ Linkedlist * loadFromPath(const char *path){
         }
     }
     fclose(file);
+    free(c);
     return keyValues;
 }
 

@@ -54,6 +54,14 @@ bool forward(Board * board, int location, int step);
 bool backward(Board * board, int location, int step);
 void move(Board * board, int from, int to);
 bool outPawn(Board * board, int pId);
+/**
+ * \brief libere toutes les variables
+ */
+void destroyBoard(Board ** board);
+/**
+ * \brief évite les warnings de compilation
+ */
+void destroyBoardVoid(void * board);
 int heuristic(Board * board,int IdPlayer);
 
 void drawBoard(Board * board, SDL_Renderer *renderer);

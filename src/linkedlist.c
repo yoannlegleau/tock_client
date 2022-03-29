@@ -22,6 +22,7 @@ struct Elem {
 
 typedef struct Linkedlist Linkedlist;
 struct Linkedlist {
+    void (*destroy)(void * function);
     Elem * last;
     int length;
 };
@@ -38,14 +39,14 @@ Elem * elemFactory( Linkedlist * l, void * o){
     Elem * elem = malloc(sizeof(Elem));
     elem->object=o;
     elem->next= elem;
-
     return elem;
 }
 
-Linkedlist * linkedListFactory(){
+Linkedlist * linkedListFactory(void (*funcDest)(void * e)){
     Linkedlist * list = malloc(sizeof(Linkedlist));
     list->last = NULL;
     list->length = 0;
+    list->destroy = funcDest;
     return list;
 }
 
@@ -105,9 +106,8 @@ void removeElem(Linkedlist *l, int i) {
     else
         getElem(l, i - 1)->next = getElem(l, i + 1);
     l->length--;
-
-    //FIXME fuite de memoire
-    //free(elem);
+    l->destroy(elem);
+    free(elem);
 }
 
 void removeFirst(Linkedlist *l) {
@@ -115,7 +115,7 @@ void removeFirst(Linkedlist *l) {
 }
 
 
-void destroy(Linkedlist *l) {
+void destroyLinkedList(Linkedlist *l) {
     while (!isEmpty(l))
         removeFirst(l);
     free(l);
@@ -180,9 +180,3 @@ void foreach(Linkedlist *l, void (*pVoid)(void *)) {
         iterator = iterator->next;
     }
 }
-
-
-
-
-
-

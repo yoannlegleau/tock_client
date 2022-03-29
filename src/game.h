@@ -51,9 +51,13 @@ void gamePause();
 void gameStop();
 
 /**
- * \brief libere toutes les variable
- */
-void gameDestroy();
+  * \brief libere toutes les variable
+  */
+void destroyGame(Game ** game);
+/**
+  * \brief évite les warnings de compilation
+  */
+void destroyGameVoid(void * game);
 
 
 #endif //TOCK_CLIENT_GAME_H

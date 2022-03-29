@@ -36,5 +36,8 @@ void drawPlayer(const Player *player);
 
 int play(Player *p, Board * board);
 
+void destroyPlayerVoid(void * player);
+
+void destroyPlayer(Player ** player);
 
 #endif //TOCK_CLIENT_PLAYER_H
