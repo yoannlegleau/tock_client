@@ -109,6 +109,7 @@ bool forward(Bord * bord, int location, int step){
             return true;
         } else return false;
     }
+    /*
     int stepToHome = getStepToHome(bord,location,player);
     if(stepToHome < step &&
         step <= stepToHome+3 &&
@@ -117,14 +118,14 @@ bool forward(Bord * bord, int location, int step){
         move(bord,location, getHomeStart(bord,player)+destination);
         return true;
     }
-    /*
+    */
+    
     int playerEntry = ((72+(player*18)-20)%72);
     if((location+step)>playerEntry && (location+step)<playerEntry+4){
         int destination = location+step-playerEntry-1;
         move(bord,location,72+(4*(player-1)+destination));
         return true;
     }
-     */
     if (bord->bord[(location+step)% getBordLen(bord)] != 0)
         printf("----- %i a tuer %i -----\n",player,bord[(location+step)% getBordLen(bord)]);
     move(bord, location,(location+step)%72);

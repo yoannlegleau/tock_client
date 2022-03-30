@@ -15,10 +15,12 @@
 /*
 gcc client.c -o client -lpthread
 */
-int start = 1;
+int start = 0;
 int clientCount = 0;
+int so;
 char output[DATA];
 
+Game *game;
 
 static pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 static pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
@@ -49,18 +51,21 @@ void * doNetworking(void * ClientDetail){
 		data[read] = '\0';
 
 		if(strcmp(data,"TEST") == 0){
+			printf("Test\n");
 			//read = recv(clientSocket,data,DATA,0);
-			snprintf(output,DATA,"Ceci est un test\n");
-			send(clientSocket,output,DATA,0);
+			//snprintf(output,DATA,"Ceci est un test\n");
+			//send(clientSocket,output,DATA,0);
 		}
 
-    if(strcmp(data,"START") == 0){
-      start = 1;
-    }
+		if(strcmp(data,"START") == 0){
+			printf("START\n");
+			addPlayerBot(game, clientCount);
+			gameStart(game);
+		}
 
-    if(strcmp(data,"PLAY") == 0){
-
-    }
+		if(strcmp(data,"PLAY") == 0){
+			
+		}
 
 	}
 
@@ -69,7 +74,7 @@ void * doNetworking(void * ClientDetail){
 }
 
 int main(){
-
+	game = gameCreate(4);
 	int serverSocket = socket(PF_INET, SOCK_STREAM, 0);
 
 	struct sockaddr_in serverAddr;
@@ -92,16 +97,17 @@ int main(){
 			Client[clientCount].index = clientCount;
 
 			pthread_create(&thread[clientCount], NULL, doNetworking, (void *) &Client[clientCount]);
-
+			printf("Clien socket: %i\n", Client[clientCount].sockID);
+			so = Client[clientCount].sockID;
+			printf("Clien socket: %i\n", socket);
 			clientCount ++;
-		}
-		if(start == 1){
-      Game *game = gameCreate(4);
-      addPlayer(game, clientCount);
-      gameStart(game);
+			printf("creation joeur client\n");
+			addPlayerClient(game, clientCount,so);
 		}
 	}
 
 	for(int i = 0 ; i < clientCount ; i ++)
 	pthread_join(thread[i],NULL);
 }
+
+

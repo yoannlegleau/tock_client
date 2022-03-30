@@ -28,13 +28,26 @@ struct Player {
     Linkedlist * cards;
 
     int (*pt)(Player *, Bord *);
+
+    int socket;
 };
 
 Player * playerFactory( int id);
+
+Player * clientFactory( int id, int socket);
+
+Player * botFactory( int id);
+
+Player * clientServerFactory( int id, int socket);
 
 void drawPlayer(const Player *player);
 
 int play(Player *p, Bord * bord);
 
+int playClient(Player *p, Bord * bord);
+
+int playBot(Player *p, Bord * bord);
+
+int playClientServer(Player *p, Bord * bord);
 
 #endif //TOCK_CLIENT_PLAYER_H

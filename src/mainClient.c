@@ -25,7 +25,10 @@
 
 #define DATA 64
 
-/*
+Game *game;
+Player *player = playerFactory(1);
+Bord *board = bordFactory(4);
+
 void * doRecieving(void * sockID){
 
 	int clientSocket = *((int *) sockID);
@@ -35,12 +38,30 @@ void * doRecieving(void * sockID){
 		char data[DATA];
 		int read = recv(clientSocket,data,DATA,0);
 		data[read] = '\0';
-		printf("%s",data);
+		//printf("%s",data);
+
+		if(strcmp(data,"PLAY") == 0){
+      printf("SERVER HAS SEND PLAY REQUEST\n");
+      data[read] = '\0';
+      player->pt(game,board);
+		}
+    if(strcmp(data,"CARD") == 0){
+      Linkedlist * cards = linkedListFactory(sizeof(enum Card));
+      while(data != '\n'){
+        data[read] = '\0';
+        enum Card * card = malloc(sizeof(enum Card));
+        *card = atoi(data);
+        addLast(player->cards, card);
+      }
+    }
+    if(strcmp(data,"UPDAT") == 0){
+
+    }
 
 	}
 
 }
- */
+
 
 /**
  * \brief lancement du jeu et fermeture
@@ -48,15 +69,21 @@ void * doRecieving(void * sockID){
  * \param args
  * \return
  */
+
 int main(int argc, char* args[]) {
+    game = gameCreate(4);
+
+
     //lance le jeu dans la fenêtre principal
+
+    // ferme le jeu
 
     int option;
     char *ip_address = NULL;
 
     //if (ip_address) printf("IP_ADDRESS: %s\n", ip_address);
 
-    /*
+
     int clientSocket = socket(PF_INET, SOCK_STREAM, 0);
 
     struct sockaddr_in serverAddr;
@@ -67,23 +94,31 @@ int main(int argc, char* args[]) {
     //serverAddr.sin_addr.s_addr = inet_addr(ip_address);
     serverAddr.sin_addr.s_addr = htons(INADDR_ANY);
 
-    if(connect(clientSocket, (struct sockaddr*) &serverAddr, sizeof(serverAddr)) == -1) return 0;
+    if(connect(clientSocket, (struct sockaddr*) &serverAddr, sizeof(serverAddr)) == -1){
+
+      winCreate();
+      Game *game = gameCreate(4);
+      addPlayer(game, 4);
+      gameStart(game);
+      // ferme le jeu
+      winDestroy();
+    }else{
 
     printf("Connection established ............\n");
-
     pthread_t thread;
     pthread_create(&thread, NULL, doRecieving, (void *) &clientSocket );
-
     while(1){
-
       char input[DATA];
       scanf("%s",input);
-
       if(strcmp(input,"TEST") == 0){
         send(clientSocket,input,DATA,0);
       }
       if(strcmp(input,"START") == 0){
         send(clientSocket,input,DATA,0);
+        Game *game = gameCreate(4);
+        addPlayer(game,1);
+        addPlayerClient(game, 4, clientSocket);
+        //gameStartServer(game);
       }
       if(strcmp(input,"PLAY") == 0){
         send(clientSocket,input,DATA,0);
@@ -91,15 +126,6 @@ int main(int argc, char* args[]) {
         send(clientSocket,input,DATA,0);
       }
     }
-    */
-
-    winCreate();
-    Game *game = gameCreate(4);
-    addPlayer(game, 4);
-    gameStart(game);
-
-    // ferme le jeu
-    winDestroy();
-
-    return 0;
+  }
+  return 0;
 }

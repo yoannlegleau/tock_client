@@ -30,6 +30,11 @@ Game * gameCreate(int nbPlayer);
  */
 void addPlayer(Game * game, int nbPlayer);
 
+void addPlayerClient(Game * game, int nbPlayer, int socket);
+
+void addPlayerBot(Game * game, int nbPlayer);
+
+
 /**
  * \brief lancer le deroulement du jeux
  */

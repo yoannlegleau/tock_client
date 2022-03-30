@@ -5,11 +5,11 @@
  * \date 20/01/2022
  * \version 1.1
  */
-
+#include <unistd.h>
 #include <stdio.h>
-#include <SDL.h>
-#include <SDL_ttf.h>
-#include <SDL_image.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
+#include <SDL2/SDL_image.h>
 #include <stdbool.h>
 
 #include "game.h"
@@ -20,7 +20,6 @@
 #include "Player/player.h"
 
 
-#include <xmllite.h>
 
 /**
  * \brief Se tableux represente toutes les cases du plateu
@@ -64,6 +63,33 @@ void addPlayer(Game * game, int nbPlayer){
   }
 }
 
+void addPlayerClient(Game * game, int nbPlayer, int socket){
+  int i;
+  Player * player;
+  printf("NB Player : %i\n", nbPlayer);
+  printf("Socket ID : %i\n", socket);
+  player = clientFactory(nbPlayer,socket);
+  addLast(game->players,player);
+}
+
+void addPlayerClientServer(Game * game, int nbPlayer, int socket){
+  int i;
+  Player * player;
+  for(i = 1; i < nbPlayer; i++){
+    player = clientServerFactory(i+1,socket);
+    addLast(game->players,player);
+  }
+}
+
+void addPlayerBot(Game * game, int nbPlayer){
+  int i;
+  Player * player;
+  for(i = nbPlayer; i < 4; i++){
+    player = botFactory(i+1);
+    addLast(game->players,player);
+  }
+}
+
 /**
  * \brief demonstration du fonctionnement des librairie graphiques baser sur l'example de cours
  * \param window fenêtre principal
@@ -73,7 +99,6 @@ void gameStart(Game * game) {
     Linkedlist * gamRules = linkedListFactory(sizeof(enum GameRule));
 
     Linkedlist * cards = linkedListFactory(sizeof(enum Card));
-
 
     //printf("cartes:%i\n",length(cards));
 
@@ -127,7 +152,7 @@ void gameStart(Game * game) {
         while(SDL_PollEvent(&e)) {
             switch(e.type) {
                 case SDL_QUIT: running = 0;
-                    break;
+                    return;
                 case SDL_WINDOWEVENT:
                     switch(e.window.event){
                         case SDL_WINDOWEVENT_EXPOSED:
@@ -163,10 +188,24 @@ void gameStart(Game * game) {
             }
         }
         Player * p = getFirst(game->players);
+
         if (isEmpty(p->cards)){
-            if(isEmpty(cards))
-                makeDeck(cards, gamRules);
+            if(isEmpty(cards)){
+                makeDeck(cards, gamRules);;
+            }
             distributeCards(cards, game->players);
+        }
+        for(int i = 0; i < length(game->players); i++){
+          Player * pp = get(game->players, i);
+          if(pp->socket != 0){
+            char output[64];
+            snprintf(output,64,"CARD ");
+            for(int j = 0 ; j < length(pp->cards); j++){
+              output = strcat(output,itoa(*((int*)(get(pp->cards, j)))));
+              output = strcat(output," ");
+            }
+            send(p->socket,output,64,0);
+          }
         }
         //drawPlayer(p);
         //TODO
@@ -177,9 +216,9 @@ void gameStart(Game * game) {
 
         for (int i = 0; i < length(game->players) ; i++) {
             p = get(game->players, i);
-            play(p, game->bord);
+            p->pt(p, game->bord);
             if(isWin(game->bord,p->idPlayer))
-                printf("---------- joueur %i a gagner ----------",p->idPlayer);
+                return ;
             rendererAll(game,renderer);
         }
 
@@ -201,10 +240,10 @@ void rendererAll(Game *game, SDL_Renderer *renderer) {
     SDL_RenderClear(renderer);
 
 #ifdef __unix__
-    sleep(100);
+    usleep(1);
 #endif
 #ifdef _WIN32
-    //Sleep(100);
+    Sleep(100);
 #endif
 }
 
