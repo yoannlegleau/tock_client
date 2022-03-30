@@ -21,7 +21,7 @@ Player * playerFactory( int id){
     Player * player = malloc(sizeof(Player));
     player->idPlayer = id;
     player->cards = linkedListFactory((void (*)(void *)) destroyCard);
-    player->play = &play;
+    player->play = &playSmart;
     return player;
 }
 
@@ -69,35 +69,43 @@ int playSmart(Player *p, Board * board) {
     Board *boardCopy = boardClone(board);
     bool played = false;
     int pownLocation;
-    int h;
+    const int minint = -2147483648;
+    int maxh = minint, maxLocation , maxj, h = minint;
 
-    int maxh = -2147483648  , maxLocation , maxj;
-
+    //printf("\tnbPown:%i nbCard:%i\n",length(pownsLocations),length(p->cards));
     for (int i = length(pownsLocations) ; i >= 0 ; i--) {
         if (get(pownsLocations, i) != NULL)
             pownLocation = *((int*) get(pownsLocations, i));
         else
             pownLocation = -1;
-        for (int j = 0; j <= length(p->cards); j++) {
-            if (pownLocation != NULL)
-                played = playCard(p, boardCopy, get(p->cards, j), pownLocation);
+        if(i == 0)
+            pownLocation = -1;
+        for (int j = 0; j < length(p->cards); j++) {
+            boardCopy = boardClone(board);
+            played = playCard(p, boardCopy, get(p->cards, j), pownLocation);
             if (played) {
                 h = heuristic(boardCopy, p->idPlayer);
+
+                //printf("\th:%i location:%i carte:",h,pownLocation);
+                //drawCard(get(p->cards, j));
+
                 if (h > maxh){
                     maxh = h;
                     maxLocation = pownLocation;
                     maxj = j;
+                    played = false;
                 }
             }
         }
     }
-    if (!played && !isEmpty(p->cards)){
-        printf("player %i a jeter ",p->idPlayer);
-        drawCard(getFirst(p->cards));
+    if (h == minint && !isEmpty(p->cards)){
+        //printf("player %i a jeter ",p->idPlayer);
+        //drawCard(getFirst(p->cards));
         pollFirst(p->cards);
     } else {
-        if (pownLocation)
         playCard(p, board, get(p->cards, maxj), maxLocation);
+        //printf("jouer h:%i location:%i carte:",maxh,maxLocation);
+        //drawCard(get(p->cards, maxj));
         removeElem(p->cards, maxj);
     }
     return played;

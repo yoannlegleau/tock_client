@@ -48,7 +48,7 @@ int getLen(Board * board){
 
 Linkedlist *getPlayerPawnsLocation(Board * board, int playerId) {
     Linkedlist * locations = linkedListFactory(free);
-    int arrayLen = getLen(board) + 4* board->nbPlayer;
+    int arrayLen = getLen(board);
     for (int i = 0; i < arrayLen; i++) {
         if (board->board[i] == playerId) {
             int * location = malloc(sizeof(int));
@@ -83,6 +83,12 @@ int getInHomePosition(Board * board, int location){
 
 int getStepToHome(Board * board, int location, int pId){
     return (getHomeEntry(pId) - location +getBoardLen(board))% getBoardLen(board);
+}
+
+int getIdTeamMember(Board * board,int idPlayer){
+    int idTeamMember = (idPlayer+(board->nbPlayer/2))%(board->nbPlayer);
+    if(idTeamMember == 0) idTeamMember = 4;
+    return idTeamMember;
 }
 
 /* ---------- Tests ---------- */
@@ -142,9 +148,9 @@ bool forward(Board * board, int location, int step){
         return true;
     }
     // */
-    if (board->board[(location+step)% getBoardLen(board)] != 0)
+    //if (board->board[(location+step)% getBoardLen(board)] != 0)
         //printf("----- %i a tuer %i -----\n",player,board[(location+step)% getBoardLen(board)]);
-    move(board, location,(location+step)%72);
+    move(board, location,(location+step)% getBoardLen(board));
     return  true;
 }
 
@@ -173,27 +179,31 @@ bool outPawn(Board * board, int pId) {
 
 int heuristic(Board * board,int IdPlayer){
     int result = 0;
+    int idTeam = getIdTeamMember(board,IdPlayer);
     for (int i = 1; i < board->nbPlayer; i++) {
-        if (i != IdPlayer)
-            result -= heuristicPlayer(board,i);
-        else
+        if (i == IdPlayer || i == idTeam)
             result += heuristicPlayer(board,i);
+        else
+            result -= heuristicPlayer(board,i);
     }
     return result;
 }
 
 int heuristicPlayer(Board * board,int IdPlayer){
     Linkedlist * pawns = getPlayerPawnsLocation(board,IdPlayer);
-    int const inHomeFactor = 100, startFactor = 20 ,toHomeFactor=1;
+    int const inHomeFactor = 100000, startFactor = 10000;
     int result = 0;
 
     for (int i = 0; i < length(pawns) ; i++) {
-        int pawnLocation = (int) get(pawns, i);
+        int pawnLocation = *((int*) get(pawns, i));
         if (pawnLocation >= getBoardLen(board))
             result += getInHomePosition(board, pawnLocation) * inHomeFactor;
-        else
-            result += getBoardLen(board) - getStepToHome(board,pawnLocation,IdPlayer)*toHomeFactor + startFactor;
+        else {
+            int distFromSart = getBoardLen(board) - getStepToHome(board, pawnLocation, IdPlayer);
+            result += (distFromSart*distFromSart) + startFactor;
+        }
     }
+    destroyLinkedList(&pawns);
     return result;
 }
 

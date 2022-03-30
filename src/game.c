@@ -13,6 +13,10 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
+#ifdef _WIN32
+#include <windows.h>
+#endif
+
 #include "game.h"
 #include "mainSDL.h"
 #include "linkedlist.h"
@@ -51,7 +55,9 @@ Game * gameCreate(int nbPlayer){
     return game;
 }
 
+
 void addPlayer(Game * game, int nbPlayer){
+
   int i;
   Player * player;
   for(i = 0; i < nbPlayer; i++){
@@ -156,7 +162,7 @@ int gameStart(Game * game) {
         for (int i = 0; i < length(game->players) ; i++) {
             p = get(game->players, i);
             p->play(p, game->board);
-            if (isWin(game->board, p->idPlayer)) {
+            if (isWin(game->board, p->idPlayer)&& isWin(game->board, getIdTeamMember(game->board,p->idPlayer))) {
                 printf("---------- joueur %i a gagner ----------", p->idPlayer);
                 return p->idPlayer;
             }
@@ -192,7 +198,7 @@ void rendererAll(Game *game, SDL_Renderer *renderer) {
     sleep(100);
 #endif
 #ifdef _WIN32
-    //Sleep(100);
+    //Sleep(2000);
 #endif
 }
 

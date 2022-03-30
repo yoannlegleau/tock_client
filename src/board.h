@@ -33,6 +33,7 @@ int getHomeEntry(int pId);
 int getHomeStart(Board * board, int pId);
 int getInHomePosition(Board * board, int location);
 int getStepToHome(Board * board, int location, int pId);
+int getIdTeamMember(Board * board,int idPlayer);
 
 
 /* ---------- Tests ---------- */

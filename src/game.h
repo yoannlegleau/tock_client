@@ -24,9 +24,9 @@ struct Game {
 Game * gameCreate(int nbPlayer);
 
 /**
- * \brief ajoute des joueur a la partie
+ * \brief ajoute des joueur a la partie et complette avec des bots
  * \param game
- * \param nbPlayer
+ * \param nbPlayer nombre de vrais joueurs
  */
 void addPlayer(Game * game, int nbPlayer);
 

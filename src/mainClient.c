@@ -57,7 +57,7 @@ int main(int argc, char* args[]) {
     int result = 1;
     while (result != -1){
         Game *game = gameCreate(4);
-        addPlayer(game, 4);
+        addPlayer(game, 1);
         result = gameStart(game);
     }
 
