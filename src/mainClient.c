@@ -53,13 +53,15 @@ void * doRecieving(void * sockID){
 int main(int argc, char* args[]) {
 
     winCreate();
+    Game *game;
 
-    int result = 1;
-    while (result != -1){
-        Game *game = gameCreate(4);
+    do {
+        game = gameCreate(4);
         addPlayer(game, 1);
-        result = gameStart(game);
-    }
+    }while(gameStart(game));
+
+
+
 
 
     //ferme le jeu

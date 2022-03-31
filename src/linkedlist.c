@@ -33,11 +33,10 @@ void destroyElem(Elem **e, void (*pFunction)(void *));
 
 /**
  * \brief Cree un Element de list en initialisent l'espace memoire. par defaux l'element "boucle" sur lui meme
- * \param l
  * \param o
  * \return
  */
-Elem * elemFactory( Linkedlist * l, void * o){
+Elem * elemFactory(void * o){
     Elem * elem = malloc(sizeof(Elem));
     elem->object=o;
     elem->next= elem;
@@ -52,6 +51,11 @@ Linkedlist * linkedListFactory(void (*funcDest)(void * e)){
     return list;
 }
 
+Linkedlist *LinkedlistClone(Linkedlist *l) {
+    //Linkedlist * clone = linkedListFactory(l->destroy);
+    //TODO Linkedlist *LinkedlistClone(Linkedlist *l)
+    return NULL;
+}
 
 int length( Linkedlist *l) {
     return l->length;
@@ -71,7 +75,7 @@ void addFirst(Linkedlist *l, void *o) {
     if(l->last == NULL)
         addLast(l,o);
     else{
-        Elem * elem = elemFactory(l,o);
+        Elem * elem = elemFactory(o);
         elem->next = l->last->next;
         l->last->next = elem;
         l->length++;
@@ -79,7 +83,7 @@ void addFirst(Linkedlist *l, void *o) {
 }
 
 void addLast(Linkedlist *l, void *o) {
-    Elem * elem = elemFactory(l,o);
+    Elem * elem = elemFactory(o);
     if(l->last == NULL)
         l->last = elem;
     else{

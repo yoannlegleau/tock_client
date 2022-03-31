@@ -16,6 +16,7 @@ typedef struct Game Game;
 struct Game {
     Board * board;
     Linkedlist * players;
+    bool running;
 };
 
 /**

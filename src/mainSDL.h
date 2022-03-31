@@ -26,4 +26,6 @@ void drawCircleBoarder(SDL_Renderer *renderer, int x, int y, int radius, SDL_Col
 int SDLgetWidth(float f);
 int SDLgetHeight(float f);
 
+SDL_Renderer * SDLgetRender();
+
 #endif //TOCK_CLIENT_MAINSDL_H

@@ -34,8 +34,8 @@
 
 void drawPlayerHUD(SDL_Renderer *renderer, Player * player, TTF_Font *police, int x, int y);
 void drawMainOpponentHUD(SDL_Renderer *renderer, Player * player);
-void drawMainPlayerHUD(SDL_Renderer *renderer, Player * player);
-void rendererAll(Game *game, SDL_Renderer *pRenderer);
+
+void rendererAll(Game *game);
 
 
 //TODO Trouver une meilleur organisation
@@ -52,7 +52,7 @@ Game * gameCreate(int nbPlayer){
     Game * game = malloc(sizeof(Game));
     game->board = boardFactory(nbPlayer);
     game->players = linkedListFactory(destroyPlayerVoid);
-    return game;
+    game->running = false;
 }
 
 
@@ -61,11 +61,11 @@ void addPlayer(Game * game, int nbPlayer){
   int i;
   Player * player;
   for(i = 0; i < nbPlayer; i++){
-    player = playerFactory(i+1);
+    player = playerRealFactory(i+1);
     addLast(game->players,player);
   }
   for(i = nbPlayer; i < 4; i++){
-    player = playerFactory(i+1);
+    player = playerBotFactory(i+1);
     addLast(game->players,player);
   }
 }
@@ -80,72 +80,33 @@ int gameStart(Game * game) {
 
     Linkedlist * cards = linkedListFactory((void (*)(void *)) destroyCard);
 
-
-    //printf("cartes:%i\n",length(cards));
-
-    //printf("---- distribution 1 ----\n");
-
-    //printf("cartes restantes:%i\n",length(cards));
-    //foreach(game->players,drawPlayer);
-
-
-
-//Le pointeur vers la surface incluse dans la fenetre
-    SDL_Renderer *renderer=NULL;
-
-
-    // Le pointeur vers notre police
-    // Une variable de couleur noire
-
-
-
+    SDL_Renderer *renderer;
     if(isWinCreat()){
-
         renderer = SDL_GetRenderer(window);
-
         if( (police = TTF_OpenFont("assets/fonts/NewHiScore.ttf", 30)) == NULL){
             fprintf(stderr, "erreur chargement font\n");
             exit(EXIT_FAILURE);
         }
-
-
     }
-    int running = 1;
-    while(running) {
+
+    rendererAll(game);
+
+    game->running = true;
+    while(game->running) {
         SDL_Event e;
         while(SDL_PollEvent(&e)) {
             switch(e.type) {
                 case SDL_QUIT:
-                    running = 0;
-                    return -1;
+                    game->running = false;
                 case SDL_KEYDOWN:
                 case SDLK_END:
-                    return -1;
+                    game->running = false;
                 case SDL_WINDOWEVENT:
                     switch(e.window.event){
                         case SDL_WINDOWEVENT_EXPOSED:
                         case SDL_WINDOWEVENT_SIZE_CHANGED:
                         case SDL_WINDOWEVENT_RESIZED:
                         case SDL_WINDOWEVENT_SHOWN:
-                            /* Le fond de la fenêtre sera blanc */
-                            SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-                            SDL_RenderClear(renderer);
-
-                            /* Ajout du texte en noir */
-                            SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-
-                            //dessin du plateux
-
-
-                            /* Ajout de la seconde image à une certaine position */
-
-                            // Ajout de la seconde image à une autre position
-
-
-
-                            /* On fait le rendu ! */
-
-
                             break;
                     }
                     break;
@@ -157,29 +118,27 @@ int gameStart(Game * game) {
                 makeDeck(cards, gameRules);
             distributeCards(cards, game->players);
         }
-
-
         for (int i = 0; i < length(game->players) ; i++) {
             p = get(game->players, i);
             p->play(p, game->board);
             if (isWin(game->board, p->idPlayer)&& isWin(game->board, getIdTeamMember(game->board,p->idPlayer))) {
                 printf("---------- joueur %i a gagner ----------", p->idPlayer);
-                return p->idPlayer;
+                game->running= false;
             }
             if(isWinCreat())
-                rendererAll(game,renderer);
+                rendererAll(game);
         }
-
     }
     return 0;
 }
 
-void rendererAll(Game *game, SDL_Renderer *renderer) {
+void rendererAll(Game *game) {
+    SDL_Renderer *renderer = SDLgetRender();
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
     SDL_RenderDrawLine(renderer, SDLgetWidth(0.5),0,SDLgetWidth(0.5),SDLgetHeight(1)),
     SDL_RenderDrawLine(renderer,0,SDLgetHeight(0.5),SDLgetWidth(1),SDLgetHeight(0.5)),
 
-    drawMainPlayerHUD(renderer,get(game->players,0));
+    drawMainPlayerHUD(get(game->players,0),0);
     drawMainOpponentHUD(renderer, get(game->players,2));
 
     drawPlayerHUD(renderer,get(game->players,0),police, SDLgetWidth(0.1), SDLgetHeight(0.1));
@@ -234,8 +193,7 @@ void drawPlayerHUD(SDL_Renderer *renderer, Player * player, TTF_Font *police, in
     }
 }
 
-void drawMainPlayerHUD(SDL_Renderer *renderer, Player * player){
-    //FIXME centre les cartes
+void drawMainOpponentHUD(SDL_Renderer *renderer, Player * player){
     SDL_Texture *image_tex;
     SDL_Rect imgDestRect ;
     SDL_Surface *image=NULL;
@@ -243,61 +201,19 @@ void drawMainPlayerHUD(SDL_Renderer *renderer, Player * player){
     int bottom = SDLgetHeight(1);
     int cardx = 160;
     int cardy = 240;
-    int cardslen = cardx*length(player->cards);
-    int xStart = center - (cardslen/2) ;
-    int yStart = bottom - cardy;
+    int idealCardy = SDLgetHeight(0.2);
+    int idealCardx = ((float)cardx/(float)cardy)*idealCardy;
+    int ofset = idealCardx/4;
 
-    imgDestRect.y = yStart;
-    imgDestRect.w = 10;
-
-    for (int i = 0; i < length(player->cards); i++) {
-
-        imgDestRect.x = xStart + (cardx*i);
-
-        const char *path = getAsset(get(player->cards,i));
-        SDL_RWops *rwop=SDL_RWFromFile(path , "rb");
-        image=IMG_LoadPNG_RW(rwop);
-        if(!image) {
-            printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
-        }
-
-        image_tex = SDL_CreateTextureFromSurface(renderer, image);
-        if(!image_tex){
-            printf("test");
-            fprintf(stderr, "Erreur a la creation du rendu de l'image : %s\n", SDL_GetError());
-            exit(EXIT_FAILURE);
-        }
-
-
-        SDL_QueryTexture(image_tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
-        SDL_RenderCopy(renderer, image_tex, NULL, &imgDestRect);
-        SDL_FreeSurface(image);
-        SDL_DestroyTexture(image_tex);
-    }
-
-
-}
-
-void drawMainOpponentHUD(SDL_Renderer *renderer, Player * player){
-    SDL_Texture *image_tex;
-    SDL_Rect imgDestRect ;
-    SDL_Surface *image=NULL;
-    int center = SDLgetWidth(0.5);
-    int bottom = SDLgetHeight(1);
-    int cardx = 80;
-    int cardy = 120;
-    int ofset = cardx/4;
-
-    int cardslen = cardx*length(player->cards) - (ofset* (length(player->cards) - 1));
+    int cardslen = idealCardx*length(player->cards) - (ofset* (length(player->cards) - 1));
     int xStart = center - (cardslen/2);
-    int yStart = bottom - cardy;
 
-    imgDestRect.y = -80;
+    imgDestRect.y = 0 - idealCardy*0.6 ;
 
 
     for (int i = 0; i < length(player->cards); i++) {
 
-        imgDestRect.x = xStart + (cardx*i) - (ofset*i);
+        imgDestRect.x = xStart + (idealCardx*i) - (ofset*i);
         imgDestRect.w = i;
 
         SDL_RWops *rwop=SDL_RWFromFile(getAsset(NULL) , "rb");
@@ -314,6 +230,8 @@ void drawMainOpponentHUD(SDL_Renderer *renderer, Player * player){
 
 
         SDL_QueryTexture(image_tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
+        imgDestRect.h = idealCardy;
+        imgDestRect.w = idealCardx;
         SDL_RenderCopy(renderer, image_tex, NULL, &imgDestRect);
         SDL_FreeSurface(image);
         SDL_DestroyTexture(image_tex);

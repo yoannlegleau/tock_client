@@ -15,6 +15,17 @@ bool isComposed(const enum Card * card){
             *card == oneOut);
 }
 
+bool isComposedSplittable(const enum Card * card){
+    switch (*card) {
+        case thirteen:
+            return true;
+        case oneOut:
+            return true;
+        case sevenSplit:
+            return false;
+    }
+}
+
 Linkedlist * getCardCompose(const enum Card * card){
     if (!isComposed(card))
         return NULL;
@@ -105,7 +116,7 @@ void destroyCard(enum Card ** card){
 
 char* getAsset(const enum Card * card){
     if (card == NULL)
-        return "assets/Design_Cartes/Derriere_Carte.png";
+        return "assets/Cartes/Carte_Back.png";
     switch (*card) {
         case one:
             return "assets/Cartes/Carte_1.png";

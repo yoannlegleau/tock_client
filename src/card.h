@@ -19,7 +19,7 @@
  * \brief chaque enume corespon a une action distinct
  */
 enum Card{one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, eighteen,
-        out, swap, ThirteenOut, oneOut };
+        out, swap, ThirteenOut, oneOut, sevenSplit };
 
 /**
  * \brief Retourne vrais si la carte est une carte composé
@@ -28,6 +28,15 @@ enum Card{one, two, three, four, five, six, seven, eight, nine, ten, eleven, twe
  * \details Une care composé est une carte qui possède plusieurs effets.
  */
 bool isComposed(const enum Card * card);
+
+/**
+ * \brief Retourne vais si une carte composer est divisible
+ * \param card
+ * \return
+ * \details Une carte composer est divisible quand le joueur n'est pas obliger de jouer toutes ces fonctionaliter pour pouvoir la jouer.
+ * \example oneOut est divisible car le joueur doit soit avencer de 1 soit sortire un pion. au contraire pour seven split le joueur est obliger de jouer les 7 carte 1
+ */
+bool isComposedSplittable(const enum Card * card);
 
 /**
  * \brief Retourne une liste des cartes qui compose la care en parameters

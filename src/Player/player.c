@@ -8,21 +8,36 @@
 
 #include <stdio.h>
 #include <malloc.h>
+#include <stdlib.h>
+#include <SDL2/SDL_image.h>
 #include "player.h"
 #include "../mainSDL.h"
+#include "PlayerBot.c"
+#include "PlayerReal.c"
 
 
-bool playCard(int idPlayer, Board * board, enum Card * card, ...);
+
 int play(Player *p, Board * board);
-int playSmart(Player *p, Board * board);
-
 
 Player * playerFactory( int id){
     Player * player = malloc(sizeof(Player));
     player->idPlayer = id;
     player->cards = linkedListFactory((void (*)(void *)) destroyCard);
-    player->play = &playSmart;
     return player;
+}
+
+Player * playerClone(Player * p){
+    Player * clone = playerFactory(p->idPlayer);
+    clone->play = p->play;
+    Linkedlist *cardsClone = linkedListFactory((void (*)(void *)) destroyCard);
+    enum Card*card;
+    for (int i = 0; i < length(p->cards); i++) {
+        card = malloc(sizeof(enum Card*));
+        *card = *((enum Card*)(get(p->cards,i)));
+        addFirst(cardsClone, card);
+    }
+    clone->cards = cardsClone;
+    return clone;
 }
 
 void destroyPlayerVoid(void * player){
@@ -37,6 +52,64 @@ void destroyPlayer(Player ** player){
 void drawPlayer(const Player *player) {
     printf("player %i:\n Cartes:%i\n",player->idPlayer,length(player->cards));
     foreach(player->cards,drawCard);
+}
+
+void drawMainPlayerHUD(Player * player,...){
+    va_list ap;
+            va_start(ap, player);
+    int highlight = va_arg(ap, int );
+    int const defaultHighlight = -858993460;
+
+    SDL_Texture *image_tex;
+    SDL_Rect imgDestRect ;
+    SDL_Surface *image=NULL;
+    int center = SDLgetWidth(0.5);
+    int bottom = SDLgetHeight(1);
+    int cardx = 160;
+    int cardy = 240;
+    int idealCardy = SDLgetHeight(0.2);
+    int idealCardx = ((float)cardx/(float)cardy)*idealCardy;
+    int cardslen = idealCardx*length(player->cards);
+    int xStart = center - (cardslen/2) ;
+    int yStart = bottom - idealCardy;
+    float highlightOfset = 0.025;
+
+    imgDestRect.y = yStart;
+    imgDestRect.w = 10;
+
+    for (int i = 0; i < length(player->cards); i++) {
+
+        imgDestRect.x = xStart + (idealCardx*i);
+        if (defaultHighlight != highlight && i == highlight)
+            imgDestRect.y = yStart - SDLgetHeight(highlightOfset);
+        else
+            imgDestRect.y = yStart;
+
+        const char *path = getAsset(get(player->cards,i));
+        SDL_RWops *rwop=SDL_RWFromFile(path , "rb");
+        image=IMG_LoadPNG_RW(rwop);
+        if(!image) {
+            printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
+        }
+
+        image_tex = SDL_CreateTextureFromSurface(SDLgetRender(), image);
+        if(!image_tex){
+            printf("test");
+            fprintf(stderr, "Erreur a la creation du rendu de l'image : %s\n", SDL_GetError());
+            exit(EXIT_FAILURE);
+        }
+
+
+
+        SDL_QueryTexture(image_tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
+        imgDestRect.h = idealCardy;
+        imgDestRect.w = idealCardx;
+        SDL_RenderCopy(SDLgetRender(), image_tex, NULL, &imgDestRect);
+        SDL_FreeSurface(image);
+        SDL_DestroyTexture(image_tex);
+    }
+
+
 }
 
 int play(Player *p, Board * board) {
@@ -64,85 +137,40 @@ int play(Player *p, Board * board) {
     return false;
 }
 
-int playSmart(Player *p, Board * board) {
-    const int minint = -2147483648;
-    int idPlayer = p->idPlayer, maxh = minint, cardPlayIndex, maxLocation, h = minint, pownLocation;
-    enum Card * maxCard;
-    if(isWin(board,p->idPlayer))
-        idPlayer = getIdTeamMember(board,idPlayer);
-    Linkedlist * pownsLocations = getPlayerPawnsLocation(board, idPlayer);
-    Board *boardCopy;
-    bool played = false;
-    printf("\tnbPown:%i nbCard:%i\n",length(pownsLocations),length(p->cards));
+bool isCardPlayable(Player *p, Board *board ,enum Card* card){
+    Board *boardCopy = boardClone(board);
+    Player *playerCopy = playerClone(p);
+    clear(playerCopy->cards);
 
-    for (int i = length(pownsLocations) ; i >= 0 ; i--) {
-        if (get(pownsLocations, i) != NULL)
-            pownLocation = *((int*) get(pownsLocations, i));
-        else
-            pownLocation = -1;
-        if(i == 0)
-            pownLocation = -1;
-        for (int j = 0; j < length(p->cards); j++) {
-            boardCopy = boardClone(board);
-            //gestion des cartes composé
-            if (isComposed(get(p->cards, j))) {
-                Linkedlist *compose = getCardCompose(get(p->cards, j));
-                int compMaxh = minint,compMaxLocation;
-                bool compplayed = false;
-                enum Card * compmaxCard = NULL;
-                for (int k = 0; k < length(compose); k++){
-                    boardCopy = boardClone(board);
-                    compplayed = playCard(idPlayer, boardCopy, get(compose, k), pownLocation);
-                    if (compplayed) {
-                        h = heuristic(boardCopy, idPlayer);
-                        //TODO ferifier si onOUt ne casse pas le choi des autres cartes de la main (7.8.9)(les cartes normal)
-                        printf("\t\th:%i location:%i carte:%s (%s)\n", h, pownLocation, cardToString((enum Card*)get(p->cards, j)), cardToString(get(compose, k)));
-                        if (h > compMaxh) {
-                            compMaxh = h;
-                            compMaxLocation = pownLocation;
-                            compmaxCard = get(compose, k);
-                            compplayed = false;
-                        }
-                    }
-                }
-                printf("\th:%i location:%i carte:%s (%s)\n",compMaxh, pownLocation, cardToString((enum Card*)get(p->cards, j)), cardToString(compmaxCard));
-                if (compMaxh > maxh) {
-                    maxh = compMaxh;
-                    maxLocation = compMaxLocation;
-                    cardPlayIndex = j;
-                    maxCard = compmaxCard;
-                    played = false;
-                }
-            } else{
-                played = playCard(idPlayer, boardCopy, get(p->cards, j), pownLocation);
-                if (played) {
-                    h = heuristic(boardCopy, idPlayer);
-                    printf("\th:%i location:%i carte:", h, pownLocation);
+    enum Card * cardCopy = malloc(sizeof(enum Card*));
+    *cardCopy = *card;
+    addFirst(playerCopy->cards,cardCopy);
 
-                    drawCard(get(p->cards, j));
-                    if (h > maxh) {
-                        maxh = h;
-                        maxLocation = pownLocation;
-                        maxCard = get(p->cards, j);
-                        cardPlayIndex = j;
-                        played = false;
-                    }
-                }
-            }
+    return playSmart(playerCopy,boardCopy);
+    /*
+    va_list ap;
+            va_start(ap, card);
+    int location1 = va_arg(ap, int );
+    int location2 = va_arg(ap, int );
+
+    if (!isComposed(card)) {
+        return playCard(idPlayer, boardCopy, card, location1,location2);
+    } else{
+        Linkedlist *compose = getCardCompose(card);
+        bool compplayed = false;
+        for (int i = 0; i < length(compose); i++){
+            if (isComposedSplittable(card))
+                boardCopy = boardClone(board);
+            compplayed = playCard(idPlayer, boardCopy, get(compose, i), location1,location2);
+            if (compplayed && isComposedSplittable(card))
+                break;
+            if (!compplayed && !isComposedSplittable(card))
+                break;
         }
+        destroyLinkedList(compose);
+        return compplayed;
     }
-
-    if (h == minint && !isEmpty(p->cards)){
-        printf("player %i a jeter ",p->idPlayer);
-        drawCard(getFirst(p->cards));
-        pollFirst(p->cards);
-    } else {
-        playCard(idPlayer, board, maxCard, maxLocation);
-        printf("jouer h:%i location:%i carte:",maxh,maxLocation);
-        drawCard(get(p->cards, cardPlayIndex));
-        removeElem(p->cards, cardPlayIndex);
-    }
-    return played;
+    */
 }
 
 bool playCard(int idPlayer, Board *board, enum Card *card, ... ) {
@@ -150,8 +178,6 @@ bool playCard(int idPlayer, Board *board, enum Card *card, ... ) {
             va_start(ap, card);
     int location1 = va_arg(ap, int );
     int location2 = va_arg(ap, int );
-    int location3 = va_arg(ap, int );
-    int location4 = va_arg(ap, int );
 
     switch (*card) {
         case one:
@@ -187,7 +213,3 @@ bool playCard(int idPlayer, Board *board, enum Card *card, ... ) {
     }
 }
 
-int getHeuristic(Board * board, Player * player, enum Card * card){
-
-    return 0;
-}

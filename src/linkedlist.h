@@ -20,6 +20,13 @@ typedef struct Linkedlist Linkedlist;
 Linkedlist * linkedListFactory(void (*funcDest)(void * e));
 
 /**
+ * \brief Clone une Linkedlist
+ * \param l Linkedlist source
+ * \return liste cloner
+ */
+Linkedlist *LinkedlistClone(Linkedlist *l);
+
+/**
  * \brief Renvoie le nombre d'éléments de la liste l.
  * \param l Linkedlist conserner
  * \return nombre d'éléments ou 0 si la liste est vide

@@ -123,3 +123,9 @@ int SDLgetHeight(float f){
     SDL_GetWindowSize(window, &w, &h);
     return (int)(h*f);
 }
+
+SDL_Renderer * SDLgetRender(){
+    if(isWinCreat()) {
+        return SDL_GetRenderer(window);
+    }
+}
