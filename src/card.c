@@ -97,8 +97,6 @@ void drawCard(const enum Card * card){
     }
 }
 
-
-
 void destroyCard(enum Card ** card){
   //TODO destroyCard
   //free(*card);
@@ -110,38 +108,38 @@ char* getAsset(const enum Card * card){
         return "assets/Design_Cartes/Derriere_Carte.png";
     switch (*card) {
         case one:
-            return "assets/Design_Cartes/CarteValeur_3.png";
+            return "assets/Cartes/Carte_1.png";
         case two:
-            return "assets/Design_Cartes/CarteValeur_3.png";
+            return "assets/Cartes/Carte_Valeur_2.png";
         case three:
-            return "assets/Design_Cartes/CarteValeur_3.png";
+            return "assets/Cartes/Carte_Valeur_3.png";
         case four:
-            return "assets/Design_Cartes/Carte4_1.png";
+            return "assets/Cartes/Carte_4.png";
         case five:
-            return "assets/Design_Cartes/Carte5_2.png";
+            return "assets/Cartes/Carte_5.png";
         case six:
-            return "assets/Design_Cartes/CarteValeur_3.png";
+            return "assets/Cartes/CarteValeur_6.png";
         case seven:
-            return "assets/Design_Cartes/Carte7_4.png";
+            return "assets/Cartes/Carte_7.png";
         case eight:
-            return "assets/Design_Cartes/CarteValeur_3.png";
+            return "assets/Cartes/Carte_Valeur_8.png";
         case nine:
-            return "assets/Design_Cartes/CarteValeur_3.png";
+            return "assets/Cartes/Carte_Valeur_9.png";
         case ten:
-            return "assets/Design_Cartes/Carte10_1.png";
+            return "assets/Cartes/Carte_10.png";
         case eleven:
-            return "assets/Design_Cartes/CarteV_1.png";
+            return "assets/Cartes/Carte_V.png";
         case twelve:
-            return "assets/Design_Cartes/CarteValeur_3.png";
+            return "assets/Cartes/Carte_Valeur_D.png";
         case thirteen:
-            return "assets/Design_Cartes/CarteValeur_3.png";
-        case ThirteenOut:
-            return "assets/Design_Cartes/CarteSortirPions_2.png";
+            return "assets/Cartes/Carte_Valeur_R.png";
+        case thirteen_out:
+            return "assets/Cartes/Carte_1.png";
         case oneOut:
             return "assets/Design_Cartes/CarteSortirPions_2.png";
-            //TODO ajouter les autre cartesd
+            //TODO ajouter les autre cartes --> JOKER
         default:
-            return "assets/Design_Cartes/Derriere_Carte.png";
+            return "assets/Cartes/Carte_Back.png";
     }
 }
 
@@ -162,7 +160,6 @@ void makeDeck(Linkedlist *cards, Linkedlist *gameRules) {
             addFirst(cards,card);
         }
     }
-
 }
 
 void distributeCards(Linkedlist *cards, Linkedlist *players) {
