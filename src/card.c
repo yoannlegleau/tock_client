@@ -118,7 +118,7 @@ char* getAsset(const enum Card * card){
         case five:
             return "assets/Cartes/Carte_5.png";
         case six:
-            return "assets/Cartes/CarteValeur_6.png";
+            return "assets/Cartes/Carte_Valeur_6.png";
         case seven:
             return "assets/Cartes/Carte_7.png";
         case eight:
@@ -133,10 +133,10 @@ char* getAsset(const enum Card * card){
             return "assets/Cartes/Carte_Valeur_D.png";
         case thirteen:
             return "assets/Cartes/Carte_Valeur_R.png";
-        case thirteen_out:
-            return "assets/Cartes/Carte_1.png";
+        case ThirteenOut:
+            return "assets/Cartes/Carte_R.png";
         case oneOut:
-            return "assets/Design_Cartes/CarteSortirPions_2.png";
+            return "assets/Cartes/Carte_1.png";
             //TODO ajouter les autre cartes --> JOKER
         default:
             return "assets/Cartes/Carte_Back.png";

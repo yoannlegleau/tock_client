@@ -241,8 +241,8 @@ void drawMainPlayerHUD(SDL_Renderer *renderer, Player * player){
     SDL_Surface *image=NULL;
     int center = SDLgetWidth(0.5);
     int bottom = SDLgetHeight(1);
-    int cardx = 80;
-    int cardy = 120;
+    int cardx = 160;
+    int cardy = 240;
     int cardslen = cardx*length(player->cards);
     int xStart = center - (cardslen/2) ;
     int yStart = bottom - cardy;
@@ -263,6 +263,7 @@ void drawMainPlayerHUD(SDL_Renderer *renderer, Player * player){
 
         image_tex = SDL_CreateTextureFromSurface(renderer, image);
         if(!image_tex){
+            printf("test");
             fprintf(stderr, "Erreur a la creation du rendu de l'image : %s\n", SDL_GetError());
             exit(EXIT_FAILURE);
         }
@@ -285,7 +286,7 @@ void drawMainOpponentHUD(SDL_Renderer *renderer, Player * player){
     int bottom = SDLgetHeight(1);
     int cardx = 80;
     int cardy = 120;
-    int ofset = 20;
+    int ofset = cardx/4;
 
     int cardslen = cardx*length(player->cards) - (ofset* (length(player->cards) - 1));
     int xStart = center - (cardslen/2);
