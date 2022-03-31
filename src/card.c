@@ -10,6 +10,36 @@
 #include "Player/player.h"
 #include <stdlib.h>
 
+bool isComposed(const enum Card * card){
+    return (*card == ThirteenOut ||
+            *card == oneOut);
+}
+
+Linkedlist * getCardCompose(const enum Card * card){
+    if (!isComposed(card))
+        return NULL;
+    Linkedlist *compose = linkedListFactory(destroyCard);
+    enum Card * composeCard ;
+    switch (*card) {
+        case ThirteenOut:
+            composeCard = malloc(sizeof(enum Card));
+            *composeCard = thirteen;
+            addFirst(compose,composeCard);
+            composeCard = malloc(sizeof(enum Card));
+            *composeCard = out;
+            addFirst(compose,composeCard);
+            break;
+        case oneOut:
+            composeCard = malloc(sizeof(enum Card));
+            *composeCard = one;
+            addFirst(compose,composeCard);
+            composeCard = malloc(sizeof(enum Card));
+            *composeCard = out;
+            addFirst(compose,composeCard);
+            break;
+    }
+    return compose;
+}
 
 void drawCard(const enum Card * card){
     if(card == NULL)
@@ -54,12 +84,20 @@ void drawCard(const enum Card * card){
         case thirteen:
             printf("thirteen\n");
             break;
-        case thirteen_out:
-            printf("thirteen_out\n");
+        case ThirteenOut:
+            printf("ThirteenOut\n");
+            break;
+        case oneOut:
+            printf("OneOut\n");
+            break;
+        case out:
+            printf("Out\n");
             break;
             //TODO ajouter les autre cartes
     }
 }
+
+
 
 void destroyCard(enum Card ** card){
   //TODO destroyCard
@@ -97,7 +135,9 @@ char* getAsset(const enum Card * card){
             return "assets/Design_Cartes/CarteValeur_3.png";
         case thirteen:
             return "assets/Design_Cartes/CarteValeur_3.png";
-        case thirteen_out:
+        case ThirteenOut:
+            return "assets/Design_Cartes/CarteSortirPions_2.png";
+        case oneOut:
             return "assets/Design_Cartes/CarteSortirPions_2.png";
             //TODO ajouter les autre cartesd
         default:
@@ -115,11 +155,14 @@ void makeDeck(Linkedlist *cards, Linkedlist *gameRules) {
             card = malloc(sizeof(enum Card));
             *card = c;
             if(*card == thirteen)
-                 *card = thirteen_out;
+                 *card = ThirteenOut;
+            if(*card == one)
+                *card = oneOut;
 
             addFirst(cards,card);
         }
     }
+
 }
 
 void distributeCards(Linkedlist *cards, Linkedlist *players) {
@@ -135,5 +178,45 @@ void distributeCards(Linkedlist *cards, Linkedlist *players) {
             addLast(p->cards, pollRandom(cards));
         }
     }
+}
 
+char * cardToString(const enum Card * card){
+    if(card == NULL)
+        return NULL;
+    switch (*card) {
+        case one:
+            return "One";
+        case two:
+            return "tow";
+        case three:
+            return "three";
+        case four:
+            return "four";
+        case five:
+            return "five";
+        case six:
+            return "six";
+        case seven:
+            return "seven";
+        case eight:
+            return "eight";
+        case nine:
+            return "nine";
+        case ten:
+            return "ten";
+        case eleven:
+            return "eleven";
+        case twelve:
+            return "twelve";
+        case thirteen:
+            return "thirteen";
+        case ThirteenOut:
+            return "ThirteenOut";
+        case oneOut:
+            return "OneOut";
+        case out:
+            return "Out";
+
+            //TODO ajouter les autre cartes
+    }
 }
