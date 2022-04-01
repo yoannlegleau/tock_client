@@ -26,8 +26,31 @@ char * getByKey(Linkedlist *liste,char *key){
     return result;
 }
 
-void setKeyValue(char *newKey,const char *path){
-  //TODO NULL = suppr
+void setKeyValue(const char *path,char *key,char *value){
+  Linkedlist * keyValues = loadFromPath(path);
+  bool key_is_found = false;
+  int i;
+  KeyValue * kv;
+  for(i=0;i<length(keyValues);i++){
+    kv = (KeyValue *)get(keyValues,i);
+    if(strcmp(kv->key,key)==0){
+      key_is_found = true;
+      if(value == NULL){
+        removeElem(keyValues,i);
+      }else
+        kv->value = value;
+      saveFromPath(path,keyValues);
+    }
+  }
+  if(!key_is_found){
+    FILE * file = fopen(path, "a");
+    if ( file == NULL ) {
+        printf( "Cannot open file %s\n", path );
+        exit( 0 );
+    }
+    fprintf(file,"<%s>%s",key,value);
+    fclose(file);
+  }
 }
 
 void destroyKeyValueVoid(void * keyValue){
@@ -40,14 +63,30 @@ void destroyKeyValue(KeyValue ** keyValue){
   free((*keyValue));
 }
 
+void saveToPath(const char *path,Linkedlist *liste){
+  int i;
+  KeyValue * kv;
+  FILE * file = fopen(path, "w");
+  if ( file == NULL ) {
+      printf( "Cannot open file %s\n", path );
+      exit( 0 );
+  }
+  rewind(file);
+  for(i=0;i<length(liste);i++){
+    kv = (KeyValue *)get(liste,i);
+    fprintf(file,"<%s>%s\n",kv->key,kv->value);
+  }
+  fclose(file);
+}
+
 Linkedlist * loadFromPath(const char *path){
     FILE * file = fopen(path, "r");
+    rewind(file);
     if ( file == NULL ) {
         printf( "Cannot open file %s\n", path );
         exit( 0 );
     }
-    if (file == NULL)
-        exit(EXIT_FAILURE);
+    rewind(file);
     Linkedlist * keyValues = linkedListFactory(destroyKeyValueVoid);
     char * c ;
     #ifdef __unix__

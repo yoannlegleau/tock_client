@@ -17,11 +17,13 @@ void destroyKeyValueVoid(void * keyValue);
 
 void destroyKeyValue(KeyValue ** keyValue);
 
-void setKeyValue(char *newKey,const char *path);
+void setKeyValue(const char *path,char *key,char *value);
+
+void saveToPath(const char *path,Linkedlist *liste);
 
 char * getByKey(Linkedlist *liste,char *key);
 
-Linkedlist *  loadFromPath(const char *path);
+Linkedlist * loadFromPath(const char *path);
 
 KeyValue * keyValueFactory(char * key,char * value);
 
