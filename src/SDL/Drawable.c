@@ -50,6 +50,8 @@ void addDrawable(void* object, void (*render)(void *)){
 }
 
 void RenderAllDrawable(){
+    if(!isWinCreat())
+        return;
     Drawable * index = NULL;
     initDrawable();
     if(!isEmpty(drawables))
@@ -64,13 +66,6 @@ void RenderAllDrawable(){
     renderBackground();
     SDL_RenderPresent(SDLgetRender());
     SDL_RenderClear(SDLgetRender());
-
-#ifdef __unix__
-    sleep(100);
-#endif
-#ifdef _WIN32
-    //Sleep(2000);
-#endif
 }
 
 void setVisibility(void* object, bool visibility){

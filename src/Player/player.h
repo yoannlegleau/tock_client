@@ -80,4 +80,12 @@ void destroyPlayer(Player ** player);
  */
 bool playCard(int idPlayer, Board * board, enum Card * card, ...);
 
+/**
+ * \brief verifi si le joueur peux jouer
+ * \param p joueur cible
+ * \param board plateau
+ * \return vrais si le joueurs peu jouer
+ */
+bool playerCanPlay(Player *p, Board *board);
+
 #endif //TOCK_CLIENT_PLAYER_H

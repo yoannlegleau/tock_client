@@ -20,15 +20,24 @@ Player * playerRealFactory( int id){
 
 bool playPlayer(Player *p, Board * board) {
 
-    printf("player %i a jeter ", p->idPlayer);
-    drawCard(getFirst(p->cards));
-    pollFirst(p->cards);
-    int highlightCard = 0;
     bool running = true;
     bool update = false;
-    enum Card * cardPayed = NULL;
-    int pownLocation = -1;
+    bool ret = false;
+    enum Card *cardPayed = NULL;
+    Linkedlist *pawnsLocations;
+    int highlightedPown = 0;
+    int pawnLocation = -1;
+    int idPlayer = p->idPlayer;
     //SELECTION DE LA CARTE
+
+    if (isWin(board, p->idPlayer))
+        idPlayer = getIdTeamMember(board, p->idPlayer);
+    pawnsLocations = getPlayerPawnsLocation(board, idPlayer);
+    int * defaultLocation = malloc(sizeof(int));
+    *defaultLocation = 0 - p->idPlayer;
+    addLast(pawnsLocations,defaultLocation);
+
+    RenderAllDrawable();
     while (running) {
         SDL_Event e;
         while (SDL_PollEvent(&e)) {
@@ -41,29 +50,88 @@ bool playPlayer(Player *p, Board * board) {
                             exit(EXIT_FAILURE);
                             break;
                         case SDLK_RIGHT:
-                            p->selectedCard = (p->selectedCard+1)%length(p->cards);
+                            if (cardPayed == NULL)
+                                p->selectedCard = (p->selectedCard + 1) % length(p->cards);
+                            else
+                                highlightedPown--;
                             update = false;
                             break;
                         case SDLK_LEFT:
-                            p->selectedCard = (p->selectedCard-1+length(p->cards))%length(p->cards);
+                            if (cardPayed == NULL)
+                                p->selectedCard = (p->selectedCard - 1 + length(p->cards)) % length(p->cards);
+                            else
+                                highlightedPown++;
                             update = false;
                             break;
+
                         case SDLK_RETURN:
-                            cardPayed = get(p->cards,p->selectedCard);
+                            if (cardPayed == NULL) {
+                                cardPayed = get(p->cards, p->selectedCard);
+                                update = false;
+                            } else {
+                                //Jouer une carte
+                                if ( isComposed(cardPayed)){
+                                    Linkedlist *compose = getCardCompose(cardPayed);
+                                    enum Card *card = NULL;
+                                    for (int i = 0; i < length(compose); ++i) {
+                                        card = get(compose,i);
+                                        if (*card == out ) {
+                                            if (pawnLocation == 0 - idPlayer && playCard(idPlayer, board, card, pawnLocation)) {
+                                                running = false;
+                                                ret = true;
+                                                update = false;
+                                            }
+                                        } if(playCard(idPlayer,board,card,pawnLocation)){
+                                            running = false;
+                                            ret = true;
+                                            update = false;
+                                        }
+                                    }
+                                }
+                                else if(playCard(idPlayer,board,cardPayed,pawnLocation)){
+                                    running = false;
+                                    ret = true;
+                                    update = false;
+                                }
+                                if (ret) {
+                                    removeElem(p->cards, p->selectedCard);
+                                    return ret;
+                                }
+                            }
+
+                            break;
+                        case SDLK_BACKSPACE:
+                            if (cardPayed != NULL){
+                                cardPayed = NULL;
+                                update = false;
+                            }
+                            break;
+                        case SDLK_DELETE:
+                            if (cardPayed == NULL && !playerCanPlay(p, board) ){
+                                removeElem(p->cards,p->selectedCard);
+                                running = false;
+                                update = false;
+                                return false;
+                            }
                             break;
                     }
             }
-        }
-        if (!update) {
-            RenderAllDrawable();
-            DrawCardMiddle(cardPayed);
-            if(pownLocation == -1)
-                highlightLocation(getStart(p->idPlayer));
-            else
-                highlightLocation(pownLocation);
+
+            if (!update) {
+                RenderAllDrawable();
+
+                DrawCardMiddle(cardPayed);
+
+                if (cardPayed != NULL){
+                    pawnLocation = *((int *) get(pawnsLocations, highlightedPown));
+                    highlightLocation(pawnLocation);
+                }
+                //FIXME affichage en retard
+                //update = true;
+            }
         }
     }
-    return false;
+    return ret;
 }
 
 void DrawCardMiddle(enum Card * card){

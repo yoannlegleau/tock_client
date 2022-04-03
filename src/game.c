@@ -81,20 +81,19 @@ int gameStart(Game * game) {
 
     Linkedlist * cards = linkedListFactory((void (*)(void *)) destroyCard);
 
-    SDL_Renderer *renderer;
     if(isWinCreat()){
-        renderer = SDL_GetRenderer(window);
         if( (police = TTF_OpenFont("assets/fonts/NewHiScore.ttf", 30)) == NULL){
             fprintf(stderr, "erreur chargement font\n");
             exit(EXIT_FAILURE);
         }
 
         //ajout des objets eu drawables
-
         addDrawable(game->board, (void (*)(void *)) drawBoard);
         for (int i = 0; i < length(game->players) ; i++) {
             addDrawable(get(game->players,i), (void (*)(void *)) drawPlayer);
         }
+        //interface de tricheur ^^
+        //addDrawable(game,rendererAllPlayerHUD);
     }
 
     RenderAllDrawable();
@@ -107,8 +106,6 @@ int gameStart(Game * game) {
                 case SDL_QUIT:
                     game->running = false;
                 case SDL_KEYDOWN:
-                case SDLK_END:
-                    game->running = false;
                 case SDL_WINDOWEVENT:
                     switch(e.window.event){
                         case SDL_WINDOWEVENT_EXPOSED:
@@ -127,14 +124,20 @@ int gameStart(Game * game) {
             distributeCards(cards, game->players);
         }
         for (int i = 0; i < length(game->players) ; i++) {
+
             p = get(game->players, i);
             p->play(p, game->board);
             if (isWin(game->board, p->idPlayer)&& isWin(game->board, getIdTeamMember(game->board,p->idPlayer))) {
                 printf("---------- joueur %i a gagner ----------", p->idPlayer);
                 game->running= false;
             }
-            if(isWinCreat())
-                RenderAllDrawable();
+            RenderAllDrawable();
+#ifdef __unix__
+            sleep(100);
+#endif
+#ifdef _WIN32
+            Sleep(100);
+#endif
         }
     }
     return 0;
@@ -142,8 +145,8 @@ int gameStart(Game * game) {
 
 void rendererAllPlayerHUD(Game *game) {
     SDL_Renderer *renderer = SDLgetRender();
-    drawPlayerHUD(renderer,get(game->players,0),police, SDLgetWidth(0.1), SDLgetHeight(0.1));
-    drawPlayerHUD(renderer,get(game->players,1),police, SDLgetWidth(0.1), SDLgetHeight(0.7));
+    drawPlayerHUD(renderer,get(game->players,1),police, SDLgetWidth(0.1), SDLgetHeight(0.1));
+    drawPlayerHUD(renderer,get(game->players,0),police, SDLgetWidth(0.1), SDLgetHeight(0.7));
     drawPlayerHUD(renderer,get(game->players,2),police, SDLgetWidth(0.7), SDLgetHeight(0.1));
     drawPlayerHUD(renderer,get(game->players,3),police, SDLgetWidth(0.7), SDLgetHeight(0.7));
 }

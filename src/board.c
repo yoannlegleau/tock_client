@@ -228,12 +228,32 @@ void drawBoard(Board * board){
 
     boardMat[7][18] = 10;
     for (int i = 14; i < 19; ++i) boardMat[9][i] = 10;
+    for (int i = 2; i < 6; ++i) boardMat[i][18] = 1;
+    Linkedlist * pawns1 = getPlayerPawnsLocation(board, 1);
+    for (int i = 2; i < 2+length(pawns1); ++i) boardMat[i][18] = 10;
+    destroyLinkedList(&pawns1);
+
     boardMat[0][7] = 20;
     for (int i = 0; i < 5; ++i) boardMat[i][9] = 20;
+    for (int i = 2; i < 6; ++i) boardMat[0][i] = 2;
+    Linkedlist * pawns2 = getPlayerPawnsLocation(board, 2);
+    for (int i = 2; i < 2+length(pawns2); ++i) boardMat[0][i] = 20;
+    destroyLinkedList(&pawns2);
+
     boardMat[11][0] = 30;
     for (int i = 0; i < 5; ++i) boardMat[9][i] = 30;
+    for (int i = 13; i < 17; ++i) boardMat[i][0] = 3;
+    Linkedlist * pawns3 = getPlayerPawnsLocation(board, 3);
+    for (int i = 13; i < 13+length(pawns3); ++i) boardMat[i][0] = 30;
+    destroyLinkedList(&pawns3);
+
     boardMat[18][11] = 40;
     for (int i = 14; i < 19; ++i) boardMat[i][9] = 40;
+    for (int i = 13; i < 17; ++i) boardMat[18][i] = 4;
+    Linkedlist * pawns4 = getPlayerPawnsLocation(board, 4);
+    for (int i = 13; i < 13+length(pawns4); ++i) boardMat[18][i] = 40;
+    destroyLinkedList(&pawns4);
+
 
     if (board->board[0] != 0)
         boardMat[7][18] = board->board[0];
@@ -353,7 +373,6 @@ void drawBoard(Board * board){
         boardMat[14][9] = board->board[87];
 
 
-
     for (int i = 0; i < matSize ; ++i) {
         for (int j = 0; j < matSize ; ++j) {
             switch (boardMat[i][j]) {
@@ -403,8 +422,7 @@ void destroyBoard(Board ** board){
 }
 
 void highlightLocation(int location){
-    if(location == -1)
-        return;
+
     SDL_Color HighlightColor = getSDLColor("BoardHighlight");
     const int squareSize = SDLgetHeight(0.03611112);
     const int sercleSize = SDLgetHeight(0.019244445);
@@ -412,8 +430,17 @@ void highlightLocation(int location){
     const int matSize = 19;
     int x = (SDLgetWidth(0.5)-((squareSize*(matSize-1))/2)) , y = SDLgetHeight(0.1);
 
-    int matX = -1, matY= 0;
+    int matX = -1, matY= -1;
 
+    if(location == -1){
+        matX = 5;
+        matY = 18;
+    } else if(location == -3){
+        matX = 13;
+        matY = 0;
+    }
+
+        if (matX == -1)
     if (14 <= location && location <= 18 )
         matX = 0;
     else if (location == 13 || location == 19 || location == 76 )
@@ -452,6 +479,45 @@ void highlightLocation(int location){
         matX = 17;
     if (50 <= location && location <= 54 )
         matX = 18;
+
+    if (32 <= location && location <= 36 )
+        matY = 0;
+    else if (location == 31 || location == 80 || location == 37 )
+        matY = 1;
+    else if (location == 30 || location == 81 || location == 38 )
+        matY = 2;
+    else if (location == 29 || location == 82 || location == 39 )
+        matY = 3;
+    else if (25 <= location && location <= 28 || 40 <= location && location <= 43 || location == 83 )
+        matY = 4;
+    else if (location == 24 || location == 44  )
+        matY = 5;
+    else if (location == 23 || location == 45  )
+        matY = 6;
+    else if (18 <= location && location <= 22 || 46 <= location && location <= 50 )
+        matY = 7;
+    else if (location == 17 || location == 51 )
+        matY = 8;
+    else if (location == 16 || location == 52 || 76 <= location && location <= 79 || 84 <= location && location <= 87 )
+        matY = 9;
+    else if (location == 15 || location == 53 )
+        matY = 10;
+    else if (10 <= location && location <= 14 || 54 <= location && location <= 58 )
+        matY = 11;
+    else if (location == 9 || location == 59 )
+        matY = 12;
+    else if (location == 8 || location == 60 )
+        matY = 13;
+    else if (3 <= location && location <= 7 || 61 <= location && location <= 64 || location == 75 )
+        matY = 14;
+    else if (location == 3 || location == 74 || location == 65 )
+        matY = 15;
+    else if (location == 2 || location == 73 || location == 66 )
+        matY = 16;
+    else if (location == 1 || location == 72 || location == 67 )
+        matY = 17;
+    if (38 <= location && location <= 72 || location == 0 )
+        matY = 18;
 
     //TODO afecter les valeurs de matY
 

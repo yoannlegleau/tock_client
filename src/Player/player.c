@@ -301,6 +301,12 @@ int play(Player *p, Board * board) {
     return false;
 }
 
+bool playerCanPlay(Player *p, Board *board){
+        Board *boardCopy = boardClone(board);
+        Player *playerCopy = playerClone(p);
+        return playSmart(playerCopy, boardCopy);
+};
+
 bool isCardPlayable(Player *p, Board *board ,enum Card* card) {
     Board *boardCopy = boardClone(board);
     Player *playerCopy = playerClone(p);
