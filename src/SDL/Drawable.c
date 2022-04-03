@@ -18,6 +18,7 @@ struct Drawable {
     void * object;
     void (*render)(void *);
     bool update;
+    bool visibility;
 };
 
 /**

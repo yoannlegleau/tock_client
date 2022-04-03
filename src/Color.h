@@ -11,7 +11,6 @@
 
 SDL_Color getSDLColor(char * colorKey);
 
-
 #endif //TOCK_CLIENT_COLOR_H
 
 

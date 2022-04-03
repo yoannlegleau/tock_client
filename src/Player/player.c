@@ -382,4 +382,3 @@ bool playCard(int idPlayer, Board *board, enum Card *card, ... ) {
             return false;
     }
 }
-
