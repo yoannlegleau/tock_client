@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <SDL2/SDL.h>
 #include <stdbool.h>
-#include "mainSDL.h"
+#include "SDL/mainSDL.h"
 #include "game.h"
 #include "parser.h"
 #include "Color.h"

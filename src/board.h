@@ -65,7 +65,12 @@ void destroyBoard(Board ** board);
 void destroyBoardVoid(void * board);
 int heuristic(Board * board,int IdPlayer);
 
-void drawBoard(Board * board, SDL_Renderer *renderer);
+void drawBoard(Board * board);
 
+/**
+ * \brief met en evidence la case selectioner
+ * \param location Position selectinée
+ */
+void highlightLocation(int location);
 
 #endif //TOCK_CLIENT_BOARD_H

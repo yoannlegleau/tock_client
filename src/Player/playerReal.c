@@ -4,7 +4,10 @@
 
 
 
+#include "../SDL/Drawable.h"
+
 bool playPlayer(Player *p, Board * board);
+void DrawCardMiddle(enum Card * card);
 
 
 Player * playerRealFactory( int id){
@@ -23,34 +26,83 @@ bool playPlayer(Player *p, Board * board) {
     int highlightCard = 0;
     bool running = true;
     bool update = false;
-    /*
+    enum Card * cardPayed = NULL;
+    int pownLocation = -1;
+    //SELECTION DE LA CARTE
     while (running) {
         SDL_Event e;
         while (SDL_PollEvent(&e)) {
             switch (e.type) {
                 case SDL_QUIT:
-                    running = false;
-                    return -1;
+                    exit(EXIT_FAILURE);
                 case SDL_KEYDOWN:
                     switch (e.key.keysym.sym) {
-                        case SDLK_END:
-                            running = false;
+                        case SDLK_ESCAPE:
+                            exit(EXIT_FAILURE);
                             break;
                         case SDLK_RIGHT:
-                            highlightCard = (length(p->cards) + 1) % length(p->cards);
+                            p->selectedCard = (p->selectedCard+1)%length(p->cards);
                             update = false;
+                            break;
+                        case SDLK_LEFT:
+                            p->selectedCard = (p->selectedCard-1+length(p->cards))%length(p->cards);
+                            update = false;
+                            break;
+                        case SDLK_RETURN:
+                            cardPayed = get(p->cards,p->selectedCard);
                             break;
                     }
             }
         }
         if (!update) {
-            drawMainPlayerHUD(p, highlightCard);
-            update = true;
+            RenderAllDrawable();
+            DrawCardMiddle(cardPayed);
+            if(pownLocation == -1)
+                highlightLocation(getStart(p->idPlayer));
+            else
+                highlightLocation(pownLocation);
         }
     }
-     */
     return false;
 }
+
+void DrawCardMiddle(enum Card * card){
+    if(card == NULL)
+        return;
+    SDL_Texture *image_tex;
+    SDL_Rect imgDestRect ;
+    SDL_Surface *image=NULL;
+    int cardx = 160;
+    int cardy = 240;
+    int idealCardy = SDLgetHeight(0.25);
+    int idealCardx = ((float)cardx/(float)cardy)*idealCardy;
+
+    imgDestRect.x = SDLgetWidth(0.5) - idealCardx/2;
+    imgDestRect.y = SDLgetHeight(0.43) - idealCardy/2;
+    imgDestRect.w = 10;
+
+    SDL_RWops *rwop=SDL_RWFromFile(getAsset(card) , "rb");
+    image=IMG_LoadPNG_RW(rwop);
+    if(!image) {
+        printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
+    }
+
+    image_tex = SDL_CreateTextureFromSurface(SDLgetRender(), image);
+    if(!image_tex){
+        fprintf(stderr, "Erreur a la creation du rendu de l'image : %s\n", SDL_GetError());
+        exit(EXIT_FAILURE);
+    }
+
+
+    SDL_QueryTexture(image_tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
+    imgDestRect.w = idealCardx;
+    imgDestRect.h = idealCardy;
+    SDL_RenderCopy(SDLgetRender(), image_tex, NULL, &imgDestRect);
+    SDL_FreeSurface(image);
+    SDL_DestroyTexture(image_tex);
+
+}
+
 
 /*
  * bool playPlayer(Player *p, Board * board) {

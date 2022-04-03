@@ -18,12 +18,13 @@
 #endif
 
 #include "game.h"
-#include "mainSDL.h"
+#include "SDL/mainSDL.h"
 #include "linkedlist.h"
 #include "card.h"
 #include "gameRule.h"
 #include "Player/player.h"
 #include "Color.h"
+#include "SDL/Drawable.h"
 
 /**
  * \brief Se tableux represente toutes les cases du plateu
@@ -35,7 +36,7 @@
 void drawPlayerHUD(SDL_Renderer *renderer, Player * player, TTF_Font *police, int x, int y);
 void drawMainOpponentHUD(SDL_Renderer *renderer, Player * player);
 
-void rendererAll(Game *game);
+void rendererAllPlayerHUD(Game *game);
 
 
 //TODO Trouver une meilleur organisation
@@ -87,9 +88,16 @@ int gameStart(Game * game) {
             fprintf(stderr, "erreur chargement font\n");
             exit(EXIT_FAILURE);
         }
+
+        //ajout des objets eu drawables
+
+        addDrawable(game->board, (void (*)(void *)) drawBoard);
+        for (int i = 0; i < length(game->players) ; i++) {
+            addDrawable(get(game->players,i), (void (*)(void *)) drawPlayer);
+        }
     }
 
-    rendererAll(game);
+    RenderAllDrawable();
 
     game->running = true;
     while(game->running) {
@@ -126,39 +134,18 @@ int gameStart(Game * game) {
                 game->running= false;
             }
             if(isWinCreat())
-                rendererAll(game);
+                RenderAllDrawable();
         }
     }
     return 0;
 }
 
-void rendererAll(Game *game) {
+void rendererAllPlayerHUD(Game *game) {
     SDL_Renderer *renderer = SDLgetRender();
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 0);
-    SDL_RenderDrawLine(renderer, SDLgetWidth(0.5),0,SDLgetWidth(0.5),SDLgetHeight(1)),
-    SDL_RenderDrawLine(renderer,0,SDLgetHeight(0.5),SDLgetWidth(1),SDLgetHeight(0.5)),
-
-    drawMainPlayerHUD(get(game->players,0),0);
-    drawMainOpponentHUD(renderer, get(game->players,2));
-
     drawPlayerHUD(renderer,get(game->players,0),police, SDLgetWidth(0.1), SDLgetHeight(0.1));
     drawPlayerHUD(renderer,get(game->players,1),police, SDLgetWidth(0.1), SDLgetHeight(0.7));
     drawPlayerHUD(renderer,get(game->players,2),police, SDLgetWidth(0.7), SDLgetHeight(0.1));
     drawPlayerHUD(renderer,get(game->players,3),police, SDLgetWidth(0.7), SDLgetHeight(0.7));
-
-    drawBoard(game->board,renderer);
-
-    SDL_Color background = getSDLColor("Background");
-    SDL_SetRenderDrawColor(renderer, background.r , background.g , background.b,background.a );
-    SDL_RenderPresent(renderer);
-    SDL_RenderClear(renderer);
-
-#ifdef __unix__
-    sleep(100);
-#endif
-#ifdef _WIN32
-    //Sleep(2000);
-#endif
 }
 
 
@@ -193,50 +180,3 @@ void drawPlayerHUD(SDL_Renderer *renderer, Player * player, TTF_Font *police, in
     }
 }
 
-void drawMainOpponentHUD(SDL_Renderer *renderer, Player * player){
-    SDL_Texture *image_tex;
-    SDL_Rect imgDestRect ;
-    SDL_Surface *image=NULL;
-    int center = SDLgetWidth(0.5);
-    int bottom = SDLgetHeight(1);
-    int cardx = 160;
-    int cardy = 240;
-    int idealCardy = SDLgetHeight(0.2);
-    int idealCardx = ((float)cardx/(float)cardy)*idealCardy;
-    int ofset = idealCardx/4;
-
-    int cardslen = idealCardx*length(player->cards) - (ofset* (length(player->cards) - 1));
-    int xStart = center - (cardslen/2);
-
-    imgDestRect.y = 0 - idealCardy*0.6 ;
-
-
-    for (int i = 0; i < length(player->cards); i++) {
-
-        imgDestRect.x = xStart + (idealCardx*i) - (ofset*i);
-        imgDestRect.w = i;
-
-        SDL_RWops *rwop=SDL_RWFromFile(getAsset(NULL) , "rb");
-        image=IMG_LoadPNG_RW(rwop);
-        if(!image) {
-            printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
-        }
-
-        image_tex = SDL_CreateTextureFromSurface(renderer, image);
-        if(!image_tex){
-            fprintf(stderr, "Erreur a la creation du rendu de l'image : %s\n", SDL_GetError());
-            exit(EXIT_FAILURE);
-        }
-
-
-        SDL_QueryTexture(image_tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
-        imgDestRect.h = idealCardy;
-        imgDestRect.w = idealCardx;
-        SDL_RenderCopy(renderer, image_tex, NULL, &imgDestRect);
-        SDL_FreeSurface(image);
-        SDL_DestroyTexture(image_tex);
-
-    }
-
-
-}

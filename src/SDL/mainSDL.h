@@ -28,4 +28,9 @@ int SDLgetHeight(float f);
 
 SDL_Renderer * SDLgetRender();
 
+/**
+ * \brief definit la couleur de fon de l'ecrant selon "Style"
+ */
+void renderBackground();
+
 #endif //TOCK_CLIENT_MAINSDL_H

@@ -39,7 +39,7 @@ void setKeyValue(const char *path,char *key,char *value){
         removeElem(keyValues,i);
       }else
         kv->value = value;
-      saveFromPath(path,keyValues);
+      saveToPath(path,keyValues);
     }
   }
   if(!key_is_found){

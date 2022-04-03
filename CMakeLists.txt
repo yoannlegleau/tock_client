@@ -18,7 +18,7 @@ set(SDL2_image_LIB_DIR C:/lib/SDL2_image-2.0.5/lib/x86)
 include_directories(${SDL2_image_INCLUDE_DIR})
 link_directories(${SDL2_image_LIB_DIR})
 
-add_executable(tock_client src/mainClient.c src/game.c src/game.h src/mainSDL.c src/mainSDL.h src/linkedlist.c src/linkedlist.h src/card.c src/card.h src/gameRule.c src/gameRule.h src/Player/player.c src/Player/player.h src/board.c src/board.h src/Color.h src/parser.c src/parser.h src/Color.c)
+add_executable(tock_client src/mainClient.c src/game.c src/game.h src/SDL/mainSDL.c src/SDL/mainSDL.h src/linkedlist.c src/linkedlist.h src/card.c src/card.h src/gameRule.c src/gameRule.h src/Player/player.c src/Player/player.h src/board.c src/board.h src/Color.h src/parser.c src/parser.h src/Color.c src/SDL/Drawable.c src/SDL/Drawable.h)
 
 target_link_libraries(${PROJECT_NAME} SDL2main SDL2)
 target_link_libraries(${PROJECT_NAME} SDL2_ttf SDL2_ttf)

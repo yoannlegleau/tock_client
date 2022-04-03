@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 #include "board.h"
-#include "mainSDL.h"
+#include "SDL/mainSDL.h"
 #include "Color.h"
 
 #define PLAYERBORDLENTH 18
@@ -207,9 +207,10 @@ int heuristicPlayer(Board * board,int IdPlayer){
     return result;
 }
 
-/* ---------- Old ---------- */
-void drawBoard(Board * board, SDL_Renderer *renderer){
-    SDL_Color couleurNoire = getSDLColor("Black");
+/* ---------- draw ---------- */
+void drawBoard(Board * board){
+    SDL_Renderer *renderer = SDLgetRender();
+    SDL_Color couleurCircle = getSDLColor("BoardCircle");
     const int squareSize = SDLgetHeight(0.03611112);
     const int sercleSize = SDLgetHeight(0.0152777779);;
     const int widthSize = SDLgetHeight(0.004166667);
@@ -357,39 +358,40 @@ void drawBoard(Board * board, SDL_Renderer *renderer){
         for (int j = 0; j < matSize ; ++j) {
             switch (boardMat[i][j]) {
                 case 0: {
-
-                    drawCircleBoarder(renderer, x + i * squareSize, y + j * squareSize, sercleSize, couleurNoire, widthSize , getSDLColor("Background"));
+                    drawCircleBoarder(renderer, x + i * squareSize, y + j * squareSize, sercleSize, couleurCircle, widthSize , getSDLColor("Background"));
                 }
                     break;
                 case 1:
-                    drawCircleBoarder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize   , getSDLColor("Player1"));
+                    drawCircleBoarder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurCircle, widthSize   , getSDLColor("Player1"));
                     break;
                 case 10:
-                    drawCircleBoarder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize   , getSDLColor("Player1Light"));
+                    drawCircleBoarder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurCircle, widthSize   , getSDLColor("Player1Light"));
                     break;
                 case 2:
-                    drawCircleBoarder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize , getSDLColor("Player2"));
+                    drawCircleBoarder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurCircle, widthSize , getSDLColor("Player2"));
                     break;
                 case 20:
-                    drawCircleBoarder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize , getSDLColor("Player2Light"));
+                    drawCircleBoarder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurCircle, widthSize , getSDLColor("Player2Light"));
                     break;
                 case 3:
-                    drawCircleBoarder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize , getSDLColor("Player3"));
+                    drawCircleBoarder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurCircle, widthSize , getSDLColor("Player3"));
                     break;
                 case 30:
-                    drawCircleBoarder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize , getSDLColor("Player3Light"));
+                    drawCircleBoarder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurCircle, widthSize , getSDLColor("Player3Light"));
                     break;
                 case 4:
-                    drawCircleBoarder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize , getSDLColor("Player4"));
+                    drawCircleBoarder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurCircle, widthSize , getSDLColor("Player4"));
                     break;
                 case 40:
-                    drawCircleBoarder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurNoire, widthSize , getSDLColor("Player4Light"));
+                    drawCircleBoarder(renderer, x+i*squareSize, y+j*squareSize, sercleSize, couleurCircle, widthSize , getSDLColor("Player4Light"));
                     break;
 
             }
         }
     }
 }
+
+
 
 void destroyBoardVoid(void * board){
   destroyBoard(board);
@@ -398,4 +400,61 @@ void destroyBoardVoid(void * board){
 void destroyBoard(Board ** board){
   free((*board)->board);
   free(*board);
+}
+
+void highlightLocation(int location){
+    if(location == -1)
+        return;
+    SDL_Color HighlightColor = getSDLColor("BoardHighlight");
+    const int squareSize = SDLgetHeight(0.03611112);
+    const int sercleSize = SDLgetHeight(0.019244445);
+    const int widthSize = SDLgetHeight(0.007);
+    const int matSize = 19;
+    int x = (SDLgetWidth(0.5)-((squareSize*(matSize-1))/2)) , y = SDLgetHeight(0.1);
+
+    int matX = -1, matY= 0;
+
+    if (14 <= location && location <= 18 )
+        matX = 0;
+    else if (location == 13 || location == 19 || location == 76 )
+        matX = 1;
+    else if (location == 12 || location == 20 || location == 77 )
+        matX = 2;
+    else if (location == 11 || location == 21 || location == 78 )
+        matX = 3;
+    else if (22 <= location && location <= 25 || 7 <= location && location <= 10 || location == 79 )
+        matX = 4;
+    else if (location == 6 || location == 26  )
+        matX = 5;
+    else if (location == 5 || location == 27  )
+        matX = 6;
+    else if (0 <= location && location <= 5 || 28 <= location && location <= 32 )
+        matX = 7;
+    else if (location == 71 || location == 33 )
+        matX = 8;
+    else if (location == 34 || location == 70 || 72 <= location && location <= 75 || 80 <= location && location <= 83 )
+        matX = 9;
+    else if (location == 35 || location == 69 )
+        matX = 10;
+    else if (36 <= location && location <= 40 || 64 <= location && location <= 68 )
+        matX = 11;
+    else if (location == 41 || location == 63 )
+        matX = 12;
+    else if (location == 42 || location == 62 )
+        matX = 13;
+    else if (43 <= location && location <= 46 || 58 <= location && location <= 61 || location == 87 )
+        matX = 14;
+    else if (location == 47 || location == 86 || location == 57 )
+        matX = 15;
+    else if (location == 48 || location == 85 || location == 56 )
+        matX = 16;
+    else if (location == 49 || location == 84 || location == 55 )
+        matX = 17;
+    if (50 <= location && location <= 54 )
+        matX = 18;
+
+    //TODO afecter les valeurs de matY
+
+    if(matX != -1 && matY != -1)
+        drawCircleBoarder(SDLgetRender(), x + matX * squareSize, y + matY * squareSize, sercleSize, HighlightColor, widthSize , getSDLColor("Background"));
 }

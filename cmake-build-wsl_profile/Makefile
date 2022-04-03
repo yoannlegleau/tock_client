@@ -177,6 +177,54 @@ src/Player/player.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/Player/player.c.s
 .PHONY : src/Player/player.c.s
 
+src/SDL/Drawable.o: src/SDL/Drawable.c.o
+.PHONY : src/SDL/Drawable.o
+
+# target to build an object file
+src/SDL/Drawable.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/SDL/Drawable.c.o
+.PHONY : src/SDL/Drawable.c.o
+
+src/SDL/Drawable.i: src/SDL/Drawable.c.i
+.PHONY : src/SDL/Drawable.i
+
+# target to preprocess a source file
+src/SDL/Drawable.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/SDL/Drawable.c.i
+.PHONY : src/SDL/Drawable.c.i
+
+src/SDL/Drawable.s: src/SDL/Drawable.c.s
+.PHONY : src/SDL/Drawable.s
+
+# target to generate assembly for a file
+src/SDL/Drawable.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/SDL/Drawable.c.s
+.PHONY : src/SDL/Drawable.c.s
+
+src/SDL/mainSDL.o: src/SDL/mainSDL.c.o
+.PHONY : src/SDL/mainSDL.o
+
+# target to build an object file
+src/SDL/mainSDL.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/SDL/mainSDL.c.o
+.PHONY : src/SDL/mainSDL.c.o
+
+src/SDL/mainSDL.i: src/SDL/mainSDL.c.i
+.PHONY : src/SDL/mainSDL.i
+
+# target to preprocess a source file
+src/SDL/mainSDL.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/SDL/mainSDL.c.i
+.PHONY : src/SDL/mainSDL.c.i
+
+src/SDL/mainSDL.s: src/SDL/mainSDL.c.s
+.PHONY : src/SDL/mainSDL.s
+
+# target to generate assembly for a file
+src/SDL/mainSDL.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/SDL/mainSDL.c.s
+.PHONY : src/SDL/mainSDL.c.s
+
 src/board.o: src/board.c.o
 .PHONY : src/board.o
 
@@ -321,30 +369,6 @@ src/mainClient.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/mainClient.c.s
 .PHONY : src/mainClient.c.s
 
-src/mainSDL.o: src/mainSDL.c.o
-.PHONY : src/mainSDL.o
-
-# target to build an object file
-src/mainSDL.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/mainSDL.c.o
-.PHONY : src/mainSDL.c.o
-
-src/mainSDL.i: src/mainSDL.c.i
-.PHONY : src/mainSDL.i
-
-# target to preprocess a source file
-src/mainSDL.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/mainSDL.c.i
-.PHONY : src/mainSDL.c.i
-
-src/mainSDL.s: src/mainSDL.c.s
-.PHONY : src/mainSDL.s
-
-# target to generate assembly for a file
-src/mainSDL.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tock_client.dir/build.make CMakeFiles/tock_client.dir/src/mainSDL.c.s
-.PHONY : src/mainSDL.c.s
-
 src/parser.o: src/parser.c.o
 .PHONY : src/parser.o
 
@@ -384,6 +408,12 @@ help:
 	@echo "... src/Player/player.o"
 	@echo "... src/Player/player.i"
 	@echo "... src/Player/player.s"
+	@echo "... src/SDL/Drawable.o"
+	@echo "... src/SDL/Drawable.i"
+	@echo "... src/SDL/Drawable.s"
+	@echo "... src/SDL/mainSDL.o"
+	@echo "... src/SDL/mainSDL.i"
+	@echo "... src/SDL/mainSDL.s"
 	@echo "... src/board.o"
 	@echo "... src/board.i"
 	@echo "... src/board.s"
@@ -402,9 +432,6 @@ help:
 	@echo "... src/mainClient.o"
 	@echo "... src/mainClient.i"
 	@echo "... src/mainClient.s"
-	@echo "... src/mainSDL.o"
-	@echo "... src/mainSDL.i"
-	@echo "... src/mainSDL.s"
 	@echo "... src/parser.o"
 	@echo "... src/parser.i"
 	@echo "... src/parser.s"

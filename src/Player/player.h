@@ -28,6 +28,9 @@ struct Player {
     Linkedlist * cards;
 
     int (*play)(Player *, Board *);
+
+    /** \brief La carte sectionner est mise en avent lors de l'affichage (sans affichage ne pas prendre en compte) par default -1*/
+    int selectedCard;
 };
 
 /**
@@ -59,9 +62,9 @@ Player * playerBotFactory( int id);
  */
 Player * playerClone(Player * p);
 
-void drawPlayer(const Player *player);
+void drawPlayer(Player *player);
 
-void drawMainPlayerHUD(Player * player,...);
+void drawMainPlayerHUD(Player * player);
 
 void destroyPlayerVoid(void * player);
 

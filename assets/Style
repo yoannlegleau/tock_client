@@ -4,6 +4,9 @@
 <Background>49,51,53
 <Text>0,0,0
 
+<BoardCircle>0,0,0
+<BoardHighlight>255,0,0
+
 <Player1>2,3,230
 <Player2>223,8,7
 <Player3>251,249,27

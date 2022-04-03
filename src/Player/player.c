@@ -11,18 +11,23 @@
 #include <stdlib.h>
 #include <SDL2/SDL_image.h>
 #include "player.h"
-#include "../mainSDL.h"
+#include "../SDL/mainSDL.h"
 #include "PlayerBot.c"
 #include "PlayerReal.c"
 
 
 
 int play(Player *p, Board * board);
+void drawPlayer1(const Player *player);
+void drawPlayer2(const Player *player);
+void drawPlayer3(const Player *player);
+void drawPlayer4(const Player *player);
 
 Player * playerFactory( int id){
     Player * player = malloc(sizeof(Player));
     player->idPlayer = id;
     player->cards = linkedListFactory((void (*)(void *)) destroyCard);
+    player->selectedCard = 2;
     return player;
 }
 
@@ -49,30 +54,40 @@ void destroyPlayer(Player ** player){
     free(*player);
 }
 
-void drawPlayer(const Player *player) {
-    printf("player %i:\n Cartes:%i\n",player->idPlayer,length(player->cards));
-    foreach(player->cards,drawCard);
+void drawPlayer(Player *player) {
+    switch (player->idPlayer) {
+        case 1:
+            drawPlayer1(player);
+            break;
+            //TODO trouver un moyen pour les partie a 6/8 joueurs
+        case 2:
+            drawPlayer2(player);
+            break;
+        case 3:
+            drawPlayer3(player);
+            break;
+        case 4:
+            drawPlayer4(player);
+            break;
+    }
 }
 
-void drawMainPlayerHUD(Player * player,...){
-    va_list ap;
-            va_start(ap, player);
-    int highlight = va_arg(ap, int );
-    int const defaultHighlight = -858993460;
-
+void drawPlayer1(const Player *player) {
     SDL_Texture *image_tex;
     SDL_Rect imgDestRect ;
     SDL_Surface *image=NULL;
     int center = SDLgetWidth(0.5);
     int bottom = SDLgetHeight(1);
-    int cardx = 160;
-    int cardy = 240;
+
+    int const cardx = 160 , cardy = 240;
+
     int idealCardy = SDLgetHeight(0.2);
     int idealCardx = ((float)cardx/(float)cardy)*idealCardy;
     int cardslen = idealCardx*length(player->cards);
     int xStart = center - (cardslen/2) ;
     int yStart = bottom - idealCardy;
     float highlightOfset = 0.025;
+    float cardOfset = 0.025;
 
     imgDestRect.y = yStart;
     imgDestRect.w = 10;
@@ -80,12 +95,27 @@ void drawMainPlayerHUD(Player * player,...){
     for (int i = 0; i < length(player->cards); i++) {
 
         imgDestRect.x = xStart + (idealCardx*i);
-        if (defaultHighlight != highlight && i == highlight)
+        if (i == player->selectedCard%length(player->cards))
             imgDestRect.y = yStart - SDLgetHeight(highlightOfset);
         else
             imgDestRect.y = yStart;
+        const char *path;
+        switch (player->idPlayer) {
+            case 1:
+                path = getAsset(get(player->cards,i));
+                break;
+                //TODO trouver un moyen pour les partie a 6/8 joueurs
+            case 2:
+                path = "Carte_Back_Left.png";
+                break;
+            case 3:
+                path ="Carte_Back_UpsideDown.png";
+                break;
+            case 4:
+                path ="Carte_Back_Right.png";
+                break;
+        }
 
-        const char *path = getAsset(get(player->cards,i));
         SDL_RWops *rwop=SDL_RWFromFile(path , "rb");
         image=IMG_LoadPNG_RW(rwop);
         if(!image) {
@@ -99,6 +129,94 @@ void drawMainPlayerHUD(Player * player,...){
             exit(EXIT_FAILURE);
         }
 
+        SDL_QueryTexture(image_tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
+        imgDestRect.h = idealCardy;
+        imgDestRect.w = idealCardx;
+        SDL_RenderCopy(SDLgetRender(), image_tex, NULL, &imgDestRect);
+        SDL_FreeSurface(image);
+        SDL_DestroyTexture(image_tex);
+    }
+}
+
+void drawPlayer2(const Player * player){
+    SDL_Texture *image_tex;
+    SDL_Rect imgDestRect ;
+    SDL_Surface *image=NULL;
+    int center = SDLgetHeight(0.5);
+    int cardx = 160;
+    int cardy = 240;
+    int idealCardy = SDLgetHeight(0.2);
+    int idealCardx = ((float)cardx/(float)cardy)*idealCardy;
+    int ofset = idealCardx/4;
+
+    int cardslen = idealCardx*length(player->cards) - (ofset* (length(player->cards) - 1));
+    int yStart = center - (cardslen/2);
+
+    imgDestRect.x = 0 - idealCardy*0.6 ;
+
+
+    for (int i = 0; i < length(player->cards); i++) {
+
+        imgDestRect.y = yStart + (idealCardx*i) - (ofset*i);
+        imgDestRect.w = i;
+
+        SDL_RWops *rwop=SDL_RWFromFile("assets/Cartes/Carte_Back_Left.png" , "rb");
+        image=IMG_LoadPNG_RW(rwop);
+        if(!image) {
+            printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
+        }
+
+        image_tex = SDL_CreateTextureFromSurface(SDLgetRender(), image);
+        if(!image_tex){
+            fprintf(stderr, "Erreur a la creation du rendu de l'image : %s\n", SDL_GetError());
+            exit(EXIT_FAILURE);
+        }
+
+
+        SDL_QueryTexture(image_tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
+        imgDestRect.h = idealCardx;
+        imgDestRect.w = idealCardy;
+        SDL_RenderCopy(SDLgetRender(), image_tex, NULL, &imgDestRect);
+        SDL_FreeSurface(image);
+        SDL_DestroyTexture(image_tex);
+
+    }
+}
+
+void drawPlayer3(const Player * player){
+    SDL_Texture *image_tex;
+    SDL_Rect imgDestRect ;
+    SDL_Surface *image=NULL;
+    int center = SDLgetWidth(0.5);
+    int bottom = SDLgetHeight(1);
+    int cardx = 160;
+    int cardy = 240;
+    int idealCardy = SDLgetHeight(0.2);
+    int idealCardx = ((float)cardx/(float)cardy)*idealCardy;
+    int ofset = idealCardx/4;
+
+    int cardslen = idealCardx*length(player->cards) - (ofset* (length(player->cards) - 1));
+    int xStart = center - (cardslen/2);
+
+    imgDestRect.y = 0 - idealCardy*0.6 ;
+
+
+    for (int i = 0; i < length(player->cards); i++) {
+
+        imgDestRect.x = xStart + (idealCardx*i) - (ofset*i);
+        imgDestRect.w = i;
+
+        SDL_RWops *rwop=SDL_RWFromFile("assets/Cartes/Carte_Back_UpsideDown.png" , "rb");
+        image=IMG_LoadPNG_RW(rwop);
+        if(!image) {
+            printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
+        }
+
+        image_tex = SDL_CreateTextureFromSurface(SDLgetRender(), image);
+        if(!image_tex){
+            fprintf(stderr, "Erreur a la creation du rendu de l'image : %s\n", SDL_GetError());
+            exit(EXIT_FAILURE);
+        }
 
 
         SDL_QueryTexture(image_tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
@@ -107,10 +225,56 @@ void drawMainPlayerHUD(Player * player,...){
         SDL_RenderCopy(SDLgetRender(), image_tex, NULL, &imgDestRect);
         SDL_FreeSurface(image);
         SDL_DestroyTexture(image_tex);
+
     }
-
-
 }
+
+void drawPlayer4(const Player * player){
+    SDL_Texture *image_tex;
+    SDL_Rect imgDestRect ;
+    SDL_Surface *image=NULL;
+    int center = SDLgetHeight(0.5);
+    int cardx = 160;
+    int cardy = 240;
+    int idealCardy = SDLgetHeight(0.2);
+    int idealCardx = ((float)cardx/(float)cardy)*idealCardy;
+    int ofset = idealCardx/4;
+
+    int cardslen = idealCardx*length(player->cards) - (ofset* (length(player->cards) - 1));
+    int yStart = center - (cardslen/2);
+
+    imgDestRect.x = SDLgetWidth(1) - idealCardy*0.4 ;
+
+
+    for (int i = 0; i < length(player->cards); i++) {
+
+        imgDestRect.y = yStart + (idealCardx*i) - (ofset*i);
+        imgDestRect.w = i;
+
+        SDL_RWops *rwop=SDL_RWFromFile("assets/Cartes/Carte_Back_Right.png" , "rb");
+        image=IMG_LoadPNG_RW(rwop);
+        if(!image) {
+            printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
+        }
+
+        image_tex = SDL_CreateTextureFromSurface(SDLgetRender(), image);
+        if(!image_tex){
+            fprintf(stderr, "Erreur a la creation du rendu de l'image : %s\n", SDL_GetError());
+            exit(EXIT_FAILURE);
+        }
+
+
+        SDL_QueryTexture(image_tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
+        imgDestRect.h = idealCardx;
+        imgDestRect.w = idealCardy;
+        SDL_RenderCopy(SDLgetRender(), image_tex, NULL, &imgDestRect);
+        SDL_FreeSurface(image);
+        SDL_DestroyTexture(image_tex);
+
+    }
+}
+
+
 
 int play(Player *p, Board * board) {
     Linkedlist * pownsLocations = getPlayerPawnsLocation(board, p->idPlayer);
@@ -137,16 +301,16 @@ int play(Player *p, Board * board) {
     return false;
 }
 
-bool isCardPlayable(Player *p, Board *board ,enum Card* card){
+bool isCardPlayable(Player *p, Board *board ,enum Card* card) {
     Board *boardCopy = boardClone(board);
     Player *playerCopy = playerClone(p);
     clear(playerCopy->cards);
 
-    enum Card * cardCopy = malloc(sizeof(enum Card*));
+    enum Card *cardCopy = malloc(sizeof(enum Card *));
     *cardCopy = *card;
-    addFirst(playerCopy->cards,cardCopy);
+    addFirst(playerCopy->cards, cardCopy);
 
-    return playSmart(playerCopy,boardCopy);
+    return playSmart(playerCopy, boardCopy);
     /*
     va_list ap;
             va_start(ap, card);

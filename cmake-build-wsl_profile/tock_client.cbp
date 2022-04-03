@@ -94,6 +94,18 @@
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/Player/player.h">
 			<Option target="tock_client"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/SDL/Drawable.c">
+			<Option target="tock_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/SDL/Drawable.h">
+			<Option target="tock_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/SDL/mainSDL.c">
+			<Option target="tock_client"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/SDL/mainSDL.h">
+			<Option target="tock_client"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/board.c">
 			<Option target="tock_client"/>
 		</Unit>
@@ -125,12 +137,6 @@
 			<Option target="tock_client"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/mainClient.c">
-			<Option target="tock_client"/>
-		</Unit>
-		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/mainSDL.c">
-			<Option target="tock_client"/>
-		</Unit>
-		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/mainSDL.h">
 			<Option target="tock_client"/>
 		</Unit>
 		<Unit filename="/mnt/c/Users/adzer/CLionProjects/tock-client/src/parser.c">

@@ -10,7 +10,8 @@
 #include <SDL2/SDL_ttf.h>
 #include <stdlib.h>
 #include "mainSDL.h"
-#include "parser.h"
+#include "../parser.h"
+#include "../Color.h"
 
 #define SETTINGS_PATH "assets/Settings"
 /**
@@ -128,4 +129,9 @@ SDL_Renderer * SDLgetRender(){
     if(isWinCreat()) {
         return SDL_GetRenderer(window);
     }
+}
+
+void renderBackground(){
+    SDL_Color background = getSDLColor("Background");
+    SDL_SetRenderDrawColor(SDLgetRender(), background.r , background.g , background.b,background.a );
 }
