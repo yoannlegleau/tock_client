@@ -77,25 +77,18 @@ bool playPlayer(Player *p, Board * board) {
                                         card = get(compose,i);
                                         if (*card == out ) {
                                             if (pawnLocation == 0 - idPlayer && playCard(idPlayer, board, card, pawnLocation)) {
-                                                running = false;
-                                                ret = true;
-                                                update = false;
+                                                removeElem(p->cards, p->selectedCard);
+                                                return true;
                                             }
-                                        } if(playCard(idPlayer,board,card,pawnLocation)){
-                                            running = false;
-                                            ret = true;
-                                            update = false;
+                                        } else if(playCard(idPlayer,board,card,pawnLocation)){
+                                            removeElem(p->cards, p->selectedCard);
+                                            return true;
                                         }
                                     }
                                 }
                                 else if(playCard(idPlayer,board,cardPayed,pawnLocation)){
-                                    running = false;
-                                    ret = true;
-                                    update = false;
-                                }
-                                if (ret) {
                                     removeElem(p->cards, p->selectedCard);
-                                    return ret;
+                                    return true;
                                 }
                             }
 

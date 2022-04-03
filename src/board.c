@@ -516,7 +516,7 @@ void highlightLocation(int location){
         matY = 16;
     else if (location == 1 || location == 72 || location == 67 )
         matY = 17;
-    if (38 <= location && location <= 72 || location == 0 )
+    if (68 <= location && location <= 72 || location == 0 )
         matY = 18;
 
     //TODO afecter les valeurs de matY

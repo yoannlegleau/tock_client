@@ -11,8 +11,8 @@
 
 #include <malloc.h>
 #include <stdlib.h>
-#include <stdio.h>
 #include "linkedlist.h"
+#include <time.h>
 
 
 typedef struct Elem Elem;
@@ -181,6 +181,7 @@ void *pollFirst(Linkedlist *l) {
 void * pollRandom(Linkedlist * l) {
     if (isEmpty(l))
         return NULL;
+    srand ( time(NULL) );
     int index = rand() % l->length;
     void *result = get(l, index);
     removeElem(l, index);
