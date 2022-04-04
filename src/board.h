@@ -5,7 +5,7 @@
 #ifndef TOCK_CLIENT_BOARD_H
 #define TOCK_CLIENT_BOARD_H
 
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #include "linkedlist.h"
 #include "card.h"
 

@@ -7,7 +7,7 @@
 #ifndef TOCK_CLIENT_COLOR_H
 #define TOCK_CLIENT_COLOR_H
 
-#include <SDL.h>
+#include <SDL2/SDL.h>
 
 SDL_Color getSDLColor(char * colorKey);
 

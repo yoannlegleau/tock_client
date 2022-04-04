@@ -5,7 +5,7 @@
 #include <stdbool.h>
 #include <unistd.h>
 
-#include "SDL/mainSDL.h"
+#include "Draw/mainSDL.h"
 
 int menu(SDL_Window * pWindow){
 

@@ -7,24 +7,27 @@
  */
 
 #include <stdio.h>
-#include <SDL.h>
-#include <SDL_ttf.h>
-#include <SDL_image.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_ttf.h>
+#include <SDL2/SDL_image.h>
 #include <stdbool.h>
 #include <stdlib.h>
 
+#ifdef __unix__
+#include <unistd.h>
+#endif
 #ifdef _WIN32
 #include <windows.h>
 #endif
 
 #include "game.h"
-#include "SDL/mainSDL.h"
+#include "Draw/mainSDL.h"
 #include "linkedlist.h"
 #include "card.h"
 #include "gameRule.h"
 #include "Player/player.h"
 #include "Color.h"
-#include "SDL/Drawable.h"
+#include "Draw/Drawable.h"
 
 /**
  * \brief Se tableux represente toutes les cases du plateu
@@ -52,18 +55,20 @@ TTF_Font *police = NULL;
 Game * gameCreate(int nbPlayer){
     Game * game = malloc(sizeof(Game));
     game->board = boardFactory(nbPlayer);
-    game->players = linkedListFactory(destroyPlayerVoid);
+    game->players = linkedListFactory(destroyPlayer);
     game->running = false;
+    printf("CREATE\n");
 }
 
 
 void addPlayer(Game * game, int nbPlayer){
-
   int i;
   Player * player;
   for(i = 0; i < nbPlayer; i++){
     player = playerRealFactory(i+1);
+    printf("Joueur %i\n", i);
     addLast(game->players,player);
+    printf("Ajout liste\n");
   }
   for(i = nbPlayer; i < 4; i++){
     player = playerBotFactory(i+1);
@@ -117,6 +122,7 @@ int gameStart(Game * game) {
                     break;
             }
         }
+        printf("JOUER\n");
         Player * p = getFirst(game->players);
         if (isEmpty(p->cards)){
             if(isEmpty(cards))

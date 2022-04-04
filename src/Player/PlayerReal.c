@@ -4,7 +4,7 @@
 
 
 
-#include "../SDL/Drawable.h"
+#include "../Draw/Drawable.h"
 
 bool playPlayer(Player *p, Board * board);
 void DrawCardMiddle(enum Card * card);

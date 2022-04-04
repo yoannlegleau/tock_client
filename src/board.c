@@ -4,7 +4,7 @@
 
 #include <stdio.h>
 #include "board.h"
-#include "SDL/mainSDL.h"
+#include "Draw/mainSDL.h"
 #include "Color.h"
 
 #define PLAYERBORDLENTH 18

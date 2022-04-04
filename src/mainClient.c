@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <SDL2/SDL.h>
 #include <stdbool.h>
-#include "SDL/mainSDL.h"
+#include "Draw/mainSDL.h"
 #include "game.h"
 #include "parser.h"
 #include "Color.h"
@@ -51,21 +51,26 @@ void * doRecieving(void * sockID){
  * \return
  */
 int main(int argc, char* args[]) {
-
-    winCreate();
+    printf("GAME\n");
+    //winCreate();
     Game *game;
-
+    game = gameCreate(4);
+    addPlayer(game, 1);
+    gameStart(game);
+    /*
     do {
+        printf("Je ")
         game = gameCreate(4);
         addPlayer(game, 1);
     }while(gameStart(game));
+    */
 
 
 
 
 
     //ferme le jeu
-    winDestroy();
+    //winDestroy();
 
     return 0;
 }

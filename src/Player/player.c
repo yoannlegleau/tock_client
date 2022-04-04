@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include <SDL2/SDL_image.h>
 #include "player.h"
-#include "../SDL/mainSDL.h"
+#include "../Draw/mainSDL.h"
 #include "PlayerBot.c"
 #include "PlayerReal.c"
 
@@ -43,10 +43,6 @@ Player * playerClone(Player * p){
     }
     clone->cards = cardsClone;
     return clone;
-}
-
-void destroyPlayerVoid(void * player){
-    destroyPlayer(player);
 }
 
 void destroyPlayer(Player ** player){

@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <SDL2/SDL.h>
 #include <stdbool.h>
-#include "SDL/mainSDL.h"
+#include "Draw/mainSDL.h"
 #include "game.h"
 
 /**
