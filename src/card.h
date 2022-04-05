@@ -1,7 +1,7 @@
 /**
  * \file card.h
- * \brief gestion des cartes
- * \author JARRIER allan
+ * \brief Gestion des cartes
+ * \author LE GLEAU Yoann
  * \date 28/01/2022
  * \version 1
  */
@@ -9,17 +9,44 @@
 #ifndef TOCK_CLIENT_CARD_H
 #define TOCK_CLIENT_CARD_H
 
+/* ---------- Includes ---------- */
+
 #include "linkedlist.h"
 #include <stdbool.h>
 #include <stdio.h>
 
-//Linkedlist * l = linkedListFactory(sizeof(enum Card));
+/* ---------- Structure ---------- */
 
 /**
  * \brief chaque enume corespon a une action distinct
  */
 enum Card{one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, eighteen,
         out, swap, ThirteenOut, oneOut, sevenSplit };
+
+/**
+ * \brief Fonction de destruction ds cartes
+ * \param card
+ */
+void destroyCard(enum Card ** card);
+
+/* ---------- Getters ---------- */
+
+/**
+ * \brief retour le chemain ver l'asset associer a la carte
+ * \param card
+ * \return
+ */
+char* getAsset(const enum Card * card);
+
+/**
+ * \brief Retourne une liste des cartes qui compose la care en parameters
+ * \param card carte a décomposer
+ * \return Linkedlist liste de cartes
+ * \details Une care composé est une carte qui possède plusieurs effets.
+ */
+Linkedlist * getCardCompose(const enum Card * card);
+
+/* ---------- Testes ---------- */
 
 /**
  * \brief Retourne vrais si la carte est une carte composé
@@ -38,13 +65,30 @@ bool isComposed(const enum Card * card);
  */
 bool isComposedSplittable(const enum Card * card);
 
+/* ---------- Utilities ---------- */
+
 /**
- * \brief Retourne une liste des cartes qui compose la care en parameters
- * \param card carte a décomposer
- * \return Linkedlist liste de cartes
- * \details Une care composé est une carte qui possède plusieurs effets.
+ * \brief ajout des cartes dans la list pour cree un paket de carte coherent et prend en compte les règles sélectionner
+ * \param cards liste de carte
+ * \param gameRules liste des règles
  */
-Linkedlist * getCardCompose(const enum Card * card);
+void makeDeck(Linkedlist * cards, Linkedlist * gameRules);
+
+/**
+ * \brief Distribuer les carters entre plusieurs joueurs
+ * \param cards
+ * \param players
+ */
+void distributeCards(Linkedlist *cards, Linkedlist *players);
+
+/**
+ * \brief ajout des cartes dans la list pour cree un paket de carte coherent et prend en compte les règles sélectionner
+ * \param cards liste de carte
+ * \param gameRules liste des règles
+ */
+void makeDeck(Linkedlist * cards, Linkedlist * gameRules);
+
+/* ---------- Displays ---------- */
 
 /**
  * \brief affiche le nom dew catres dans le terminal
@@ -54,22 +98,12 @@ Linkedlist * getCardCompose(const enum Card * card);
 void drawCard(const enum Card * card);
 
 /**
- * \brief retour le chemain ver l'asset associer a la carte
+ * \brief affiche une carte au centre du plateau
  * \param card
- * \return
  */
-char* getAsset(const enum Card * card);
+void DrawCardMiddle(enum Card * card);
 
-/**
- * \brief ajout des cartes dans la list pour cree un paket de carte coherent et prend en compte les règles sélectionner
- * \param cards liste de carte
- * \param gameRules liste des règles
- */
-void makeDeck(Linkedlist * cards, Linkedlist * gameRules);
 
-void distributeCards(Linkedlist *cards, Linkedlist *players);
-
-void destroyCard(enum Card ** card);
 
 char * cardToString(const enum Card * card);
 

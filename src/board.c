@@ -2,6 +2,7 @@
 // Created by adzerake on 10/03/2022.
 //
 
+/* ---------- Includes ---------- */
 #include <stdio.h>
 #include "board.h"
 #include "SDL/mainSDL.h"
@@ -9,8 +10,16 @@
 
 #define PLAYERBORDLENTH 18
 
-int getBoardLen(Board * board);
+/* ---------- Sub Declaration ---------- */
+
+/**
+ * \brief Calcule une estimation de la position. l'estimation est representative de l'envencement et des chance de victoire d'un joueur dans la partie a un instant t sans prandre en compt les autres joueurs
+ * \param board context
+ * \param IdPlayer Identifient du jour de reference
+ * \return Int estimation
+ */
 int heuristicPlayer(Board * board,int IdPlayer);
+
 
 /* ---------- Constructor ---------- */
 
@@ -36,6 +45,12 @@ void initBoard(Board * board) {
     }
 }
 
+void destroyBoard(Board ** board){
+    free((*board)->board);
+    free(*board);
+}
+
+
 /* ---------- Getter ---------- */
 
 int getNbPlayer(Board * board){
@@ -44,6 +59,10 @@ int getNbPlayer(Board * board){
 
 int getLen(Board * board){
     return (getBoardLen(board)+(4*getNbPlayer(board)));
+}
+
+int getBoardLen(Board * board){
+    return getNbPlayer(board) * PLAYERBORDLENTH;
 }
 
 Linkedlist *getPlayerPawnsLocation(Board * board, int playerId) {
@@ -57,10 +76,6 @@ Linkedlist *getPlayerPawnsLocation(Board * board, int playerId) {
         }
     }
     return locations;
-}
-
-int getBoardLen(Board * board){
-    return getNbPlayer(board) * PLAYERBORDLENTH;
 }
 
 int getStart(int pId){
@@ -91,6 +106,7 @@ int getIdTeamMember(Board * board,int idPlayer){
     return idTeamMember;
 }
 
+
 /* ---------- Tests ---------- */
 
 bool isOnBoard(Board * board, int location){
@@ -115,6 +131,7 @@ bool isWin(Board * board, int pId){
     }
     return ret;
 }
+
 
 /* ---------- Utilities ---------- */
 
@@ -207,7 +224,9 @@ int heuristicPlayer(Board * board,int IdPlayer){
     return result;
 }
 
+
 /* ---------- draw ---------- */
+
 void drawBoard(Board * board){
     SDL_Renderer *renderer = SDLgetRender();
     SDL_Color couleurCircle = getSDLColor("BoardCircle");
@@ -408,17 +427,6 @@ void drawBoard(Board * board){
             }
         }
     }
-}
-
-
-
-void destroyBoardVoid(void * board){
-  destroyBoard(board);
-}
-
-void destroyBoard(Board ** board){
-  free((*board)->board);
-  free(*board);
 }
 
 void highlightLocation(int location){

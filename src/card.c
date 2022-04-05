@@ -1,14 +1,19 @@
 /**
  * \file card.c
- * \brief gestion des cartes
- * \author JARRIER allan
+ * \brief Gestion des cartes
+ * \author LE GLEAU Yoann
  * \date 28/01/2022
  * \version 1
  */
 
+/* ---------- Includes ---------- */
+
 #include "card.h"
 #include "Player/player.h"
+#include "SDL/mainSDL.h"
 #include <stdlib.h>
+#include <SDL2/SDL_image.h>
+
 
 bool isComposed(const enum Card * card){
     return (*card == ThirteenOut ||
@@ -224,7 +229,43 @@ char * cardToString(const enum Card * card){
             return "OneOut";
         case out:
             return "Out";
-
             //TODO ajouter les autre cartes
     }
+}
+
+void DrawCardMiddle(enum Card * card){
+    if(card == NULL)
+        return;
+    SDL_Texture *image_tex;
+    SDL_Rect imgDestRect ;
+    SDL_Surface *image=NULL;
+    int cardx = 160;
+    int cardy = 240;
+    int idealCardy = SDLgetHeight(0.25);
+    int idealCardx = ((float)cardx/(float)cardy)*idealCardy;
+
+    imgDestRect.x = SDLgetWidth(0.5) - idealCardx/2;
+    imgDestRect.y = SDLgetHeight(0.43) - idealCardy/2;
+    imgDestRect.w = 10;
+
+    SDL_RWops *rwop=SDL_RWFromFile(getAsset(card) , "rb");
+    image=IMG_LoadPNG_RW(rwop);
+    if(!image) {
+        printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
+    }
+
+    image_tex = SDL_CreateTextureFromSurface(SDLgetRender(), image);
+    if(!image_tex){
+        fprintf(stderr, "Erreur a la creation du rendu de l'image : %s\n", SDL_GetError());
+        exit(EXIT_FAILURE);
+    }
+
+
+    SDL_QueryTexture(image_tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
+    imgDestRect.w = idealCardx;
+    imgDestRect.h = idealCardy;
+    SDL_RenderCopy(SDLgetRender(), image_tex, NULL, &imgDestRect);
+    SDL_FreeSurface(image);
+    SDL_DestroyTexture(image_tex);
+
 }

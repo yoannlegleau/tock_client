@@ -10,15 +10,18 @@
 #define TOCK_CLIENT_PLAYER_H
 
 
+/* ---------- Includes ---------- */
+
 #include "../linkedlist.h"
 #include "../card.h"
 #include "../board.h"
 #include "stdbool.h"
 
-/**
- * \brief structure represante un joueur
- */
+//---------- Structure ----------
 
+/**
+ * \brief Structure représentent un joueur
+ */
 typedef struct Player Player;
 struct Player {
     /** \brief Id unique d'un joueur */
@@ -27,11 +30,14 @@ struct Player {
     /** \brief liste de carte representent la main du joueur */
     Linkedlist * cards;
 
+    /** \brief Fonction permettent de jouer son tour */
     int (*play)(Player *, Board *);
 
     /** \brief La carte sectionner est mise en avent lors de l'affichage (sans affichage ne pas prendre en compte) par default -1*/
     int selectedCard;
 };
+
+//---------- Constructor ----------
 
 /**
  * \brief Constructeur general de Player
@@ -62,14 +68,25 @@ Player * playerBotFactory( int id);
  */
 Player * playerClone(Player * p);
 
-void drawPlayer(Player *player);
-
-void drawMainPlayerHUD(Player * player);
-
-void destroyPlayerVoid(void * player);
-
+/**
+ * \brief Liber l'espace memoire allouer a un joueur
+ * \param player cible
+ */
 void destroyPlayer(Player ** player);
 
+
+//---------- Testes ----------
+
+/**
+ * \brief verifi si le joueur peux jouer
+ * \param p joueur cible
+ * \param board plateau
+ * \return vrais si le joueurs peu jouer
+ */
+bool playerCanPlay(Player *p, Board *board);
+
+
+//---------- Utilities ----------
 /**
  * \brief efectuer l'action d'une carte sur un ou plusieurs pion sur un plateau
  * \param idPlayer idantifien du joueur
@@ -80,12 +97,13 @@ void destroyPlayer(Player ** player);
  */
 bool playCard(int idPlayer, Board * board, enum Card * card, ...);
 
+
+//---------- Displays ----------
+
 /**
- * \brief verifi si le joueur peux jouer
- * \param p joueur cible
- * \param board plateau
- * \return vrais si le joueurs peu jouer
+ * \brief Affiche les cartes d'un joueur selon sa position (id)
+ * \param player cible
  */
-bool playerCanPlay(Player *p, Board *board);
+void drawPlayer(Player *player);
 
 #endif //TOCK_CLIENT_PLAYER_H

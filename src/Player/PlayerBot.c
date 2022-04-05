@@ -1,8 +1,23 @@
-//
-// Created by adzer on 31/03/2022.
-//
+/**
+ * \file PlayerBot.c
+ * \brief Joueur de type inteligence artificiel
+ * \author LE GLEAU Yoann
+ * \date 21/02/2022
+ * \version 1
+ */
 
+/* ---------- Sub Declaration ---------- */
+
+/**
+ * \brief Fonction permettent à l'intelligence artificielle de jouer son tour
+ * \param p joueur cible
+ * \param board pllateu cible
+ * \return Vrais si le joueur a joué
+ */
 bool playSmart(Player *p, Board * board);
+
+
+//---------- Constructor ----------
 
 Player * playerBotFactory( int id){
     //appel le constructeur supérieure
@@ -10,6 +25,8 @@ Player * playerBotFactory( int id){
     player->play = &playSmart;
     return player;
 }
+
+//---------- utilities ----------
 
 bool playSmart(Player *p, Board * board) {
     const int minint = -2147483648;

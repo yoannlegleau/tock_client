@@ -52,7 +52,7 @@ TTF_Font *police = NULL;
 Game * gameCreate(int nbPlayer){
     Game * game = malloc(sizeof(Game));
     game->board = boardFactory(nbPlayer);
-    game->players = linkedListFactory(destroyPlayerVoid);
+    game->players = linkedListFactory((void (*)(void *)) destroyPlayer);
     game->running = false;
 }
 
