@@ -1,11 +1,15 @@
 * MAKEFILE 👾
-** Darwin
-   Pour compiler sur macOS
-   #+BEGIN_SRC sh
-   make -f Makefile.darwin
-   #+END_SRC
 ** Linux
-   Pour compiler sur Linux
-** Windows
-   Pour compiler sur Windows
-   
+   ** Installation
+   - le repertoire
+   #+BEGIN_SRC sh
+   git clone https://github.com/yoannlegleau/tock_client.git
+   #+END_SRC
+   ** Éxécution
+   #+BEGIN_SRC sh
+   make clean game
+   #+END_SRC
+   puis
+   #+BEGIN_SRC sh
+   ./game
+   #+END_SRC
