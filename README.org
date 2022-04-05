@@ -1,7 +1,8 @@
-* MAKEFILE 👾
+* Tock.io 👾
+Tock.io est l'adapation numérique du jeu de société le Tock.
+Une sorte de jeu des petits chevaux qui se joue par équipe de 2, et qui ce joue avec des cartes à la place des dés.
 ** Linux
    Installation
-   - le repertoire
    #+BEGIN_SRC sh
    git clone https://github.com/yoannlegleau/tock_client.git
    #+END_SRC
