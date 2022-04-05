@@ -1,15 +1,14 @@
 * MAKEFILE 👾
 ** Linux
-   ** Installation
+   Installation
    - le repertoire
    #+BEGIN_SRC sh
    git clone https://github.com/yoannlegleau/tock_client.git
    #+END_SRC
-   ** Éxécution
+   Éxécution
    #+BEGIN_SRC sh
    make clean game
    #+END_SRC
-   puis
    #+BEGIN_SRC sh
    ./game
    #+END_SRC
