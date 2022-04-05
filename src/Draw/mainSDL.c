@@ -41,11 +41,11 @@ bool isWinCreat(){
 void winCreate() {
     if (isWinCreat())
         return;
+    
+    Linkedlist * settings = loadFromPath(SETTINGS_PATH);
 
     SDL_Init(SDL_INIT_VIDEO); // Initialise SDL2
     TTF_Init(); // Initialise SDL2_TTF
-
-    Linkedlist *settings = loadFromPath(SETTINGS_PATH);
 
 
     // Créez la fenêtre de l'application avec les paramètres suivants :
@@ -70,7 +70,27 @@ void winCreate() {
         // Dans le cas où la fenêtre ne pourrait pas être créé...
         printf("Could not create window: %s\n", SDL_GetError());
     }
+/*
+    SDL_Init(SDL_INIT_VIDEO); // Initialise SDL2
+    TTF_Init(); // Initialise SDL2_TTF
 
+
+    // Créez la fenêtre de l'application avec les paramètres suivants :
+    window = SDL_CreateWindow(
+            "Tock.io",                  // window title
+            SDL_WINDOWPOS_UNDEFINED,           // initial x position
+            SDL_WINDOWPOS_UNDEFINED,           // initial y position
+            1280,                               // width, in pixels
+            720,                               // height, in pixels
+            SDL_WINDOW_SHOWN|SDL_WINDOW_RESIZABLE|SDL_WINDOW_OPENGL // flags - see below
+    );
+
+    // Vérifiez que la fenêtre a bien été créé
+    if (window == NULL) {
+        // Dans le cas où la fenêtre ne pourrait pas être créé...
+        printf("Could not create window: %s\n", SDL_GetError());
+    }
+*/
     // Creation du render
     if(SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED) == NULL){
         fprintf(stderr, "Erreur à la création du renderer\n");

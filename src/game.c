@@ -58,6 +58,7 @@ Game * gameCreate(int nbPlayer){
     game->players = linkedListFactory(destroyPlayer);
     game->running = false;
     printf("CREATE\n");
+    return game;
 }
 
 
@@ -139,7 +140,7 @@ int gameStart(Game * game) {
             }
             RenderAllDrawable();
 #ifdef __unix__
-            sleep(100);
+            sleep(1);
 #endif
 #ifdef _WIN32
             Sleep(100);

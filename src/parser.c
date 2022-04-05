@@ -81,20 +81,14 @@ void saveToPath(const char *path,Linkedlist *liste){
 
 Linkedlist * loadFromPath(const char *path){
     FILE * file = fopen(path, "r");
-    rewind(file);
     if ( file == NULL ) {
         printf( "Cannot open file %s\n", path );
         exit( 0 );
     }
-    rewind(file);
     Linkedlist * keyValues = linkedListFactory(destroyKeyValueVoid);
     char * c ;
-    #ifdef __unix__
-        c = (char *) malloc(sizeof(char)+1);
-    #endif
-    #ifdef _WIN32
-        c = "";
-    #endif
+    c = (char *) malloc(sizeof(char)+1);
+    rewind(file);
     while(!feof(file)){
         fscanf(file,"%c",c);
         if(*c == REG_START){
@@ -113,10 +107,7 @@ Linkedlist * loadFromPath(const char *path){
         }
     }
     fclose(file);
-    #ifdef __unix__
     free(c);
-    #endif
-
     return keyValues;
 }
 

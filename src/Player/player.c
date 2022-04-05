@@ -96,6 +96,9 @@ void drawPlayer1(const Player *player) {
         else
             imgDestRect.y = yStart;
         const char *path;
+        path = getAsset(get(player->cards,i));
+
+        /*
         switch (player->idPlayer) {
             case 1:
                 path = getAsset(get(player->cards,i));
@@ -111,9 +114,13 @@ void drawPlayer1(const Player *player) {
                 path ="Carte_Back_Right.png";
                 break;
         }
-
+        */
+        /*
         SDL_RWops *rwop=SDL_RWFromFile(path , "rb");
         image=IMG_LoadPNG_RW(rwop);
+        */
+        SDL_Surface * image = IMG_Load(path);     
+
         if(!image) {
             printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
         }
@@ -155,9 +162,12 @@ void drawPlayer2(const Player * player){
 
         imgDestRect.y = yStart + (idealCardx*i) - (ofset*i);
         imgDestRect.w = i;
-
+/*
         SDL_RWops *rwop=SDL_RWFromFile("assets/Cartes/Carte_Back_Left.png" , "rb");
         image=IMG_LoadPNG_RW(rwop);
+*/
+        SDL_Surface * image = IMG_Load("assets/Cartes/Carte_Back_Left.png");     
+
         if(!image) {
             printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
         }
@@ -201,9 +211,12 @@ void drawPlayer3(const Player * player){
 
         imgDestRect.x = xStart + (idealCardx*i) - (ofset*i);
         imgDestRect.w = i;
-
+/*
         SDL_RWops *rwop=SDL_RWFromFile("assets/Cartes/Carte_Back_UpsideDown.png" , "rb");
         image=IMG_LoadPNG_RW(rwop);
+*/
+        SDL_Surface * image = IMG_Load("assets/Cartes/Carte_Back_UpsideDown.png");     
+
         if(!image) {
             printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
         }
@@ -246,9 +259,12 @@ void drawPlayer4(const Player * player){
 
         imgDestRect.y = yStart + (idealCardx*i) - (ofset*i);
         imgDestRect.w = i;
-
+/*
         SDL_RWops *rwop=SDL_RWFromFile("assets/Cartes/Carte_Back_Right.png" , "rb");
         image=IMG_LoadPNG_RW(rwop);
+*/
+        SDL_Surface * image = IMG_Load("assets/Cartes/Carte_Back_Right.png");     
+
         if(!image) {
             printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
         }

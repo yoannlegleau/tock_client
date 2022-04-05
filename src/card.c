@@ -121,29 +121,29 @@ char* getAsset(const enum Card * card){
         case one:
             return "assets/Cartes/Carte_1.png";
         case two:
-            return "assets/Cartes/Carte_Valeur_2.png";
+            return "assets/Cartes/Carte_valeur_2.png";
         case three:
-            return "assets/Cartes/Carte_Valeur_3.png";
+            return "assets/Cartes/Carte_valeur_3.png";
         case four:
             return "assets/Cartes/Carte_4.png";
         case five:
-            return "assets/Cartes/Carte_Valeur_5.png";
+            return "assets/Cartes/Carte_valeur_5.png";
         case six:
-            return "assets/Cartes/Carte_Valeur_6.png";
+            return "assets/Cartes/Carte_valeur_6.png";
         case seven:
-            return "assets/Cartes/Carte_Valeur_7.png";
+            return "assets/Cartes/Carte_valeur_7.png";
         case eight:
-            return "assets/Cartes/Carte_Valeur_8.png";
+            return "assets/Cartes/Carte_valeur_8.png";
         case nine:
-            return "assets/Cartes/Carte_Valeur_9.png";
+            return "assets/Cartes/Carte_valeur_9.png";
         case ten:
-            return "assets/Cartes/Carte_Valeur_10.png";
+            return "assets/Cartes/Carte_valeur_10.png";
         case eleven:
-            return "assets/Cartes/Carte_Valeur_V.png";
+            return "assets/Cartes/Carte_valeur_V.png";
         case twelve:
-            return "assets/Cartes/Carte_Valeur_D.png";
+            return "assets/Cartes/Carte_valeur_D.png";
         case thirteen:
-            return "assets/Cartes/Carte_Valeur_R.png";
+            return "assets/Cartes/Carte_R.png";
         case ThirteenOut:
             return "assets/Cartes/Carte_R.png";
         case oneOut:

@@ -52,7 +52,7 @@ void * doRecieving(void * sockID){
  */
 int main(int argc, char* args[]) {
     printf("GAME\n");
-    //winCreate();
+    winCreate();
     Game *game;
     game = gameCreate(4);
     addPlayer(game, 1);
@@ -70,7 +70,7 @@ int main(int argc, char* args[]) {
 
 
     //ferme le jeu
-    //winDestroy();
+    winDestroy();
 
     return 0;
 }
