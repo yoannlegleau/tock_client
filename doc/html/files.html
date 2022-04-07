@@ -56,7 +56,7 @@ $(function() {
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameboarder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -68,20 +68,26 @@ $(function() {
 <div class="textblock">Liste de tous les fichiers avec une brève description :</div><div class="directory">
 <div class="levels">[Niveau de détails <span onclick="javascript:toggleLevel(1);">1</span><span onclick="javascript:toggleLevel(2);">2</span>]</div><table class="directory">
 <tr id="row_0_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_0_" class="arrow" onclick="toggleFolder('0_')">&#9660;</span><span id="img_0_" class="iconfopen" onclick="toggleFolder('0_')">&#160;</span><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html" target="_self">src</a></td><td class="desc"></td></tr>
-<tr id="row_0_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="board_8c.html" target="_self">board.c</a></td><td class="desc"></td></tr>
-<tr id="row_0_1_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="board_8h_source.html"><span class="icondoc"></span></a><a class="el" href="board_8h.html" target="_self">board.h</a></td><td class="desc"></td></tr>
+<tr id="row_0_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="board_8c.html" target="_self">board.c</a></td><td class="desc">Gestion du plateau de jeu et des pions </td></tr>
+<tr id="row_0_1_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="board_8h_source.html"><span class="icondoc"></span></a><a class="el" href="board_8h.html" target="_self">board.h</a></td><td class="desc">Gestion du plateau de jeu et des pions </td></tr>
 <tr id="row_0_2_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="card_8c.html" target="_self">card.c</a></td><td class="desc">Gestion des cartes </td></tr>
 <tr id="row_0_3_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="card_8h_source.html"><span class="icondoc"></span></a><a class="el" href="card_8h.html" target="_self">card.h</a></td><td class="desc">Gestion des cartes </td></tr>
-<tr id="row_0_4_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="_color_8h_source.html"><span class="icondoc"></span></a><a class="el" href="_color_8h.html" target="_self">Color.h</a></td><td class="desc"></td></tr>
-<tr id="row_0_5_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="game_8c.html" target="_self">game.c</a></td><td class="desc"></td></tr>
-<tr id="row_0_6_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="game_8h_source.html"><span class="icondoc"></span></a><a class="el" href="game_8h.html" target="_self">game.h</a></td><td class="desc">Gestionaire de partie </td></tr>
-<tr id="row_0_7_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="game_rule_8c.html" target="_self">gameRule.c</a></td><td class="desc"></td></tr>
-<tr id="row_0_8_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="game_rule_8h_source.html"><span class="icondoc"></span></a><a class="el" href="game_rule_8h.html" target="_self">gameRule.h</a></td><td class="desc"></td></tr>
-<tr id="row_0_9_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="linkedlist_8c.html" target="_self">linkedlist.c</a></td><td class="desc">Liste chainer generique </td></tr>
-<tr id="row_0_10_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="linkedlist_8h_source.html"><span class="icondoc"></span></a><a class="el" href="linkedlist_8h.html" target="_self">linkedlist.h</a></td><td class="desc">Liste chainer generique </td></tr>
-<tr id="row_0_11_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="main_8c.html" target="_self">main.c</a></td><td class="desc">Gestion de l'application </td></tr>
-<tr id="row_0_12_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="main_s_d_l_8c.html" target="_self">mainSDL.c</a></td><td class="desc">Gestion de la fenetre principale </td></tr>
-<tr id="row_0_13_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="main_s_d_l_8h_source.html"><span class="icondoc"></span></a><a class="el" href="main_s_d_l_8h.html" target="_self">mainSDL.h</a></td><td class="desc"></td></tr>
+<tr id="row_0_4_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="_color_8c.html" target="_self">Color.c</a></td><td class="desc">Gestion des Couleurs / Style </td></tr>
+<tr id="row_0_5_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="_color_8h_source.html"><span class="icondoc"></span></a><a class="el" href="_color_8h.html" target="_self">Color.h</a></td><td class="desc">Gestion des Couleurs / Style </td></tr>
+<tr id="row_0_6_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="game_8c.html" target="_self">game.c</a></td><td class="desc">Gestionaire de partie </td></tr>
+<tr id="row_0_7_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="game_8h_source.html"><span class="icondoc"></span></a><a class="el" href="game_8h.html" target="_self">game.h</a></td><td class="desc">Gestionaire de partie </td></tr>
+<tr id="row_0_8_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="game_rule_8c.html" target="_self">gameRule.c</a></td><td class="desc"></td></tr>
+<tr id="row_0_9_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="game_rule_8h_source.html"><span class="icondoc"></span></a><a class="el" href="game_rule_8h.html" target="_self">gameRule.h</a></td><td class="desc">Enumeration des variantes de règles de jeu </td></tr>
+<tr id="row_0_10_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="linkedlist_8c.html" target="_self">linkedlist.c</a></td><td class="desc">Liste chainer generique </td></tr>
+<tr id="row_0_11_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="linkedlist_8h_source.html"><span class="icondoc"></span></a><a class="el" href="linkedlist_8h.html" target="_self">linkedlist.h</a></td><td class="desc">Liste chainer generique </td></tr>
+<tr id="row_0_12_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="main_client_8c.html" target="_self">mainClient.c</a></td><td class="desc">Gestion de l'application </td></tr>
+<tr id="row_0_13_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="main_server_8c.html" target="_self">mainServer.c</a></td><td class="desc">Gestion de l'application coter server </td></tr>
+<tr id="row_0_14_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="main_serveur_8c.html" target="_self">mainServeur.c</a></td><td class="desc"></td></tr>
+<tr id="row_0_15_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="menu_8c.html" target="_self">menu.c</a></td><td class="desc"></td></tr>
+<tr id="row_0_16_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="parser_8c.html" target="_self">parser.c</a></td><td class="desc">Parser de ficher de configuration </td></tr>
+<tr id="row_0_17_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="parser_8h_source.html"><span class="icondoc"></span></a><a class="el" href="parser_8h.html" target="_self">parser.h</a></td><td class="desc">Parser de ficher de configuration </td></tr>
+<tr id="row_0_18_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icondoc"></span><a class="el" href="pawn_8c.html" target="_self">pawn.c</a></td><td class="desc"></td></tr>
+<tr id="row_0_19_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><a href="pawn_8h_source.html"><span class="icondoc"></span></a><a class="el" href="pawn_8h.html" target="_self">pawn.h</a></td><td class="desc"></td></tr>
 </table>
 </div><!-- directory -->
 </div><!-- contents -->

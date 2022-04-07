@@ -55,7 +55,7 @@ $(function() {
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameboarder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -72,29 +72,95 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>gestion des cartes  
+<p>Gestion des cartes.  
 <a href="#details">Plus de détails...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="card_8h_source.html">card.h</a>&quot;</code><br />
 <code>#include &quot;Player/player.h&quot;</code><br />
+<code>#include &quot;SDL/mainSDL.h&quot;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;SDL2/SDL_image.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:afe3c91043da027e3ca6e6b514828e126"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="card_8c.html#afe3c91043da027e3ca6e6b514828e126">drawCard</a> (const enum <a class="el" href="card_8h.html#a98a2b239923441ea943de74af3208aa3">Card</a> *card)</td></tr>
-<tr class="memdesc:afe3c91043da027e3ca6e6b514828e126"><td class="mdescLeft">&#160;</td><td class="mdescRight">affiche le nom dew catres dans le terminal  <a href="card_8c.html#afe3c91043da027e3ca6e6b514828e126">Plus de détails...</a><br /></td></tr>
-<tr class="separator:afe3c91043da027e3ca6e6b514828e126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af05b830f3fa2b2d709482ad780b58fb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="card_8c.html#af05b830f3fa2b2d709482ad780b58fb5">destroyCard</a> (enum <a class="el" href="card_8h.html#a98a2b239923441ea943de74af3208aa3">Card</a> **card)</td></tr>
+<tr class="memdesc:af05b830f3fa2b2d709482ad780b58fb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fonction de destruction ds cartes.  <a href="card_8c.html#af05b830f3fa2b2d709482ad780b58fb5">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af05b830f3fa2b2d709482ad780b58fb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fb5fd69286d34a83c35565dc69a5243"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="card_8c.html#a9fb5fd69286d34a83c35565dc69a5243">getAsset</a> (const enum <a class="el" href="card_8h.html#a98a2b239923441ea943de74af3208aa3">Card</a> *card)</td></tr>
+<tr class="memdesc:a9fb5fd69286d34a83c35565dc69a5243"><td class="mdescLeft">&#160;</td><td class="mdescRight">retour le chemain ver l'asset associer a la carte  <a href="card_8c.html#a9fb5fd69286d34a83c35565dc69a5243">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9fb5fd69286d34a83c35565dc69a5243"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56c6d69114d3d5875e68541740e52750"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="card_8c.html#a56c6d69114d3d5875e68541740e52750">getCardCompose</a> (const enum <a class="el" href="card_8h.html#a98a2b239923441ea943de74af3208aa3">Card</a> *card)</td></tr>
+<tr class="memdesc:a56c6d69114d3d5875e68541740e52750"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne une liste des cartes qui compose la care en parameters.  <a href="card_8c.html#a56c6d69114d3d5875e68541740e52750">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a56c6d69114d3d5875e68541740e52750"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa6bbfa32eeeb67f6492fc2b77d95ff2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="card_8c.html#aaa6bbfa32eeeb67f6492fc2b77d95ff2">isComposed</a> (const enum <a class="el" href="card_8h.html#a98a2b239923441ea943de74af3208aa3">Card</a> *card)</td></tr>
+<tr class="memdesc:aaa6bbfa32eeeb67f6492fc2b77d95ff2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retourne vrais si la carte est une carte composé  <a href="card_8c.html#aaa6bbfa32eeeb67f6492fc2b77d95ff2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aaa6bbfa32eeeb67f6492fc2b77d95ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6402c47e0a2fa351b4ee2dae38305e07"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="card_8c.html#a6402c47e0a2fa351b4ee2dae38305e07">isComposedSplittable</a> (const enum <a class="el" href="card_8h.html#a98a2b239923441ea943de74af3208aa3">Card</a> *card)</td></tr>
+<tr class="separator:a6402c47e0a2fa351b4ee2dae38305e07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a588f788a116c7297754143f4c764675e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="card_8c.html#a588f788a116c7297754143f4c764675e">makeDeck</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *cards, <a class="el" href="struct_linkedlist.html">Linkedlist</a> *gameRules)</td></tr>
 <tr class="memdesc:a588f788a116c7297754143f4c764675e"><td class="mdescLeft">&#160;</td><td class="mdescRight">ajout des cartes dans la list pour cree un paket de carte coherent et prend en compte les règles sélectionner  <a href="card_8c.html#a588f788a116c7297754143f4c764675e">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a588f788a116c7297754143f4c764675e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a099ad5ba8fde893123e3223f3ab306af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="card_8c.html#a099ad5ba8fde893123e3223f3ab306af">distributeCards</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *cards, <a class="el" href="struct_linkedlist.html">Linkedlist</a> *players)</td></tr>
+<tr class="memdesc:a099ad5ba8fde893123e3223f3ab306af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distribuer les carters entre plusieurs joueurs.  <a href="card_8c.html#a099ad5ba8fde893123e3223f3ab306af">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a099ad5ba8fde893123e3223f3ab306af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe3c91043da027e3ca6e6b514828e126"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="card_8c.html#afe3c91043da027e3ca6e6b514828e126">drawCard</a> (const enum <a class="el" href="card_8h.html#a98a2b239923441ea943de74af3208aa3">Card</a> *card)</td></tr>
+<tr class="memdesc:afe3c91043da027e3ca6e6b514828e126"><td class="mdescLeft">&#160;</td><td class="mdescRight">affiche le nom dew catres dans le terminal  <a href="card_8c.html#afe3c91043da027e3ca6e6b514828e126">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afe3c91043da027e3ca6e6b514828e126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada1e17b155f092346b61389178bc87a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="card_8c.html#ada1e17b155f092346b61389178bc87a4">DrawCardMiddle</a> (enum <a class="el" href="card_8h.html#a98a2b239923441ea943de74af3208aa3">Card</a> *card)</td></tr>
+<tr class="memdesc:ada1e17b155f092346b61389178bc87a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">affiche une carte au centre du plateau  <a href="card_8c.html#ada1e17b155f092346b61389178bc87a4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ada1e17b155f092346b61389178bc87a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b950ad10b4db401839ef5d34582c803"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="card_8c.html#a5b950ad10b4db401839ef5d34582c803">cardToString</a> (const enum <a class="el" href="card_8h.html#a98a2b239923441ea943de74af3208aa3">Card</a> *card)</td></tr>
+<tr class="separator:a5b950ad10b4db401839ef5d34582c803"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
-<div class="textblock"><p >gestion des cartes </p>
-<dl class="section author"><dt>Auteur</dt><dd>JARRIER allan </dd></dl>
+<div class="textblock"><p >Gestion des cartes. </p>
+<dl class="section author"><dt>Auteur</dt><dd>LE GLEAU Yoann </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>28/01/2022 </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1 </dd></dl>
 </div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a5b950ad10b4db401839ef5d34582c803" name="a5b950ad10b4db401839ef5d34582c803"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b950ad10b4db401839ef5d34582c803">&#9670;&nbsp;</a></span>cardToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * cardToString </td>
+          <td>(</td>
+          <td class="paramtype">const enum <a class="el" href="card_8h.html#a98a2b239923441ea943de74af3208aa3">Card</a> *&#160;</td>
+          <td class="paramname"><em>card</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af05b830f3fa2b2d709482ad780b58fb5" name="af05b830f3fa2b2d709482ad780b58fb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af05b830f3fa2b2d709482ad780b58fb5">&#9670;&nbsp;</a></span>destroyCard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void destroyCard </td>
+          <td>(</td>
+          <td class="paramtype">enum <a class="el" href="card_8h.html#a98a2b239923441ea943de74af3208aa3">Card</a> **&#160;</td>
+          <td class="paramname"><em>card</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Fonction de destruction ds cartes. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">card</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a099ad5ba8fde893123e3223f3ab306af" name="a099ad5ba8fde893123e3223f3ab306af"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a099ad5ba8fde893123e3223f3ab306af">&#9670;&nbsp;</a></span>distributeCards()</h2>
 
@@ -120,6 +186,15 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Distribuer les carters entre plusieurs joueurs. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cards</td><td></td></tr>
+    <tr><td class="paramname">players</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -147,6 +222,133 @@ Fonctions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section version"><dt>Version</dt><dd>1 </dd></dl>
+
+</div>
+</div>
+<a id="ada1e17b155f092346b61389178bc87a4" name="ada1e17b155f092346b61389178bc87a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada1e17b155f092346b61389178bc87a4">&#9670;&nbsp;</a></span>DrawCardMiddle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DrawCardMiddle </td>
+          <td>(</td>
+          <td class="paramtype">enum <a class="el" href="card_8h.html#a98a2b239923441ea943de74af3208aa3">Card</a> *&#160;</td>
+          <td class="paramname"><em>card</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>affiche une carte au centre du plateau </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">card</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9fb5fd69286d34a83c35565dc69a5243" name="a9fb5fd69286d34a83c35565dc69a5243"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fb5fd69286d34a83c35565dc69a5243">&#9670;&nbsp;</a></span>getAsset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * getAsset </td>
+          <td>(</td>
+          <td class="paramtype">const enum <a class="el" href="card_8h.html#a98a2b239923441ea943de74af3208aa3">Card</a> *&#160;</td>
+          <td class="paramname"><em>card</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>retour le chemain ver l'asset associer a la carte </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">card</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a56c6d69114d3d5875e68541740e52750" name="a56c6d69114d3d5875e68541740e52750"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56c6d69114d3d5875e68541740e52750">&#9670;&nbsp;</a></span>getCardCompose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_linkedlist.html">Linkedlist</a> * getCardCompose </td>
+          <td>(</td>
+          <td class="paramtype">const enum <a class="el" href="card_8h.html#a98a2b239923441ea943de74af3208aa3">Card</a> *&#160;</td>
+          <td class="paramname"><em>card</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne une liste des cartes qui compose la care en parameters. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">card</td><td>carte a décomposer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd><a class="el" href="struct_linkedlist.html">Linkedlist</a> liste de cartes</dd></dl>
+<p>Une care composé est une carte qui possède plusieurs effets. </p>
+
+</div>
+</div>
+<a id="aaa6bbfa32eeeb67f6492fc2b77d95ff2" name="aaa6bbfa32eeeb67f6492fc2b77d95ff2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa6bbfa32eeeb67f6492fc2b77d95ff2">&#9670;&nbsp;</a></span>isComposed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isComposed </td>
+          <td>(</td>
+          <td class="paramtype">const enum <a class="el" href="card_8h.html#a98a2b239923441ea943de74af3208aa3">Card</a> *&#160;</td>
+          <td class="paramname"><em>card</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retourne vrais si la carte est une carte composé </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">card</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>bool</dd></dl>
+<p>Une care composé est une carte qui possède plusieurs effets. </p>
+
+</div>
+</div>
+<a id="a6402c47e0a2fa351b4ee2dae38305e07" name="a6402c47e0a2fa351b4ee2dae38305e07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6402c47e0a2fa351b4ee2dae38305e07">&#9670;&nbsp;</a></span>isComposedSplittable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isComposedSplittable </td>
+          <td>(</td>
+          <td class="paramtype">const enum <a class="el" href="card_8h.html#a98a2b239923441ea943de74af3208aa3">Card</a> *&#160;</td>
+          <td class="paramname"><em>card</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

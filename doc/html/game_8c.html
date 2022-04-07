@@ -55,7 +55,7 @@ $(function() {
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameboarder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -69,71 +69,67 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Structures de données</a> &#124;
 <a href="#typedef-members">Définitions de type</a> &#124;
-<a href="#func-members">Fonctions</a>  </div>
+<a href="#func-members">Fonctions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">Référence du fichier game.c</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>gestionaire de partie  
+<a href="#details">Plus de détails...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;SDL.h&gt;</code><br />
 <code>#include &lt;SDL_ttf.h&gt;</code><br />
 <code>#include &lt;SDL_image.h&gt;</code><br />
 <code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="game_8h_source.html">game.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="main_s_d_l_8h_source.html">mainSDL.h</a>&quot;</code><br />
+<code>#include &quot;SDL/mainSDL.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="linkedlist_8h_source.html">linkedlist.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="card_8h_source.html">card.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="game_rule_8h_source.html">gameRule.h</a>&quot;</code><br />
 <code>#include &quot;Player/player.h&quot;</code><br />
-<code>#include &quot;<a class="el" href="board_8h_source.html">board.h</a>&quot;</code><br />
-<code>#include &lt;xmllite.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_color_8h_source.html">Color.h</a>&quot;</code><br />
+<code>#include &quot;SDL/Drawable.h&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Structures de données</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_pawn.html">Pawn</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_rule.html">Rule</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Définitions de type</h2></td></tr>
-<tr class="memitem:a41376036826b0217a186f072edddc5d8"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_pawn.html">Pawn</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a41376036826b0217a186f072edddc5d8">Pawn</a></td></tr>
-<tr class="memdesc:a41376036826b0217a186f072edddc5d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Se tableux represente toutes les cases du plateu.  <a href="game_8c.html#a41376036826b0217a186f072edddc5d8">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a41376036826b0217a186f072edddc5d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a683d0414d3752753074b14f91eb79cca"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_rule.html">Rule</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a683d0414d3752753074b14f91eb79cca">Rule</a></td></tr>
 <tr class="separator:a683d0414d3752753074b14f91eb79cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a044c42150c2fa2a9c15d058ae610a328"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a044c42150c2fa2a9c15d058ae610a328">playOnce</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *players)</td></tr>
-<tr class="separator:a044c42150c2fa2a9c15d058ae610a328"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24adfa3e2367dcea3cd3ff85c8760b02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a24adfa3e2367dcea3cd3ff85c8760b02">getPlayerPawnsLocation</a> ()</td></tr>
-<tr class="separator:a24adfa3e2367dcea3cd3ff85c8760b02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a111d040be8be5add440629d4752c86cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a111d040be8be5add440629d4752c86cc">rendererAll</a> (SDL_Renderer *pRenderer)</td></tr>
-<tr class="separator:a111d040be8be5add440629d4752c86cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8608f514fe7507c9b45f1f7e945be7f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a8608f514fe7507c9b45f1f7e945be7f1">gameCreate</a> (SDL_Window *<a class="el" href="main_s_d_l_8h.html#aaa8e409e04dcf575ef63fd5fb3db06f9">window</a>)</td></tr>
-<tr class="memdesc:a8608f514fe7507c9b45f1f7e945be7f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">demonstration du fonctionnement des librairie graphiques baser sur l'example de cours  <a href="game_8c.html#a8608f514fe7507c9b45f1f7e945be7f1">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a8608f514fe7507c9b45f1f7e945be7f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b3feb510b4ce1172670eabae3ab782b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a5b3feb510b4ce1172670eabae3ab782b">drawPlayerHUD</a> (SDL_Renderer *renderer, Player *player, TTF_Font *<a class="el" href="game_8c.html#a49a11b0728728090fa1189391c9fe0c8">police</a>, int x, int y)</td></tr>
+<tr class="memdesc:a5b3feb510b4ce1172670eabae3ab782b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche une interface dédier au developers pairmeten de visualiser les cartes des adversaires.  <a href="game_8c.html#a5b3feb510b4ce1172670eabae3ab782b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5b3feb510b4ce1172670eabae3ab782b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3405bf5a2601791e9e63922464126932"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a3405bf5a2601791e9e63922464126932">rendererAllPlayerHUD</a> (<a class="el" href="struct_game.html">Game</a> *game)</td></tr>
+<tr class="separator:a3405bf5a2601791e9e63922464126932"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69129938578bf1f0834e913cebaf0786"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_game.html">Game</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a69129938578bf1f0834e913cebaf0786">gameCreate</a> (int nbPlayer)</td></tr>
+<tr class="memdesc:a69129938578bf1f0834e913cebaf0786"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialise la liste  <a href="game_8c.html#a69129938578bf1f0834e913cebaf0786">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a69129938578bf1f0834e913cebaf0786"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab90e474b77908d1939ef7f592812785f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#ab90e474b77908d1939ef7f592812785f">addPlayer</a> (<a class="el" href="struct_game.html">Game</a> *game, int nbPlayer)</td></tr>
+<tr class="memdesc:ab90e474b77908d1939ef7f592812785f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ajoute des joueur a la partie et complette avec des bots  <a href="game_8c.html#ab90e474b77908d1939ef7f592812785f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab90e474b77908d1939ef7f592812785f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5958820c2a3ad5257a73d228f125eaa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#ab5958820c2a3ad5257a73d228f125eaa">gameStart</a> (<a class="el" href="struct_game.html">Game</a> *game)</td></tr>
+<tr class="memdesc:ab5958820c2a3ad5257a73d228f125eaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">demonstration du fonctionnement des librairie graphiques baser sur l'example de cours  <a href="game_8c.html#ab5958820c2a3ad5257a73d228f125eaa">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab5958820c2a3ad5257a73d228f125eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a49a11b0728728090fa1189391c9fe0c8"><td class="memItemLeft" align="right" valign="top">TTF_Font *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a49a11b0728728090fa1189391c9fe0c8">police</a> = NULL</td></tr>
+<tr class="separator:a49a11b0728728090fa1189391c9fe0c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Documentation des définitions de type</h2>
-<a id="a41376036826b0217a186f072edddc5d8" name="a41376036826b0217a186f072edddc5d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41376036826b0217a186f072edddc5d8">&#9670;&nbsp;</a></span>Pawn</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="struct_pawn.html">Pawn</a> <a class="el" href="struct_pawn.html">Pawn</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Se tableux represente toutes les cases du plateu. </p>
-<p >la longeur varie selon le nombre de joueur car chaque jouer posed 18 plus 4 donc pour 4j 88 et 132 pour 6. Les int represantes les ID de chaques jouers </p><div class="image">
-<img src="assets/img/Tock.io-BoardArray.jpg" alt=""/>
-</div>
- 
-</div>
-</div>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p >gestionaire de partie </p>
+<dl class="section author"><dt>Auteur</dt><dd>SINGLANDE Thomas </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>20/01/2022 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.1 </dd></dl>
+</div><h2 class="groupheader">Documentation des définitions de type</h2>
 <a id="a683d0414d3752753074b14f91eb79cca" name="a683d0414d3752753074b14f91eb79cca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a683d0414d3752753074b14f91eb79cca">&#9670;&nbsp;</a></span>Rule</h2>
 
@@ -149,24 +145,139 @@ Fonctions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Documentation des fonctions</h2>
-<a id="a8608f514fe7507c9b45f1f7e945be7f1" name="a8608f514fe7507c9b45f1f7e945be7f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8608f514fe7507c9b45f1f7e945be7f1">&#9670;&nbsp;</a></span>gameCreate()</h2>
+<a id="ab90e474b77908d1939ef7f592812785f" name="ab90e474b77908d1939ef7f592812785f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab90e474b77908d1939ef7f592812785f">&#9670;&nbsp;</a></span>addPlayer()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void gameCreate </td>
+          <td class="memname">void addPlayer </td>
           <td>(</td>
-          <td class="paramtype">SDL_Window *&#160;</td>
-          <td class="paramname"><em>window</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbPlayer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ajoute des joueur a la partie et complette avec des bots </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game</td><td></td></tr>
+    <tr><td class="paramname">nbPlayer</td><td>nombre de vrais joueurs </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5b3feb510b4ce1172670eabae3ab782b" name="a5b3feb510b4ce1172670eabae3ab782b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b3feb510b4ce1172670eabae3ab782b">&#9670;&nbsp;</a></span>drawPlayerHUD()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawPlayerHUD </td>
+          <td>(</td>
+          <td class="paramtype">SDL_Renderer *&#160;</td>
+          <td class="paramname"><em>renderer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Player *&#160;</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TTF_Font *&#160;</td>
+          <td class="paramname"><em>police</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche une interface dédier au developers pairmeten de visualiser les cartes des adversaires. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">renderer</td><td>De l'écran </td></tr>
+    <tr><td class="paramname">player</td><td></td></tr>
+    <tr><td class="paramname">police</td><td></td></tr>
+    <tr><td class="paramname">x</td><td></td></tr>
+    <tr><td class="paramname">y</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a69129938578bf1f0834e913cebaf0786" name="a69129938578bf1f0834e913cebaf0786"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69129938578bf1f0834e913cebaf0786">&#9670;&nbsp;</a></span>gameCreate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_game.html">Game</a> * gameCreate </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbPlayer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>initialise la liste </p>
+
+</div>
+</div>
+<a id="ab5958820c2a3ad5257a73d228f125eaa" name="ab5958820c2a3ad5257a73d228f125eaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5958820c2a3ad5257a73d228f125eaa">&#9670;&nbsp;</a></span>gameStart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int gameStart </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>demonstration du fonctionnement des librairie graphiques baser sur l'example de cours </p>
-<p >initialise la liste</p>
+<p >lancer le deroulement du jeux</p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">window</td><td>fenêtre principal </td></tr>
@@ -176,16 +287,17 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a24adfa3e2367dcea3cd3ff85c8760b02" name="a24adfa3e2367dcea3cd3ff85c8760b02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24adfa3e2367dcea3cd3ff85c8760b02">&#9670;&nbsp;</a></span>getPlayerPawnsLocation()</h2>
+<a id="a3405bf5a2601791e9e63922464126932" name="a3405bf5a2601791e9e63922464126932"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3405bf5a2601791e9e63922464126932">&#9670;&nbsp;</a></span>rendererAllPlayerHUD()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_linkedlist.html">Linkedlist</a> * getPlayerPawnsLocation </td>
+          <td class="memname">void rendererAllPlayerHUD </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -193,36 +305,15 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a044c42150c2fa2a9c15d058ae610a328" name="a044c42150c2fa2a9c15d058ae610a328"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a044c42150c2fa2a9c15d058ae610a328">&#9670;&nbsp;</a></span>playOnce()</h2>
+<h2 class="groupheader">Documentation des variables</h2>
+<a id="a49a11b0728728090fa1189391c9fe0c8" name="a49a11b0728728090fa1189391c9fe0c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49a11b0728728090fa1189391c9fe0c8">&#9670;&nbsp;</a></span>police</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void playOnce </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td>
-          <td class="paramname"><em>players</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a111d040be8be5add440629d4752c86cc" name="a111d040be8be5add440629d4752c86cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a111d040be8be5add440629d4752c86cc">&#9670;&nbsp;</a></span>rendererAll()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rendererAll </td>
-          <td>(</td>
-          <td class="paramtype">SDL_Renderer *&#160;</td>
-          <td class="paramname"><em>pRenderer</em></td><td>)</td>
-          <td></td>
+          <td class="memname">TTF_Font* police = NULL</td>
         </tr>
       </table>
 </div><div class="memdoc">

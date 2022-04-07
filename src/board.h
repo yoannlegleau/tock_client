@@ -1,7 +1,10 @@
-//
-// Created by adzerake on 10/03/2022.
-//
-
+/**
+ * \file board.h
+ * \brief Gestion du plateau de jeu et des pions
+ * \author LE GLEAU Yoann
+ * \date 10/03/2022
+ * \version 1
+ */
 #ifndef TOCK_CLIENT_BOARD_H
 #define TOCK_CLIENT_BOARD_H
 
@@ -20,7 +23,12 @@
  */
 typedef struct Board Board;
 struct Board {
-    /** \brief plateau contenant les pions */
+    /**
+        * \brief Se tableux represente toutes les cases du plateu
+        * \details la longeur varie selon le nombre de joueur car chaque jouer posed 18 plus 4 donc pour 4j 88 et 132 pour 6.
+        * Les int represantes les ID de chaques jouers
+        * \image html assets/img/Tock.io-BoardArray.jpg
+    */
     int * board;
 
     /** \brief Nombre de joueurs sur le plateau (4 ou 6 ou 8) */

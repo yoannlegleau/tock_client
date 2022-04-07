@@ -1,5 +1,26 @@
 var searchData=
 [
-  ['initboard_0',['initBoard',['../board_8c.html#ade61443d39f111c96f160359cab6f8bb',1,'initBoard(int pInt[88]):&#160;board.c'],['../board_8h.html#ade61443d39f111c96f160359cab6f8bb',1,'initBoard(int pInt[88]):&#160;board.c']]],
-  ['isempty_1',['isEmpty',['../linkedlist_8c.html#afcb647a9f61711367accfb0739d044c1',1,'isEmpty(Linkedlist *l):&#160;linkedlist.c'],['../linkedlist_8h.html#afcb647a9f61711367accfb0739d044c1',1,'isEmpty(Linkedlist *l):&#160;linkedlist.c']]]
+  ['gamecreate_0',['gameCreate',['../game_8c.html#a69129938578bf1f0834e913cebaf0786',1,'gameCreate(int nbPlayer):&#160;game.c'],['../game_8h.html#a69129938578bf1f0834e913cebaf0786',1,'gameCreate(int nbPlayer):&#160;game.c']]],
+  ['gamepause_1',['gamePause',['../game_8h.html#aa5642769dce9d51ebe5be75b3dd5007e',1,'game.h']]],
+  ['gameresume_2',['gameResume',['../game_8h.html#a43a4a38dc12d37bc2867ab1ee105b23e',1,'game.h']]],
+  ['gamestart_3',['gameStart',['../game_8c.html#ab5958820c2a3ad5257a73d228f125eaa',1,'gameStart(Game *game):&#160;game.c'],['../game_8h.html#ab5958820c2a3ad5257a73d228f125eaa',1,'gameStart(Game *game):&#160;game.c']]],
+  ['gamestop_4',['gameStop',['../game_8h.html#af3dc2d180f1b05fae33e4ffef3973124',1,'game.h']]],
+  ['get_5',['get',['../linkedlist_8c.html#aa00469bd435f0b5ae644e6894b9cb096',1,'get(Linkedlist *l, int index):&#160;linkedlist.c'],['../linkedlist_8h.html#aa00469bd435f0b5ae644e6894b9cb096',1,'get(Linkedlist *l, int index):&#160;linkedlist.c']]],
+  ['getasset_6',['getAsset',['../card_8c.html#a9fb5fd69286d34a83c35565dc69a5243',1,'getAsset(const enum Card *card):&#160;card.c'],['../card_8h.html#a9fb5fd69286d34a83c35565dc69a5243',1,'getAsset(const enum Card *card):&#160;card.c']]],
+  ['getboardlen_7',['getBoardLen',['../board_8c.html#a75cfce0286a261d6229cc76a742ef735',1,'getBoardLen(Board *board):&#160;board.c'],['../board_8h.html#a75cfce0286a261d6229cc76a742ef735',1,'getBoardLen(Board *board):&#160;board.c']]],
+  ['getbykey_8',['getByKey',['../parser_8c.html#a74c8703763f4b12dc78722098fe4768a',1,'getByKey(Linkedlist *liste, char *key):&#160;parser.c'],['../parser_8h.html#a74c8703763f4b12dc78722098fe4768a',1,'getByKey(Linkedlist *liste, char *key):&#160;parser.c']]],
+  ['getcardcompose_9',['getCardCompose',['../card_8c.html#a56c6d69114d3d5875e68541740e52750',1,'getCardCompose(const enum Card *card):&#160;card.c'],['../card_8h.html#a56c6d69114d3d5875e68541740e52750',1,'getCardCompose(const enum Card *card):&#160;card.c']]],
+  ['getelem_10',['getElem',['../linkedlist_8c.html#afd695034383108ee40c85d2cf25e1d45',1,'linkedlist.c']]],
+  ['getfirst_11',['getFirst',['../linkedlist_8c.html#a5ffae0151690b64dd5e7d2651bdcd489',1,'getFirst(Linkedlist *l):&#160;linkedlist.c'],['../linkedlist_8h.html#a5ffae0151690b64dd5e7d2651bdcd489',1,'getFirst(Linkedlist *l):&#160;linkedlist.c']]],
+  ['gethomeentry_12',['getHomeEntry',['../board_8c.html#a82a54698fb8707023eb0a899f969dd5a',1,'getHomeEntry(int pId):&#160;board.c'],['../board_8h.html#a82a54698fb8707023eb0a899f969dd5a',1,'getHomeEntry(int pId):&#160;board.c']]],
+  ['gethomestart_13',['getHomeStart',['../board_8c.html#a44a7840b948482c80780207e2c1841c6',1,'getHomeStart(Board *board, int pId):&#160;board.c'],['../board_8h.html#a44a7840b948482c80780207e2c1841c6',1,'getHomeStart(Board *board, int pId):&#160;board.c']]],
+  ['getidteammember_14',['getIdTeamMember',['../board_8c.html#a195a508db400eb827a4c799bcbc76b91',1,'getIdTeamMember(Board *board, int idPlayer):&#160;board.c'],['../board_8h.html#a195a508db400eb827a4c799bcbc76b91',1,'getIdTeamMember(Board *board, int idPlayer):&#160;board.c']]],
+  ['getinhomeposition_15',['getInHomePosition',['../board_8c.html#a8b1c7657d71105c2b2206cb6f3ae73ee',1,'getInHomePosition(Board *board, int location):&#160;board.c'],['../board_8h.html#a8b1c7657d71105c2b2206cb6f3ae73ee',1,'getInHomePosition(Board *board, int location):&#160;board.c']]],
+  ['getlast_16',['getLast',['../linkedlist_8c.html#a9559ae005964e1246efd9dc7ffcce527',1,'getLast(Linkedlist *l):&#160;linkedlist.c'],['../linkedlist_8h.html#a9559ae005964e1246efd9dc7ffcce527',1,'getLast(Linkedlist *l):&#160;linkedlist.c']]],
+  ['getlen_17',['getLen',['../board_8c.html#a4d96389b5829477f59e5217cf4984217',1,'getLen(Board *board):&#160;board.c'],['../board_8h.html#a4d96389b5829477f59e5217cf4984217',1,'getLen(Board *board):&#160;board.c']]],
+  ['getnbplayer_18',['getNbPlayer',['../board_8c.html#af0d2e96e7e0ec3cfa1615035b2bb7790',1,'getNbPlayer(Board *board):&#160;board.c'],['../board_8h.html#af0d2e96e7e0ec3cfa1615035b2bb7790',1,'getNbPlayer(Board *board):&#160;board.c']]],
+  ['getplayerpawnslocation_19',['getPlayerPawnsLocation',['../board_8c.html#af7b0f196b2e4811eb4e2cefee65a5134',1,'getPlayerPawnsLocation(Board *board, int playerId):&#160;board.c'],['../board_8h.html#af7b0f196b2e4811eb4e2cefee65a5134',1,'getPlayerPawnsLocation(Board *board, int playerId):&#160;board.c']]],
+  ['getsdlcolor_20',['getSDLColor',['../_color_8c.html#ac8ab32d63f52157d17cd8a9b8d5485db',1,'getSDLColor(char *colorKey):&#160;Color.c'],['../_color_8h.html#ac8ab32d63f52157d17cd8a9b8d5485db',1,'getSDLColor(char *colorKey):&#160;Color.c']]],
+  ['getstart_21',['getStart',['../board_8c.html#a92407440e2a3ee6a1391e5ef3ab1f8e6',1,'getStart(int pId):&#160;board.c'],['../board_8h.html#a92407440e2a3ee6a1391e5ef3ab1f8e6',1,'getStart(int pId):&#160;board.c']]],
+  ['getsteptohome_22',['getStepToHome',['../board_8c.html#ac57c3505ba5cbfd2573b20ddd1c2c325',1,'getStepToHome(Board *board, int location, int pId):&#160;board.c'],['../board_8h.html#ac57c3505ba5cbfd2573b20ddd1c2c325',1,'getStepToHome(Board *board, int location, int pId):&#160;board.c']]]
 ];

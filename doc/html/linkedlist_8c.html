@@ -55,7 +55,7 @@ $(function() {
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameboarder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -79,6 +79,7 @@ $(function() {
 <div class="textblock"><code>#include &lt;malloc.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="linkedlist_8h_source.html">linkedlist.h</a>&quot;</code><br />
+<code>#include &lt;time.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Structures de données</h2></td></tr>
@@ -90,25 +91,43 @@ Structures de données</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Définitions de type</h2></td></tr>
 <tr class="memitem:a5220afa13cf5163ab0a13caef3230176"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_elem.html">Elem</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a5220afa13cf5163ab0a13caef3230176">Elem</a></td></tr>
+<tr class="memdesc:a5220afa13cf5163ab0a13caef3230176"><td class="mdescLeft">&#160;</td><td class="mdescRight">sous-structure de la liste comportent les object  <a href="linkedlist_8c.html#a5220afa13cf5163ab0a13caef3230176">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5220afa13cf5163ab0a13caef3230176"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a263dccd8d3432734b215f4b44f90515f"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_linkedlist.html">Linkedlist</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a263dccd8d3432734b215f4b44f90515f">Linkedlist</a></td></tr>
-<tr class="separator:a263dccd8d3432734b215f4b44f90515f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:afd695034383108ee40c85d2cf25e1d45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_elem.html">Elem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#afd695034383108ee40c85d2cf25e1d45">getElem</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l, int index)</td></tr>
-<tr class="separator:afd695034383108ee40c85d2cf25e1d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8beb2d56cc6457a550b46c94df0dbb47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_elem.html">Elem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a8beb2d56cc6457a550b46c94df0dbb47">elemFactory</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l, void *o)</td></tr>
-<tr class="memdesc:a8beb2d56cc6457a550b46c94df0dbb47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cree un Element de list en initialisent l'espace memoire. par defaux l'element "boucle" sur lui meme.  <a href="linkedlist_8c.html#a8beb2d56cc6457a550b46c94df0dbb47">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a8beb2d56cc6457a550b46c94df0dbb47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1777aaa1033242487c161a6f0d3272d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a1777aaa1033242487c161a6f0d3272d6">linkedListFactory</a> (int typeSize)</td></tr>
-<tr class="separator:a1777aaa1033242487c161a6f0d3272d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8feb9e4794625402d10a59f9e2a3ef5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#ad8feb9e4794625402d10a59f9e2a3ef5">size</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l)</td></tr>
-<tr class="memdesc:ad8feb9e4794625402d10a59f9e2a3ef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie la taille des element contenue.  <a href="linkedlist_8c.html#ad8feb9e4794625402d10a59f9e2a3ef5">Plus de détails...</a><br /></td></tr>
-<tr class="separator:ad8feb9e4794625402d10a59f9e2a3ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15d9e75b680fe5dfea2665ab1a805b4b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a15d9e75b680fe5dfea2665ab1a805b4b">linkedListFactory</a> (void(*funcDest)(void *e))</td></tr>
+<tr class="separator:a15d9e75b680fe5dfea2665ab1a805b4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b95822e786b0607fc7578a092c7e3a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a9b95822e786b0607fc7578a092c7e3a0">LinkedlistClone</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l)</td></tr>
+<tr class="memdesc:a9b95822e786b0607fc7578a092c7e3a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clone une <a class="el" href="struct_linkedlist.html">Linkedlist</a>.  <a href="linkedlist_8c.html#a9b95822e786b0607fc7578a092c7e3a0">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9b95822e786b0607fc7578a092c7e3a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1334a3afb8a5b299f33ec0fecbafc0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#af1334a3afb8a5b299f33ec0fecbafc0f">clone</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l)</td></tr>
+<tr class="memdesc:af1334a3afb8a5b299f33ec0fecbafc0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie une reel copie de la liste.  <a href="linkedlist_8c.html#af1334a3afb8a5b299f33ec0fecbafc0f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af1334a3afb8a5b299f33ec0fecbafc0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0714ab46e064bcdffd7922b522410f31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a0714ab46e064bcdffd7922b522410f31">destroyLinkedList</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> **l)</td></tr>
+<tr class="memdesc:a0714ab46e064bcdffd7922b522410f31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suprime la lise et libert l'espace memoire.  <a href="linkedlist_8c.html#a0714ab46e064bcdffd7922b522410f31">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0714ab46e064bcdffd7922b522410f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3effba9e2a67a34c4261a950234e3f4b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_elem.html">Elem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a3effba9e2a67a34c4261a950234e3f4b">elemFactory</a> (void *o)</td></tr>
+<tr class="memdesc:a3effba9e2a67a34c4261a950234e3f4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cree un Element de list en initialisent l'espace memoire. par defaux l'element "boucle" sur lui meme.  <a href="linkedlist_8c.html#a3effba9e2a67a34c4261a950234e3f4b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3effba9e2a67a34c4261a950234e3f4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a060bc27c96ebb711b574196dbba107e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a060bc27c96ebb711b574196dbba107e9">destroyElem</a> (<a class="el" href="struct_elem.html">Elem</a> **e, void(*destroy)(void *))</td></tr>
+<tr class="memdesc:a060bc27c96ebb711b574196dbba107e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">liber la memoir allouer a un element de la list  <a href="linkedlist_8c.html#a060bc27c96ebb711b574196dbba107e9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a060bc27c96ebb711b574196dbba107e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53b854c9c6b351137f85d421439a6233"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a53b854c9c6b351137f85d421439a6233">length</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l)</td></tr>
 <tr class="memdesc:a53b854c9c6b351137f85d421439a6233"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le nombre d'éléments de la liste l.  <a href="linkedlist_8c.html#a53b854c9c6b351137f85d421439a6233">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a53b854c9c6b351137f85d421439a6233"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd695034383108ee40c85d2cf25e1d45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_elem.html">Elem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#afd695034383108ee40c85d2cf25e1d45">getElem</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l, int index)</td></tr>
+<tr class="memdesc:afd695034383108ee40c85d2cf25e1d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie l'élément à la position spécifiée dans cette liste.  <a href="linkedlist_8c.html#afd695034383108ee40c85d2cf25e1d45">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afd695034383108ee40c85d2cf25e1d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa00469bd435f0b5ae644e6894b9cb096"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#aa00469bd435f0b5ae644e6894b9cb096">get</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l, int index)</td></tr>
+<tr class="memdesc:aa00469bd435f0b5ae644e6894b9cb096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie l'objet à la position spécifiée dans cette liste.  <a href="linkedlist_8c.html#aa00469bd435f0b5ae644e6894b9cb096">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa00469bd435f0b5ae644e6894b9cb096"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ffae0151690b64dd5e7d2651bdcd489"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a5ffae0151690b64dd5e7d2651bdcd489">getFirst</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l)</td></tr>
+<tr class="memdesc:a5ffae0151690b64dd5e7d2651bdcd489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le premiere élément dans cette liste.  <a href="linkedlist_8c.html#a5ffae0151690b64dd5e7d2651bdcd489">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5ffae0151690b64dd5e7d2651bdcd489"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9559ae005964e1246efd9dc7ffcce527"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a9559ae005964e1246efd9dc7ffcce527">getLast</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l)</td></tr>
+<tr class="memdesc:a9559ae005964e1246efd9dc7ffcce527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le dernière élément dans cette liste.  <a href="linkedlist_8c.html#a9559ae005964e1246efd9dc7ffcce527">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9559ae005964e1246efd9dc7ffcce527"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcb647a9f61711367accfb0739d044c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#afcb647a9f61711367accfb0739d044c1">isEmpty</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l)</td></tr>
 <tr class="memdesc:afcb647a9f61711367accfb0739d044c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie true si cette liste ne contient aucun élément.  <a href="linkedlist_8c.html#afcb647a9f61711367accfb0739d044c1">Plus de détails...</a><br /></td></tr>
 <tr class="separator:afcb647a9f61711367accfb0739d044c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,9 +140,6 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a135d034b3b6161bb07d912ff7adc5368"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a135d034b3b6161bb07d912ff7adc5368">addLast</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l, void *o)</td></tr>
 <tr class="memdesc:a135d034b3b6161bb07d912ff7adc5368"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute l'objet O a la fin de la liste.  <a href="linkedlist_8c.html#a135d034b3b6161bb07d912ff7adc5368">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a135d034b3b6161bb07d912ff7adc5368"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1334a3afb8a5b299f33ec0fecbafc0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#af1334a3afb8a5b299f33ec0fecbafc0f">clone</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l)</td></tr>
-<tr class="memdesc:af1334a3afb8a5b299f33ec0fecbafc0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie une reel copie de la liste.  <a href="linkedlist_8c.html#af1334a3afb8a5b299f33ec0fecbafc0f">Plus de détails...</a><br /></td></tr>
-<tr class="separator:af1334a3afb8a5b299f33ec0fecbafc0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22e2ece11220b164541395438eafd87f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a22e2ece11220b164541395438eafd87f">clear</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l)</td></tr>
 <tr class="memdesc:a22e2ece11220b164541395438eafd87f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suprime tout les objects de la liste.  <a href="linkedlist_8c.html#a22e2ece11220b164541395438eafd87f">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a22e2ece11220b164541395438eafd87f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,25 +149,14 @@ Fonctions</h2></td></tr>
 <tr class="memitem:a902a8a5358a5c1233fb7a84188c95cf7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a902a8a5358a5c1233fb7a84188c95cf7">removeFirst</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l)</td></tr>
 <tr class="memdesc:a902a8a5358a5c1233fb7a84188c95cf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suprime le premier objet de la liste.  <a href="linkedlist_8c.html#a902a8a5358a5c1233fb7a84188c95cf7">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a902a8a5358a5c1233fb7a84188c95cf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf9e95651ac39e37b814352db42a72dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#abf9e95651ac39e37b814352db42a72dc">destroy</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l)</td></tr>
-<tr class="memdesc:abf9e95651ac39e37b814352db42a72dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suprime la lise et libert l'espace memoire.  <a href="linkedlist_8c.html#abf9e95651ac39e37b814352db42a72dc">Plus de détails...</a><br /></td></tr>
-<tr class="separator:abf9e95651ac39e37b814352db42a72dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa00469bd435f0b5ae644e6894b9cb096"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#aa00469bd435f0b5ae644e6894b9cb096">get</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l, int index)</td></tr>
-<tr class="memdesc:aa00469bd435f0b5ae644e6894b9cb096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie l'élément à la position spécifiée dans cette liste.  <a href="linkedlist_8c.html#aa00469bd435f0b5ae644e6894b9cb096">Plus de détails...</a><br /></td></tr>
-<tr class="separator:aa00469bd435f0b5ae644e6894b9cb096"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ffae0151690b64dd5e7d2651bdcd489"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a5ffae0151690b64dd5e7d2651bdcd489">getFirst</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l)</td></tr>
-<tr class="memdesc:a5ffae0151690b64dd5e7d2651bdcd489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le premiere élément dans cette liste.  <a href="linkedlist_8c.html#a5ffae0151690b64dd5e7d2651bdcd489">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a5ffae0151690b64dd5e7d2651bdcd489"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9559ae005964e1246efd9dc7ffcce527"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a9559ae005964e1246efd9dc7ffcce527">getLast</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l)</td></tr>
-<tr class="memdesc:a9559ae005964e1246efd9dc7ffcce527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le dernière élément dans cette liste.  <a href="linkedlist_8c.html#a9559ae005964e1246efd9dc7ffcce527">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a9559ae005964e1246efd9dc7ffcce527"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a512c4edbb810a012a89fee8fa483074d"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a512c4edbb810a012a89fee8fa483074d">pollFirst</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l)</td></tr>
-<tr class="memdesc:a512c4edbb810a012a89fee8fa483074d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le premiere élément dans cette liste et le supprime.  <a href="linkedlist_8c.html#a512c4edbb810a012a89fee8fa483074d">Plus de détails...</a><br /></td></tr>
+<tr class="memdesc:a512c4edbb810a012a89fee8fa483074d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie le premiere élément dans la liste et le supprime.  <a href="linkedlist_8c.html#a512c4edbb810a012a89fee8fa483074d">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a512c4edbb810a012a89fee8fa483074d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ddc4cccc387759bca3067b3ae640cb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a9ddc4cccc387759bca3067b3ae640cb7">drawListe</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l, void(*draw)(void *o))</td></tr>
-<tr class="memdesc:a9ddc4cccc387759bca3067b3ae640cb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">affiche le contenu de la liste  <a href="linkedlist_8c.html#a9ddc4cccc387759bca3067b3ae640cb7">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a9ddc4cccc387759bca3067b3ae640cb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e00cf7bdb01cd151ffde60c97a5a074"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a3e00cf7bdb01cd151ffde60c97a5a074">pollRandom</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l)</td></tr>
+<tr class="memdesc:a3e00cf7bdb01cd151ffde60c97a5a074"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie un élément aléatoire dans la liste et le supprime.  <a href="linkedlist_8c.html#a3e00cf7bdb01cd151ffde60c97a5a074">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3e00cf7bdb01cd151ffde60c97a5a074"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d693c9adf0600ee81073b500359d418"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html#a5d693c9adf0600ee81073b500359d418">foreach</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *l, void(*pVoid)(void *))</td></tr>
+<tr class="memdesc:a5d693c9adf0600ee81073b500359d418"><td class="mdescLeft">&#160;</td><td class="mdescRight">parcoure de la liste  <a href="linkedlist_8c.html#a5d693c9adf0600ee81073b500359d418">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a5d693c9adf0600ee81073b500359d418"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
@@ -175,19 +180,7 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a263dccd8d3432734b215f4b44f90515f" name="a263dccd8d3432734b215f4b44f90515f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a263dccd8d3432734b215f4b44f90515f">&#9670;&nbsp;</a></span>Linkedlist</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="struct_linkedlist.html">Linkedlist</a> <a class="el" href="struct_linkedlist.html">Linkedlist</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>sous-structure de la liste comportent les object </p>
 
 </div>
 </div>
@@ -357,16 +350,53 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="abf9e95651ac39e37b814352db42a72dc" name="abf9e95651ac39e37b814352db42a72dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf9e95651ac39e37b814352db42a72dc">&#9670;&nbsp;</a></span>destroy()</h2>
+<a id="a060bc27c96ebb711b574196dbba107e9" name="a060bc27c96ebb711b574196dbba107e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a060bc27c96ebb711b574196dbba107e9">&#9670;&nbsp;</a></span>destroyElem()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void destroy </td>
+          <td class="memname">void destroyElem </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="struct_elem.html">Elem</a> **&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void(*)(void *)&#160;</td>
+          <td class="paramname"><em>destroy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>liber la memoir allouer a un element de la list </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>element a detruire </td></tr>
+    <tr><td class="paramname">destroy</td><td>fonction de destruction des objets de la liste </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0714ab46e064bcdffd7922b522410f31" name="a0714ab46e064bcdffd7922b522410f31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0714ab46e064bcdffd7922b522410f31">&#9670;&nbsp;</a></span>destroyLinkedList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void destroyLinkedList </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_linkedlist.html">Linkedlist</a> **&#160;</td>
           <td class="paramname"><em>l</em></td><td>)</td>
           <td></td>
         </tr>
@@ -383,46 +413,8 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9ddc4cccc387759bca3067b3ae640cb7" name="a9ddc4cccc387759bca3067b3ae640cb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ddc4cccc387759bca3067b3ae640cb7">&#9670;&nbsp;</a></span>drawListe()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void drawListe </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td>
-          <td class="paramname"><em>l</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void(*)(void *o)&#160;</td>
-          <td class="paramname"><em>draw</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>affiche le contenu de la liste </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">l</td><td>liste cible </td></tr>
-    <tr><td class="paramname">draw</td><td>fonction d'affichage </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Obsolète:</a></b></dt><dd>refine a utiliser forEach utiliser foreach </dd></dl>
-
-</div>
-</div>
-<a id="a8beb2d56cc6457a550b46c94df0dbb47" name="a8beb2d56cc6457a550b46c94df0dbb47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8beb2d56cc6457a550b46c94df0dbb47">&#9670;&nbsp;</a></span>elemFactory()</h2>
+<a id="a3effba9e2a67a34c4261a950234e3f4b" name="a3effba9e2a67a34c4261a950234e3f4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3effba9e2a67a34c4261a950234e3f4b">&#9670;&nbsp;</a></span>elemFactory()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -430,19 +422,9 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="struct_elem.html">Elem</a> * elemFactory </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td>
-          <td class="paramname"><em>l</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>o</em>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>o</em></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -450,7 +432,6 @@ Fonctions</h2></td></tr>
 <p>Cree un Element de list en initialisent l'espace memoire. par defaux l'element "boucle" sur lui meme. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
-    <tr><td class="paramname">l</td><td></td></tr>
     <tr><td class="paramname">o</td><td></td></tr>
   </table>
   </dd>
@@ -485,6 +466,15 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>parcoure de la liste </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td>liste de travaille </td></tr>
+    <tr><td class="paramname">pVoid</td><td>fonction utiliser par toutes les objects </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="aa00469bd435f0b5ae644e6894b9cb096" name="aa00469bd435f0b5ae644e6894b9cb096"></a>
@@ -513,7 +503,7 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Renvoie l'élément à la position spécifiée dans cette liste. </p>
+<p>Renvoie l'objet à la position spécifiée dans cette liste. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">l</td><td></td></tr>
@@ -550,6 +540,16 @@ Fonctions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Renvoie l'élément à la position spécifiée dans cette liste. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td></td></tr>
+    <tr><td class="paramname">index</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>objet ou NULL si hor liste </dd></dl>
 
 </div>
 </div>
@@ -662,8 +662,35 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1777aaa1033242487c161a6f0d3272d6" name="a1777aaa1033242487c161a6f0d3272d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1777aaa1033242487c161a6f0d3272d6">&#9670;&nbsp;</a></span>linkedListFactory()</h2>
+<a id="a9b95822e786b0607fc7578a092c7e3a0" name="a9b95822e786b0607fc7578a092c7e3a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b95822e786b0607fc7578a092c7e3a0">&#9670;&nbsp;</a></span>LinkedlistClone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_linkedlist.html">Linkedlist</a> * LinkedlistClone </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td>
+          <td class="paramname"><em>l</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clone une <a class="el" href="struct_linkedlist.html">Linkedlist</a>. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td><a class="el" href="struct_linkedlist.html">Linkedlist</a> source </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>liste cloner </dd></dl>
+
+</div>
+</div>
+<a id="a15d9e75b680fe5dfea2665ab1a805b4b" name="a15d9e75b680fe5dfea2665ab1a805b4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15d9e75b680fe5dfea2665ab1a805b4b">&#9670;&nbsp;</a></span>linkedListFactory()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -671,8 +698,8 @@ Fonctions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="struct_linkedlist.html">Linkedlist</a> * linkedListFactory </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>typeSize</em></td><td>)</td>
+          <td class="paramtype">void(*)(void *e)&#160;</td>
+          <td class="paramname"><em>funcDest</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -696,7 +723,34 @@ Fonctions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Renvoie le premiere élément dans cette liste et le supprime. </p>
+<p>Renvoie le premiere élément dans la liste et le supprime. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a3e00cf7bdb01cd151ffde60c97a5a074" name="a3e00cf7bdb01cd151ffde60c97a5a074"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e00cf7bdb01cd151ffde60c97a5a074">&#9670;&nbsp;</a></span>pollRandom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * pollRandom </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td>
+          <td class="paramname"><em>l</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie un élément aléatoire dans la liste et le supprime. </p>
 <dl class="params"><dt>Paramètres</dt><dd>
   <table class="params">
     <tr><td class="paramname">l</td><td></td></tr>
@@ -767,33 +821,6 @@ Fonctions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="ad8feb9e4794625402d10a59f9e2a3ef5" name="ad8feb9e4794625402d10a59f9e2a3ef5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8feb9e4794625402d10a59f9e2a3ef5">&#9670;&nbsp;</a></span>size()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int size </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td>
-          <td class="paramname"><em>l</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Renvoie la taille des element contenue. </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">l</td><td><a class="el" href="struct_linkedlist.html">Linkedlist</a> conserner </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Renvoie</dt><dd>int </dd></dl>
 
 </div>
 </div>

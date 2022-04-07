@@ -1528,14 +1528,14 @@
                   \else  \@tempdimc+\tabu@spreadtarget \fi
                   {}{}{}{}{}\@@}
 \def\tabu@message@negcoef #1#2{
-    \tabu@spaces\tabu@spaces\space * #1. X[\rem@play#2]:
+    \tabu@spaces\tabu@spaces\space * #1. X[\rem@pt#2]:
     \space width = \tabu@wd {#1}
         \expandafter\string\csname tabu@\the\tabu@nested.W\number#1\endcsname
-    \ifdim -\tabu@play#2\tabucolX<\tabu@target
-    < \number-\rem@play#2 X
-    = \the\dimexpr -\tabu@play#2\tabucolX \relax
+    \ifdim -\tabu@pt#2\tabucolX<\tabu@target
+    < \number-\rem@pt#2 X
+    = \the\dimexpr -\tabu@pt#2\tabucolX \relax
     \else
-    <= \the\tabu@target\space < \number-\rem@play#2 X\fi}
+    <= \the\tabu@target\space < \number-\rem@pt#2 X\fi}
 \def\tabu@message@reached{\tabu@header
      ******* Reached Target:
             hfuzz = \tabu@hfuzz\on@line\space *******}
@@ -1564,8 +1564,8 @@
     \fi
 }% \tabu@message@verticalsp
 \edef\tabu@spaces{\@spaces}
-\def\tabu@strippt{\expandafter\tabu@play\the}
-{\@makeother\P \@makeother\T\lowercase{\gdef\tabu@play #1PT{#1}}}
+\def\tabu@strippt{\expandafter\tabu@pt\the}
+{\@makeother\P \@makeother\T\lowercase{\gdef\tabu@pt #1PT{#1}}}
 \def\tabu@msgalign{\expandafter\tabu@msg@align\the\dimexpr}
 \def\tabu@msgalign@PT{\expandafter\tabu@msg@align\romannumeral-`\0\tabu@strippt}
 \def\do #1{%

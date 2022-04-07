@@ -1,6 +1,6 @@
 /**
- * \file main.c
- * \brief gestion de l'application
+ * \file mainServer.c
+ * \brief gestion de l'application coter server
  * \author LE GLEAU yoann
  * \date 21/03/2022
  *

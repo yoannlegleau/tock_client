@@ -1,15 +1,28 @@
-//
-// Created by adzerake on 16/02/2022.
-//
+/**
+ * \file gameRule.h
+ * \brief Enumeration des variantes de règles de jeu
+ * \author LE GLEAU Yoann
+ * \date 16/02/2022
+ * \version 1
+ */
+
 
 #ifndef TOCK_CLIENT_GAMERULE_H
 #define TOCK_CLIENT_GAMERULE_H
 
-/**
- * \brief ensembles des regles et varientes lier a une catre
- */
-enum GameRule{minusFiveForOpponent};
+/* ---------- Structure ---------- */
 
+/**
+ * \brief Ensembles des règles et variantes lier a une cartes
+ */
+enum GameRule{FiveForOpponent};
+
+/* ---------- Constructor ---------- */
+
+/**
+ * \brief Liber l'espace memoire allouer
+ * \param gameRule
+ */
 void destroyGameRuleVoid(void * gameRule);
 
 void destroyGameRule(enum GameRule ** gameRule);

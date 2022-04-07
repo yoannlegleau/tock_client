@@ -1,0 +1,91 @@
+\hypertarget{board_8h_source}{}\doxysection{board.\+h}
+\label{board_8h_source}\index{C:/Users/adzerake/CLionProjects/tock-\/client/src/board.h@{C:/Users/adzerake/CLionProjects/tock-\/client/src/board.h}}
+\mbox{\hyperlink{board_8h}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef TOCK\_CLIENT\_BOARD\_H}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define TOCK\_CLIENT\_BOARD\_H}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Includes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <SDL.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{linkedlist_8h}{linkedlist.h}}"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{card_8h}{card.h}}"{}}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Structure -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{24 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_board}{Board}} \mbox{\hyperlink{struct_board}{Board}};}
+\DoxyCodeLine{25 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_board}{Board}} \{}
+\DoxyCodeLine{32     \textcolor{keywordtype}{int} * \mbox{\hyperlink{struct_board_aa2ce0e10c66abea89c94f2f0a22b59ad}{board}};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{35     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_board_afcb1bcbe719ae3b8f83535efd646dcb6}{nbPlayer}};}
+\DoxyCodeLine{36 \};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Constructor -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{46 \mbox{\hyperlink{struct_board}{Board}} * \mbox{\hyperlink{board_8h_a5dbbc578002ad9e11998e92ce29588e8}{boardFactory}}(\textcolor{keywordtype}{int} nbPlayer);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{53 \mbox{\hyperlink{struct_board}{Board}} * \mbox{\hyperlink{board_8h_a275f1a16eaf4238fe071326efa2f949d}{boardClone}}(\mbox{\hyperlink{struct_board}{Board}} * board);}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{59 \textcolor{keywordtype}{void} \mbox{\hyperlink{board_8h_a482bbee01164d1f5821bad0abc6d7fbd}{initBoard}}(\mbox{\hyperlink{struct_board}{Board}} * board);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{64 \textcolor{keywordtype}{void} \mbox{\hyperlink{board_8h_a9b124246e6875d0d8551a8c3acfc394d}{destroyBoard}}(\mbox{\hyperlink{struct_board}{Board}} ** board);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Getters -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{74 \textcolor{keywordtype}{int} \mbox{\hyperlink{board_8h_af0d2e96e7e0ec3cfa1615035b2bb7790}{getNbPlayer}}(\mbox{\hyperlink{struct_board}{Board}} * board);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{81 \textcolor{keywordtype}{int} \mbox{\hyperlink{board_8h_a4d96389b5829477f59e5217cf4984217}{getLen}}(\mbox{\hyperlink{struct_board}{Board}} * board);}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{88 \textcolor{keywordtype}{int} \mbox{\hyperlink{board_8h_a75cfce0286a261d6229cc76a742ef735}{getBoardLen}}(\mbox{\hyperlink{struct_board}{Board}} * board);}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{96 \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * \mbox{\hyperlink{board_8h_af7b0f196b2e4811eb4e2cefee65a5134}{getPlayerPawnsLocation}}(\mbox{\hyperlink{struct_board}{Board}} * board, \textcolor{keywordtype}{int} playerId );}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{103 \textcolor{keywordtype}{int} \mbox{\hyperlink{board_8h_a92407440e2a3ee6a1391e5ef3ab1f8e6}{getStart}}(\textcolor{keywordtype}{int} pId);}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{110 \textcolor{keywordtype}{int} \mbox{\hyperlink{board_8h_a82a54698fb8707023eb0a899f969dd5a}{getHomeEntry}}(\textcolor{keywordtype}{int} pId);}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{117 \textcolor{keywordtype}{int} \mbox{\hyperlink{board_8h_a44a7840b948482c80780207e2c1841c6}{getHomeStart}}(\mbox{\hyperlink{struct_board}{Board}} * board, \textcolor{keywordtype}{int} pId);}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{124 \textcolor{keywordtype}{int} \mbox{\hyperlink{board_8h_a8b1c7657d71105c2b2206cb6f3ae73ee}{getInHomePosition}}(\mbox{\hyperlink{struct_board}{Board}} * board, \textcolor{keywordtype}{int} location);}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{133 \textcolor{keywordtype}{int} \mbox{\hyperlink{board_8h_ac57c3505ba5cbfd2573b20ddd1c2c325}{getStepToHome}}(\mbox{\hyperlink{struct_board}{Board}} * board, \textcolor{keywordtype}{int} location, \textcolor{keywordtype}{int} pId);}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{141 \textcolor{keywordtype}{int} \mbox{\hyperlink{board_8h_a195a508db400eb827a4c799bcbc76b91}{getIdTeamMember}}(\mbox{\hyperlink{struct_board}{Board}} * board,\textcolor{keywordtype}{int} idPlayer);}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Tests -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{152 \textcolor{keywordtype}{bool} \mbox{\hyperlink{board_8h_ae0f457c466ffad4c89212459b0992896}{isOnBoard}}(\mbox{\hyperlink{struct_board}{Board}} * board, \textcolor{keywordtype}{int} location);}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{161 \textcolor{keywordtype}{bool} \mbox{\hyperlink{board_8h_a4365bf407115db13e16cd10110aa15cc}{pawnOnPath}}(\mbox{\hyperlink{struct_board}{Board}} * board, \textcolor{keywordtype}{int} location, \textcolor{keywordtype}{int} step);}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{169 \textcolor{keywordtype}{bool} \mbox{\hyperlink{board_8h_abbc6fd18e86814b18e6a0b97fd5f37c4}{isWin}}(\mbox{\hyperlink{struct_board}{Board}} * board, \textcolor{keywordtype}{int} pId);}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Utilities -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{181 \textcolor{keywordtype}{bool} \mbox{\hyperlink{board_8h_a3738ccd604fe9fe9d189a0e4fd6b143c}{forward}}(\mbox{\hyperlink{struct_board}{Board}} * board, \textcolor{keywordtype}{int} location, \textcolor{keywordtype}{int} step);}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{190 \textcolor{keywordtype}{bool} \mbox{\hyperlink{board_8h_a160927aa21e403f6743f4cacb5321a87}{backward}}(\mbox{\hyperlink{struct_board}{Board}} * board, \textcolor{keywordtype}{int} location, \textcolor{keywordtype}{int} step);}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{198 \textcolor{keywordtype}{void} \mbox{\hyperlink{board_8h_a232d733f919605b39318b1ee3ec8fce1}{move}}(\mbox{\hyperlink{struct_board}{Board}} * board, \textcolor{keywordtype}{int} from, \textcolor{keywordtype}{int} to);}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{206 \textcolor{keywordtype}{bool} \mbox{\hyperlink{board_8h_a6b8349be43c85bc81c554bcc0fb884a2}{outPawn}}(\mbox{\hyperlink{struct_board}{Board}} * board, \textcolor{keywordtype}{int} pId);}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{214 \textcolor{keywordtype}{int} \mbox{\hyperlink{board_8h_a3f1b1f6b63108eb054789c97ce1d3c00}{heuristic}}(\mbox{\hyperlink{struct_board}{Board}} * board,\textcolor{keywordtype}{int} IdPlayer);}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Displays -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{223 \textcolor{keywordtype}{void} \mbox{\hyperlink{board_8h_a037f22059b7c568a31da880e27d41e43}{drawBoard}}(\mbox{\hyperlink{struct_board}{Board}} * board);}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{229 \textcolor{keywordtype}{void} \mbox{\hyperlink{board_8h_a0274f3760b503a4569ba0ddf29a6c85c}{highlightLocation}}(\textcolor{keywordtype}{int} location);}
+\DoxyCodeLine{230 }
+\DoxyCodeLine{231 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//TOCK\_CLIENT\_BOARD\_H}}
+
+\end{DoxyCode}

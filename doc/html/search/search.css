@@ -3,7 +3,7 @@
 #MSearchBox {
     white-space : nowrap;
     background: white;
-    boarder-radius: 0.65em;
+    border-radius: 0.65em;
     box-shadow: inset 0.5px 0.5px 3px 0px #555;
     z-index: 102;
 }
@@ -30,12 +30,12 @@
     margin: 0 0.15em;
     padding: 0;
     line-height: 1em;
-    boarder:none;
+    border:none;
     color: #909090;
     outline: none;
     font-family: Arial, Verdana, sans-serif;
-    -webkit-boarder-radius: 0px;
-    boarder-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
     background: none;
 }
 
@@ -57,7 +57,7 @@
     display: none;
     font-size: inherit;
     background : none;
-    boarder: none;
+    border: none;
     margin: 0;
     padding: 0;
     outline: none;
@@ -89,16 +89,16 @@
     display: none;
     position: absolute;
     left: 0; top: 0;
-    boarder: 1px solid #90A5CE;
+    border: 1px solid #90A5CE;
     background-color: #F9FAFC;
     z-index: 10001;
     padding-top: 4px;
     padding-bottom: 4px;
-    -moz-boarder-radius: 4px;
-    -webkit-boarder-top-left-radius: 4px;
-    -webkit-boarder-top-right-radius: 4px;
-    -webkit-boarder-bottom-left-radius: 4px;
-    -webkit-boarder-bottom-right-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    -webkit-border-bottom-right-radius: 4px;
     -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
 }
 
@@ -106,7 +106,7 @@
     font: 8pt Arial, Verdana, sans-serif;
     padding-left:  2px;
     padding-right: 12px;
-    boarder: 0px;
+    border: 0px;
 }
 
 span.SelectionMark {
@@ -152,7 +152,7 @@ iframe#MSearchResults {
     display: none;
     position: absolute;
     left: 0; top: 0;
-    boarder: 1px solid #000;
+    border: 1px solid #000;
     background-color: #EEF1F7;
     z-index:10000;
 }

@@ -37,7 +37,7 @@ bool playSmart(Player *p, Board * board) {
     Linkedlist * pownsLocations = getPlayerPawnsLocation(board, idPlayer);
     Board *boardCopy;
     bool played = false;
-    printf("\tnbPown:%i nbCard:%i\n",length(pownsLocations),length(p->cards));
+    //printf("\tnbPown:%i nbCard:%i\n",length(pownsLocations),length(p->cards));
 
     for (int i = length(pownsLocations) ; i >= 0 ; i--) {
         if (get(pownsLocations, i) != NULL)
@@ -60,7 +60,7 @@ bool playSmart(Player *p, Board * board) {
                     if (compplayed) {
                         h = heuristic(boardCopy, idPlayer);
                         //TODO ferifier si onOUt ne casse pas le choi des autres cartes de la main (7.8.9)(les cartes normal)
-                        printf("\t\th:%i location:%i carte:%s (%s)\n", h, pownLocation, cardToString((enum Card*)get(p->cards, j)), cardToString(get(compose, k)));
+                        //printf("\t\th:%i location:%i carte:%s (%s)\n", h, pownLocation, cardToString((enum Card*)get(p->cards, j)), cardToString(get(compose, k)));
                         if (h > compMaxh) {
                             compMaxh = h;
                             compMaxLocation = pownLocation;
@@ -69,7 +69,7 @@ bool playSmart(Player *p, Board * board) {
                         }
                     }
                 }
-                printf("\th:%i location:%i carte:%s (%s)\n",compMaxh, pownLocation, cardToString((enum Card*)get(p->cards, j)), cardToString(compmaxCard));
+                //printf("\th:%i location:%i carte:%s (%s)\n",compMaxh, pownLocation, cardToString((enum Card*)get(p->cards, j)), cardToString(compmaxCard));
                 if (compMaxh > maxh) {
                     maxh = compMaxh;
                     maxLocation = compMaxLocation;
@@ -81,9 +81,9 @@ bool playSmart(Player *p, Board * board) {
                 played = playCard(idPlayer, boardCopy, get(p->cards, j), pownLocation);
                 if (played) {
                     h = heuristic(boardCopy, idPlayer);
-                    printf("\th:%i location:%i carte:", h, pownLocation);
+                    //printf("\th:%i location:%i carte:", h, pownLocation);
 
-                    drawCard(get(p->cards, j));
+                    //drawCard(get(p->cards, j));
                     if (h > maxh) {
                         maxh = h;
                         maxLocation = pownLocation;
@@ -96,14 +96,14 @@ bool playSmart(Player *p, Board * board) {
         }
     }
     if (h == minint && !isEmpty(p->cards)){
-        printf("player %i a jeter ",p->idPlayer);
-        drawCard(getFirst(p->cards));
+        //printf("player %i a jeter ",p->idPlayer);
+        //drawCard(getFirst(p->cards));
         pollFirst(p->cards);
         played = false;
     } else {
         playCard(idPlayer, board, maxCard, maxLocation);
-        printf("jouer h:%i location:%i carte:",maxh,maxLocation);
-        drawCard(get(p->cards, cardPlayIndex));
+        //printf("jouer h:%i location:%i carte:",maxh,maxLocation);
+        //drawCard(get(p->cards, cardPlayIndex));
         removeElem(p->cards, cardPlayIndex);
         played = true;
     }

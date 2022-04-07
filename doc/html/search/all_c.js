@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['pawn_0',['Pawn',['../struct_pawn.html',1,'Pawn'],['../game_8c.html#a41376036826b0217a186f072edddc5d8',1,'Pawn():&#160;game.c']]],
-  ['pawnonpath_1',['pawnOnPath',['../board_8c.html#aacf217e326af10bed20595d6d02c8322',1,'board.c']]],
-  ['playcard_2',['playCard',['../board_8c.html#a6256228950cd2f9e808f0f7b3ea09e6d',1,'playCard(enum Card *card, int location):&#160;board.c'],['../main_s_d_l_8h.html#a6256228950cd2f9e808f0f7b3ea09e6d',1,'playCard(enum Card *card, int location):&#160;board.c']]],
-  ['playonce_3',['playOnce',['../game_8c.html#a044c42150c2fa2a9c15d058ae610a328',1,'game.c']]],
-  ['pollfirst_4',['pollFirst',['../linkedlist_8c.html#a512c4edbb810a012a89fee8fa483074d',1,'pollFirst(Linkedlist *l):&#160;linkedlist.c'],['../linkedlist_8h.html#a512c4edbb810a012a89fee8fa483074d',1,'pollFirst(Linkedlist *l):&#160;linkedlist.c']]]
+  ['nbplayer_0',['nbPlayer',['../struct_board.html#afcb1bcbe719ae3b8f83535efd646dcb6',1,'Board']]],
+  ['next_1',['next',['../struct_elem.html#a2f6c7da605efbc5686c5951fe2baf8cb',1,'Elem']]],
+  ['nine_2',['nine',['../card_8h.html#a98a2b239923441ea943de74af3208aa3a747df047c68bef3d0d7ff65578ee5848',1,'card.h']]]
 ];

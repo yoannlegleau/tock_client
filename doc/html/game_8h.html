@@ -55,7 +55,7 @@ $(function() {
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameboarder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -67,6 +67,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#typedef-members">Définitions de type</a> &#124;
 <a href="#func-members">Fonctions</a>  </div>
   <div class="headertitle"><div class="title">Référence du fichier game.h</div></div>
 </div><!--header-->
@@ -74,17 +76,35 @@ $(function() {
 
 <p>gestionaire de partie  
 <a href="#details">Plus de détails...</a></p>
-
+<div class="textblock"><code>#include &quot;<a class="el" href="board_8h_source.html">board.h</a>&quot;</code><br />
+</div>
 <p><a href="game_8h_source.html">Aller au code source de ce fichier.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_game.html">Game</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:a69b5df78d315f81ed77df30fdbfb7002"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_game.html">Game</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a69b5df78d315f81ed77df30fdbfb7002">Game</a></td></tr>
+<tr class="memdesc:a69b5df78d315f81ed77df30fdbfb7002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentent une partie de jeu.  <a href="game_8h.html#a69b5df78d315f81ed77df30fdbfb7002">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a69b5df78d315f81ed77df30fdbfb7002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a8608f514fe7507c9b45f1f7e945be7f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a8608f514fe7507c9b45f1f7e945be7f1">gameCreate</a> (SDL_Window *<a class="el" href="main_s_d_l_8h.html#aaa8e409e04dcf575ef63fd5fb3db06f9">window</a>)</td></tr>
-<tr class="memdesc:a8608f514fe7507c9b45f1f7e945be7f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialise la liste  <a href="game_8h.html#a8608f514fe7507c9b45f1f7e945be7f1">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a8608f514fe7507c9b45f1f7e945be7f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ccf13a9cc0f2c05b31227c77fb9cd4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a5ccf13a9cc0f2c05b31227c77fb9cd4e">gameStart</a> ()</td></tr>
-<tr class="memdesc:a5ccf13a9cc0f2c05b31227c77fb9cd4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">lancer le deroulement du jeux  <a href="game_8h.html#a5ccf13a9cc0f2c05b31227c77fb9cd4e">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a5ccf13a9cc0f2c05b31227c77fb9cd4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69129938578bf1f0834e913cebaf0786"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_game.html">Game</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a69129938578bf1f0834e913cebaf0786">gameCreate</a> (int nbPlayer)</td></tr>
+<tr class="memdesc:a69129938578bf1f0834e913cebaf0786"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialise la liste  <a href="game_8h.html#a69129938578bf1f0834e913cebaf0786">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a69129938578bf1f0834e913cebaf0786"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab90e474b77908d1939ef7f592812785f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#ab90e474b77908d1939ef7f592812785f">addPlayer</a> (<a class="el" href="struct_game.html">Game</a> *game, int nbPlayer)</td></tr>
+<tr class="memdesc:ab90e474b77908d1939ef7f592812785f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ajoute des joueur a la partie et complette avec des bots  <a href="game_8h.html#ab90e474b77908d1939ef7f592812785f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab90e474b77908d1939ef7f592812785f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3f5f3e86f72c33e08d0d56f35d6b2a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#ae3f5f3e86f72c33e08d0d56f35d6b2a7">destroyGame</a> (<a class="el" href="struct_game.html">Game</a> **game)</td></tr>
+<tr class="memdesc:ae3f5f3e86f72c33e08d0d56f35d6b2a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">libere toutes les variable  <a href="game_8h.html#ae3f5f3e86f72c33e08d0d56f35d6b2a7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae3f5f3e86f72c33e08d0d56f35d6b2a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5958820c2a3ad5257a73d228f125eaa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#ab5958820c2a3ad5257a73d228f125eaa">gameStart</a> (<a class="el" href="struct_game.html">Game</a> *game)</td></tr>
+<tr class="memdesc:ab5958820c2a3ad5257a73d228f125eaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">lancer le deroulement du jeux  <a href="game_8h.html#ab5958820c2a3ad5257a73d228f125eaa">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab5958820c2a3ad5257a73d228f125eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43a4a38dc12d37bc2867ab1ee105b23e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a43a4a38dc12d37bc2867ab1ee105b23e">gameResume</a> ()</td></tr>
 <tr class="memdesc:a43a4a38dc12d37bc2867ab1ee105b23e"><td class="mdescLeft">&#160;</td><td class="mdescRight">reprande le jeu apres une pause  <a href="game_8h.html#a43a4a38dc12d37bc2867ab1ee105b23e">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a43a4a38dc12d37bc2867ab1ee105b23e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -94,71 +114,107 @@ Fonctions</h2></td></tr>
 <tr class="memitem:af3dc2d180f1b05fae33e4ffef3973124"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#af3dc2d180f1b05fae33e4ffef3973124">gameStop</a> ()</td></tr>
 <tr class="memdesc:af3dc2d180f1b05fae33e4ffef3973124"><td class="mdescLeft">&#160;</td><td class="mdescRight">arreter le jeux (posible start pour une nouvelle partie)  <a href="game_8h.html#af3dc2d180f1b05fae33e4ffef3973124">Plus de détails...</a><br /></td></tr>
 <tr class="separator:af3dc2d180f1b05fae33e4ffef3973124"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a046399e2d517fd587a23bcd0b0e23ab9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html#a046399e2d517fd587a23bcd0b0e23ab9">gameDestroy</a> ()</td></tr>
-<tr class="memdesc:a046399e2d517fd587a23bcd0b0e23ab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">libere toutes les variable  <a href="game_8h.html#a046399e2d517fd587a23bcd0b0e23ab9">Plus de détails...</a><br /></td></tr>
-<tr class="separator:a046399e2d517fd587a23bcd0b0e23ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p >gestionaire de partie </p>
-<dl class="section author"><dt>Auteur</dt><dd>SINGLANDE Thomas </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>20/01/2022 </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.1</dd></dl>
 <dl class="section author"><dt>Auteur</dt><dd>SINGLANDE Thomas </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>20/01/2022 </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1 <div class="image">
 <img src="assets\img\appState.png" alt=""/>
 </div>
  </dd></dl>
-</div><h2 class="groupheader">Documentation des fonctions</h2>
-<a id="a8608f514fe7507c9b45f1f7e945be7f1" name="a8608f514fe7507c9b45f1f7e945be7f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8608f514fe7507c9b45f1f7e945be7f1">&#9670;&nbsp;</a></span>gameCreate()</h2>
+</div><h2 class="groupheader">Documentation des définitions de type</h2>
+<a id="a69b5df78d315f81ed77df30fdbfb7002" name="a69b5df78d315f81ed77df30fdbfb7002"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69b5df78d315f81ed77df30fdbfb7002">&#9670;&nbsp;</a></span>Game</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void gameCreate </td>
-          <td>(</td>
-          <td class="paramtype">SDL_Window *&#160;</td>
-          <td class="paramname"><em>window</em></td><td>)</td>
-          <td></td>
+          <td class="memname">typedef struct <a class="el" href="struct_game.html">Game</a> <a class="el" href="struct_game.html">Game</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>initialise la liste </p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">window</td><td>fenetre d'affichage</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>initialise la liste</p>
-<dl class="params"><dt>Paramètres</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">window</td><td>fenêtre principal </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Structure représentent une partie de jeu. </p>
 
 </div>
 </div>
-<a id="a046399e2d517fd587a23bcd0b0e23ab9" name="a046399e2d517fd587a23bcd0b0e23ab9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a046399e2d517fd587a23bcd0b0e23ab9">&#9670;&nbsp;</a></span>gameDestroy()</h2>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="ab90e474b77908d1939ef7f592812785f" name="ab90e474b77908d1939ef7f592812785f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab90e474b77908d1939ef7f592812785f">&#9670;&nbsp;</a></span>addPlayer()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void gameDestroy </td>
+          <td class="memname">void addPlayer </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbPlayer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ajoute des joueur a la partie et complette avec des bots </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game</td><td></td></tr>
+    <tr><td class="paramname">nbPlayer</td><td>nombre de vrais joueurs </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae3f5f3e86f72c33e08d0d56f35d6b2a7" name="ae3f5f3e86f72c33e08d0d56f35d6b2a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3f5f3e86f72c33e08d0d56f35d6b2a7">&#9670;&nbsp;</a></span>destroyGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void destroyGame </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_game.html">Game</a> **&#160;</td>
+          <td class="paramname"><em>game</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>libere toutes les variable </p>
+
+</div>
+</div>
+<a id="a69129938578bf1f0834e913cebaf0786" name="a69129938578bf1f0834e913cebaf0786"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69129938578bf1f0834e913cebaf0786">&#9670;&nbsp;</a></span>gameCreate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_game.html">Game</a> * gameCreate </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbPlayer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>initialise la liste </p>
 
 </div>
 </div>
@@ -200,22 +256,30 @@ Fonctions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5ccf13a9cc0f2c05b31227c77fb9cd4e" name="a5ccf13a9cc0f2c05b31227c77fb9cd4e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ccf13a9cc0f2c05b31227c77fb9cd4e">&#9670;&nbsp;</a></span>gameStart()</h2>
+<a id="ab5958820c2a3ad5257a73d228f125eaa" name="ab5958820c2a3ad5257a73d228f125eaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5958820c2a3ad5257a73d228f125eaa">&#9670;&nbsp;</a></span>gameStart()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void gameStart </td>
+          <td class="memname">int gameStart </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_game.html">Game</a> *&#160;</td>
+          <td class="paramname"><em>game</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>lancer le deroulement du jeux </p>
+<p >lancer le deroulement du jeux</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>fenêtre principal </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

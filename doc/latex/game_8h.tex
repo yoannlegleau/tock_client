@@ -5,21 +5,34 @@
 gestionaire de partie  
 
 
+{\ttfamily \#include \char`\"{}board.\+h\char`\"{}}\newline
+\doxysubsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_game}{Game}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_game}{Game}} \mbox{\hyperlink{game_8h_a69b5df78d315f81ed77df30fdbfb7002}{Game}}
+\begin{DoxyCompactList}\small\item\em Structure représentent une partie de jeu. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{game_8h_a8608f514fe7507c9b45f1f7e945be7f1}{game\+Create}} (SDL\+\_\+\+Window $\ast$\mbox{\hyperlink{main_s_d_l_8h_aaa8e409e04dcf575ef63fd5fb3db06f9}{window}})
+\mbox{\hyperlink{struct_game}{Game}} $\ast$ \mbox{\hyperlink{game_8h_a69129938578bf1f0834e913cebaf0786}{game\+Create}} (int nb\+Player)
 \begin{DoxyCompactList}\small\item\em initialise la liste \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{game_8h_a5ccf13a9cc0f2c05b31227c77fb9cd4e}{game\+Start}} ()
+void \mbox{\hyperlink{game_8h_ab90e474b77908d1939ef7f592812785f}{add\+Player}} (\mbox{\hyperlink{struct_game}{Game}} $\ast$game, int nb\+Player)
+\begin{DoxyCompactList}\small\item\em ajoute des joueur a la partie et complette avec des bots \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8h_ae3f5f3e86f72c33e08d0d56f35d6b2a7}{destroy\+Game}} (\mbox{\hyperlink{struct_game}{Game}} $\ast$$\ast$game)
+\begin{DoxyCompactList}\small\item\em libere toutes les variable \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8h_ab5958820c2a3ad5257a73d228f125eaa}{game\+Start}} (\mbox{\hyperlink{struct_game}{Game}} $\ast$game)
 \begin{DoxyCompactList}\small\item\em lancer le deroulement du jeux \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{game_8h_a43a4a38dc12d37bc2867ab1ee105b23e}{game\+Resume}} ()
 \begin{DoxyCompactList}\small\item\em reprande le jeu apres une pause \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{game_8h_aa5642769dce9d51ebe5be75b3dd5007e}{game\+Pause}} ()
 \begin{DoxyCompactList}\small\item\em metre en pose le jeux \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{game_8h_af3dc2d180f1b05fae33e4ffef3973124}{game\+Stop}} ()
-\begin{DoxyCompactList}\small\item\em arreter le jeux (posible start pour une nouvelle partie) \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{game_8h_a046399e2d517fd587a23bcd0b0e23ab9}{game\+Destroy}} ()
-\begin{DoxyCompactList}\small\item\em libere toutes les variable \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em arreter le jeux (posible start pour une nouvelle partie) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
@@ -32,51 +45,60 @@ SINGLANDE Thomas
 20/01/2022 
 \end{DoxyDate}
 \begin{DoxyVersion}{Version}
-1.\+1
-\end{DoxyVersion}
-\begin{DoxyAuthor}{Auteur}
-SINGLANDE Thomas 
-\end{DoxyAuthor}
-\begin{DoxyDate}{Date}
-20/01/2022 
-\end{DoxyDate}
-\begin{DoxyVersion}{Version}
 1  
 \end{DoxyVersion}
 
 
+\doxysubsection{Documentation des définitions de type}
+\mbox{\Hypertarget{game_8h_a69b5df78d315f81ed77df30fdbfb7002}\label{game_8h_a69b5df78d315f81ed77df30fdbfb7002}} 
+\index{game.h@{game.h}!Game@{Game}}
+\index{Game@{Game}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{Game}{Game}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_game}{Game}} \mbox{\hyperlink{struct_game}{Game}}}
+
+
+
+Structure représentent une partie de jeu. 
+
+
+
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{game_8h_a8608f514fe7507c9b45f1f7e945be7f1}\label{game_8h_a8608f514fe7507c9b45f1f7e945be7f1}} 
-\index{game.h@{game.h}!gameCreate@{gameCreate}}
-\index{gameCreate@{gameCreate}!game.h@{game.h}}
-\doxysubsubsection{\texorpdfstring{gameCreate()}{gameCreate()}}
-{\footnotesize\ttfamily void game\+Create (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Window $\ast$}]{window }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{game_8h_ab90e474b77908d1939ef7f592812785f}\label{game_8h_ab90e474b77908d1939ef7f592812785f}} 
+\index{game.h@{game.h}!addPlayer@{addPlayer}}
+\index{addPlayer@{addPlayer}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{addPlayer()}{addPlayer()}}
+{\footnotesize\ttfamily void add\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game}{Game}} $\ast$}]{game,  }\item[{int}]{nb\+Player }\end{DoxyParamCaption})}
 
 
 
-initialise la liste 
-
-
-\begin{DoxyParams}{Paramètres}
-{\em window} & fenetre d\textquotesingle{}affichage\\
-\hline
-\end{DoxyParams}
-initialise la liste
+ajoute des joueur a la partie et complette avec des bots 
 
 
 \begin{DoxyParams}{Paramètres}
-{\em window} & fenêtre principal \\
+{\em game} & \\
+\hline
+{\em nb\+Player} & nombre de vrais joueurs \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{game_8h_a046399e2d517fd587a23bcd0b0e23ab9}\label{game_8h_a046399e2d517fd587a23bcd0b0e23ab9}} 
-\index{game.h@{game.h}!gameDestroy@{gameDestroy}}
-\index{gameDestroy@{gameDestroy}!game.h@{game.h}}
-\doxysubsubsection{\texorpdfstring{gameDestroy()}{gameDestroy()}}
-{\footnotesize\ttfamily void game\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{game_8h_ae3f5f3e86f72c33e08d0d56f35d6b2a7}\label{game_8h_ae3f5f3e86f72c33e08d0d56f35d6b2a7}} 
+\index{game.h@{game.h}!destroyGame@{destroyGame}}
+\index{destroyGame@{destroyGame}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{destroyGame()}{destroyGame()}}
+{\footnotesize\ttfamily void destroy\+Game (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game}{Game}} $\ast$$\ast$}]{game }\end{DoxyParamCaption})}
 
 
 
 libere toutes les variable 
+
+\mbox{\Hypertarget{game_8h_a69129938578bf1f0834e913cebaf0786}\label{game_8h_a69129938578bf1f0834e913cebaf0786}} 
+\index{game.h@{game.h}!gameCreate@{gameCreate}}
+\index{gameCreate@{gameCreate}!game.h@{game.h}}
+\doxysubsubsection{\texorpdfstring{gameCreate()}{gameCreate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_game}{Game}} $\ast$ game\+Create (\begin{DoxyParamCaption}\item[{int}]{nb\+Player }\end{DoxyParamCaption})}
+
+
+
+initialise la liste 
 
 \mbox{\Hypertarget{game_8h_aa5642769dce9d51ebe5be75b3dd5007e}\label{game_8h_aa5642769dce9d51ebe5be75b3dd5007e}} 
 \index{game.h@{game.h}!gamePause@{gamePause}}
@@ -98,16 +120,23 @@ metre en pose le jeux
 
 reprande le jeu apres une pause 
 
-\mbox{\Hypertarget{game_8h_a5ccf13a9cc0f2c05b31227c77fb9cd4e}\label{game_8h_a5ccf13a9cc0f2c05b31227c77fb9cd4e}} 
+\mbox{\Hypertarget{game_8h_ab5958820c2a3ad5257a73d228f125eaa}\label{game_8h_ab5958820c2a3ad5257a73d228f125eaa}} 
 \index{game.h@{game.h}!gameStart@{gameStart}}
 \index{gameStart@{gameStart}!game.h@{game.h}}
 \doxysubsubsection{\texorpdfstring{gameStart()}{gameStart()}}
-{\footnotesize\ttfamily void game\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int game\+Start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game}{Game}} $\ast$}]{game }\end{DoxyParamCaption})}
 
 
 
 lancer le deroulement du jeux 
 
+lancer le deroulement du jeux
+
+
+\begin{DoxyParams}{Paramètres}
+{\em window} & fenêtre principal \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{game_8h_af3dc2d180f1b05fae33e4ffef3973124}\label{game_8h_af3dc2d180f1b05fae33e4ffef3973124}} 
 \index{game.h@{game.h}!gameStop@{gameStop}}
 \index{gameStop@{gameStop}!game.h@{game.h}}

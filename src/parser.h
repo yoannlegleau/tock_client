@@ -1,6 +1,10 @@
-//
-// Created by adzerake on 23/03/2022.
-//
+/**
+ * \file parser.h
+ * \brief parser de ficher de configuration
+ * \author LE GLEAU Yoann
+ * \date 23/03/2022
+ * \version 1
+ */
 
 #ifndef TOCK_CLIENT_PARSER_H
 #define TOCK_CLIENT_PARSER_H

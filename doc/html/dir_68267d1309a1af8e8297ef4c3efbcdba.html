@@ -55,7 +55,7 @@ $(function() {
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameboarder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -73,18 +73,25 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Fichiers</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8c.html">board.c</a></td></tr>
+<tr class="memdesc:board_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestion du plateau de jeu et des pions. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="board_8h.html">board.h</a> <a href="board_8h_source.html">[code]</a></td></tr>
+<tr class="memdesc:board_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestion du plateau de jeu et des pions. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="card_8c.html">card.c</a></td></tr>
-<tr class="memdesc:card_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">gestion des cartes <br /></td></tr>
+<tr class="memdesc:card_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestion des cartes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="card_8h.html">card.h</a> <a href="card_8h_source.html">[code]</a></td></tr>
-<tr class="memdesc:card_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">gestion des cartes <br /></td></tr>
+<tr class="memdesc:card_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestion des cartes. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_color_8c.html">Color.c</a></td></tr>
+<tr class="memdesc:_color_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestion des Couleurs / Style. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_color_8h.html">Color.h</a> <a href="_color_8h_source.html">[code]</a></td></tr>
+<tr class="memdesc:_color_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gestion des Couleurs / Style. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html">game.c</a></td></tr>
+<tr class="memdesc:game_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">gestionaire de partie <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8h.html">game.h</a> <a href="game_8h_source.html">[code]</a></td></tr>
 <tr class="memdesc:game_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">gestionaire de partie <br /></td></tr>
@@ -92,6 +99,7 @@ Fichiers</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_rule_8c.html">gameRule.c</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_rule_8h.html">gameRule.h</a> <a href="game_rule_8h_source.html">[code]</a></td></tr>
+<tr class="memdesc:game_rule_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumeration des variantes de règles de jeu. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8c.html">linkedlist.c</a></td></tr>
 <tr class="memdesc:linkedlist_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">liste chainer generique <br /></td></tr>
@@ -99,13 +107,25 @@ Fichiers</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="linkedlist_8h.html">linkedlist.h</a> <a href="linkedlist_8h_source.html">[code]</a></td></tr>
 <tr class="memdesc:linkedlist_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">liste chainer generique <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html">main.c</a></td></tr>
-<tr class="memdesc:main_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">gestion de l'application <br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_client_8c.html">mainClient.c</a></td></tr>
+<tr class="memdesc:main_client_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">gestion de l'application <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_s_d_l_8c.html">mainSDL.c</a></td></tr>
-<tr class="memdesc:main_s_d_l_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">gestion de la fenetre principale <br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_server_8c.html">mainServer.c</a></td></tr>
+<tr class="memdesc:main_server_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">gestion de l'application coter server <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_s_d_l_8h.html">mainSDL.h</a> <a href="main_s_d_l_8h_source.html">[code]</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_serveur_8c.html">mainServeur.c</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8c.html">menu.c</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parser_8c.html">parser.c</a></td></tr>
+<tr class="memdesc:parser_8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">parser de ficher de configuration <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parser_8h.html">parser.h</a> <a href="parser_8h_source.html">[code]</a></td></tr>
+<tr class="memdesc:parser_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">parser de ficher de configuration <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pawn_8c.html">pawn.c</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">fichier &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pawn_8h.html">pawn.h</a> <a href="pawn_8h_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

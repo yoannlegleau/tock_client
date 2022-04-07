@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>tock:  Fichier source de C:/Users/adzerake/CLionProjects/tock-client/src/board.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">tock
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">board.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="board_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef TOCK_CLIENT_BOARD_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define TOCK_CLIENT_BOARD_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">/* ---------- Includes ---------- */</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="linkedlist_8h.html">linkedlist.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="card_8h.html">card.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">/* ---------- Structure ---------- */</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="board_8h.html#a23ebcc73fdb69bb37ce7dc92a2a3d008">   24</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_board.html">Board</a> <a class="code hl_struct" href="struct_board.html">Board</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="struct_board.html">   25</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_board.html">Board</a> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="struct_board.html#aa2ce0e10c66abea89c94f2f0a22b59ad">   32</a></span>    <span class="keywordtype">int</span> * <a class="code hl_variable" href="struct_board.html#aa2ce0e10c66abea89c94f2f0a22b59ad">board</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="struct_board.html#afcb1bcbe719ae3b8f83535efd646dcb6">   35</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_board.html#afcb1bcbe719ae3b8f83535efd646dcb6">nbPlayer</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">/* ---------- Constructor ---------- */</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><a class="code hl_struct" href="struct_board.html">Board</a> * <a class="code hl_function" href="board_8h.html#a5dbbc578002ad9e11998e92ce29588e8">boardFactory</a>(<span class="keywordtype">int</span> nbPlayer);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><a class="code hl_struct" href="struct_board.html">Board</a> * <a class="code hl_function" href="board_8h.html#a275f1a16eaf4238fe071326efa2f949d">boardClone</a>(<a class="code hl_struct" href="struct_board.html">Board</a> * board);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keywordtype">void</span> <a class="code hl_function" href="board_8h.html#a482bbee01164d1f5821bad0abc6d7fbd">initBoard</a>(<a class="code hl_struct" href="struct_board.html">Board</a> * board);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keywordtype">void</span> <a class="code hl_function" href="board_8h.html#a9b124246e6875d0d8551a8c3acfc394d">destroyBoard</a>(<a class="code hl_struct" href="struct_board.html">Board</a> ** board);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">/* ---------- Getters ---------- */</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keywordtype">int</span> <a class="code hl_function" href="board_8h.html#af0d2e96e7e0ec3cfa1615035b2bb7790">getNbPlayer</a>(<a class="code hl_struct" href="struct_board.html">Board</a> * board);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="keywordtype">int</span> <a class="code hl_function" href="board_8h.html#a4d96389b5829477f59e5217cf4984217">getLen</a>(<a class="code hl_struct" href="struct_board.html">Board</a> * board);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keywordtype">int</span> <a class="code hl_function" href="board_8h.html#a75cfce0286a261d6229cc76a742ef735">getBoardLen</a>(<a class="code hl_struct" href="struct_board.html">Board</a> * board);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><a class="code hl_struct" href="struct_linkedlist.html">Linkedlist</a> * <a class="code hl_function" href="board_8h.html#af7b0f196b2e4811eb4e2cefee65a5134">getPlayerPawnsLocation</a>(<a class="code hl_struct" href="struct_board.html">Board</a> * board, <span class="keywordtype">int</span> playerId );</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="keywordtype">int</span> <a class="code hl_function" href="board_8h.html#a92407440e2a3ee6a1391e5ef3ab1f8e6">getStart</a>(<span class="keywordtype">int</span> pId);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keywordtype">int</span> <a class="code hl_function" href="board_8h.html#a82a54698fb8707023eb0a899f969dd5a">getHomeEntry</a>(<span class="keywordtype">int</span> pId);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keywordtype">int</span> <a class="code hl_function" href="board_8h.html#a44a7840b948482c80780207e2c1841c6">getHomeStart</a>(<a class="code hl_struct" href="struct_board.html">Board</a> * board, <span class="keywordtype">int</span> pId);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="keywordtype">int</span> <a class="code hl_function" href="board_8h.html#a8b1c7657d71105c2b2206cb6f3ae73ee">getInHomePosition</a>(<a class="code hl_struct" href="struct_board.html">Board</a> * board, <span class="keywordtype">int</span> location);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="keywordtype">int</span> <a class="code hl_function" href="board_8h.html#ac57c3505ba5cbfd2573b20ddd1c2c325">getStepToHome</a>(<a class="code hl_struct" href="struct_board.html">Board</a> * board, <span class="keywordtype">int</span> location, <span class="keywordtype">int</span> pId);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="keywordtype">int</span> <a class="code hl_function" href="board_8h.html#a195a508db400eb827a4c799bcbc76b91">getIdTeamMember</a>(<a class="code hl_struct" href="struct_board.html">Board</a> * board,<span class="keywordtype">int</span> idPlayer);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="comment">/* ---------- Tests ---------- */</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="keywordtype">bool</span> <a class="code hl_function" href="board_8h.html#ae0f457c466ffad4c89212459b0992896">isOnBoard</a>(<a class="code hl_struct" href="struct_board.html">Board</a> * board, <span class="keywordtype">int</span> location);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="keywordtype">bool</span> <a class="code hl_function" href="board_8h.html#a4365bf407115db13e16cd10110aa15cc">pawnOnPath</a>(<a class="code hl_struct" href="struct_board.html">Board</a> * board, <span class="keywordtype">int</span> location, <span class="keywordtype">int</span> step);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="keywordtype">bool</span> <a class="code hl_function" href="board_8h.html#abbc6fd18e86814b18e6a0b97fd5f37c4">isWin</a>(<a class="code hl_struct" href="struct_board.html">Board</a> * board, <span class="keywordtype">int</span> pId);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="comment">/* ---------- Utilities ---------- */</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="keywordtype">bool</span> <a class="code hl_function" href="board_8h.html#a3738ccd604fe9fe9d189a0e4fd6b143c">forward</a>(<a class="code hl_struct" href="struct_board.html">Board</a> * board, <span class="keywordtype">int</span> location, <span class="keywordtype">int</span> step);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span><span class="keywordtype">bool</span> <a class="code hl_function" href="board_8h.html#a160927aa21e403f6743f4cacb5321a87">backward</a>(<a class="code hl_struct" href="struct_board.html">Board</a> * board, <span class="keywordtype">int</span> location, <span class="keywordtype">int</span> step);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="keywordtype">void</span> <a class="code hl_function" href="board_8h.html#a232d733f919605b39318b1ee3ec8fce1">move</a>(<a class="code hl_struct" href="struct_board.html">Board</a> * board, <span class="keywordtype">int</span> from, <span class="keywordtype">int</span> to);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="keywordtype">bool</span> <a class="code hl_function" href="board_8h.html#a6b8349be43c85bc81c554bcc0fb884a2">outPawn</a>(<a class="code hl_struct" href="struct_board.html">Board</a> * board, <span class="keywordtype">int</span> pId);</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="keywordtype">int</span> <a class="code hl_function" href="board_8h.html#a3f1b1f6b63108eb054789c97ce1d3c00">heuristic</a>(<a class="code hl_struct" href="struct_board.html">Board</a> * board,<span class="keywordtype">int</span> IdPlayer);</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="comment">/* ---------- Displays ---------- */</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="keywordtype">void</span> <a class="code hl_function" href="board_8h.html#a037f22059b7c568a31da880e27d41e43">drawBoard</a>(<a class="code hl_struct" href="struct_board.html">Board</a> * board);</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="keywordtype">void</span> <a class="code hl_function" href="board_8h.html#a0274f3760b503a4569ba0ddf29a6c85c">highlightLocation</a>(<span class="keywordtype">int</span> location);</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="preprocessor">#endif </span><span class="comment">//TOCK_CLIENT_BOARD_H</span></div>
+<div class="ttc" id="aboard_8h_html_a0274f3760b503a4569ba0ddf29a6c85c"><div class="ttname"><a href="board_8h.html#a0274f3760b503a4569ba0ddf29a6c85c">highlightLocation</a></div><div class="ttdeci">void highlightLocation(int location)</div><div class="ttdoc">met en evidence la case selectioner</div><div class="ttdef"><b>Definition:</b> board.c:436</div></div>
+<div class="ttc" id="aboard_8h_html_a037f22059b7c568a31da880e27d41e43"><div class="ttname"><a href="board_8h.html#a037f22059b7c568a31da880e27d41e43">drawBoard</a></div><div class="ttdeci">void drawBoard(Board *board)</div><div class="ttdoc">Afficher le plateau ses pions et les reserve de pion.</div><div class="ttdef"><b>Definition:</b> board.c:234</div></div>
+<div class="ttc" id="aboard_8h_html_a160927aa21e403f6743f4cacb5321a87"><div class="ttname"><a href="board_8h.html#a160927aa21e403f6743f4cacb5321a87">backward</a></div><div class="ttdeci">bool backward(Board *board, int location, int step)</div><div class="ttdoc">Fais reculer un pion sur le plateau.</div><div class="ttdef"><b>Definition:</b> board.c:178</div></div>
+<div class="ttc" id="aboard_8h_html_a195a508db400eb827a4c799bcbc76b91"><div class="ttname"><a href="board_8h.html#a195a508db400eb827a4c799bcbc76b91">getIdTeamMember</a></div><div class="ttdeci">int getIdTeamMember(Board *board, int idPlayer)</div><div class="ttdoc">Retourne l'identifient du coéquipier.</div><div class="ttdef"><b>Definition:</b> board.c:107</div></div>
+<div class="ttc" id="aboard_8h_html_a232d733f919605b39318b1ee3ec8fce1"><div class="ttname"><a href="board_8h.html#a232d733f919605b39318b1ee3ec8fce1">move</a></div><div class="ttdeci">void move(Board *board, int from, int to)</div><div class="ttdoc">Fonction de déplacement basic.</div><div class="ttdef"><b>Definition:</b> board.c:185</div></div>
+<div class="ttc" id="aboard_8h_html_a275f1a16eaf4238fe071326efa2f949d"><div class="ttname"><a href="board_8h.html#a275f1a16eaf4238fe071326efa2f949d">boardClone</a></div><div class="ttdeci">Board * boardClone(Board *board)</div><div class="ttdoc">Duplique un plateau.</div><div class="ttdef"><b>Definition:</b> board.c:38</div></div>
+<div class="ttc" id="aboard_8h_html_a3738ccd604fe9fe9d189a0e4fd6b143c"><div class="ttname"><a href="board_8h.html#a3738ccd604fe9fe9d189a0e4fd6b143c">forward</a></div><div class="ttdeci">bool forward(Board *board, int location, int step)</div><div class="ttdoc">Fais avancer un pion sur le plateau.</div><div class="ttdef"><b>Definition:</b> board.c:142</div></div>
+<div class="ttc" id="aboard_8h_html_a3f1b1f6b63108eb054789c97ce1d3c00"><div class="ttname"><a href="board_8h.html#a3f1b1f6b63108eb054789c97ce1d3c00">heuristic</a></div><div class="ttdeci">int heuristic(Board *board, int IdPlayer)</div><div class="ttdoc">Calcule une estimation de la position. l'estimation est representative de l'envencement et des chance...</div><div class="ttdef"><b>Definition:</b> board.c:201</div></div>
+<div class="ttc" id="aboard_8h_html_a4365bf407115db13e16cd10110aa15cc"><div class="ttname"><a href="board_8h.html#a4365bf407115db13e16cd10110aa15cc">pawnOnPath</a></div><div class="ttdeci">bool pawnOnPath(Board *board, int location, int step)</div><div class="ttdoc">Verifier si il y a des pion sur le chemin.</div><div class="ttdef"><b>Definition:</b> board.c:120</div></div>
+<div class="ttc" id="aboard_8h_html_a44a7840b948482c80780207e2c1841c6"><div class="ttname"><a href="board_8h.html#a44a7840b948482c80780207e2c1841c6">getHomeStart</a></div><div class="ttdeci">int getHomeStart(Board *board, int pId)</div><div class="ttdoc">Retourne les coordonnées de premiere case de la maison d'un joueur.</div><div class="ttdef"><b>Definition:</b> board.c:93</div></div>
+<div class="ttc" id="aboard_8h_html_a482bbee01164d1f5821bad0abc6d7fbd"><div class="ttname"><a href="board_8h.html#a482bbee01164d1f5821bad0abc6d7fbd">initBoard</a></div><div class="ttdeci">void initBoard(Board *board)</div><div class="ttdoc">Remet a 0 tout le plateau.</div><div class="ttdef"><b>Definition:</b> board.c:46</div></div>
+<div class="ttc" id="aboard_8h_html_a4d96389b5829477f59e5217cf4984217"><div class="ttname"><a href="board_8h.html#a4d96389b5829477f59e5217cf4984217">getLen</a></div><div class="ttdeci">int getLen(Board *board)</div><div class="ttdoc">Retourne la longueur du plateau en comptent les maisons des joueurs.</div><div class="ttdef"><b>Definition:</b> board.c:64</div></div>
+<div class="ttc" id="aboard_8h_html_a5dbbc578002ad9e11998e92ce29588e8"><div class="ttname"><a href="board_8h.html#a5dbbc578002ad9e11998e92ce29588e8">boardFactory</a></div><div class="ttdeci">Board * boardFactory(int nbPlayer)</div><div class="ttdoc">Constructeur de Board.</div><div class="ttdef"><b>Definition:</b> board.c:30</div></div>
+<div class="ttc" id="aboard_8h_html_a6b8349be43c85bc81c554bcc0fb884a2"><div class="ttname"><a href="board_8h.html#a6b8349be43c85bc81c554bcc0fb884a2">outPawn</a></div><div class="ttdeci">bool outPawn(Board *board, int pId)</div><div class="ttdoc">Fais sortir un pion a un joueur (ajouter un pion)</div><div class="ttdef"><b>Definition:</b> board.c:190</div></div>
+<div class="ttc" id="aboard_8h_html_a75cfce0286a261d6229cc76a742ef735"><div class="ttname"><a href="board_8h.html#a75cfce0286a261d6229cc76a742ef735">getBoardLen</a></div><div class="ttdeci">int getBoardLen(Board *board)</div><div class="ttdoc">Retourne la longueur du plateau sans comptent les maisons des joueurs.</div><div class="ttdef"><b>Definition:</b> board.c:68</div></div>
+<div class="ttc" id="aboard_8h_html_a82a54698fb8707023eb0a899f969dd5a"><div class="ttname"><a href="board_8h.html#a82a54698fb8707023eb0a899f969dd5a">getHomeEntry</a></div><div class="ttdeci">int getHomeEntry(int pId)</div><div class="ttdoc">Retourne les coordonnées de la case qui permet au pion de ranter des pions d'un joueur.</div><div class="ttdef"><b>Definition:</b> board.c:89</div></div>
+<div class="ttc" id="aboard_8h_html_a8b1c7657d71105c2b2206cb6f3ae73ee"><div class="ttname"><a href="board_8h.html#a8b1c7657d71105c2b2206cb6f3ae73ee">getInHomePosition</a></div><div class="ttdeci">int getInHomePosition(Board *board, int location)</div><div class="ttdoc">Retourne la position d'une coordoner dans la la maison.</div><div class="ttdef"><b>Definition:</b> board.c:97</div></div>
+<div class="ttc" id="aboard_8h_html_a92407440e2a3ee6a1391e5ef3ab1f8e6"><div class="ttname"><a href="board_8h.html#a92407440e2a3ee6a1391e5ef3ab1f8e6">getStart</a></div><div class="ttdeci">int getStart(int pId)</div><div class="ttdoc">Retourne les coordonnées de la case de sortie des pions d'un joueur.</div><div class="ttdef"><b>Definition:</b> board.c:85</div></div>
+<div class="ttc" id="aboard_8h_html_a9b124246e6875d0d8551a8c3acfc394d"><div class="ttname"><a href="board_8h.html#a9b124246e6875d0d8551a8c3acfc394d">destroyBoard</a></div><div class="ttdeci">void destroyBoard(Board **board)</div><div class="ttdoc">libere toutes les variables du plateau</div><div class="ttdef"><b>Definition:</b> board.c:52</div></div>
+<div class="ttc" id="aboard_8h_html_abbc6fd18e86814b18e6a0b97fd5f37c4"><div class="ttname"><a href="board_8h.html#abbc6fd18e86814b18e6a0b97fd5f37c4">isWin</a></div><div class="ttdeci">bool isWin(Board *board, int pId)</div><div class="ttdoc">Verifier si le joueur a gagner (4 pion dans la maison). Ne prend pas en compte la réussite de l'équip...</div><div class="ttdef"><b>Definition:</b> board.c:129</div></div>
+<div class="ttc" id="aboard_8h_html_ac57c3505ba5cbfd2573b20ddd1c2c325"><div class="ttname"><a href="board_8h.html#ac57c3505ba5cbfd2573b20ddd1c2c325">getStepToHome</a></div><div class="ttdeci">int getStepToHome(Board *board, int location, int pId)</div><div class="ttdoc">Retourne la distance qu'il rest à parcourir a un pion pour rentrer à la maison.</div><div class="ttdef"><b>Definition:</b> board.c:103</div></div>
+<div class="ttc" id="aboard_8h_html_ae0f457c466ffad4c89212459b0992896"><div class="ttname"><a href="board_8h.html#ae0f457c466ffad4c89212459b0992896">isOnBoard</a></div><div class="ttdeci">bool isOnBoard(Board *board, int location)</div><div class="ttdoc">Verifier que la position est bien sur le plateau les maisons ne sont pas incluse.</div><div class="ttdef"><b>Definition:</b> board.c:116</div></div>
+<div class="ttc" id="aboard_8h_html_af0d2e96e7e0ec3cfa1615035b2bb7790"><div class="ttname"><a href="board_8h.html#af0d2e96e7e0ec3cfa1615035b2bb7790">getNbPlayer</a></div><div class="ttdeci">int getNbPlayer(Board *board)</div><div class="ttdoc">Retourne le nombre de jouer autour du plateau.</div><div class="ttdef"><b>Definition:</b> board.c:60</div></div>
+<div class="ttc" id="aboard_8h_html_af7b0f196b2e4811eb4e2cefee65a5134"><div class="ttname"><a href="board_8h.html#af7b0f196b2e4811eb4e2cefee65a5134">getPlayerPawnsLocation</a></div><div class="ttdeci">Linkedlist * getPlayerPawnsLocation(Board *board, int playerId)</div><div class="ttdoc">Retourn la liste des coordonnés (int) des pions d'un joueur.</div><div class="ttdef"><b>Definition:</b> board.c:72</div></div>
+<div class="ttc" id="acard_8h_html"><div class="ttname"><a href="card_8h.html">card.h</a></div><div class="ttdoc">Gestion des cartes.</div></div>
+<div class="ttc" id="alinkedlist_8h_html"><div class="ttname"><a href="linkedlist_8h.html">linkedlist.h</a></div><div class="ttdoc">liste chainer generique</div></div>
+<div class="ttc" id="astruct_board_html"><div class="ttname"><a href="struct_board.html">Board</a></div><div class="ttdef"><b>Definition:</b> board.h:25</div></div>
+<div class="ttc" id="astruct_board_html_aa2ce0e10c66abea89c94f2f0a22b59ad"><div class="ttname"><a href="struct_board.html#aa2ce0e10c66abea89c94f2f0a22b59ad">Board::board</a></div><div class="ttdeci">int * board</div><div class="ttdoc">Se tableux represente toutes les cases du plateu.</div><div class="ttdef"><b>Definition:</b> board.h:32</div></div>
+<div class="ttc" id="astruct_board_html_afcb1bcbe719ae3b8f83535efd646dcb6"><div class="ttname"><a href="struct_board.html#afcb1bcbe719ae3b8f83535efd646dcb6">Board::nbPlayer</a></div><div class="ttdeci">int nbPlayer</div><div class="ttdoc">Nombre de joueurs sur le plateau (4 ou 6 ou 8)</div><div class="ttdef"><b>Definition:</b> board.h:35</div></div>
+<div class="ttc" id="astruct_linkedlist_html"><div class="ttname"><a href="struct_linkedlist.html">Linkedlist</a></div><div class="ttdef"><b>Definition:</b> linkedlist.c:32</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

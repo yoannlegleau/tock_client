@@ -1,0 +1,37 @@
+\hypertarget{parser_8h_source}{}\doxysection{parser.\+h}
+\label{parser_8h_source}\index{C:/Users/adzerake/CLionProjects/tock-\/client/src/parser.h@{C:/Users/adzerake/CLionProjects/tock-\/client/src/parser.h}}
+\mbox{\hyperlink{parser_8h}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef TOCK\_CLIENT\_PARSER\_H}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define TOCK\_CLIENT\_PARSER\_H}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{linkedlist_8h}{linkedlist.h}}"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_key_value}{KeyValue}} \mbox{\hyperlink{struct_key_value}{KeyValue}};}
+\DoxyCodeLine{15 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_key_value}{KeyValue}}\{}
+\DoxyCodeLine{16     \textcolor{keywordtype}{char} * \mbox{\hyperlink{struct_key_value_a5892a9181e6a332f84d27aecd41dcd12}{key}} ;}
+\DoxyCodeLine{17     \textcolor{keywordtype}{char} * \mbox{\hyperlink{struct_key_value_a4e9aec275e566b978a3ccb4e043d8c61}{value}} ;}
+\DoxyCodeLine{18 \};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keywordtype}{void} \mbox{\hyperlink{parser_8h_adb7290c0f3f34cf59cb84bc5140fabb2}{destroyKeyValueVoid}}(\textcolor{keywordtype}{void} * keyValue);}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keywordtype}{void} \mbox{\hyperlink{parser_8h_aae0feb747a4fcc18bbeed9691084d3c3}{destroyKeyValue}}(\mbox{\hyperlink{struct_key_value}{KeyValue}} ** keyValue);}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keywordtype}{void} \mbox{\hyperlink{parser_8h_a085ab0c8afa8e88f443d8a7baae370a5}{setKeyValue}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *path,\textcolor{keywordtype}{char} *key,\textcolor{keywordtype}{char} *value);}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keywordtype}{void} \mbox{\hyperlink{parser_8h_adc1fed34024e6a4948a2a3657480c681}{saveToPath}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *path,\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} *liste);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keywordtype}{char} * \mbox{\hyperlink{parser_8h_a74c8703763f4b12dc78722098fe4768a}{getByKey}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} *liste,\textcolor{keywordtype}{char} *key);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * \mbox{\hyperlink{parser_8h_a935610bb322bdb046732b9a10ee65012}{loadFromPath}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *path);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \mbox{\hyperlink{struct_key_value}{KeyValue}} * \mbox{\hyperlink{parser_8h_a8869bd5059ff7fa9085a4fafaf73018e}{keyValueFactory}}(\textcolor{keywordtype}{char} * key,\textcolor{keywordtype}{char} * value);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keywordtype}{void} \mbox{\hyperlink{parser_8h_ada6b335e6a50bd312e98a7421013358a}{drawKeyValue}}(\mbox{\hyperlink{struct_key_value}{KeyValue}} *keyValue);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keywordtype}{bool} \mbox{\hyperlink{parser_8h_a50bec7ea3c48ec139264e0128df959ed}{toBool}}(\textcolor{keywordtype}{char} *s);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//TOCK\_CLIENT\_PARSER\_H}}
+
+\end{DoxyCode}

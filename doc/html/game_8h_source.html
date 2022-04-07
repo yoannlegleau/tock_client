@@ -55,7 +55,7 @@ $(function() {
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameboarder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -73,29 +73,58 @@ $(function() {
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef TOCK_CLIENT_GAME_H</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define TOCK_CLIENT_GAME_H</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/* ---------- Includes ---------- */</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">void</span> <a class="code hl_function" href="game_8h.html#a8608f514fe7507c9b45f1f7e945be7f1">gameCreate</a>(SDL_Window *<a class="code hl_variable" href="main_s_d_l_8c.html#a04a8a2bbfa9c15500892b8e5033d625b">window</a>);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="game_8h.html#a5ccf13a9cc0f2c05b31227c77fb9cd4e">   24</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="game_8h.html#a5ccf13a9cc0f2c05b31227c77fb9cd4e">gameStart</a>();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="game_8h.html#a43a4a38dc12d37bc2867ab1ee105b23e">   29</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="game_8h.html#a43a4a38dc12d37bc2867ab1ee105b23e">gameResume</a>();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="board_8h.html">board.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">/* ---------- Structure ---------- */</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="game_8h.html#a69b5df78d315f81ed77df30fdbfb7002">   23</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_game.html">Game</a> <a class="code hl_struct" href="struct_game.html">Game</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="struct_game.html">   24</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_game.html">Game</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="struct_game.html#ab8dad7d3cb14e06a506084453a9cf527">   26</a></span>    <a class="code hl_struct" href="struct_board.html">Board</a> * <a class="code hl_variable" href="struct_game.html#ab8dad7d3cb14e06a506084453a9cf527">board</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_game.html#aec4c1fe6baf6c742fb2c61ccff70d75e">   29</a></span>    <a class="code hl_struct" href="struct_linkedlist.html">Linkedlist</a> * <a class="code hl_variable" href="struct_game.html#aec4c1fe6baf6c742fb2c61ccff70d75e">players</a>;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="game_8h.html#aa5642769dce9d51ebe5be75b3dd5007e">   34</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="game_8h.html#aa5642769dce9d51ebe5be75b3dd5007e">gamePause</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="struct_game.html#a36f7b6be7108281af77939ceaec42fd6">   32</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="struct_game.html#a36f7b6be7108281af77939ceaec42fd6">running</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>};</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="game_8h.html#af3dc2d180f1b05fae33e4ffef3973124">   39</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="game_8h.html#af3dc2d180f1b05fae33e4ffef3973124">gameStop</a>();</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="game_8h.html#a046399e2d517fd587a23bcd0b0e23ab9">   44</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="game_8h.html#a046399e2d517fd587a23bcd0b0e23ab9">gameDestroy</a>();</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#endif </span><span class="comment">//TOCK_CLIENT_GAME_H</span></div>
-<div class="ttc" id="agame_8h_html_a046399e2d517fd587a23bcd0b0e23ab9"><div class="ttname"><a href="game_8h.html#a046399e2d517fd587a23bcd0b0e23ab9">gameDestroy</a></div><div class="ttdeci">void gameDestroy()</div><div class="ttdoc">libere toutes les variable</div></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">/* ---------- Constructor ---------- */</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><a class="code hl_struct" href="struct_game.html">Game</a> * <a class="code hl_function" href="game_8h.html#a69129938578bf1f0834e913cebaf0786">gameCreate</a>(<span class="keywordtype">int</span> nbPlayer);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">void</span> <a class="code hl_function" href="game_8h.html#ab90e474b77908d1939ef7f592812785f">addPlayer</a>(<a class="code hl_struct" href="struct_game.html">Game</a> * game, <span class="keywordtype">int</span> nbPlayer);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="game_8h.html#ae3f5f3e86f72c33e08d0d56f35d6b2a7">   53</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="game_8h.html#ae3f5f3e86f72c33e08d0d56f35d6b2a7">destroyGame</a>(<a class="code hl_struct" href="struct_game.html">Game</a> ** game);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">/* ---------- Utilities ---------- */</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keywordtype">int</span> <a class="code hl_function" href="game_8h.html#ab5958820c2a3ad5257a73d228f125eaa">gameStart</a>(<a class="code hl_struct" href="struct_game.html">Game</a>* game);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="game_8h.html#a43a4a38dc12d37bc2867ab1ee105b23e">   66</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="game_8h.html#a43a4a38dc12d37bc2867ab1ee105b23e">gameResume</a>();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="game_8h.html#aa5642769dce9d51ebe5be75b3dd5007e">   71</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="game_8h.html#aa5642769dce9d51ebe5be75b3dd5007e">gamePause</a>();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="game_8h.html#af3dc2d180f1b05fae33e4ffef3973124">   76</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="game_8h.html#af3dc2d180f1b05fae33e4ffef3973124">gameStop</a>();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#endif </span><span class="comment">//TOCK_CLIENT_GAME_H</span></div>
+<div class="ttc" id="aboard_8h_html"><div class="ttname"><a href="board_8h.html">board.h</a></div><div class="ttdoc">Gestion du plateau de jeu et des pions.</div></div>
 <div class="ttc" id="agame_8h_html_a43a4a38dc12d37bc2867ab1ee105b23e"><div class="ttname"><a href="game_8h.html#a43a4a38dc12d37bc2867ab1ee105b23e">gameResume</a></div><div class="ttdeci">void gameResume()</div><div class="ttdoc">reprande le jeu apres une pause</div></div>
-<div class="ttc" id="agame_8h_html_a5ccf13a9cc0f2c05b31227c77fb9cd4e"><div class="ttname"><a href="game_8h.html#a5ccf13a9cc0f2c05b31227c77fb9cd4e">gameStart</a></div><div class="ttdeci">void gameStart()</div><div class="ttdoc">lancer le deroulement du jeux</div></div>
-<div class="ttc" id="agame_8h_html_a8608f514fe7507c9b45f1f7e945be7f1"><div class="ttname"><a href="game_8h.html#a8608f514fe7507c9b45f1f7e945be7f1">gameCreate</a></div><div class="ttdeci">void gameCreate(SDL_Window *window)</div><div class="ttdoc">initialise la liste</div><div class="ttdef"><b>Definition:</b> game.c:57</div></div>
+<div class="ttc" id="agame_8h_html_a69129938578bf1f0834e913cebaf0786"><div class="ttname"><a href="game_8h.html#a69129938578bf1f0834e913cebaf0786">gameCreate</a></div><div class="ttdeci">Game * gameCreate(int nbPlayer)</div><div class="ttdoc">initialise la liste</div><div class="ttdef"><b>Definition:</b> game.c:56</div></div>
 <div class="ttc" id="agame_8h_html_aa5642769dce9d51ebe5be75b3dd5007e"><div class="ttname"><a href="game_8h.html#aa5642769dce9d51ebe5be75b3dd5007e">gamePause</a></div><div class="ttdeci">void gamePause()</div><div class="ttdoc">metre en pose le jeux</div></div>
+<div class="ttc" id="agame_8h_html_ab5958820c2a3ad5257a73d228f125eaa"><div class="ttname"><a href="game_8h.html#ab5958820c2a3ad5257a73d228f125eaa">gameStart</a></div><div class="ttdeci">int gameStart(Game *game)</div><div class="ttdoc">lancer le deroulement du jeux</div><div class="ttdef"><b>Definition:</b> game.c:82</div></div>
+<div class="ttc" id="agame_8h_html_ab90e474b77908d1939ef7f592812785f"><div class="ttname"><a href="game_8h.html#ab90e474b77908d1939ef7f592812785f">addPlayer</a></div><div class="ttdeci">void addPlayer(Game *game, int nbPlayer)</div><div class="ttdoc">ajoute des joueur a la partie et complette avec des bots</div><div class="ttdef"><b>Definition:</b> game.c:64</div></div>
+<div class="ttc" id="agame_8h_html_ae3f5f3e86f72c33e08d0d56f35d6b2a7"><div class="ttname"><a href="game_8h.html#ae3f5f3e86f72c33e08d0d56f35d6b2a7">destroyGame</a></div><div class="ttdeci">void destroyGame(Game **game)</div><div class="ttdoc">libere toutes les variable</div></div>
 <div class="ttc" id="agame_8h_html_af3dc2d180f1b05fae33e4ffef3973124"><div class="ttname"><a href="game_8h.html#af3dc2d180f1b05fae33e4ffef3973124">gameStop</a></div><div class="ttdeci">void gameStop()</div><div class="ttdoc">arreter le jeux (posible start pour une nouvelle partie)</div></div>
-<div class="ttc" id="amain_s_d_l_8c_html_a04a8a2bbfa9c15500892b8e5033d625b"><div class="ttname"><a href="main_s_d_l_8c.html#a04a8a2bbfa9c15500892b8e5033d625b">window</a></div><div class="ttdeci">SDL_Window * window</div><div class="ttdoc">pointeur vers la fenêtre principal</div><div class="ttdef"><b>Definition:</b> mainSDL.c:17</div></div>
+<div class="ttc" id="astruct_board_html"><div class="ttname"><a href="struct_board.html">Board</a></div><div class="ttdef"><b>Definition:</b> board.h:25</div></div>
+<div class="ttc" id="astruct_game_html"><div class="ttname"><a href="struct_game.html">Game</a></div><div class="ttdef"><b>Definition:</b> game.h:24</div></div>
+<div class="ttc" id="astruct_game_html_a36f7b6be7108281af77939ceaec42fd6"><div class="ttname"><a href="struct_game.html#a36f7b6be7108281af77939ceaec42fd6">Game::running</a></div><div class="ttdeci">bool running</div><div class="ttdoc">Est vrai si la parie est en cour.</div><div class="ttdef"><b>Definition:</b> game.h:32</div></div>
+<div class="ttc" id="astruct_game_html_ab8dad7d3cb14e06a506084453a9cf527"><div class="ttname"><a href="struct_game.html#ab8dad7d3cb14e06a506084453a9cf527">Game::board</a></div><div class="ttdeci">Board * board</div><div class="ttdoc">Plateau de jeu.</div><div class="ttdef"><b>Definition:</b> game.h:26</div></div>
+<div class="ttc" id="astruct_game_html_aec4c1fe6baf6c742fb2c61ccff70d75e"><div class="ttname"><a href="struct_game.html#aec4c1fe6baf6c742fb2c61ccff70d75e">Game::players</a></div><div class="ttdeci">Linkedlist * players</div><div class="ttdoc">List des joueurs de la partie.</div><div class="ttdef"><b>Definition:</b> game.h:29</div></div>
+<div class="ttc" id="astruct_linkedlist_html"><div class="ttname"><a href="struct_linkedlist.html">Linkedlist</a></div><div class="ttdef"><b>Definition:</b> linkedlist.c:32</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

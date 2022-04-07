@@ -1,6 +1,10 @@
-//
-// Created by adzerake on 23/03/2022.
-//
+/**
+ * \file parser.c
+ * \brief parser de ficher de configuration
+ * \author LE GLEAU Yoann
+ * \date 23/03/2022
+ * \version 1
+ */
 
 #include <stdio.h>
 #include <stdlib.h>

@@ -77,7 +77,6 @@ bool playPlayer(Player *p, Board * board) {
                                 highlightedPown++;
                             update = false;
                             break;
-
                         case SDLK_RETURN:
                             if (cardPayed == NULL) {
                                 cardPayed = get(p->cards, p->selectedCard);

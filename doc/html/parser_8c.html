@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>tock: Référence du fichier C:/Users/adzerake/CLionProjects/tock-client/src/parser.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">tock
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier parser.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>parser de ficher de configuration  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="parser_8h_source.html">parser.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="linkedlist_8h_source.html">linkedlist.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ad4d796b98c583d49e83adabd74a63bf6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parser_8c.html#ad4d796b98c583d49e83adabd74a63bf6">MAX_BUFFER_SIZE</a>&#160;&#160;&#160;100</td></tr>
+<tr class="separator:ad4d796b98c583d49e83adabd74a63bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51243964b82ff6b415c3b97a19e9ea31"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parser_8c.html#a51243964b82ff6b415c3b97a19e9ea31">REG_START</a>&#160;&#160;&#160;'&lt;'</td></tr>
+<tr class="separator:a51243964b82ff6b415c3b97a19e9ea31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80491731be6cefa5140e089c6b3f8cb5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parser_8c.html#a80491731be6cefa5140e089c6b3f8cb5">REG_END</a>&#160;&#160;&#160;'&gt;'</td></tr>
+<tr class="separator:a80491731be6cefa5140e089c6b3f8cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a74c8703763f4b12dc78722098fe4768a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parser_8c.html#a74c8703763f4b12dc78722098fe4768a">getByKey</a> (<a class="el" href="struct_linkedlist.html">Linkedlist</a> *liste, char *key)</td></tr>
+<tr class="separator:a74c8703763f4b12dc78722098fe4768a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a085ab0c8afa8e88f443d8a7baae370a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parser_8c.html#a085ab0c8afa8e88f443d8a7baae370a5">setKeyValue</a> (const char *path, char *key, char *value)</td></tr>
+<tr class="separator:a085ab0c8afa8e88f443d8a7baae370a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb7290c0f3f34cf59cb84bc5140fabb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parser_8c.html#adb7290c0f3f34cf59cb84bc5140fabb2">destroyKeyValueVoid</a> (void *keyValue)</td></tr>
+<tr class="separator:adb7290c0f3f34cf59cb84bc5140fabb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae0feb747a4fcc18bbeed9691084d3c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parser_8c.html#aae0feb747a4fcc18bbeed9691084d3c3">destroyKeyValue</a> (<a class="el" href="struct_key_value.html">KeyValue</a> **keyValue)</td></tr>
+<tr class="separator:aae0feb747a4fcc18bbeed9691084d3c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc1fed34024e6a4948a2a3657480c681"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parser_8c.html#adc1fed34024e6a4948a2a3657480c681">saveToPath</a> (const char *path, <a class="el" href="struct_linkedlist.html">Linkedlist</a> *liste)</td></tr>
+<tr class="separator:adc1fed34024e6a4948a2a3657480c681"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a935610bb322bdb046732b9a10ee65012"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parser_8c.html#a935610bb322bdb046732b9a10ee65012">loadFromPath</a> (const char *path)</td></tr>
+<tr class="separator:a935610bb322bdb046732b9a10ee65012"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8869bd5059ff7fa9085a4fafaf73018e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_key_value.html">KeyValue</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parser_8c.html#a8869bd5059ff7fa9085a4fafaf73018e">keyValueFactory</a> (char *key, char *value)</td></tr>
+<tr class="separator:a8869bd5059ff7fa9085a4fafaf73018e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada6b335e6a50bd312e98a7421013358a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parser_8c.html#ada6b335e6a50bd312e98a7421013358a">drawKeyValue</a> (<a class="el" href="struct_key_value.html">KeyValue</a> *keyValue)</td></tr>
+<tr class="separator:ada6b335e6a50bd312e98a7421013358a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50bec7ea3c48ec139264e0128df959ed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="parser_8c.html#a50bec7ea3c48ec139264e0128df959ed">toBool</a> (char *s)</td></tr>
+<tr class="separator:a50bec7ea3c48ec139264e0128df959ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p >parser de ficher de configuration </p>
+<p >Structure des pions pour le server.</p>
+<dl class="section author"><dt>Auteur</dt><dd>LE GLEAU Yoann </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>23/03/2022 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1</dd></dl>
+<dl class="section author"><dt>Auteur</dt><dd>LE GLEAU Yoann </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>11/03/2022 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1 </dd></dl>
+</div><h2 class="groupheader">Documentation des macros</h2>
+<a id="ad4d796b98c583d49e83adabd74a63bf6" name="ad4d796b98c583d49e83adabd74a63bf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4d796b98c583d49e83adabd74a63bf6">&#9670;&nbsp;</a></span>MAX_BUFFER_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_BUFFER_SIZE&#160;&#160;&#160;100</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a80491731be6cefa5140e089c6b3f8cb5" name="a80491731be6cefa5140e089c6b3f8cb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80491731be6cefa5140e089c6b3f8cb5">&#9670;&nbsp;</a></span>REG_END</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_END&#160;&#160;&#160;'&gt;'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a51243964b82ff6b415c3b97a19e9ea31" name="a51243964b82ff6b415c3b97a19e9ea31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51243964b82ff6b415c3b97a19e9ea31">&#9670;&nbsp;</a></span>REG_START</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REG_START&#160;&#160;&#160;'&lt;'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="aae0feb747a4fcc18bbeed9691084d3c3" name="aae0feb747a4fcc18bbeed9691084d3c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae0feb747a4fcc18bbeed9691084d3c3">&#9670;&nbsp;</a></span>destroyKeyValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void destroyKeyValue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_key_value.html">KeyValue</a> **&#160;</td>
+          <td class="paramname"><em>keyValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adb7290c0f3f34cf59cb84bc5140fabb2" name="adb7290c0f3f34cf59cb84bc5140fabb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb7290c0f3f34cf59cb84bc5140fabb2">&#9670;&nbsp;</a></span>destroyKeyValueVoid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void destroyKeyValueVoid </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>keyValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ada6b335e6a50bd312e98a7421013358a" name="ada6b335e6a50bd312e98a7421013358a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada6b335e6a50bd312e98a7421013358a">&#9670;&nbsp;</a></span>drawKeyValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawKeyValue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_key_value.html">KeyValue</a> *&#160;</td>
+          <td class="paramname"><em>keyValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a74c8703763f4b12dc78722098fe4768a" name="a74c8703763f4b12dc78722098fe4768a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74c8703763f4b12dc78722098fe4768a">&#9670;&nbsp;</a></span>getByKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * getByKey </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td>
+          <td class="paramname"><em>liste</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8869bd5059ff7fa9085a4fafaf73018e" name="a8869bd5059ff7fa9085a4fafaf73018e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8869bd5059ff7fa9085a4fafaf73018e">&#9670;&nbsp;</a></span>keyValueFactory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_key_value.html">KeyValue</a> * keyValueFactory </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a935610bb322bdb046732b9a10ee65012" name="a935610bb322bdb046732b9a10ee65012"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a935610bb322bdb046732b9a10ee65012">&#9670;&nbsp;</a></span>loadFromPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_linkedlist.html">Linkedlist</a> * loadFromPath </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adc1fed34024e6a4948a2a3657480c681" name="adc1fed34024e6a4948a2a3657480c681"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc1fed34024e6a4948a2a3657480c681">&#9670;&nbsp;</a></span>saveToPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void saveToPath </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td>
+          <td class="paramname"><em>liste</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a085ab0c8afa8e88f443d8a7baae370a5" name="a085ab0c8afa8e88f443d8a7baae370a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a085ab0c8afa8e88f443d8a7baae370a5">&#9670;&nbsp;</a></span>setKeyValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setKeyValue </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a50bec7ea3c48ec139264e0128df959ed" name="a50bec7ea3c48ec139264e0128df959ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50bec7ea3c48ec139264e0128df959ed">&#9670;&nbsp;</a></span>toBool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool toBool </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

@@ -1,6 +1,10 @@
-//
-// Created by adzerake on 10/03/2022.
-//
+/**
+ * \file board.c
+ * \brief Gestion du plateau de jeu et des pions
+ * \author LE GLEAU Yoann
+ * \date 10/03/2022
+ * \version 1
+ */
 
 /* ---------- Includes ---------- */
 #include <stdio.h>

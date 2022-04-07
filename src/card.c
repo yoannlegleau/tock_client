@@ -15,19 +15,54 @@
 #include <SDL2/SDL_image.h>
 
 
-bool isComposed(const enum Card * card){
-    return (*card == ThirteenOut ||
-            *card == oneOut);
+/* ---------- Constructor ---------- */
+
+void destroyCard(enum Card ** card){
+    //TODO destroyCard
+    //free(*card);
+    *card = NULL;
 }
 
-bool isComposedSplittable(const enum Card * card){
+
+/* ---------- Getters ---------- */
+
+char* getAsset(const enum Card * card){
+    if (card == NULL)
+        return "assets/Cartes/Carte_Back.png";
     switch (*card) {
+        case one:
+            return "assets/Cartes/Carte_1.png";
+        case two:
+            return "assets/Cartes/Carte_Valeur_2.png";
+        case three:
+            return "assets/Cartes/Carte_Valeur_3.png";
+        case four:
+            return "assets/Cartes/Carte_4.png";
+        case five:
+            return "assets/Cartes/Carte_Valeur_5.png";
+        case six:
+            return "assets/Cartes/Carte_Valeur_6.png";
+        case seven:
+            return "assets/Cartes/Carte_Valeur_7.png";
+        case eight:
+            return "assets/Cartes/Carte_Valeur_8.png";
+        case nine:
+            return "assets/Cartes/Carte_Valeur_9.png";
+        case ten:
+            return "assets/Cartes/Carte_Valeur_10.png";
+        case eleven:
+            return "assets/Cartes/Carte_Valeur_V.png";
+        case twelve:
+            return "assets/Cartes/Carte_Valeur_D.png";
         case thirteen:
-            return true;
+            return "assets/Cartes/Carte_Valeur_R.png";
+        case ThirteenOut:
+            return "assets/Cartes/Carte_R.png";
         case oneOut:
-            return true;
-        case sevenSplit:
-            return false;
+            return "assets/Cartes/Carte_1.png";
+            //TODO ajouter les autre cartes --> JOKER
+        default:
+            return "assets/Cartes/Carte_Back.png";
     }
 }
 
@@ -56,6 +91,64 @@ Linkedlist * getCardCompose(const enum Card * card){
     }
     return compose;
 }
+
+/* ---------- Testes ---------- */
+
+
+bool isComposed(const enum Card * card){
+    return (*card == ThirteenOut ||
+            *card == oneOut);
+}
+
+bool isComposedSplittable(const enum Card * card){
+    switch (*card) {
+        case thirteen:
+            return true;
+        case oneOut:
+            return true;
+        case sevenSplit:
+            return false;
+    }
+}
+
+
+/* ---------- Utilities ---------- */
+
+void makeDeck(Linkedlist *cards, Linkedlist *gameRules) {
+    clear(cards);
+    enum Card * card ;
+    for (int i = 0; i < 4; ++i) {
+        for (enum Card c = one ; c <= thirteen; ++c) {
+
+            card = malloc(sizeof(enum Card));
+            *card = c;
+            if(*card == thirteen)
+                *card = ThirteenOut;
+            if(*card == one)
+                *card = oneOut;
+
+            addFirst(cards,card);
+        }
+    }
+}
+
+void distributeCards(Linkedlist *cards, Linkedlist *players) {
+    int nbPlayer = length(players);
+    int nbDistributCards;
+    if((length(cards)/length(players))%4 != 0) nbDistributCards = 5;
+    else nbDistributCards = 4;
+    Player * p;
+
+    for (int i = 0; i < nbPlayer; i++) {
+        p = get(players,i);
+        for (int j = 0; j < nbDistributCards; j++) {
+            addLast(p->cards, pollRandom(cards));
+        }
+    }
+}
+
+
+/* ---------- Displays ---------- */
 
 void drawCard(const enum Card * card){
     if(card == NULL)
@@ -113,85 +206,43 @@ void drawCard(const enum Card * card){
     }
 }
 
-void destroyCard(enum Card ** card){
-  //TODO destroyCard
-  //free(*card);
-  *card = NULL;
-}
+void DrawCardMiddle(enum Card * card){
+    if(card == NULL)
+        return;
+    SDL_Texture *image_tex;
+    SDL_Rect imgDestRect ;
+    SDL_Surface *image=NULL;
+    int cardx = 160;
+    int cardy = 240;
+    int idealCardy = SDLgetHeight(0.25);
+    int idealCardx = ((float)cardx/(float)cardy)*idealCardy;
 
-char* getAsset(const enum Card * card){
-    if (card == NULL)
-        return "assets/Cartes/Carte_Back.png";
-    switch (*card) {
-        case one:
-            return "assets/Cartes/Carte_1.png";
-        case two:
-            return "assets/Cartes/Carte_Valeur_2.png";
-        case three:
-            return "assets/Cartes/Carte_Valeur_3.png";
-        case four:
-            return "assets/Cartes/Carte_4.png";
-        case five:
-            return "assets/Cartes/Carte_Valeur_5.png";
-        case six:
-            return "assets/Cartes/Carte_Valeur_6.png";
-        case seven:
-            return "assets/Cartes/Carte_Valeur_7.png";
-        case eight:
-            return "assets/Cartes/Carte_Valeur_8.png";
-        case nine:
-            return "assets/Cartes/Carte_Valeur_9.png";
-        case ten:
-            return "assets/Cartes/Carte_Valeur_10.png";
-        case eleven:
-            return "assets/Cartes/Carte_Valeur_V.png";
-        case twelve:
-            return "assets/Cartes/Carte_Valeur_D.png";
-        case thirteen:
-            return "assets/Cartes/Carte_Valeur_R.png";
-        case ThirteenOut:
-            return "assets/Cartes/Carte_R.png";
-        case oneOut:
-            return "assets/Cartes/Carte_1.png";
-            //TODO ajouter les autre cartes --> JOKER
-        default:
-            return "assets/Cartes/Carte_Back.png";
+    imgDestRect.x = SDLgetWidth(0.5) - idealCardx/2;
+    imgDestRect.y = SDLgetHeight(0.43) - idealCardy/2;
+    imgDestRect.w = 10;
+
+    SDL_RWops *rwop=SDL_RWFromFile(getAsset(card) , "rb");
+    image=IMG_LoadPNG_RW(rwop);
+    if(!image) {
+        printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
     }
-}
 
-
-void makeDeck(Linkedlist *cards, Linkedlist *gameRules) {
-    clear(cards);
-    enum Card * card ;
-    for (int i = 0; i < 4; ++i) {
-        for (enum Card c = one ; c <= thirteen; ++c) {
-
-            card = malloc(sizeof(enum Card));
-            *card = c;
-            if(*card == thirteen)
-                 *card = ThirteenOut;
-            if(*card == one)
-                *card = oneOut;
-
-            addFirst(cards,card);
-        }
+    image_tex = SDL_CreateTextureFromSurface(SDLgetRender(), image);
+    if(!image_tex){
+        fprintf(stderr, "Erreur a la creation du rendu de l'image : %s\n", SDL_GetError());
+        exit(EXIT_FAILURE);
     }
+
+
+    SDL_QueryTexture(image_tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
+    imgDestRect.w = idealCardx;
+    imgDestRect.h = idealCardy;
+    SDL_RenderCopy(SDLgetRender(), image_tex, NULL, &imgDestRect);
+    SDL_FreeSurface(image);
+    SDL_DestroyTexture(image_tex);
+
 }
 
-void distributeCards(Linkedlist *cards, Linkedlist *players) {
-    int nbPlayer = length(players);
-    int nbDistributCards;
-    if((length(cards)/length(players))%4 != 0) nbDistributCards = 5;
-    else nbDistributCards = 4;
-    Player * p;
-
-    for (int i = 0; i < nbPlayer; i++) {
-        p = get(players,i);
-        for (int j = 0; j < nbDistributCards; j++) {
-            addLast(p->cards, pollRandom(cards));
-        }
-    }
-}
 
 char * cardToString(const enum Card * card){
     if(card == NULL)
@@ -231,41 +282,4 @@ char * cardToString(const enum Card * card){
             return "Out";
             //TODO ajouter les autre cartes
     }
-}
-
-void DrawCardMiddle(enum Card * card){
-    if(card == NULL)
-        return;
-    SDL_Texture *image_tex;
-    SDL_Rect imgDestRect ;
-    SDL_Surface *image=NULL;
-    int cardx = 160;
-    int cardy = 240;
-    int idealCardy = SDLgetHeight(0.25);
-    int idealCardx = ((float)cardx/(float)cardy)*idealCardy;
-
-    imgDestRect.x = SDLgetWidth(0.5) - idealCardx/2;
-    imgDestRect.y = SDLgetHeight(0.43) - idealCardy/2;
-    imgDestRect.w = 10;
-
-    SDL_RWops *rwop=SDL_RWFromFile(getAsset(card) , "rb");
-    image=IMG_LoadPNG_RW(rwop);
-    if(!image) {
-        printf("IMG_LoadPNG_RW: %s\n", IMG_GetError());
-    }
-
-    image_tex = SDL_CreateTextureFromSurface(SDLgetRender(), image);
-    if(!image_tex){
-        fprintf(stderr, "Erreur a la creation du rendu de l'image : %s\n", SDL_GetError());
-        exit(EXIT_FAILURE);
-    }
-
-
-    SDL_QueryTexture(image_tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
-    imgDestRect.w = idealCardx;
-    imgDestRect.h = idealCardy;
-    SDL_RenderCopy(SDLgetRender(), image_tex, NULL, &imgDestRect);
-    SDL_FreeSurface(image);
-    SDL_DestroyTexture(image_tex);
-
 }

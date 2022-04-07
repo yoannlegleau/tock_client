@@ -55,7 +55,7 @@ $(function() {
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameboarder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -69,35 +69,24 @@ $(function() {
   <div class="headertitle"><div class="title">Color.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_color_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by adzerake on 10/03/2022.</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef TOCK_CLIENT_COLOR_H</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define TOCK_CLIENT_COLOR_H</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="_color_8h.html#a1d588d71a130835aefee5340759b9317">    8</a></span><span class="keyword">const</span> SDL_Color <a class="code hl_variable" href="_color_8h.html#a1d588d71a130835aefee5340759b9317">couleurNoire</a> = {0, 0, 0};</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="_color_8h.html#aac9b1cc66a1a82b7957bff89132e5555">    9</a></span><span class="keyword">const</span> SDL_Color <a class="code hl_variable" href="_color_8h.html#aac9b1cc66a1a82b7957bff89132e5555">couleurBlanc</a> = {255, 255, 255};</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="_color_8h.html#a15d2146e71c712081337332e659d0c44">   10</a></span><span class="keyword">const</span> SDL_Color <a class="code hl_variable" href="_color_8h.html#a15d2146e71c712081337332e659d0c44">colorPlayer1</a> = {2, 3, 230};</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="_color_8h.html#a2cc1f78cdd872f44f40c475ee5f76bc1">   11</a></span><span class="keyword">const</span> SDL_Color <a class="code hl_variable" href="_color_8h.html#a2cc1f78cdd872f44f40c475ee5f76bc1">colorPlayer2</a> = {223, 8 , 7};</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="_color_8h.html#a16b8c478c9e170179e714e2486d916b2">   12</a></span><span class="keyword">const</span> SDL_Color <a class="code hl_variable" href="_color_8h.html#a16b8c478c9e170179e714e2486d916b2">colorPlayer3</a> = {251, 249, 27};</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="_color_8h.html#af343d3e3ce4f336e77b9cf7081d116e0">   13</a></span><span class="keyword">const</span> SDL_Color <a class="code hl_variable" href="_color_8h.html#af343d3e3ce4f336e77b9cf7081d116e0">colorPlayer4</a> = {57, 147, 103};</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="_color_8h.html#a313eca0f2b203ca3063dea6f3689b531">   14</a></span><span class="keyword">const</span> SDL_Color <a class="code hl_variable" href="_color_8h.html#a313eca0f2b203ca3063dea6f3689b531">colorPlayer1Light</a> = {65, 65, 244};</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="_color_8h.html#a5722c3d050384571ca4f3e99a1094b97">   15</a></span><span class="keyword">const</span> SDL_Color <a class="code hl_variable" href="_color_8h.html#a5722c3d050384571ca4f3e99a1094b97">colorPlayer2Light</a> = {255, 98 , 98};</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="_color_8h.html#ac76f1cc0990613ec2ed4a8a631720620">   16</a></span><span class="keyword">const</span>  SDL_Color <a class="code hl_variable" href="_color_8h.html#ac76f1cc0990613ec2ed4a8a631720620">colorPlayer3Light</a> = {255, 254, 113};</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="_color_8h.html#a4d1e3f4a1cfc40c68fe129cba6df5359">   17</a></span><span class="keyword">const</span> SDL_Color <a class="code hl_variable" href="_color_8h.html#a4d1e3f4a1cfc40c68fe129cba6df5359">colorPlayer4Light</a> = {146, 206, 177};</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif </span><span class="comment">//TOCK_CLIENT_COLOR_H</span></div>
-<div class="ttc" id="a_color_8h_html_a15d2146e71c712081337332e659d0c44"><div class="ttname"><a href="_color_8h.html#a15d2146e71c712081337332e659d0c44">colorPlayer1</a></div><div class="ttdeci">const SDL_Color colorPlayer1</div><div class="ttdef"><b>Definition:</b> Color.h:10</div></div>
-<div class="ttc" id="a_color_8h_html_a16b8c478c9e170179e714e2486d916b2"><div class="ttname"><a href="_color_8h.html#a16b8c478c9e170179e714e2486d916b2">colorPlayer3</a></div><div class="ttdeci">const SDL_Color colorPlayer3</div><div class="ttdef"><b>Definition:</b> Color.h:12</div></div>
-<div class="ttc" id="a_color_8h_html_a1d588d71a130835aefee5340759b9317"><div class="ttname"><a href="_color_8h.html#a1d588d71a130835aefee5340759b9317">couleurNoire</a></div><div class="ttdeci">const SDL_Color couleurNoire</div><div class="ttdef"><b>Definition:</b> Color.h:8</div></div>
-<div class="ttc" id="a_color_8h_html_a2cc1f78cdd872f44f40c475ee5f76bc1"><div class="ttname"><a href="_color_8h.html#a2cc1f78cdd872f44f40c475ee5f76bc1">colorPlayer2</a></div><div class="ttdeci">const SDL_Color colorPlayer2</div><div class="ttdef"><b>Definition:</b> Color.h:11</div></div>
-<div class="ttc" id="a_color_8h_html_a313eca0f2b203ca3063dea6f3689b531"><div class="ttname"><a href="_color_8h.html#a313eca0f2b203ca3063dea6f3689b531">colorPlayer1Light</a></div><div class="ttdeci">const SDL_Color colorPlayer1Light</div><div class="ttdef"><b>Definition:</b> Color.h:14</div></div>
-<div class="ttc" id="a_color_8h_html_a4d1e3f4a1cfc40c68fe129cba6df5359"><div class="ttname"><a href="_color_8h.html#a4d1e3f4a1cfc40c68fe129cba6df5359">colorPlayer4Light</a></div><div class="ttdeci">const SDL_Color colorPlayer4Light</div><div class="ttdef"><b>Definition:</b> Color.h:17</div></div>
-<div class="ttc" id="a_color_8h_html_a5722c3d050384571ca4f3e99a1094b97"><div class="ttname"><a href="_color_8h.html#a5722c3d050384571ca4f3e99a1094b97">colorPlayer2Light</a></div><div class="ttdeci">const SDL_Color colorPlayer2Light</div><div class="ttdef"><b>Definition:</b> Color.h:15</div></div>
-<div class="ttc" id="a_color_8h_html_aac9b1cc66a1a82b7957bff89132e5555"><div class="ttname"><a href="_color_8h.html#aac9b1cc66a1a82b7957bff89132e5555">couleurBlanc</a></div><div class="ttdeci">const SDL_Color couleurBlanc</div><div class="ttdef"><b>Definition:</b> Color.h:9</div></div>
-<div class="ttc" id="a_color_8h_html_ac76f1cc0990613ec2ed4a8a631720620"><div class="ttname"><a href="_color_8h.html#ac76f1cc0990613ec2ed4a8a631720620">colorPlayer3Light</a></div><div class="ttdeci">const SDL_Color colorPlayer3Light</div><div class="ttdef"><b>Definition:</b> Color.h:16</div></div>
-<div class="ttc" id="a_color_8h_html_af343d3e3ce4f336e77b9cf7081d116e0"><div class="ttname"><a href="_color_8h.html#af343d3e3ce4f336e77b9cf7081d116e0">colorPlayer4</a></div><div class="ttdeci">const SDL_Color colorPlayer4</div><div class="ttdef"><b>Definition:</b> Color.h:13</div></div>
+<a href="_color_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef TOCK_CLIENT_COLOR_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define TOCK_CLIENT_COLOR_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/* ---------- Includes ---------- */</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;SDL.h&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">/* ---------- Getters ---------- */</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>SDL_Color <a class="code hl_function" href="_color_8h.html#ac8ab32d63f52157d17cd8a9b8d5485db">getSDLColor</a>(<span class="keywordtype">char</span> * colorKey);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#endif </span><span class="comment">//TOCK_CLIENT_COLOR_H</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="ttc" id="a_color_8h_html_ac8ab32d63f52157d17cd8a9b8d5485db"><div class="ttname"><a href="_color_8h.html#ac8ab32d63f52157d17cd8a9b8d5485db">getSDLColor</a></div><div class="ttdeci">SDL_Color getSDLColor(char *colorKey)</div><div class="ttdoc">Récupère la valeur de la couleur selon la feuille de style.</div><div class="ttdef"><b>Definition:</b> Color.c:55</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

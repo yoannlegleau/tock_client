@@ -1,0 +1,548 @@
+\hypertarget{board_8h}{}\doxysection{Référence du fichier C\+:/\+Users/adzerake/\+CLion\+Projects/tock-\/client/src/board.h}
+\label{board_8h}\index{C:/Users/adzerake/CLionProjects/tock-\/client/src/board.h@{C:/Users/adzerake/CLionProjects/tock-\/client/src/board.h}}
+
+
+Gestion du plateau de jeu et des pions.  
+
+
+{\ttfamily \#include $<$SDL.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}linkedlist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}card.\+h\char`\"{}}\newline
+\doxysubsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_board}{Board}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_board}{Board}} \mbox{\hyperlink{board_8h_a23ebcc73fdb69bb37ce7dc92a2a3d008}{Board}}
+\begin{DoxyCompactList}\small\item\em Structure représentent le plateau. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_board}{Board}} $\ast$ \mbox{\hyperlink{board_8h_a5dbbc578002ad9e11998e92ce29588e8}{board\+Factory}} (int nb\+Player)
+\begin{DoxyCompactList}\small\item\em Constructeur de \mbox{\hyperlink{struct_board}{Board}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_board}{Board}} $\ast$ \mbox{\hyperlink{board_8h_a275f1a16eaf4238fe071326efa2f949d}{board\+Clone}} (\mbox{\hyperlink{struct_board}{Board}} $\ast$board)
+\begin{DoxyCompactList}\small\item\em Duplique un plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{board_8h_a482bbee01164d1f5821bad0abc6d7fbd}{init\+Board}} (\mbox{\hyperlink{struct_board}{Board}} $\ast$board)
+\begin{DoxyCompactList}\small\item\em Remet a 0 tout le plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{board_8h_a9b124246e6875d0d8551a8c3acfc394d}{destroy\+Board}} (\mbox{\hyperlink{struct_board}{Board}} $\ast$$\ast$board)
+\begin{DoxyCompactList}\small\item\em libere toutes les variables du plateau \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{board_8h_af0d2e96e7e0ec3cfa1615035b2bb7790}{get\+Nb\+Player}} (\mbox{\hyperlink{struct_board}{Board}} $\ast$board)
+\begin{DoxyCompactList}\small\item\em Retourne le nombre de jouer autour du plateau. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{board_8h_a4d96389b5829477f59e5217cf4984217}{get\+Len}} (\mbox{\hyperlink{struct_board}{Board}} $\ast$board)
+\begin{DoxyCompactList}\small\item\em Retourne la longueur du plateau en comptent les maisons des joueurs. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{board_8h_a75cfce0286a261d6229cc76a742ef735}{get\+Board\+Len}} (\mbox{\hyperlink{struct_board}{Board}} $\ast$board)
+\begin{DoxyCompactList}\small\item\em Retourne la longueur du plateau sans comptent les maisons des joueurs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ \mbox{\hyperlink{board_8h_af7b0f196b2e4811eb4e2cefee65a5134}{get\+Player\+Pawns\+Location}} (\mbox{\hyperlink{struct_board}{Board}} $\ast$board, int player\+Id)
+\begin{DoxyCompactList}\small\item\em Retourn la liste des coordonnés (int) des pions d\textquotesingle{}un joueur. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{board_8h_a92407440e2a3ee6a1391e5ef3ab1f8e6}{get\+Start}} (int p\+Id)
+\begin{DoxyCompactList}\small\item\em Retourne les coordonnées de la case de sortie des pions d\textquotesingle{}un joueur. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{board_8h_a82a54698fb8707023eb0a899f969dd5a}{get\+Home\+Entry}} (int p\+Id)
+\begin{DoxyCompactList}\small\item\em Retourne les coordonnées de la case qui permet au pion de ranter des pions d\textquotesingle{}un joueur. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{board_8h_a44a7840b948482c80780207e2c1841c6}{get\+Home\+Start}} (\mbox{\hyperlink{struct_board}{Board}} $\ast$board, int p\+Id)
+\begin{DoxyCompactList}\small\item\em Retourne les coordonnées de premiere case de la maison d\textquotesingle{}un joueur. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{board_8h_a8b1c7657d71105c2b2206cb6f3ae73ee}{get\+In\+Home\+Position}} (\mbox{\hyperlink{struct_board}{Board}} $\ast$board, int location)
+\begin{DoxyCompactList}\small\item\em Retourne la position d\textquotesingle{}une coordoner dans la la maison. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{board_8h_ac57c3505ba5cbfd2573b20ddd1c2c325}{get\+Step\+To\+Home}} (\mbox{\hyperlink{struct_board}{Board}} $\ast$board, int location, int p\+Id)
+\begin{DoxyCompactList}\small\item\em Retourne la distance qu\textquotesingle{}il rest à parcourir a un pion pour rentrer à la maison. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{board_8h_a195a508db400eb827a4c799bcbc76b91}{get\+Id\+Team\+Member}} (\mbox{\hyperlink{struct_board}{Board}} $\ast$board, int id\+Player)
+\begin{DoxyCompactList}\small\item\em Retourne l\textquotesingle{}identifient du coéquipier. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{board_8h_ae0f457c466ffad4c89212459b0992896}{is\+On\+Board}} (\mbox{\hyperlink{struct_board}{Board}} $\ast$board, int location)
+\begin{DoxyCompactList}\small\item\em Verifier que la position est bien sur le plateau les maisons ne sont pas incluse. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{board_8h_a4365bf407115db13e16cd10110aa15cc}{pawn\+On\+Path}} (\mbox{\hyperlink{struct_board}{Board}} $\ast$board, int location, int step)
+\begin{DoxyCompactList}\small\item\em Verifier si il y a des pion sur le chemin. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{board_8h_abbc6fd18e86814b18e6a0b97fd5f37c4}{is\+Win}} (\mbox{\hyperlink{struct_board}{Board}} $\ast$board, int p\+Id)
+\begin{DoxyCompactList}\small\item\em Verifier si le joueur a gagner (4 pion dans la maison). Ne prend pas en compte la réussite de l\textquotesingle{}équipier. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{board_8h_a3738ccd604fe9fe9d189a0e4fd6b143c}{forward}} (\mbox{\hyperlink{struct_board}{Board}} $\ast$board, int location, int step)
+\begin{DoxyCompactList}\small\item\em Fais avancer un pion sur le plateau. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{board_8h_a160927aa21e403f6743f4cacb5321a87}{backward}} (\mbox{\hyperlink{struct_board}{Board}} $\ast$board, int location, int step)
+\begin{DoxyCompactList}\small\item\em Fais reculer un pion sur le plateau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{board_8h_a232d733f919605b39318b1ee3ec8fce1}{move}} (\mbox{\hyperlink{struct_board}{Board}} $\ast$board, int from, int to)
+\begin{DoxyCompactList}\small\item\em Fonction de déplacement basic. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{board_8h_a6b8349be43c85bc81c554bcc0fb884a2}{out\+Pawn}} (\mbox{\hyperlink{struct_board}{Board}} $\ast$board, int p\+Id)
+\begin{DoxyCompactList}\small\item\em Fais sortir un pion a un joueur (ajouter un pion) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{board_8h_a3f1b1f6b63108eb054789c97ce1d3c00}{heuristic}} (\mbox{\hyperlink{struct_board}{Board}} $\ast$board, int Id\+Player)
+\begin{DoxyCompactList}\small\item\em Calcule une estimation de la position. l\textquotesingle{}estimation est representative de l\textquotesingle{}envencement et des chance de victoire d\textquotesingle{}un joueur dans la partie a un instant t. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{board_8h_a037f22059b7c568a31da880e27d41e43}{draw\+Board}} (\mbox{\hyperlink{struct_board}{Board}} $\ast$board)
+\begin{DoxyCompactList}\small\item\em Afficher le plateau ses pions et les reserve de pion. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{board_8h_a0274f3760b503a4569ba0ddf29a6c85c}{highlight\+Location}} (int location)
+\begin{DoxyCompactList}\small\item\em met en evidence la case selectioner \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Gestion du plateau de jeu et des pions. 
+
+\begin{DoxyAuthor}{Auteur}
+LE GLEAU Yoann 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+10/03/2022 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+
+
+\doxysubsection{Documentation des définitions de type}
+\mbox{\Hypertarget{board_8h_a23ebcc73fdb69bb37ce7dc92a2a3d008}\label{board_8h_a23ebcc73fdb69bb37ce7dc92a2a3d008}} 
+\index{board.h@{board.h}!Board@{Board}}
+\index{Board@{Board}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{Board}{Board}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_board}{Board}} \mbox{\hyperlink{struct_board}{Board}}}
+
+
+
+Structure représentent le plateau. 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{board_8h_a160927aa21e403f6743f4cacb5321a87}\label{board_8h_a160927aa21e403f6743f4cacb5321a87}} 
+\index{board.h@{board.h}!backward@{backward}}
+\index{backward@{backward}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{backward()}{backward()}}
+{\footnotesize\ttfamily bool backward (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board,  }\item[{int}]{location,  }\item[{int}]{step }\end{DoxyParamCaption})}
+
+
+
+Fais reculer un pion sur le plateau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & Context \\
+\hline
+{\em location} & Position du pion à faire avancer \\
+\hline
+{\em step} & Distance à parcourir \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true si le pion a bien pue reculer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{board_8h_a275f1a16eaf4238fe071326efa2f949d}\label{board_8h_a275f1a16eaf4238fe071326efa2f949d}} 
+\index{board.h@{board.h}!boardClone@{boardClone}}
+\index{boardClone@{boardClone}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{boardClone()}{boardClone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_board}{Board}} $\ast$ board\+Clone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board }\end{DoxyParamCaption})}
+
+
+
+Duplique un plateau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & plateau source \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+\mbox{\hyperlink{struct_board}{Board}} copie 
+\end{DoxyReturn}
+\mbox{\Hypertarget{board_8h_a5dbbc578002ad9e11998e92ce29588e8}\label{board_8h_a5dbbc578002ad9e11998e92ce29588e8}} 
+\index{board.h@{board.h}!boardFactory@{boardFactory}}
+\index{boardFactory@{boardFactory}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{boardFactory()}{boardFactory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_board}{Board}} $\ast$ board\+Factory (\begin{DoxyParamCaption}\item[{int}]{nb\+Player }\end{DoxyParamCaption})}
+
+
+
+Constructeur de \mbox{\hyperlink{struct_board}{Board}}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nb\+Player} & Nombre de joueurs autour du plateau (4 ou 6 ou 8) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+\mbox{\hyperlink{struct_board}{Board}} nouveau plateau 
+\end{DoxyReturn}
+\mbox{\Hypertarget{board_8h_a9b124246e6875d0d8551a8c3acfc394d}\label{board_8h_a9b124246e6875d0d8551a8c3acfc394d}} 
+\index{board.h@{board.h}!destroyBoard@{destroyBoard}}
+\index{destroyBoard@{destroyBoard}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{destroyBoard()}{destroyBoard()}}
+{\footnotesize\ttfamily void destroy\+Board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$$\ast$}]{board }\end{DoxyParamCaption})}
+
+
+
+libere toutes les variables du plateau 
+
+\mbox{\Hypertarget{board_8h_a037f22059b7c568a31da880e27d41e43}\label{board_8h_a037f22059b7c568a31da880e27d41e43}} 
+\index{board.h@{board.h}!drawBoard@{drawBoard}}
+\index{drawBoard@{drawBoard}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{drawBoard()}{drawBoard()}}
+{\footnotesize\ttfamily void draw\+Board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board }\end{DoxyParamCaption})}
+
+
+
+Afficher le plateau ses pions et les reserve de pion. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & context \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{board_8h_a3738ccd604fe9fe9d189a0e4fd6b143c}\label{board_8h_a3738ccd604fe9fe9d189a0e4fd6b143c}} 
+\index{board.h@{board.h}!forward@{forward}}
+\index{forward@{forward}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{forward()}{forward()}}
+{\footnotesize\ttfamily bool forward (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board,  }\item[{int}]{location,  }\item[{int}]{step }\end{DoxyParamCaption})}
+
+
+
+Fais avancer un pion sur le plateau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & context \\
+\hline
+{\em location} & Position du pion à faire avancer \\
+\hline
+{\em step} & Distance à parcourir \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true si le pion a bien pue avencer 
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}\mbox{\Hypertarget{board_8h_a75cfce0286a261d6229cc76a742ef735}\label{board_8h_a75cfce0286a261d6229cc76a742ef735}} 
+\index{board.h@{board.h}!getBoardLen@{getBoardLen}}
+\index{getBoardLen@{getBoardLen}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{getBoardLen()}{getBoardLen()}}
+{\footnotesize\ttfamily int get\+Board\+Len (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board }\end{DoxyParamCaption})}
+
+
+
+Retourne la longueur du plateau sans comptent les maisons des joueurs. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & context \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{board_8h_a82a54698fb8707023eb0a899f969dd5a}\label{board_8h_a82a54698fb8707023eb0a899f969dd5a}} 
+\index{board.h@{board.h}!getHomeEntry@{getHomeEntry}}
+\index{getHomeEntry@{getHomeEntry}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{getHomeEntry()}{getHomeEntry()}}
+{\footnotesize\ttfamily int get\+Home\+Entry (\begin{DoxyParamCaption}\item[{int}]{p\+Id }\end{DoxyParamCaption})}
+
+
+
+Retourne les coordonnées de la case qui permet au pion de ranter des pions d\textquotesingle{}un joueur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Id} & Identifient du joueur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int coordonnée 
+\end{DoxyReturn}
+\mbox{\Hypertarget{board_8h_a44a7840b948482c80780207e2c1841c6}\label{board_8h_a44a7840b948482c80780207e2c1841c6}} 
+\index{board.h@{board.h}!getHomeStart@{getHomeStart}}
+\index{getHomeStart@{getHomeStart}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{getHomeStart()}{getHomeStart()}}
+{\footnotesize\ttfamily int get\+Home\+Start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board,  }\item[{int}]{p\+Id }\end{DoxyParamCaption})}
+
+
+
+Retourne les coordonnées de premiere case de la maison d\textquotesingle{}un joueur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Id} & Identifient du joueur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int coordonnée 
+\end{DoxyReturn}
+\mbox{\Hypertarget{board_8h_a195a508db400eb827a4c799bcbc76b91}\label{board_8h_a195a508db400eb827a4c799bcbc76b91}} 
+\index{board.h@{board.h}!getIdTeamMember@{getIdTeamMember}}
+\index{getIdTeamMember@{getIdTeamMember}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{getIdTeamMember()}{getIdTeamMember()}}
+{\footnotesize\ttfamily int get\+Id\+Team\+Member (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board,  }\item[{int}]{id\+Player }\end{DoxyParamCaption})}
+
+
+
+Retourne l\textquotesingle{}identifient du coéquipier. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & context \\
+\hline
+{\em id\+Player} & Identifient du joueur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int identifient du coéquipier 
+\end{DoxyReturn}
+\mbox{\Hypertarget{board_8h_a8b1c7657d71105c2b2206cb6f3ae73ee}\label{board_8h_a8b1c7657d71105c2b2206cb6f3ae73ee}} 
+\index{board.h@{board.h}!getInHomePosition@{getInHomePosition}}
+\index{getInHomePosition@{getInHomePosition}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{getInHomePosition()}{getInHomePosition()}}
+{\footnotesize\ttfamily int get\+In\+Home\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board,  }\item[{int}]{location }\end{DoxyParamCaption})}
+
+
+
+Retourne la position d\textquotesingle{}une coordoner dans la la maison. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Id} & Identifient du joueur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int \mbox{[}1-\/4\mbox{]} position, -\/1 si la localisation n\textquotesingle{}est pas dans une maison 
+\end{DoxyReturn}
+\mbox{\Hypertarget{board_8h_a4d96389b5829477f59e5217cf4984217}\label{board_8h_a4d96389b5829477f59e5217cf4984217}} 
+\index{board.h@{board.h}!getLen@{getLen}}
+\index{getLen@{getLen}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{getLen()}{getLen()}}
+{\footnotesize\ttfamily int get\+Len (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board }\end{DoxyParamCaption})}
+
+
+
+Retourne la longueur du plateau en comptent les maisons des joueurs. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & context \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{board_8h_af0d2e96e7e0ec3cfa1615035b2bb7790}\label{board_8h_af0d2e96e7e0ec3cfa1615035b2bb7790}} 
+\index{board.h@{board.h}!getNbPlayer@{getNbPlayer}}
+\index{getNbPlayer@{getNbPlayer}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{getNbPlayer()}{getNbPlayer()}}
+{\footnotesize\ttfamily int get\+Nb\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board }\end{DoxyParamCaption})}
+
+
+
+Retourne le nombre de jouer autour du plateau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & context \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{board_8h_af7b0f196b2e4811eb4e2cefee65a5134}\label{board_8h_af7b0f196b2e4811eb4e2cefee65a5134}} 
+\index{board.h@{board.h}!getPlayerPawnsLocation@{getPlayerPawnsLocation}}
+\index{getPlayerPawnsLocation@{getPlayerPawnsLocation}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{getPlayerPawnsLocation()}{getPlayerPawnsLocation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ get\+Player\+Pawns\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board,  }\item[{int}]{player\+Id }\end{DoxyParamCaption})}
+
+
+
+Retourn la liste des coordonnés (int) des pions d\textquotesingle{}un joueur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & context \\
+\hline
+{\em player\+Id} & id du joueur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} of int$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{board_8h_a92407440e2a3ee6a1391e5ef3ab1f8e6}\label{board_8h_a92407440e2a3ee6a1391e5ef3ab1f8e6}} 
+\index{board.h@{board.h}!getStart@{getStart}}
+\index{getStart@{getStart}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{getStart()}{getStart()}}
+{\footnotesize\ttfamily int get\+Start (\begin{DoxyParamCaption}\item[{int}]{p\+Id }\end{DoxyParamCaption})}
+
+
+
+Retourne les coordonnées de la case de sortie des pions d\textquotesingle{}un joueur. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em p\+Id} & Identifient du joueur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int coordonnée 
+\end{DoxyReturn}
+\mbox{\Hypertarget{board_8h_ac57c3505ba5cbfd2573b20ddd1c2c325}\label{board_8h_ac57c3505ba5cbfd2573b20ddd1c2c325}} 
+\index{board.h@{board.h}!getStepToHome@{getStepToHome}}
+\index{getStepToHome@{getStepToHome}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{getStepToHome()}{getStepToHome()}}
+{\footnotesize\ttfamily int get\+Step\+To\+Home (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board,  }\item[{int}]{location,  }\item[{int}]{p\+Id }\end{DoxyParamCaption})}
+
+
+
+Retourne la distance qu\textquotesingle{}il rest à parcourir a un pion pour rentrer à la maison. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & context \\
+\hline
+{\em location} & position \\
+\hline
+{\em p\+Id} & Identifient du joueur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{board_8h_a3f1b1f6b63108eb054789c97ce1d3c00}\label{board_8h_a3f1b1f6b63108eb054789c97ce1d3c00}} 
+\index{board.h@{board.h}!heuristic@{heuristic}}
+\index{heuristic@{heuristic}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{heuristic()}{heuristic()}}
+{\footnotesize\ttfamily int heuristic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board,  }\item[{int}]{Id\+Player }\end{DoxyParamCaption})}
+
+
+
+Calcule une estimation de la position. l\textquotesingle{}estimation est representative de l\textquotesingle{}envencement et des chance de victoire d\textquotesingle{}un joueur dans la partie a un instant t. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & context \\
+\hline
+{\em Id\+Player} & Idantifient du jour de reference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Int estimation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{board_8h_a0274f3760b503a4569ba0ddf29a6c85c}\label{board_8h_a0274f3760b503a4569ba0ddf29a6c85c}} 
+\index{board.h@{board.h}!highlightLocation@{highlightLocation}}
+\index{highlightLocation@{highlightLocation}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{highlightLocation()}{highlightLocation()}}
+{\footnotesize\ttfamily void highlight\+Location (\begin{DoxyParamCaption}\item[{int}]{location }\end{DoxyParamCaption})}
+
+
+
+met en evidence la case selectioner 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em location} & Position selectinée \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{board_8h_a482bbee01164d1f5821bad0abc6d7fbd}\label{board_8h_a482bbee01164d1f5821bad0abc6d7fbd}} 
+\index{board.h@{board.h}!initBoard@{initBoard}}
+\index{initBoard@{initBoard}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{initBoard()}{initBoard()}}
+{\footnotesize\ttfamily void init\+Board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board }\end{DoxyParamCaption})}
+
+
+
+Remet a 0 tout le plateau. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & cible \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{board_8h_ae0f457c466ffad4c89212459b0992896}\label{board_8h_ae0f457c466ffad4c89212459b0992896}} 
+\index{board.h@{board.h}!isOnBoard@{isOnBoard}}
+\index{isOnBoard@{isOnBoard}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{isOnBoard()}{isOnBoard()}}
+{\footnotesize\ttfamily bool is\+On\+Board (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board,  }\item[{int}]{location }\end{DoxyParamCaption})}
+
+
+
+Verifier que la position est bien sur le plateau les maisons ne sont pas incluse. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & context \\
+\hline
+{\em location} & position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Vrais si la position est sur le plateau 
+\end{DoxyReturn}
+\mbox{\Hypertarget{board_8h_abbc6fd18e86814b18e6a0b97fd5f37c4}\label{board_8h_abbc6fd18e86814b18e6a0b97fd5f37c4}} 
+\index{board.h@{board.h}!isWin@{isWin}}
+\index{isWin@{isWin}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{isWin()}{isWin()}}
+{\footnotesize\ttfamily bool is\+Win (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board,  }\item[{int}]{p\+Id }\end{DoxyParamCaption})}
+
+
+
+Verifier si le joueur a gagner (4 pion dans la maison). Ne prend pas en compte la réussite de l\textquotesingle{}équipier. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & context \\
+\hline
+{\em p\+Id} & Identifient du joueur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+vrais si gagner 
+\end{DoxyReturn}
+\mbox{\Hypertarget{board_8h_a232d733f919605b39318b1ee3ec8fce1}\label{board_8h_a232d733f919605b39318b1ee3ec8fce1}} 
+\index{board.h@{board.h}!move@{move}}
+\index{move@{move}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board,  }\item[{int}]{from,  }\item[{int}]{to }\end{DoxyParamCaption})}
+
+
+
+Fonction de déplacement basic. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & context \\
+\hline
+{\em from} & départ \\
+\hline
+{\em to} & destination \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{board_8h_a6b8349be43c85bc81c554bcc0fb884a2}\label{board_8h_a6b8349be43c85bc81c554bcc0fb884a2}} 
+\index{board.h@{board.h}!outPawn@{outPawn}}
+\index{outPawn@{outPawn}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{outPawn()}{outPawn()}}
+{\footnotesize\ttfamily bool out\+Pawn (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board,  }\item[{int}]{p\+Id }\end{DoxyParamCaption})}
+
+
+
+Fais sortir un pion a un joueur (ajouter un pion) 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & context \\
+\hline
+{\em p\+Id} & Identifient du joueur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Vrais si le pion a bien pue aitre sorti 
+\end{DoxyReturn}
+\mbox{\Hypertarget{board_8h_a4365bf407115db13e16cd10110aa15cc}\label{board_8h_a4365bf407115db13e16cd10110aa15cc}} 
+\index{board.h@{board.h}!pawnOnPath@{pawnOnPath}}
+\index{pawnOnPath@{pawnOnPath}!board.h@{board.h}}
+\doxysubsubsection{\texorpdfstring{pawnOnPath()}{pawnOnPath()}}
+{\footnotesize\ttfamily bool pawn\+On\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_board}{Board}} $\ast$}]{board,  }\item[{int}]{location,  }\item[{int}]{step }\end{DoxyParamCaption})}
+
+
+
+Verifier si il y a des pion sur le chemin. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em board} & context \\
+\hline
+{\em location} & coordonnée de depart \\
+\hline
+{\em step} & distance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Vrais s\textquotesingle{}il y a un pion ou plus 
+\end{DoxyReturn}

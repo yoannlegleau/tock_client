@@ -1,5 +1,3 @@
-#include <stdbool.h>
-
 /**
  * \file Linkedlist.h
  * \brief liste chainer generique
@@ -9,7 +7,19 @@
  * \details Baser sur les specification suivantes https://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html
  */
 
+/* ---------- Includes ---------- */
+
+#include <stdbool.h>
+
+
+/* ---------- Structure ---------- */
+
+/**
+ * \brief Structure general dfe la liste
+ */
 typedef struct Linkedlist Linkedlist;
+
+/* ---------- Constructor ---------- */
 
 /**
  * \brief (ruteur) Cree une nouvelle list chainer
@@ -27,43 +37,6 @@ Linkedlist * linkedListFactory(void (*funcDest)(void * e));
 Linkedlist *LinkedlistClone(Linkedlist *l);
 
 /**
- * \brief Renvoie le nombre d'éléments de la liste l.
- * \param l Linkedlist conserner
- * \return nombre d'éléments ou 0 si la liste est vide
- */
-int length( Linkedlist *l);
-
-/**
- * \brief Renvoie true si cette liste ne contient aucun élément.
- * \param l liste cible
- * \return true si cette liste ne contient aucun élément
- * \details Cette implémentation renvoie length() == 0.
- */
-bool isEmpty(Linkedlist *l);
-
-/**
- * \brief Renvoie le nombre d'occurrence de l'objet dans la liste
- * \param l Linkedlist
- * \param o pointeure de comparaison
- * \return int corespondent
- */
-int contains( Linkedlist * l, void * o);
-
-/**
- * \brief Ajoute l'objet O au debut de la liste
- * \param l
- * \param o
- */
-void addFirst(Linkedlist * l, void * o);
-
-/**
- * \brief Ajoute l'objet O a la fin de la liste
- * \param l
- * \param o
- */
-void addLast(Linkedlist *l,  void * o);
-
-/**
  * \brief Renvoie une reel copie de la liste
  * \param l liste copier
  * \return copie de la liste
@@ -71,32 +44,23 @@ void addLast(Linkedlist *l,  void * o);
 Linkedlist * clone( Linkedlist * l);
 
 /**
- * \brief Suprime tout les objects de la liste
- * \param l Linkedlist
- */
-void clear(Linkedlist * l);
-
-/**
- * \brief Suprime de la liste un object
- * \param l Linkedlist
- * \param i (index) position de l'object
- */
-void removeElem(Linkedlist * l, int i);
-
-/**
- * \brief Suprime le premier objet de la liste
- * \param l Linkedlist
- */
-void removeFirst(Linkedlist *l);
-
-/**
  * \brief Suprime la lise et libert l'espace memoire
  * \param l Linkedlist
  */
 void destroyLinkedList(Linkedlist ** l);
 
+
+/* ---------- Getters ---------- */
+
 /**
- * \brief Renvoie l'élément à la position spécifiée dans cette liste.
+ * \brief Renvoie le nombre d'éléments de la liste l.
+ * \param l Linkedlist conserner
+ * \return nombre d'éléments ou 0 si la liste est vide
+ */
+int length( Linkedlist *l);
+
+/**
+ * \brief Renvoie l'objet à la position spécifiée dans cette liste.
  * \param l
  * \param index
  * \return objet ou NULL si hor liste
@@ -116,6 +80,61 @@ void * getFirst( Linkedlist * l);
  * \return
  */
 void * getLast( Linkedlist * l);
+
+
+/* ---------- Testes  ---------- */
+
+/**
+ * \brief Renvoie true si cette liste ne contient aucun élément.
+ * \param l liste cible
+ * \return true si cette liste ne contient aucun élément
+ * \details Cette implémentation renvoie length() == 0.
+ */
+bool isEmpty(Linkedlist *l);
+
+/**
+ * \brief Renvoie le nombre d'occurrence de l'objet dans la liste
+ * \param l Linkedlist
+ * \param o pointeure de comparaison
+ * \return int corespondent
+ */
+int contains( Linkedlist * l, void * o);
+
+
+/* ---------- Utilities ---------- */
+
+/**
+ * \brief Ajoute l'objet O au debut de la liste
+ * \param l
+ * \param o
+ */
+void addFirst(Linkedlist * l, void * o);
+
+/**
+ * \brief Ajoute l'objet O a la fin de la liste
+ * \param l
+ * \param o
+ */
+void addLast(Linkedlist *l,  void * o);
+
+/**
+ * \brief Suprime tout les objects de la liste
+ * \param l Linkedlist
+ */
+void clear(Linkedlist * l);
+
+/**
+ * \brief Suprime de la liste un object
+ * \param l Linkedlist
+ * \param i (index) position de l'object
+ */
+void removeElem(Linkedlist * l, int i);
+
+/**
+ * \brief Suprime le premier objet de la liste
+ * \param l Linkedlist
+ */
+void removeFirst(Linkedlist *l);
 
 /**
  * \brief Renvoie le premiere élément dans la liste et le supprime.

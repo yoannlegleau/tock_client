@@ -2,7 +2,7 @@
 \label{card_8h}\index{C:/Users/adzerake/CLionProjects/tock-\/client/src/card.h@{C:/Users/adzerake/CLionProjects/tock-\/client/src/card.h}}
 
 
-gestion des cartes  
+Gestion des cartes.  
 
 
 {\ttfamily \#include \char`\"{}linkedlist.\+h\char`\"{}}\newline
@@ -29,26 +29,44 @@ enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} \{ \newl
 , \newline
 \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3a605d70a0e88820992d3a5d1f28e7e77c}{thirteen}}
 , \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3a7526c04d442ea38779b1babab0d52f15}{eighteen}}
+, \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3aaca14bf8f96bb2b357f12496b7f11579}{out}}
 , \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3ad63cf0a9a61fb4dc83610b112ae790f9}{swap}}
-, \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3ab9854728c4cce3d32c4325730bc50c1c}{eleven\+\_\+out}}
+, \newline
+\mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3af359f99897f97c5c2b52f8da4a722a72}{Thirteen\+Out}}
+, \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3a2c9780672ff741a2224701e608f41efc}{one\+Out}}
+, \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3a41cbf5c8d5a295697fb21cca4e73b2c6}{seven\+Split}}
  \}
 \begin{DoxyCompactList}\small\item\em chaque enume corespon a une action distinct \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{card_8h_afe3c91043da027e3ca6e6b514828e126}{draw\+Card}} (const enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$card)
-\begin{DoxyCompactList}\small\item\em affiche le nom dew catres dans le terminal \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{card_8h_af05b830f3fa2b2d709482ad780b58fb5}{destroy\+Card}} (enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$$\ast$card)
+\begin{DoxyCompactList}\small\item\em Fonction de destruction ds cartes. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{card_8h_a9fb5fd69286d34a83c35565dc69a5243}{get\+Asset}} (const enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$card)
+\begin{DoxyCompactList}\small\item\em retour le chemain ver l\textquotesingle{}asset associer a la carte \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ \mbox{\hyperlink{card_8h_a56c6d69114d3d5875e68541740e52750}{get\+Card\+Compose}} (const enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$card)
+\begin{DoxyCompactList}\small\item\em Retourne une liste des cartes qui compose la care en parameters. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{card_8h_aaa6bbfa32eeeb67f6492fc2b77d95ff2}{is\+Composed}} (const enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$card)
+\begin{DoxyCompactList}\small\item\em Retourne vrais si la carte est une carte composé \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{card_8h_a6402c47e0a2fa351b4ee2dae38305e07}{is\+Composed\+Splittable}} (const enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$card)
+\item 
 void \mbox{\hyperlink{card_8h_a588f788a116c7297754143f4c764675e}{make\+Deck}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$cards, \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$game\+Rules)
 \begin{DoxyCompactList}\small\item\em ajout des cartes dans la list pour cree un paket de carte coherent et prend en compte les règles sélectionner \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{card_8h_a099ad5ba8fde893123e3223f3ab306af}{distribute\+Cards}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$cards, \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$players)
+\begin{DoxyCompactList}\small\item\em Distribuer les carters entre plusieurs joueurs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{card_8h_afe3c91043da027e3ca6e6b514828e126}{draw\+Card}} (const enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$card)
+\begin{DoxyCompactList}\small\item\em affiche le nom dew catres dans le terminal \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{card_8h_ada1e17b155f092346b61389178bc87a4}{Draw\+Card\+Middle}} (enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$card)
+\begin{DoxyCompactList}\small\item\em affiche une carte au centre du plateau \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{card_8h_a5b950ad10b4db401839ef5d34582c803}{card\+To\+String}} (const enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$card)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Description détaillée}
-gestion des cartes 
+Gestion des cartes. 
 
 \begin{DoxyAuthor}{Auteur}
-JARRIER allan 
+LE GLEAU Yoann 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
 28/01/2022 
@@ -126,24 +144,68 @@ thirteen&\\
 eighteen&\\
 \hline
 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{out@{out}!card.h@{card.h}}\index{card.h@{card.h}!out@{out}}}\mbox{\Hypertarget{card_8h_a98a2b239923441ea943de74af3208aa3aaca14bf8f96bb2b357f12496b7f11579}\label{card_8h_a98a2b239923441ea943de74af3208aa3aaca14bf8f96bb2b357f12496b7f11579}} 
+out&\\
+\hline
+
 \raisebox{\heightof{T}}[0pt][0pt]{\index{swap@{swap}!card.h@{card.h}}\index{card.h@{card.h}!swap@{swap}}}\mbox{\Hypertarget{card_8h_a98a2b239923441ea943de74af3208aa3ad63cf0a9a61fb4dc83610b112ae790f9}\label{card_8h_a98a2b239923441ea943de74af3208aa3ad63cf0a9a61fb4dc83610b112ae790f9}} 
 swap&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{eleven\_out@{eleven\_out}!card.h@{card.h}}\index{card.h@{card.h}!eleven\_out@{eleven\_out}}}\mbox{\Hypertarget{card_8h_a98a2b239923441ea943de74af3208aa3ab9854728c4cce3d32c4325730bc50c1c}\label{card_8h_a98a2b239923441ea943de74af3208aa3ab9854728c4cce3d32c4325730bc50c1c}} 
-eleven\+\_\+out&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ThirteenOut@{ThirteenOut}!card.h@{card.h}}\index{card.h@{card.h}!ThirteenOut@{ThirteenOut}}}\mbox{\Hypertarget{card_8h_a98a2b239923441ea943de74af3208aa3af359f99897f97c5c2b52f8da4a722a72}\label{card_8h_a98a2b239923441ea943de74af3208aa3af359f99897f97c5c2b52f8da4a722a72}} 
+Thirteen\+Out&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{oneOut@{oneOut}!card.h@{card.h}}\index{card.h@{card.h}!oneOut@{oneOut}}}\mbox{\Hypertarget{card_8h_a98a2b239923441ea943de74af3208aa3a2c9780672ff741a2224701e608f41efc}\label{card_8h_a98a2b239923441ea943de74af3208aa3a2c9780672ff741a2224701e608f41efc}} 
+one\+Out&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sevenSplit@{sevenSplit}!card.h@{card.h}}\index{card.h@{card.h}!sevenSplit@{sevenSplit}}}\mbox{\Hypertarget{card_8h_a98a2b239923441ea943de74af3208aa3a41cbf5c8d5a295697fb21cca4e73b2c6}\label{card_8h_a98a2b239923441ea943de74af3208aa3a41cbf5c8d5a295697fb21cca4e73b2c6}} 
+seven\+Split&\\
 \hline
 
 \end{DoxyEnumFields}
 
 
 \doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{card_8h_a5b950ad10b4db401839ef5d34582c803}\label{card_8h_a5b950ad10b4db401839ef5d34582c803}} 
+\index{card.h@{card.h}!cardToString@{cardToString}}
+\index{cardToString@{cardToString}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{cardToString()}{cardToString()}}
+{\footnotesize\ttfamily char $\ast$ card\+To\+String (\begin{DoxyParamCaption}\item[{const enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$}]{card }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{card_8h_af05b830f3fa2b2d709482ad780b58fb5}\label{card_8h_af05b830f3fa2b2d709482ad780b58fb5}} 
+\index{card.h@{card.h}!destroyCard@{destroyCard}}
+\index{destroyCard@{destroyCard}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{destroyCard()}{destroyCard()}}
+{\footnotesize\ttfamily void destroy\+Card (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$$\ast$}]{card }\end{DoxyParamCaption})}
+
+
+
+Fonction de destruction ds cartes. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em card} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{card_8h_a099ad5ba8fde893123e3223f3ab306af}\label{card_8h_a099ad5ba8fde893123e3223f3ab306af}} 
 \index{card.h@{card.h}!distributeCards@{distributeCards}}
 \index{distributeCards@{distributeCards}!card.h@{card.h}}
 \doxysubsubsection{\texorpdfstring{distributeCards()}{distributeCards()}}
 {\footnotesize\ttfamily void distribute\+Cards (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{cards,  }\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{players }\end{DoxyParamCaption})}
 
+
+
+Distribuer les carters entre plusieurs joueurs. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em cards} & \\
+\hline
+{\em players} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{card_8h_afe3c91043da027e3ca6e6b514828e126}\label{card_8h_afe3c91043da027e3ca6e6b514828e126}} 
 \index{card.h@{card.h}!drawCard@{drawCard}}
 \index{drawCard@{drawCard}!card.h@{card.h}}
@@ -162,6 +224,81 @@ affiche le nom dew catres dans le terminal
 \begin{DoxyVersion}{Version}
 1 
 \end{DoxyVersion}
+\mbox{\Hypertarget{card_8h_ada1e17b155f092346b61389178bc87a4}\label{card_8h_ada1e17b155f092346b61389178bc87a4}} 
+\index{card.h@{card.h}!DrawCardMiddle@{DrawCardMiddle}}
+\index{DrawCardMiddle@{DrawCardMiddle}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{DrawCardMiddle()}{DrawCardMiddle()}}
+{\footnotesize\ttfamily void Draw\+Card\+Middle (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$}]{card }\end{DoxyParamCaption})}
+
+
+
+affiche une carte au centre du plateau 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em card} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{card_8h_a9fb5fd69286d34a83c35565dc69a5243}\label{card_8h_a9fb5fd69286d34a83c35565dc69a5243}} 
+\index{card.h@{card.h}!getAsset@{getAsset}}
+\index{getAsset@{getAsset}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{getAsset()}{getAsset()}}
+{\footnotesize\ttfamily char $\ast$ get\+Asset (\begin{DoxyParamCaption}\item[{const enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$}]{card }\end{DoxyParamCaption})}
+
+
+
+retour le chemain ver l\textquotesingle{}asset associer a la carte 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em card} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{card_8h_a56c6d69114d3d5875e68541740e52750}\label{card_8h_a56c6d69114d3d5875e68541740e52750}} 
+\index{card.h@{card.h}!getCardCompose@{getCardCompose}}
+\index{getCardCompose@{getCardCompose}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{getCardCompose()}{getCardCompose()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ get\+Card\+Compose (\begin{DoxyParamCaption}\item[{const enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$}]{card }\end{DoxyParamCaption})}
+
+
+
+Retourne une liste des cartes qui compose la care en parameters. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em card} & carte a décomposer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} liste de cartes
+\end{DoxyReturn}
+Une care composé est une carte qui possède plusieurs effets. \mbox{\Hypertarget{card_8h_aaa6bbfa32eeeb67f6492fc2b77d95ff2}\label{card_8h_aaa6bbfa32eeeb67f6492fc2b77d95ff2}} 
+\index{card.h@{card.h}!isComposed@{isComposed}}
+\index{isComposed@{isComposed}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{isComposed()}{isComposed()}}
+{\footnotesize\ttfamily bool is\+Composed (\begin{DoxyParamCaption}\item[{const enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$}]{card }\end{DoxyParamCaption})}
+
+
+
+Retourne vrais si la carte est une carte composé 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em card} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+bool
+\end{DoxyReturn}
+Une care composé est une carte qui possède plusieurs effets. \mbox{\Hypertarget{card_8h_a6402c47e0a2fa351b4ee2dae38305e07}\label{card_8h_a6402c47e0a2fa351b4ee2dae38305e07}} 
+\index{card.h@{card.h}!isComposedSplittable@{isComposedSplittable}}
+\index{isComposedSplittable@{isComposedSplittable}!card.h@{card.h}}
+\doxysubsubsection{\texorpdfstring{isComposedSplittable()}{isComposedSplittable()}}
+{\footnotesize\ttfamily bool is\+Composed\+Splittable (\begin{DoxyParamCaption}\item[{const enum \mbox{\hyperlink{card_8h_a98a2b239923441ea943de74af3208aa3}{Card}} $\ast$}]{card }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{card_8h_a588f788a116c7297754143f4c764675e}\label{card_8h_a588f788a116c7297754143f4c764675e}} 
 \index{card.h@{card.h}!makeDeck@{makeDeck}}
 \index{makeDeck@{makeDeck}!card.h@{card.h}}

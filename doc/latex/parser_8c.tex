@@ -1,0 +1,145 @@
+\hypertarget{parser_8c}{}\doxysection{Référence du fichier C\+:/\+Users/adzerake/\+CLion\+Projects/tock-\/client/src/parser.c}
+\label{parser_8c}\index{C:/Users/adzerake/CLionProjects/tock-\/client/src/parser.c@{C:/Users/adzerake/CLionProjects/tock-\/client/src/parser.c}}
+
+
+parser de ficher de configuration  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}parser.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linkedlist.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{parser_8c_ad4d796b98c583d49e83adabd74a63bf6}{MAX\+\_\+\+BUFFER\+\_\+\+SIZE}}~100
+\item 
+\#define \mbox{\hyperlink{parser_8c_a51243964b82ff6b415c3b97a19e9ea31}{REG\+\_\+\+START}}~\textquotesingle{}$<$\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{parser_8c_a80491731be6cefa5140e089c6b3f8cb5}{REG\+\_\+\+END}}~\textquotesingle{}$>$\textquotesingle{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{parser_8c_a74c8703763f4b12dc78722098fe4768a}{get\+By\+Key}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$liste, char $\ast$key)
+\item 
+void \mbox{\hyperlink{parser_8c_a085ab0c8afa8e88f443d8a7baae370a5}{set\+Key\+Value}} (const char $\ast$path, char $\ast$key, char $\ast$value)
+\item 
+void \mbox{\hyperlink{parser_8c_adb7290c0f3f34cf59cb84bc5140fabb2}{destroy\+Key\+Value\+Void}} (void $\ast$key\+Value)
+\item 
+void \mbox{\hyperlink{parser_8c_aae0feb747a4fcc18bbeed9691084d3c3}{destroy\+Key\+Value}} (\mbox{\hyperlink{struct_key_value}{Key\+Value}} $\ast$$\ast$key\+Value)
+\item 
+void \mbox{\hyperlink{parser_8c_adc1fed34024e6a4948a2a3657480c681}{save\+To\+Path}} (const char $\ast$path, \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$liste)
+\item 
+\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ \mbox{\hyperlink{parser_8c_a935610bb322bdb046732b9a10ee65012}{load\+From\+Path}} (const char $\ast$path)
+\item 
+\mbox{\hyperlink{struct_key_value}{Key\+Value}} $\ast$ \mbox{\hyperlink{parser_8c_a8869bd5059ff7fa9085a4fafaf73018e}{key\+Value\+Factory}} (char $\ast$key, char $\ast$value)
+\item 
+void \mbox{\hyperlink{parser_8c_ada6b335e6a50bd312e98a7421013358a}{draw\+Key\+Value}} (\mbox{\hyperlink{struct_key_value}{Key\+Value}} $\ast$key\+Value)
+\item 
+bool \mbox{\hyperlink{parser_8c_a50bec7ea3c48ec139264e0128df959ed}{to\+Bool}} (char $\ast$s)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+parser de ficher de configuration 
+
+Structure des pions pour le server.
+
+\begin{DoxyAuthor}{Auteur}
+LE GLEAU Yoann 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+23/03/2022 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Auteur}
+LE GLEAU Yoann 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+11/03/2022 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
+
+
+\doxysubsection{Documentation des macros}
+\mbox{\Hypertarget{parser_8c_ad4d796b98c583d49e83adabd74a63bf6}\label{parser_8c_ad4d796b98c583d49e83adabd74a63bf6}} 
+\index{parser.c@{parser.c}!MAX\_BUFFER\_SIZE@{MAX\_BUFFER\_SIZE}}
+\index{MAX\_BUFFER\_SIZE@{MAX\_BUFFER\_SIZE}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_BUFFER\_SIZE}{MAX\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+BUFFER\+\_\+\+SIZE~100}
+
+\mbox{\Hypertarget{parser_8c_a80491731be6cefa5140e089c6b3f8cb5}\label{parser_8c_a80491731be6cefa5140e089c6b3f8cb5}} 
+\index{parser.c@{parser.c}!REG\_END@{REG\_END}}
+\index{REG\_END@{REG\_END}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{REG\_END}{REG\_END}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+END~\textquotesingle{}$>$\textquotesingle{}}
+
+\mbox{\Hypertarget{parser_8c_a51243964b82ff6b415c3b97a19e9ea31}\label{parser_8c_a51243964b82ff6b415c3b97a19e9ea31}} 
+\index{parser.c@{parser.c}!REG\_START@{REG\_START}}
+\index{REG\_START@{REG\_START}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{REG\_START}{REG\_START}}
+{\footnotesize\ttfamily \#define REG\+\_\+\+START~\textquotesingle{}$<$\textquotesingle{}}
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{parser_8c_aae0feb747a4fcc18bbeed9691084d3c3}\label{parser_8c_aae0feb747a4fcc18bbeed9691084d3c3}} 
+\index{parser.c@{parser.c}!destroyKeyValue@{destroyKeyValue}}
+\index{destroyKeyValue@{destroyKeyValue}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{destroyKeyValue()}{destroyKeyValue()}}
+{\footnotesize\ttfamily void destroy\+Key\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_key_value}{Key\+Value}} $\ast$$\ast$}]{key\+Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{parser_8c_adb7290c0f3f34cf59cb84bc5140fabb2}\label{parser_8c_adb7290c0f3f34cf59cb84bc5140fabb2}} 
+\index{parser.c@{parser.c}!destroyKeyValueVoid@{destroyKeyValueVoid}}
+\index{destroyKeyValueVoid@{destroyKeyValueVoid}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{destroyKeyValueVoid()}{destroyKeyValueVoid()}}
+{\footnotesize\ttfamily void destroy\+Key\+Value\+Void (\begin{DoxyParamCaption}\item[{void $\ast$}]{key\+Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{parser_8c_ada6b335e6a50bd312e98a7421013358a}\label{parser_8c_ada6b335e6a50bd312e98a7421013358a}} 
+\index{parser.c@{parser.c}!drawKeyValue@{drawKeyValue}}
+\index{drawKeyValue@{drawKeyValue}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{drawKeyValue()}{drawKeyValue()}}
+{\footnotesize\ttfamily void draw\+Key\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_key_value}{Key\+Value}} $\ast$}]{key\+Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{parser_8c_a74c8703763f4b12dc78722098fe4768a}\label{parser_8c_a74c8703763f4b12dc78722098fe4768a}} 
+\index{parser.c@{parser.c}!getByKey@{getByKey}}
+\index{getByKey@{getByKey}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{getByKey()}{getByKey()}}
+{\footnotesize\ttfamily char $\ast$ get\+By\+Key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{liste,  }\item[{char $\ast$}]{key }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{parser_8c_a8869bd5059ff7fa9085a4fafaf73018e}\label{parser_8c_a8869bd5059ff7fa9085a4fafaf73018e}} 
+\index{parser.c@{parser.c}!keyValueFactory@{keyValueFactory}}
+\index{keyValueFactory@{keyValueFactory}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{keyValueFactory()}{keyValueFactory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_key_value}{Key\+Value}} $\ast$ key\+Value\+Factory (\begin{DoxyParamCaption}\item[{char $\ast$}]{key,  }\item[{char $\ast$}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{parser_8c_a935610bb322bdb046732b9a10ee65012}\label{parser_8c_a935610bb322bdb046732b9a10ee65012}} 
+\index{parser.c@{parser.c}!loadFromPath@{loadFromPath}}
+\index{loadFromPath@{loadFromPath}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{loadFromPath()}{loadFromPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ load\+From\+Path (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{parser_8c_adc1fed34024e6a4948a2a3657480c681}\label{parser_8c_adc1fed34024e6a4948a2a3657480c681}} 
+\index{parser.c@{parser.c}!saveToPath@{saveToPath}}
+\index{saveToPath@{saveToPath}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{saveToPath()}{saveToPath()}}
+{\footnotesize\ttfamily void save\+To\+Path (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path,  }\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{liste }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{parser_8c_a085ab0c8afa8e88f443d8a7baae370a5}\label{parser_8c_a085ab0c8afa8e88f443d8a7baae370a5}} 
+\index{parser.c@{parser.c}!setKeyValue@{setKeyValue}}
+\index{setKeyValue@{setKeyValue}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{setKeyValue()}{setKeyValue()}}
+{\footnotesize\ttfamily void set\+Key\+Value (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path,  }\item[{char $\ast$}]{key,  }\item[{char $\ast$}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{parser_8c_a50bec7ea3c48ec139264e0128df959ed}\label{parser_8c_a50bec7ea3c48ec139264e0128df959ed}} 
+\index{parser.c@{parser.c}!toBool@{toBool}}
+\index{toBool@{toBool}!parser.c@{parser.c}}
+\doxysubsubsection{\texorpdfstring{toBool()}{toBool()}}
+{\footnotesize\ttfamily bool to\+Bool (\begin{DoxyParamCaption}\item[{char $\ast$}]{s }\end{DoxyParamCaption})}
+

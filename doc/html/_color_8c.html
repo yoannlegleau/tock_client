@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>tock: Référence du fichier C:/Users/adzerake/CLionProjects/tock-client/src/Color.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">tock
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Fonctions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier Color.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Gestion des Couleurs / Style.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_color_8h_source.html">Color.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="linkedlist_8h_source.html">linkedlist.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="parser_8h_source.html">parser.h</a>&quot;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a1df34530ddf17354abc6e0cf36b9e208"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_color_8c.html#a1df34530ddf17354abc6e0cf36b9e208">STYLE_PATH</a>&#160;&#160;&#160;&quot;assets/Style&quot;</td></tr>
+<tr class="memdesc:a1df34530ddf17354abc6e0cf36b9e208"><td class="mdescLeft">&#160;</td><td class="mdescRight">chemin d'acces du ficher de style par default  <a href="_color_8c.html#a1df34530ddf17354abc6e0cf36b9e208">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1df34530ddf17354abc6e0cf36b9e208"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf7c20632f3e895e1ad4e59c63a7659b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_color_8c.html#acf7c20632f3e895e1ad4e59c63a7659b">COLOR_SPLITER</a>&#160;&#160;&#160;&quot;,&quot;</td></tr>
+<tr class="memdesc:acf7c20632f3e895e1ad4e59c63a7659b"><td class="mdescLeft">&#160;</td><td class="mdescRight">séparateur endre les valeurs RGB dans la feuille de style  <a href="_color_8c.html#acf7c20632f3e895e1ad4e59c63a7659b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:acf7c20632f3e895e1ad4e59c63a7659b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a924735cbd450be6fc8767e889ca144f4"><td class="memItemLeft" align="right" valign="top">char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_color_8c.html#a924735cbd450be6fc8767e889ca144f4">str_split</a> (char *a_str, const char a_delim)</td></tr>
+<tr class="separator:a924735cbd450be6fc8767e889ca144f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65d56f7c33c31d90d579c3c50a49a0e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_color_8c.html#a65d56f7c33c31d90d579c3c50a49a0e0">colorInit</a> ()</td></tr>
+<tr class="separator:a65d56f7c33c31d90d579c3c50a49a0e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8ab32d63f52157d17cd8a9b8d5485db"><td class="memItemLeft" align="right" valign="top">SDL_Color&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_color_8c.html#ac8ab32d63f52157d17cd8a9b8d5485db">getSDLColor</a> (char *colorKey)</td></tr>
+<tr class="memdesc:ac8ab32d63f52157d17cd8a9b8d5485db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Récupère la valeur de la couleur selon la feuille de style.  <a href="_color_8c.html#ac8ab32d63f52157d17cd8a9b8d5485db">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac8ab32d63f52157d17cd8a9b8d5485db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a57e9e11c574622ff9b43b382a0366952"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_linkedlist.html">Linkedlist</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_color_8c.html#a57e9e11c574622ff9b43b382a0366952">colors</a></td></tr>
+<tr class="memdesc:a57e9e11c574622ff9b43b382a0366952"><td class="mdescLeft">&#160;</td><td class="mdescRight">(singleton) liste contenant les clefs valuers des couleur  <a href="_color_8c.html#a57e9e11c574622ff9b43b382a0366952">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a57e9e11c574622ff9b43b382a0366952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p >Gestion des Couleurs / Style. </p>
+<dl class="section author"><dt>Auteur</dt><dd>LE GLEAU Yoann </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>27/03/2022 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>2 </dd></dl>
+</div><h2 class="groupheader">Documentation des macros</h2>
+<a id="acf7c20632f3e895e1ad4e59c63a7659b" name="acf7c20632f3e895e1ad4e59c63a7659b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf7c20632f3e895e1ad4e59c63a7659b">&#9670;&nbsp;</a></span>COLOR_SPLITER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define COLOR_SPLITER&#160;&#160;&#160;&quot;,&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>séparateur endre les valeurs RGB dans la feuille de style </p>
+
+</div>
+</div>
+<a id="a1df34530ddf17354abc6e0cf36b9e208" name="a1df34530ddf17354abc6e0cf36b9e208"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1df34530ddf17354abc6e0cf36b9e208">&#9670;&nbsp;</a></span>STYLE_PATH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STYLE_PATH&#160;&#160;&#160;&quot;assets/Style&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>chemin d'acces du ficher de style par default </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a65d56f7c33c31d90d579c3c50a49a0e0" name="a65d56f7c33c31d90d579c3c50a49a0e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65d56f7c33c31d90d579c3c50a49a0e0">&#9670;&nbsp;</a></span>colorInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void colorInit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac8ab32d63f52157d17cd8a9b8d5485db" name="ac8ab32d63f52157d17cd8a9b8d5485db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8ab32d63f52157d17cd8a9b8d5485db">&#9670;&nbsp;</a></span>getSDLColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SDL_Color getSDLColor </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>colorKey</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Récupère la valeur de la couleur selon la feuille de style. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">colorKey</td><td>Identifient de la couleur </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>SDL_Color couleur </dd></dl>
+
+</div>
+</div>
+<a id="a924735cbd450be6fc8767e889ca144f4" name="a924735cbd450be6fc8767e889ca144f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a924735cbd450be6fc8767e889ca144f4">&#9670;&nbsp;</a></span>str_split()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char ** str_split </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>a_str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char&#160;</td>
+          <td class="paramname"><em>a_delim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a_str</td><td></td></tr>
+    <tr><td class="paramname">a_delim</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd></dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des variables</h2>
+<a id="a57e9e11c574622ff9b43b382a0366952" name="a57e9e11c574622ff9b43b382a0366952"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57e9e11c574622ff9b43b382a0366952">&#9670;&nbsp;</a></span>colors</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_linkedlist.html">Linkedlist</a>* colors</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>(singleton) liste contenant les clefs valuers des couleur </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

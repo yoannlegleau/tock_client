@@ -1,5 +1,5 @@
 /**
- * \file game.h
+ * \file game.c
  * \brief gestionaire de partie
  * \author SINGLANDE Thomas
  * \date 20/01/2022
@@ -17,6 +17,8 @@
 #include <windows.h>
 #endif
 
+/* ---------- Includes ---------- */
+
 #include "game.h"
 #include "SDL/mainSDL.h"
 #include "linkedlist.h"
@@ -26,18 +28,20 @@
 #include "Color.h"
 #include "SDL/Drawable.h"
 
-/**
- * \brief Se tableux represente toutes les cases du plateu
- * \details la longeur varie selon le nombre de joueur car chaque jouer posed 18 plus 4 donc pour 4j 88 et 132 pour 6.
- * Les int represantes les ID de chaques jouers
- * \image html assets/img/Tock.io-BoardArray.jpg
- */
 
+/* ---------- Sub Declaration ---------- */
+
+/**
+ * \brief Affiche une interface dédier au developers pairmeten de visualiser les cartes des adversaires
+ * \param renderer De l'écran
+ * \param player
+ * \param police
+ * \param x
+ * \param y
+ */
 void drawPlayerHUD(SDL_Renderer *renderer, Player * player, TTF_Font *police, int x, int y);
-void drawMainOpponentHUD(SDL_Renderer *renderer, Player * player);
 
 void rendererAllPlayerHUD(Game *game);
-
 
 //TODO Trouver une meilleur organisation
 typedef struct Rule Rule;
@@ -99,6 +103,8 @@ int gameStart(Game * game) {
     RenderAllDrawable();
 
     game->running = true;
+
+    int t = 0;
     while(game->running) {
         SDL_Event e;
         while(SDL_PollEvent(&e)) {
@@ -127,17 +133,18 @@ int gameStart(Game * game) {
 
             p = get(game->players, i);
             p->play(p, game->board);
+
             if (isWin(game->board, p->idPlayer)&& isWin(game->board, getIdTeamMember(game->board,p->idPlayer))) {
                 printf("---------- joueur %i a gagner ----------", p->idPlayer);
                 game->running= false;
             }
             RenderAllDrawable();
-#ifdef __unix__
-            sleep(100);
-#endif
-#ifdef _WIN32
-            Sleep(100);
-#endif
+        #ifdef __unix__
+                    sleep(100);
+        #endif
+        #ifdef _WIN32
+                    Sleep(0);
+        #endif
         }
     }
     return 0;

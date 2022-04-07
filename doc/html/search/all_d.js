@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['removeelem_0',['removeElem',['../linkedlist_8c.html#a12976c90013ea6e466c15431cc88172c',1,'removeElem(Linkedlist *l, int i):&#160;linkedlist.c'],['../linkedlist_8h.html#a12976c90013ea6e466c15431cc88172c',1,'removeElem(Linkedlist *l, int i):&#160;linkedlist.c']]],
-  ['removefirst_1',['removeFirst',['../linkedlist_8c.html#a902a8a5358a5c1233fb7a84188c95cf7',1,'removeFirst(Linkedlist *l):&#160;linkedlist.c'],['../linkedlist_8h.html#a902a8a5358a5c1233fb7a84188c95cf7',1,'removeFirst(Linkedlist *l):&#160;linkedlist.c']]],
-  ['rendererall_2',['rendererAll',['../game_8c.html#a111d040be8be5add440629d4752c86cc',1,'game.c']]],
-  ['rule_3',['Rule',['../struct_rule.html',1,'Rule'],['../game_8c.html#a683d0414d3752753074b14f91eb79cca',1,'Rule():&#160;game.c']]],
-  ['rulev_4',['ruleV',['../struct_rule.html#ad6a8b800b82aa1975f77a6b6722c8272',1,'Rule']]]
+  ['object_0',['object',['../struct_elem.html#a077376d12464f945e2414d5499c79b3f',1,'Elem']]],
+  ['one_1',['one',['../card_8h.html#a98a2b239923441ea943de74af3208aa3a470762e93142d967e17ff201a373c133',1,'card.h']]],
+  ['oneout_2',['oneOut',['../card_8h.html#a98a2b239923441ea943de74af3208aa3a2c9780672ff741a2224701e608f41efc',1,'card.h']]],
+  ['out_3',['out',['../card_8h.html#a98a2b239923441ea943de74af3208aa3aaca14bf8f96bb2b357f12496b7f11579',1,'card.h']]],
+  ['outpawn_4',['outPawn',['../board_8c.html#a6b8349be43c85bc81c554bcc0fb884a2',1,'outPawn(Board *board, int pId):&#160;board.c'],['../board_8h.html#a6b8349be43c85bc81c554bcc0fb884a2',1,'outPawn(Board *board, int pId):&#160;board.c']]],
+  ['output_5',['output',['../main_serveur_8c.html#aafe59ece171906266110f9c00159ef7b',1,'mainServeur.c']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['idplayer_0',['IDplayer',['../struct_pawn.html#a19cbf1ef3c0c2bfd2a7b23e0cdb97a56',1,'Pawn']]],
-  ['invincibility_1',['invincibility',['../struct_pawn.html#a3b8493a3da1362ff931c0fbb3ed011ad',1,'Pawn']]]
+  ['destroy_0',['destroy',['../struct_linkedlist.html#a80cabf539e4e2f5fa97df09811c46541',1,'Linkedlist']]]
 ];

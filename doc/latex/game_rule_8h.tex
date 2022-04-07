@@ -1,11 +1,37 @@
 \hypertarget{game_rule_8h}{}\doxysection{Référence du fichier C\+:/\+Users/adzerake/\+CLion\+Projects/tock-\/client/src/game\+Rule.h}
 \label{game_rule_8h}\index{C:/Users/adzerake/CLionProjects/tock-\/client/src/gameRule.h@{C:/Users/adzerake/CLionProjects/tock-\/client/src/gameRule.h}}
+
+
+Enumeration des variantes de règles de jeu.  
+
+
 \doxysubsection*{Énumérations}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{game_rule_8h_a14e22b68b1581d31203037ae8b7f86ae}{Game\+Rule}} \{ \mbox{\hyperlink{game_rule_8h_a14e22b68b1581d31203037ae8b7f86aea568e649f4047c8c5245ec07f8792265f}{minus\+Five\+For\+Opponent}}
+enum \mbox{\hyperlink{game_rule_8h_a14e22b68b1581d31203037ae8b7f86ae}{Game\+Rule}} \{ \mbox{\hyperlink{game_rule_8h_a14e22b68b1581d31203037ae8b7f86aeab112d4659243b05da3d227f51ecac154}{Five\+For\+Opponent}}
  \}
-\begin{DoxyCompactList}\small\item\em ensembles des regles et varientes lier a une catre \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Ensembles des règles et variantes lier a une cartes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{game_rule_8h_af8562d3666fd0c3d252a0f66a071c4a1}{destroy\+Game\+Rule\+Void}} (void $\ast$game\+Rule)
+\begin{DoxyCompactList}\small\item\em Liber l\textquotesingle{}espace memoire allouer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_rule_8h_ab3b6b13635fe10162963e783c97b26bc}{destroy\+Game\+Rule}} (enum \mbox{\hyperlink{game_rule_8h_a14e22b68b1581d31203037ae8b7f86ae}{Game\+Rule}} $\ast$$\ast$game\+Rule)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Enumeration des variantes de règles de jeu. 
+
+\begin{DoxyAuthor}{Auteur}
+LE GLEAU Yoann 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+16/02/2022 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1 
+\end{DoxyVersion}
 
 
 \doxysubsection{Documentation du type de l\textquotesingle{}énumération}
@@ -17,11 +43,35 @@ enum \mbox{\hyperlink{game_rule_8h_a14e22b68b1581d31203037ae8b7f86ae}{Game\+Rule
 
 
 
-ensembles des regles et varientes lier a une catre 
+Ensembles des règles et variantes lier a une cartes. 
 
 \begin{DoxyEnumFields}{Valeurs énumérées}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{minusFiveForOpponent@{minusFiveForOpponent}!gameRule.h@{gameRule.h}}\index{gameRule.h@{gameRule.h}!minusFiveForOpponent@{minusFiveForOpponent}}}\mbox{\Hypertarget{game_rule_8h_a14e22b68b1581d31203037ae8b7f86aea568e649f4047c8c5245ec07f8792265f}\label{game_rule_8h_a14e22b68b1581d31203037ae8b7f86aea568e649f4047c8c5245ec07f8792265f}} 
-minus\+Five\+For\+Opponent&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FiveForOpponent@{FiveForOpponent}!gameRule.h@{gameRule.h}}\index{gameRule.h@{gameRule.h}!FiveForOpponent@{FiveForOpponent}}}\mbox{\Hypertarget{game_rule_8h_a14e22b68b1581d31203037ae8b7f86aeab112d4659243b05da3d227f51ecac154}\label{game_rule_8h_a14e22b68b1581d31203037ae8b7f86aeab112d4659243b05da3d227f51ecac154}} 
+Five\+For\+Opponent&\\
 \hline
 
 \end{DoxyEnumFields}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{game_rule_8h_ab3b6b13635fe10162963e783c97b26bc}\label{game_rule_8h_ab3b6b13635fe10162963e783c97b26bc}} 
+\index{gameRule.h@{gameRule.h}!destroyGameRule@{destroyGameRule}}
+\index{destroyGameRule@{destroyGameRule}!gameRule.h@{gameRule.h}}
+\doxysubsubsection{\texorpdfstring{destroyGameRule()}{destroyGameRule()}}
+{\footnotesize\ttfamily void destroy\+Game\+Rule (\begin{DoxyParamCaption}\item[{enum \mbox{\hyperlink{game_rule_8h_a14e22b68b1581d31203037ae8b7f86ae}{Game\+Rule}} $\ast$$\ast$}]{game\+Rule }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{game_rule_8h_af8562d3666fd0c3d252a0f66a071c4a1}\label{game_rule_8h_af8562d3666fd0c3d252a0f66a071c4a1}} 
+\index{gameRule.h@{gameRule.h}!destroyGameRuleVoid@{destroyGameRuleVoid}}
+\index{destroyGameRuleVoid@{destroyGameRuleVoid}!gameRule.h@{gameRule.h}}
+\doxysubsubsection{\texorpdfstring{destroyGameRuleVoid()}{destroyGameRuleVoid()}}
+{\footnotesize\ttfamily void destroy\+Game\+Rule\+Void (\begin{DoxyParamCaption}\item[{void $\ast$}]{game\+Rule }\end{DoxyParamCaption})}
+
+
+
+Liber l\textquotesingle{}espace memoire allouer. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em game\+Rule} & \\
+\hline
+\end{DoxyParams}

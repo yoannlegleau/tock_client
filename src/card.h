@@ -23,6 +23,9 @@
 enum Card{one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, eighteen,
         out, swap, ThirteenOut, oneOut, sevenSplit };
 
+
+/* ---------- Constructor ---------- */
+
 /**
  * \brief Fonction de destruction ds cartes
  * \param card

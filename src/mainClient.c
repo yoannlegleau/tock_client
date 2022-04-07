@@ -1,5 +1,5 @@
 /**
- * \file main.c
+ * \file mainClient.c
  * \brief gestion de l'application
  * \author JARRIER Allan
  * \date 20/01/2022
@@ -59,10 +59,6 @@ int main(int argc, char* args[]) {
         game = gameCreate(4);
         addPlayer(game, 1);
     }while(gameStart(game));
-
-
-
-
 
     //ferme le jeu
     winDestroy();

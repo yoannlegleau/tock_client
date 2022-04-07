@@ -3,32 +3,47 @@
 \doxysubsection*{Champs de données}
 \begin{DoxyCompactItemize}
 \item 
+void($\ast$ \mbox{\hyperlink{struct_linkedlist_a80cabf539e4e2f5fa97df09811c46541}{destroy}} )(void $\ast$function)
+\begin{DoxyCompactList}\small\item\em fonction de destruction des objets de la liste \end{DoxyCompactList}\item 
 \mbox{\hyperlink{struct_elem}{Elem}} $\ast$ \mbox{\hyperlink{struct_linkedlist_a307b72eb1a27142755c533a6a736bd22}{last}}
-\item 
-int \mbox{\hyperlink{struct_linkedlist_a439227feff9d7f55384e8780cfc2eb82}{size}}
-\item 
+\begin{DoxyCompactList}\small\item\em Dernier element de la liste. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{struct_linkedlist_a9f59b34b1f25fe00023291b678246bcc}{length}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em nomble d\textquotesingle{}objet contenu dans la liste \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Documentation des champs}
+\mbox{\Hypertarget{struct_linkedlist_a80cabf539e4e2f5fa97df09811c46541}\label{struct_linkedlist_a80cabf539e4e2f5fa97df09811c46541}} 
+\index{Linkedlist@{Linkedlist}!destroy@{destroy}}
+\index{destroy@{destroy}!Linkedlist@{Linkedlist}}
+\doxysubsubsection{\texorpdfstring{destroy}{destroy}}
+{\footnotesize\ttfamily void($\ast$ destroy) (void $\ast$function)}
+
+
+
+fonction de destruction des objets de la liste 
+
 \mbox{\Hypertarget{struct_linkedlist_a307b72eb1a27142755c533a6a736bd22}\label{struct_linkedlist_a307b72eb1a27142755c533a6a736bd22}} 
 \index{Linkedlist@{Linkedlist}!last@{last}}
 \index{last@{last}!Linkedlist@{Linkedlist}}
 \doxysubsubsection{\texorpdfstring{last}{last}}
 {\footnotesize\ttfamily \mbox{\hyperlink{struct_elem}{Elem}}$\ast$ last}
 
+
+
+Dernier element de la liste. 
+
+\begin{DoxyNote}{Note}
+Le premier est donc le suivent du dernier 
+\end{DoxyNote}
 \mbox{\Hypertarget{struct_linkedlist_a9f59b34b1f25fe00023291b678246bcc}\label{struct_linkedlist_a9f59b34b1f25fe00023291b678246bcc}} 
 \index{Linkedlist@{Linkedlist}!length@{length}}
 \index{length@{length}!Linkedlist@{Linkedlist}}
 \doxysubsubsection{\texorpdfstring{length}{length}}
 {\footnotesize\ttfamily int length}
 
-\mbox{\Hypertarget{struct_linkedlist_a439227feff9d7f55384e8780cfc2eb82}\label{struct_linkedlist_a439227feff9d7f55384e8780cfc2eb82}} 
-\index{Linkedlist@{Linkedlist}!size@{size}}
-\index{size@{size}!Linkedlist@{Linkedlist}}
-\doxysubsubsection{\texorpdfstring{size}{size}}
-{\footnotesize\ttfamily int size}
+
+
+nomble d\textquotesingle{}objet contenu dans la liste 
 
 
 

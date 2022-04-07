@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['removeelem_0',['removeElem',['../linkedlist_8c.html#a12976c90013ea6e466c15431cc88172c',1,'removeElem(Linkedlist *l, int i):&#160;linkedlist.c'],['../linkedlist_8h.html#a12976c90013ea6e466c15431cc88172c',1,'removeElem(Linkedlist *l, int i):&#160;linkedlist.c']]],
-  ['removefirst_1',['removeFirst',['../linkedlist_8c.html#a902a8a5358a5c1233fb7a84188c95cf7',1,'removeFirst(Linkedlist *l):&#160;linkedlist.c'],['../linkedlist_8h.html#a902a8a5358a5c1233fb7a84188c95cf7',1,'removeFirst(Linkedlist *l):&#160;linkedlist.c']]],
-  ['rendererall_2',['rendererAll',['../game_8c.html#a111d040be8be5add440629d4752c86cc',1,'game.c']]]
+  ['length_0',['length',['../linkedlist_8c.html#a53b854c9c6b351137f85d421439a6233',1,'length(Linkedlist *l):&#160;linkedlist.c'],['../linkedlist_8h.html#a53b854c9c6b351137f85d421439a6233',1,'length(Linkedlist *l):&#160;linkedlist.c']]],
+  ['linkedlistclone_1',['LinkedlistClone',['../linkedlist_8c.html#a9b95822e786b0607fc7578a092c7e3a0',1,'LinkedlistClone(Linkedlist *l):&#160;linkedlist.c'],['../linkedlist_8h.html#a9b95822e786b0607fc7578a092c7e3a0',1,'LinkedlistClone(Linkedlist *l):&#160;linkedlist.c']]],
+  ['linkedlistfactory_2',['linkedListFactory',['../linkedlist_8c.html#a15d9e75b680fe5dfea2665ab1a805b4b',1,'linkedListFactory(void(*funcDest)(void *e)):&#160;linkedlist.c'],['../linkedlist_8h.html#a15d9e75b680fe5dfea2665ab1a805b4b',1,'linkedListFactory(void(*funcDest)(void *e)):&#160;linkedlist.c']]],
+  ['loadfrompath_3',['loadFromPath',['../parser_8c.html#a935610bb322bdb046732b9a10ee65012',1,'loadFromPath(const char *path):&#160;parser.c'],['../parser_8h.html#a935610bb322bdb046732b9a10ee65012',1,'loadFromPath(const char *path):&#160;parser.c']]]
 ];

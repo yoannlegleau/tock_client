@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8c.html#a700a0caa5b70a06d1064e576f9f3cf65',1,'main.c']]],
-  ['makedeck_1',['makeDeck',['../card_8c.html#a588f788a116c7297754143f4c764675e',1,'makeDeck(Linkedlist *cards, Linkedlist *gameRules):&#160;card.c'],['../card_8h.html#a588f788a116c7297754143f4c764675e',1,'makeDeck(Linkedlist *cards, Linkedlist *gameRules):&#160;card.c']]],
-  ['move_2',['move',['../board_8c.html#a7650ba73078429f41e6774a72b6867bc',1,'move(int from, int to):&#160;board.c'],['../board_8h.html#a7650ba73078429f41e6774a72b6867bc',1,'move(int from, int to):&#160;board.c']]]
+  ['initboard_0',['initBoard',['../board_8c.html#a482bbee01164d1f5821bad0abc6d7fbd',1,'initBoard(Board *board):&#160;board.c'],['../board_8h.html#a482bbee01164d1f5821bad0abc6d7fbd',1,'initBoard(Board *board):&#160;board.c']]],
+  ['iscomposed_1',['isComposed',['../card_8c.html#aaa6bbfa32eeeb67f6492fc2b77d95ff2',1,'isComposed(const enum Card *card):&#160;card.c'],['../card_8h.html#aaa6bbfa32eeeb67f6492fc2b77d95ff2',1,'isComposed(const enum Card *card):&#160;card.c']]],
+  ['iscomposedsplittable_2',['isComposedSplittable',['../card_8c.html#a6402c47e0a2fa351b4ee2dae38305e07',1,'isComposedSplittable(const enum Card *card):&#160;card.c'],['../card_8h.html#a6402c47e0a2fa351b4ee2dae38305e07',1,'isComposedSplittable(const enum Card *card):&#160;card.c']]],
+  ['isempty_3',['isEmpty',['../linkedlist_8c.html#afcb647a9f61711367accfb0739d044c1',1,'isEmpty(Linkedlist *l):&#160;linkedlist.c'],['../linkedlist_8h.html#afcb647a9f61711367accfb0739d044c1',1,'isEmpty(Linkedlist *l):&#160;linkedlist.c']]],
+  ['isonboard_4',['isOnBoard',['../board_8c.html#ae0f457c466ffad4c89212459b0992896',1,'isOnBoard(Board *board, int location):&#160;board.c'],['../board_8h.html#ae0f457c466ffad4c89212459b0992896',1,'isOnBoard(Board *board, int location):&#160;board.c']]],
+  ['iswin_5',['isWin',['../board_8c.html#abbc6fd18e86814b18e6a0b97fd5f37c4',1,'isWin(Board *board, int pId):&#160;board.c'],['../board_8h.html#abbc6fd18e86814b18e6a0b97fd5f37c4',1,'isWin(Board *board, int pId):&#160;board.c']]]
 ];

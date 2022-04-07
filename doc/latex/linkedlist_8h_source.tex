@@ -2,56 +2,73 @@
 \label{linkedlist_8h_source}\index{C:/Users/adzerake/CLionProjects/tock-\/client/src/linkedlist.h@{C:/Users/adzerake/CLionProjects/tock-\/client/src/linkedlist.h}}
 \mbox{\hyperlink{linkedlist_8h}{Aller à la documentation de ce fichier.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{1 \textcolor{preprocessor}{\#include <stdbool.h>}}
-\DoxyCodeLine{2 }
-\DoxyCodeLine{12 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} \mbox{\hyperlink{struct_linkedlist}{Linkedlist}};}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{10 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Includes -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <stdbool.h>}}
 \DoxyCodeLine{13 }
-\DoxyCodeLine{20 \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * \mbox{\hyperlink{linkedlist_8h_a1777aaa1033242487c161a6f0d3272d6}{linkedListFactory}}( \textcolor{keywordtype}{int} typeSize);}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Structure -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{20 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} \mbox{\hyperlink{struct_linkedlist}{Linkedlist}};}
 \DoxyCodeLine{21 }
-\DoxyCodeLine{27 \textcolor{keywordtype}{int} \mbox{\hyperlink{linkedlist_8h_ad8feb9e4794625402d10a59f9e2a3ef5}{size}}( \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
-\DoxyCodeLine{28 }
-\DoxyCodeLine{34 \textcolor{keywordtype}{int} \mbox{\hyperlink{linkedlist_8h_a53b854c9c6b351137f85d421439a6233}{length}}( \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} *l);}
-\DoxyCodeLine{35 }
-\DoxyCodeLine{42 \textcolor{keywordtype}{bool} \mbox{\hyperlink{linkedlist_8h_afcb647a9f61711367accfb0739d044c1}{isEmpty}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} *l);}
-\DoxyCodeLine{43 }
-\DoxyCodeLine{50 \textcolor{keywordtype}{int} \mbox{\hyperlink{linkedlist_8h_aaaed1713f40fabff5721f44dceab292a}{contains}}( \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l, \textcolor{keywordtype}{void} * o);}
+\DoxyCodeLine{22 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Constructor -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{30 \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * \mbox{\hyperlink{linkedlist_8h_a15d9e75b680fe5dfea2665ab1a805b4b}{linkedListFactory}}(\textcolor{keywordtype}{void} (*funcDest)(\textcolor{keywordtype}{void} * e));}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{37 \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} *\mbox{\hyperlink{linkedlist_8h_a9b95822e786b0607fc7578a092c7e3a0}{LinkedlistClone}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} *l);}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{44 \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * \mbox{\hyperlink{linkedlist_8h_af1334a3afb8a5b299f33ec0fecbafc0f}{clone}}( \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{50 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_a0714ab46e064bcdffd7922b522410f31}{destroyLinkedList}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} ** l);}
 \DoxyCodeLine{51 }
-\DoxyCodeLine{57 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_a19eed22e17ce9faac496ce39d4287caa}{addFirst}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l, \textcolor{keywordtype}{void} * o);}
-\DoxyCodeLine{58 }
-\DoxyCodeLine{64 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_a135d034b3b6161bb07d912ff7adc5368}{addLast}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} *l,  \textcolor{keywordtype}{void} * o);}
-\DoxyCodeLine{65 }
-\DoxyCodeLine{71 \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * \mbox{\hyperlink{linkedlist_8h_af1334a3afb8a5b299f33ec0fecbafc0f}{clone}}( \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
-\DoxyCodeLine{72 }
-\DoxyCodeLine{77 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_a22e2ece11220b164541395438eafd87f}{clear}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
-\DoxyCodeLine{78 }
-\DoxyCodeLine{84 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_a12976c90013ea6e466c15431cc88172c}{removeElem}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l, \textcolor{keywordtype}{int} i);}
-\DoxyCodeLine{85 }
-\DoxyCodeLine{90 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_a902a8a5358a5c1233fb7a84188c95cf7}{removeFirst}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} *l);}
-\DoxyCodeLine{91 }
-\DoxyCodeLine{96 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_abf9e95651ac39e37b814352db42a72dc}{destroy}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
-\DoxyCodeLine{97 }
-\DoxyCodeLine{104 \textcolor{keywordtype}{void} * \mbox{\hyperlink{linkedlist_8h_aa00469bd435f0b5ae644e6894b9cb096}{get}}( \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l, \textcolor{keywordtype}{int} index );}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Getters -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{60 \textcolor{keywordtype}{int} \mbox{\hyperlink{linkedlist_8h_a53b854c9c6b351137f85d421439a6233}{length}}( \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} *l);}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{68 \textcolor{keywordtype}{void} * \mbox{\hyperlink{linkedlist_8h_aa00469bd435f0b5ae644e6894b9cb096}{get}}( \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l, \textcolor{keywordtype}{int} index );}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{75 \textcolor{keywordtype}{void} * \mbox{\hyperlink{linkedlist_8h_a5ffae0151690b64dd5e7d2651bdcd489}{getFirst}}( \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{82 \textcolor{keywordtype}{void} * \mbox{\hyperlink{linkedlist_8h_a9559ae005964e1246efd9dc7ffcce527}{getLast}}( \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Testes  -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{93 \textcolor{keywordtype}{bool} \mbox{\hyperlink{linkedlist_8h_afcb647a9f61711367accfb0739d044c1}{isEmpty}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} *l);}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{101 \textcolor{keywordtype}{int} \mbox{\hyperlink{linkedlist_8h_aaaed1713f40fabff5721f44dceab292a}{contains}}( \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l, \textcolor{keywordtype}{void} * o);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{comment}{/* -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ Utilities -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ */}}
 \DoxyCodeLine{105 }
-\DoxyCodeLine{111 \textcolor{keywordtype}{void} * \mbox{\hyperlink{linkedlist_8h_a5ffae0151690b64dd5e7d2651bdcd489}{getFirst}}( \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
+\DoxyCodeLine{111 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_a19eed22e17ce9faac496ce39d4287caa}{addFirst}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l, \textcolor{keywordtype}{void} * o);}
 \DoxyCodeLine{112 }
-\DoxyCodeLine{118 \textcolor{keywordtype}{void} * \mbox{\hyperlink{linkedlist_8h_a9559ae005964e1246efd9dc7ffcce527}{getLast}}( \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
+\DoxyCodeLine{118 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_a135d034b3b6161bb07d912ff7adc5368}{addLast}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} *l,  \textcolor{keywordtype}{void} * o);}
 \DoxyCodeLine{119 }
-\DoxyCodeLine{125 \textcolor{keywordtype}{void} * \mbox{\hyperlink{linkedlist_8h_a512c4edbb810a012a89fee8fa483074d}{pollFirst}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
-\DoxyCodeLine{126 }
-\DoxyCodeLine{132 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_ae31095fa82978128cf88d2940568109c}{drawListe}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} *l,\textcolor{keywordtype}{void} (*draw)(\textcolor{keywordtype}{void} *));}
-\DoxyCodeLine{133 }
-\DoxyCodeLine{134 \textcolor{keywordtype}{void} \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l, \textcolor{keywordtype}{void} (*pVoid)(\textcolor{keywordtype}{void} *));}
-\DoxyCodeLine{135 }
-\DoxyCodeLine{136 }
-\DoxyCodeLine{137 \textcolor{comment}{/*}}
-\DoxyCodeLine{138 \textcolor{comment}{ IDER DE FONCTION A IMPLEMENTER}}
-\DoxyCodeLine{139 \textcolor{comment}{pollFirst()}}
-\DoxyCodeLine{140 \textcolor{comment}{remove()}}
-\DoxyCodeLine{141 \textcolor{comment}{remove(int index)}}
-\DoxyCodeLine{142 \textcolor{comment}{remove(Object o)}}
-\DoxyCodeLine{143 \textcolor{comment}{removeFirst()}}
-\DoxyCodeLine{144 \textcolor{comment}{set(int index, E element)}}
-\DoxyCodeLine{145 \textcolor{comment}{toArray()}}
-\DoxyCodeLine{146 \textcolor{comment}{*/}}
+\DoxyCodeLine{124 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_a22e2ece11220b164541395438eafd87f}{clear}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{131 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_a12976c90013ea6e466c15431cc88172c}{removeElem}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l, \textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{137 \textcolor{keywordtype}{void} \mbox{\hyperlink{linkedlist_8h_a902a8a5358a5c1233fb7a84188c95cf7}{removeFirst}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} *l);}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{144 \textcolor{keywordtype}{void} * \mbox{\hyperlink{linkedlist_8h_a512c4edbb810a012a89fee8fa483074d}{pollFirst}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{151 \textcolor{keywordtype}{void} * \mbox{\hyperlink{linkedlist_8h_a3e00cf7bdb01cd151ffde60c97a5a074}{pollRandom}}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l);}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{158 \textcolor{keywordtype}{void} \textcolor{keywordflow}{foreach}(\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} * l, \textcolor{keywordtype}{void} (*pVoid)(\textcolor{keywordtype}{void} *));}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 \textcolor{comment}{/*}}
+\DoxyCodeLine{162 \textcolor{comment}{ IDER DE FONCTION A IMPLEMENTER}}
+\DoxyCodeLine{163 \textcolor{comment}{pollFirst()}}
+\DoxyCodeLine{164 \textcolor{comment}{remove()}}
+\DoxyCodeLine{165 \textcolor{comment}{remove(int index)}}
+\DoxyCodeLine{166 \textcolor{comment}{remove(Object o)}}
+\DoxyCodeLine{167 \textcolor{comment}{removeFirst()}}
+\DoxyCodeLine{168 \textcolor{comment}{set(int index, E element)}}
+\DoxyCodeLine{169 \textcolor{comment}{toArray()}}
+\DoxyCodeLine{170 \textcolor{comment}{*/}}
 
 \end{DoxyCode}

@@ -1,0 +1,127 @@
+\hypertarget{_color_8c}{}\doxysection{Référence du fichier C\+:/\+Users/adzerake/\+CLion\+Projects/tock-\/client/src/\+Color.c}
+\label{_color_8c}\index{C:/Users/adzerake/CLionProjects/tock-\/client/src/Color.c@{C:/Users/adzerake/CLionProjects/tock-\/client/src/Color.c}}
+
+
+Gestion des Couleurs / Style.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Color.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}linkedlist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}parser.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_color_8c_a1df34530ddf17354abc6e0cf36b9e208}{STYLE\+\_\+\+PATH}}~\char`\"{}assets/Style\char`\"{}
+\begin{DoxyCompactList}\small\item\em chemin d\textquotesingle{}acces du ficher de style par default \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_color_8c_acf7c20632f3e895e1ad4e59c63a7659b}{COLOR\+\_\+\+SPLITER}}~\char`\"{},\char`\"{}
+\begin{DoxyCompactList}\small\item\em séparateur endre les valeurs RGB dans la feuille de style \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$$\ast$ \mbox{\hyperlink{_color_8c_a924735cbd450be6fc8767e889ca144f4}{str\+\_\+split}} (char $\ast$a\+\_\+str, const char a\+\_\+delim)
+\item 
+void \mbox{\hyperlink{_color_8c_a65d56f7c33c31d90d579c3c50a49a0e0}{color\+Init}} ()
+\item 
+SDL\+\_\+\+Color \mbox{\hyperlink{_color_8c_ac8ab32d63f52157d17cd8a9b8d5485db}{get\+SDLColor}} (char $\ast$color\+Key)
+\begin{DoxyCompactList}\small\item\em Récupère la valeur de la couleur selon la feuille de style. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ \mbox{\hyperlink{_color_8c_a57e9e11c574622ff9b43b382a0366952}{colors}}
+\begin{DoxyCompactList}\small\item\em (singleton) liste contenant les clefs valuers des couleur \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Gestion des Couleurs / Style. 
+
+\begin{DoxyAuthor}{Auteur}
+LE GLEAU Yoann 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+27/03/2022 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+2 
+\end{DoxyVersion}
+
+
+\doxysubsection{Documentation des macros}
+\mbox{\Hypertarget{_color_8c_acf7c20632f3e895e1ad4e59c63a7659b}\label{_color_8c_acf7c20632f3e895e1ad4e59c63a7659b}} 
+\index{Color.c@{Color.c}!COLOR\_SPLITER@{COLOR\_SPLITER}}
+\index{COLOR\_SPLITER@{COLOR\_SPLITER}!Color.c@{Color.c}}
+\doxysubsubsection{\texorpdfstring{COLOR\_SPLITER}{COLOR\_SPLITER}}
+{\footnotesize\ttfamily \#define COLOR\+\_\+\+SPLITER~\char`\"{},\char`\"{}}
+
+
+
+séparateur endre les valeurs RGB dans la feuille de style 
+
+\mbox{\Hypertarget{_color_8c_a1df34530ddf17354abc6e0cf36b9e208}\label{_color_8c_a1df34530ddf17354abc6e0cf36b9e208}} 
+\index{Color.c@{Color.c}!STYLE\_PATH@{STYLE\_PATH}}
+\index{STYLE\_PATH@{STYLE\_PATH}!Color.c@{Color.c}}
+\doxysubsubsection{\texorpdfstring{STYLE\_PATH}{STYLE\_PATH}}
+{\footnotesize\ttfamily \#define STYLE\+\_\+\+PATH~\char`\"{}assets/Style\char`\"{}}
+
+
+
+chemin d\textquotesingle{}acces du ficher de style par default 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{_color_8c_a65d56f7c33c31d90d579c3c50a49a0e0}\label{_color_8c_a65d56f7c33c31d90d579c3c50a49a0e0}} 
+\index{Color.c@{Color.c}!colorInit@{colorInit}}
+\index{colorInit@{colorInit}!Color.c@{Color.c}}
+\doxysubsubsection{\texorpdfstring{colorInit()}{colorInit()}}
+{\footnotesize\ttfamily void color\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_color_8c_ac8ab32d63f52157d17cd8a9b8d5485db}\label{_color_8c_ac8ab32d63f52157d17cd8a9b8d5485db}} 
+\index{Color.c@{Color.c}!getSDLColor@{getSDLColor}}
+\index{getSDLColor@{getSDLColor}!Color.c@{Color.c}}
+\doxysubsubsection{\texorpdfstring{getSDLColor()}{getSDLColor()}}
+{\footnotesize\ttfamily SDL\+\_\+\+Color get\+SDLColor (\begin{DoxyParamCaption}\item[{char $\ast$}]{color\+Key }\end{DoxyParamCaption})}
+
+
+
+Récupère la valeur de la couleur selon la feuille de style. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em color\+Key} & Identifient de la couleur \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+SDL\+\_\+\+Color couleur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_color_8c_a924735cbd450be6fc8767e889ca144f4}\label{_color_8c_a924735cbd450be6fc8767e889ca144f4}} 
+\index{Color.c@{Color.c}!str\_split@{str\_split}}
+\index{str\_split@{str\_split}!Color.c@{Color.c}}
+\doxysubsubsection{\texorpdfstring{str\_split()}{str\_split()}}
+{\footnotesize\ttfamily char $\ast$$\ast$ str\+\_\+split (\begin{DoxyParamCaption}\item[{char $\ast$}]{a\+\_\+str,  }\item[{const char}]{a\+\_\+delim }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Paramètres}
+{\em a\+\_\+str} & \\
+\hline
+{\em a\+\_\+delim} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+
+\end{DoxyReturn}
+
+
+\doxysubsection{Documentation des variables}
+\mbox{\Hypertarget{_color_8c_a57e9e11c574622ff9b43b382a0366952}\label{_color_8c_a57e9e11c574622ff9b43b382a0366952}} 
+\index{Color.c@{Color.c}!colors@{colors}}
+\index{colors@{colors}!Color.c@{Color.c}}
+\doxysubsubsection{\texorpdfstring{colors}{colors}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_linkedlist}{Linkedlist}}$\ast$ colors}
+
+
+
+(singleton) liste contenant les clefs valuers des couleur 
+

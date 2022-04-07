@@ -1,57 +1,70 @@
 \hypertarget{game_8c}{}\doxysection{Référence du fichier C\+:/\+Users/adzerake/\+CLion\+Projects/tock-\/client/src/game.c}
 \label{game_8c}\index{C:/Users/adzerake/CLionProjects/tock-\/client/src/game.c@{C:/Users/adzerake/CLionProjects/tock-\/client/src/game.c}}
+
+
+gestionaire de partie  
+
+
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$SDL.\+h$>$}\newline
 {\ttfamily \#include $<$SDL\+\_\+ttf.\+h$>$}\newline
 {\ttfamily \#include $<$SDL\+\_\+image.\+h$>$}\newline
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}game.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}main\+SDL.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}SDL/main\+SDL.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}linkedlist.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}card.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}game\+Rule.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Player/player.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}board.\+h\char`\"{}}\newline
-{\ttfamily \#include $<$xmllite.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Color.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}SDL/\+Drawable.\+h\char`\"{}}\newline
 \doxysubsection*{Structures de données}
 \begin{DoxyCompactItemize}
-\item 
-struct \mbox{\hyperlink{struct_pawn}{Pawn}}
 \item 
 struct \mbox{\hyperlink{struct_rule}{Rule}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Définitions de type}
 \begin{DoxyCompactItemize}
 \item 
-typedef struct \mbox{\hyperlink{struct_pawn}{Pawn}} \mbox{\hyperlink{game_8c_a41376036826b0217a186f072edddc5d8}{Pawn}}
-\begin{DoxyCompactList}\small\item\em Se tableux represente toutes les cases du plateu. \end{DoxyCompactList}\item 
 typedef struct \mbox{\hyperlink{struct_rule}{Rule}} \mbox{\hyperlink{game_8c_a683d0414d3752753074b14f91eb79cca}{Rule}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{game_8c_a044c42150c2fa2a9c15d058ae610a328}{play\+Once}} (\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$players)
+void \mbox{\hyperlink{game_8c_a5b3feb510b4ce1172670eabae3ab782b}{draw\+Player\+HUD}} (SDL\+\_\+\+Renderer $\ast$renderer, Player $\ast$player, TTF\+\_\+\+Font $\ast$\mbox{\hyperlink{game_8c_a49a11b0728728090fa1189391c9fe0c8}{police}}, int x, int y)
+\begin{DoxyCompactList}\small\item\em Affiche une interface dédier au developers pairmeten de visualiser les cartes des adversaires. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8c_a3405bf5a2601791e9e63922464126932}{renderer\+All\+Player\+HUD}} (\mbox{\hyperlink{struct_game}{Game}} $\ast$game)
 \item 
-\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ \mbox{\hyperlink{game_8c_a24adfa3e2367dcea3cd3ff85c8760b02}{get\+Player\+Pans\+Location}} ()
-\item 
-void \mbox{\hyperlink{game_8c_a111d040be8be5add440629d4752c86cc}{renderer\+All}} (SDL\+\_\+\+Renderer $\ast$p\+Renderer)
-\item 
-void \mbox{\hyperlink{game_8c_a8608f514fe7507c9b45f1f7e945be7f1}{game\+Create}} (SDL\+\_\+\+Window $\ast$\mbox{\hyperlink{main_s_d_l_8h_aaa8e409e04dcf575ef63fd5fb3db06f9}{window}})
+\mbox{\hyperlink{struct_game}{Game}} $\ast$ \mbox{\hyperlink{game_8c_a69129938578bf1f0834e913cebaf0786}{game\+Create}} (int nb\+Player)
+\begin{DoxyCompactList}\small\item\em initialise la liste \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8c_ab90e474b77908d1939ef7f592812785f}{add\+Player}} (\mbox{\hyperlink{struct_game}{Game}} $\ast$game, int nb\+Player)
+\begin{DoxyCompactList}\small\item\em ajoute des joueur a la partie et complette avec des bots \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8c_ab5958820c2a3ad5257a73d228f125eaa}{game\+Start}} (\mbox{\hyperlink{struct_game}{Game}} $\ast$game)
 \begin{DoxyCompactList}\small\item\em demonstration du fonctionnement des librairie graphiques baser sur l\textquotesingle{}example de cours \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+TTF\+\_\+\+Font $\ast$ \mbox{\hyperlink{game_8c_a49a11b0728728090fa1189391c9fe0c8}{police}} = NULL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+gestionaire de partie 
+
+\begin{DoxyAuthor}{Auteur}
+SINGLANDE Thomas 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+20/01/2022 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\+1 
+\end{DoxyVersion}
 
 
 \doxysubsection{Documentation des définitions de type}
-\mbox{\Hypertarget{game_8c_a41376036826b0217a186f072edddc5d8}\label{game_8c_a41376036826b0217a186f072edddc5d8}} 
-\index{game.c@{game.c}!Pawn@{Pawn}}
-\index{Pawn@{Pawn}!game.c@{game.c}}
-\doxysubsubsection{\texorpdfstring{Pawn}{Pawn}}
-{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pawn}{Pawn}} \mbox{\hyperlink{struct_pawn}{Pawn}}}
-
-
-
-Se tableux represente toutes les cases du plateu. 
-
-la longeur varie selon le nombre de joueur car chaque jouer posed 18 plus 4 donc pour 4j 88 et 132 pour 6. Les int represantes les ID de chaques jouers  \mbox{\Hypertarget{game_8c_a683d0414d3752753074b14f91eb79cca}\label{game_8c_a683d0414d3752753074b14f91eb79cca}} 
+\mbox{\Hypertarget{game_8c_a683d0414d3752753074b14f91eb79cca}\label{game_8c_a683d0414d3752753074b14f91eb79cca}} 
 \index{game.c@{game.c}!Rule@{Rule}}
 \index{Rule@{Rule}!game.c@{game.c}}
 \doxysubsubsection{\texorpdfstring{Rule}{Rule}}
@@ -60,38 +73,85 @@ la longeur varie selon le nombre de joueur car chaque jouer posed 18 plus 4 donc
 
 
 \doxysubsection{Documentation des fonctions}
-\mbox{\Hypertarget{game_8c_a8608f514fe7507c9b45f1f7e945be7f1}\label{game_8c_a8608f514fe7507c9b45f1f7e945be7f1}} 
+\mbox{\Hypertarget{game_8c_ab90e474b77908d1939ef7f592812785f}\label{game_8c_ab90e474b77908d1939ef7f592812785f}} 
+\index{game.c@{game.c}!addPlayer@{addPlayer}}
+\index{addPlayer@{addPlayer}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{addPlayer()}{addPlayer()}}
+{\footnotesize\ttfamily void add\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game}{Game}} $\ast$}]{game,  }\item[{int}]{nb\+Player }\end{DoxyParamCaption})}
+
+
+
+ajoute des joueur a la partie et complette avec des bots 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em game} & \\
+\hline
+{\em nb\+Player} & nombre de vrais joueurs \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{game_8c_a5b3feb510b4ce1172670eabae3ab782b}\label{game_8c_a5b3feb510b4ce1172670eabae3ab782b}} 
+\index{game.c@{game.c}!drawPlayerHUD@{drawPlayerHUD}}
+\index{drawPlayerHUD@{drawPlayerHUD}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{drawPlayerHUD()}{drawPlayerHUD()}}
+{\footnotesize\ttfamily void draw\+Player\+HUD (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{Player $\ast$}]{player,  }\item[{TTF\+\_\+\+Font $\ast$}]{police,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Affiche une interface dédier au developers pairmeten de visualiser les cartes des adversaires. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em renderer} & De l\textquotesingle{}écran \\
+\hline
+{\em player} & \\
+\hline
+{\em police} & \\
+\hline
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{game_8c_a69129938578bf1f0834e913cebaf0786}\label{game_8c_a69129938578bf1f0834e913cebaf0786}} 
 \index{game.c@{game.c}!gameCreate@{gameCreate}}
 \index{gameCreate@{gameCreate}!game.c@{game.c}}
 \doxysubsubsection{\texorpdfstring{gameCreate()}{gameCreate()}}
-{\footnotesize\ttfamily void game\+Create (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Window $\ast$}]{window }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_game}{Game}} $\ast$ game\+Create (\begin{DoxyParamCaption}\item[{int}]{nb\+Player }\end{DoxyParamCaption})}
+
+
+
+initialise la liste 
+
+\mbox{\Hypertarget{game_8c_ab5958820c2a3ad5257a73d228f125eaa}\label{game_8c_ab5958820c2a3ad5257a73d228f125eaa}} 
+\index{game.c@{game.c}!gameStart@{gameStart}}
+\index{gameStart@{gameStart}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{gameStart()}{gameStart()}}
+{\footnotesize\ttfamily int game\+Start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game}{Game}} $\ast$}]{game }\end{DoxyParamCaption})}
 
 
 
 demonstration du fonctionnement des librairie graphiques baser sur l\textquotesingle{}example de cours 
 
-initialise la liste
+lancer le deroulement du jeux
 
 
 \begin{DoxyParams}{Paramètres}
 {\em window} & fenêtre principal \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{game_8c_a24adfa3e2367dcea3cd3ff85c8760b02}\label{game_8c_a24adfa3e2367dcea3cd3ff85c8760b02}} 
-\index{game.c@{game.c}!getPlayerPansLocation@{getPlayerPansLocation}}
-\index{getPlayerPansLocation@{getPlayerPansLocation}!game.c@{game.c}}
-\doxysubsubsection{\texorpdfstring{getPlayerPansLocation()}{getPlayerPawnsLocation()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$ get\+Player\+Pans\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{game_8c_a3405bf5a2601791e9e63922464126932}\label{game_8c_a3405bf5a2601791e9e63922464126932}} 
+\index{game.c@{game.c}!rendererAllPlayerHUD@{rendererAllPlayerHUD}}
+\index{rendererAllPlayerHUD@{rendererAllPlayerHUD}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{rendererAllPlayerHUD()}{rendererAllPlayerHUD()}}
+{\footnotesize\ttfamily void renderer\+All\+Player\+HUD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_game}{Game}} $\ast$}]{game }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{game_8c_a044c42150c2fa2a9c15d058ae610a328}\label{game_8c_a044c42150c2fa2a9c15d058ae610a328}} 
-\index{game.c@{game.c}!playOnce@{playOnce}}
-\index{playOnce@{playOnce}!game.c@{game.c}}
-\doxysubsubsection{\texorpdfstring{playOnce()}{playOnce()}}
-{\footnotesize\ttfamily void play\+Once (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_linkedlist}{Linkedlist}} $\ast$}]{players }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{game_8c_a111d040be8be5add440629d4752c86cc}\label{game_8c_a111d040be8be5add440629d4752c86cc}} 
-\index{game.c@{game.c}!rendererAll@{rendererAll}}
-\index{rendererAll@{rendererAll}!game.c@{game.c}}
-\doxysubsubsection{\texorpdfstring{rendererAll()}{rendererAll()}}
-{\footnotesize\ttfamily void renderer\+All (\begin{DoxyParamCaption}\item[{SDL\+\_\+\+Renderer $\ast$}]{p\+Renderer }\end{DoxyParamCaption})}
+
+\doxysubsection{Documentation des variables}
+\mbox{\Hypertarget{game_8c_a49a11b0728728090fa1189391c9fe0c8}\label{game_8c_a49a11b0728728090fa1189391c9fe0c8}} 
+\index{game.c@{game.c}!police@{police}}
+\index{police@{police}!game.c@{game.c}}
+\doxysubsubsection{\texorpdfstring{police}{police}}
+{\footnotesize\ttfamily TTF\+\_\+\+Font$\ast$ police = NULL}
 

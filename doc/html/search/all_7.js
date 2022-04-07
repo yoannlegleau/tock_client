@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['idplayer_0',['IDplayer',['../struct_pawn.html#a19cbf1ef3c0c2bfd2a7b23e0cdb97a56',1,'Pawn']]],
-  ['initboard_1',['initBoard',['../board_8c.html#ade61443d39f111c96f160359cab6f8bb',1,'initBoard(int pInt[88]):&#160;board.c'],['../board_8h.html#ade61443d39f111c96f160359cab6f8bb',1,'initBoard(int pInt[88]):&#160;board.c']]],
-  ['invincibility_2',['invincibility',['../struct_pawn.html#a3b8493a3da1362ff931c0fbb3ed011ad',1,'Pawn']]],
-  ['isempty_3',['isEmpty',['../linkedlist_8c.html#afcb647a9f61711367accfb0739d044c1',1,'isEmpty(Linkedlist *l):&#160;linkedlist.c'],['../linkedlist_8h.html#afcb647a9f61711367accfb0739d044c1',1,'isEmpty(Linkedlist *l):&#160;linkedlist.c']]]
+  ['heuristic_0',['heuristic',['../board_8c.html#a3f1b1f6b63108eb054789c97ce1d3c00',1,'heuristic(Board *board, int IdPlayer):&#160;board.c'],['../board_8h.html#a3f1b1f6b63108eb054789c97ce1d3c00',1,'heuristic(Board *board, int IdPlayer):&#160;board.c']]],
+  ['heuristicplayer_1',['heuristicPlayer',['../board_8c.html#a01cf49ae8c1a2b7647fa756337b32a81',1,'board.c']]],
+  ['highlightlocation_2',['highlightLocation',['../board_8c.html#a0274f3760b503a4569ba0ddf29a6c85c',1,'highlightLocation(int location):&#160;board.c'],['../board_8h.html#a0274f3760b503a4569ba0ddf29a6c85c',1,'highlightLocation(int location):&#160;board.c']]]
 ];

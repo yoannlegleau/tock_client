@@ -55,7 +55,7 @@ $(function() {
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
-<iframe src="javascript:void(0)" frameboarder="0"
+<iframe src="javascript:void(0)" frameborder="0" 
         name="MSearchResults" id="MSearchResults">
 </iframe>
 </div>
@@ -69,18 +69,25 @@ $(function() {
   <div class="headertitle"><div class="title">gameRule.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="game_rule_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by adzerake on 16/02/2022.</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef TOCK_CLIENT_GAMERULE_H</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define TOCK_CLIENT_GAMERULE_H</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="game_rule_8h.html#a14e22b68b1581d31203037ae8b7f86ae">   11</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="game_rule_8h.html#a14e22b68b1581d31203037ae8b7f86ae">GameRule</a>{<a class="code hl_enumvalue" href="game_rule_8h.html#a14e22b68b1581d31203037ae8b7f86aea568e649f4047c8c5245ec07f8792265f">minusFiveForOpponent</a>};</div>
+<a href="game_rule_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef TOCK_CLIENT_GAMERULE_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define TOCK_CLIENT_GAMERULE_H</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#endif </span><span class="comment">//TOCK_CLIENT_GAMERULE_H</span></div>
-<div class="ttc" id="agame_rule_8h_html_a14e22b68b1581d31203037ae8b7f86ae"><div class="ttname"><a href="game_rule_8h.html#a14e22b68b1581d31203037ae8b7f86ae">GameRule</a></div><div class="ttdeci">GameRule</div><div class="ttdoc">ensembles des regles et varientes lier a une catre</div><div class="ttdef"><b>Definition:</b> gameRule.h:11</div></div>
-<div class="ttc" id="agame_rule_8h_html_a14e22b68b1581d31203037ae8b7f86aea568e649f4047c8c5245ec07f8792265f"><div class="ttname"><a href="game_rule_8h.html#a14e22b68b1581d31203037ae8b7f86aea568e649f4047c8c5245ec07f8792265f">minusFiveForOpponent</a></div><div class="ttdeci">@ minusFiveForOpponent</div><div class="ttdef"><b>Definition:</b> gameRule.h:11</div></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">/* ---------- Structure ---------- */</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="game_rule_8h.html#a14e22b68b1581d31203037ae8b7f86aeab112d4659243b05da3d227f51ecac154">   18</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="game_rule_8h.html#a14e22b68b1581d31203037ae8b7f86ae">GameRule</a>{<a class="code hl_enumvalue" href="game_rule_8h.html#a14e22b68b1581d31203037ae8b7f86aeab112d4659243b05da3d227f51ecac154">FiveForOpponent</a>};</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/* ---------- Constructor ---------- */</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keywordtype">void</span> <a class="code hl_function" href="game_rule_8h.html#af8562d3666fd0c3d252a0f66a071c4a1">destroyGameRuleVoid</a>(<span class="keywordtype">void</span> * gameRule);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keywordtype">void</span> <a class="code hl_function" href="game_rule_8h.html#ab3b6b13635fe10162963e783c97b26bc">destroyGameRule</a>(<span class="keyword">enum</span> <a class="code hl_enumeration" href="game_rule_8h.html#a14e22b68b1581d31203037ae8b7f86ae">GameRule</a> ** gameRule);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#endif </span><span class="comment">//TOCK_CLIENT_GAMERULE_H</span></div>
+<div class="ttc" id="agame_rule_8h_html_a14e22b68b1581d31203037ae8b7f86ae"><div class="ttname"><a href="game_rule_8h.html#a14e22b68b1581d31203037ae8b7f86ae">GameRule</a></div><div class="ttdeci">GameRule</div><div class="ttdoc">Ensembles des règles et variantes lier a une cartes.</div><div class="ttdef"><b>Definition:</b> gameRule.h:18</div></div>
+<div class="ttc" id="agame_rule_8h_html_a14e22b68b1581d31203037ae8b7f86aeab112d4659243b05da3d227f51ecac154"><div class="ttname"><a href="game_rule_8h.html#a14e22b68b1581d31203037ae8b7f86aeab112d4659243b05da3d227f51ecac154">FiveForOpponent</a></div><div class="ttdeci">@ FiveForOpponent</div><div class="ttdef"><b>Definition:</b> gameRule.h:18</div></div>
+<div class="ttc" id="agame_rule_8h_html_ab3b6b13635fe10162963e783c97b26bc"><div class="ttname"><a href="game_rule_8h.html#ab3b6b13635fe10162963e783c97b26bc">destroyGameRule</a></div><div class="ttdeci">void destroyGameRule(enum GameRule **gameRule)</div><div class="ttdef"><b>Definition:</b> gameRule.c:19</div></div>
+<div class="ttc" id="agame_rule_8h_html_af8562d3666fd0c3d252a0f66a071c4a1"><div class="ttname"><a href="game_rule_8h.html#af8562d3666fd0c3d252a0f66a071c4a1">destroyGameRuleVoid</a></div><div class="ttdeci">void destroyGameRuleVoid(void *gameRule)</div><div class="ttdoc">Liber l'espace memoire allouer.</div><div class="ttdef"><b>Definition:</b> gameRule.c:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

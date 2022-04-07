@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['exit_5ffailure_0',['EXIT_FAILURE',['../game_8c.html#a73efe787c131b385070f25d18b7c9aa4',1,'game.c']]]
+  ['color_5fspliter_0',['COLOR_SPLITER',['../_color_8c.html#acf7c20632f3e895e1ad4e59c63a7659b',1,'Color.c']]]
 ];

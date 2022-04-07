@@ -10,14 +10,30 @@
 #ifndef TOCK_CLIENT_GAME_H
 #define TOCK_CLIENT_GAME_H
 
+/* ---------- Includes ---------- */
+
 #include "board.h"
 
+
+/* ---------- Structure ---------- */
+
+/**
+ * \brief Structure représentent une partie de jeu
+ */
 typedef struct Game Game;
 struct Game {
+    /** \brief Plateau de jeu*/
     Board * board;
+
+    /** \brief List des joueurs de la partie*/
     Linkedlist * players;
+
+    /** \brief Est vrai si la parie est en cour*/
     bool running;
 };
+
+
+/* ---------- Constructor ---------- */
 
 /**
  * \brief initialise la liste
@@ -30,6 +46,14 @@ Game * gameCreate(int nbPlayer);
  * \param nbPlayer nombre de vrais joueurs
  */
 void addPlayer(Game * game, int nbPlayer);
+
+/**
+  * \brief libere toutes les variable
+  */
+void destroyGame(Game ** game);
+
+
+/* ---------- Utilities ---------- */
 
 /**
  * \brief lancer le deroulement du jeux
@@ -50,15 +74,6 @@ void gamePause();
  * \brief arreter le jeux (posible start pour une nouvelle partie)
  */
 void gameStop();
-
-/**
-  * \brief libere toutes les variable
-  */
-void destroyGame(Game ** game);
-/**
-  * \brief évite les warnings de compilation
-  */
-void destroyGameVoid(void * game);
 
 
 #endif //TOCK_CLIENT_GAME_H
